@@ -74,7 +74,7 @@ class install_cmake(Command):
 
         with fp:
             for line in fp:
-                if line.startswith("FAIRSEQ2N_INSTALL_STANDALONE"):
+                if line.startswith("llm_lib2N_INSTALL_STANDALONE"):
                     _, value = line.strip().split("=", 1)
 
                     return value.upper() in ["1", "ON", "TRUE", "YES", "Y"]
@@ -93,7 +93,7 @@ class install_cmake(Command):
         if component:
             cmd += ["--component", component]
 
-        cmd += ["--prefix", path.join(self.install_dir, "fairseq2n"), "--strip"]
+        cmd += ["--prefix", path.join(self.install_dir, "llm_lib2n"), "--strip"]
 
         if self.verbose:
             cmd += ["--verbose"]
@@ -135,12 +135,12 @@ setup(
         "install": install,  # type: ignore[dict-item]
         "install_cmake": install_cmake,
     },
-    name="fairseq2n",
+    name="llm_lib2n",
     version="0.8.0.dev0",
     description="FAIR Sequence Modeling Toolkit (Native)",
-    long_description="https://github.com/facebookresearch/fairseq2",
+    long_description="https://github.com/facebookresearch/llm_lib2",
     long_description_content_type="text/plain",
-    url="https://github.com/facebookresearch/fairseq2",
+    url="https://github.com/facebookresearch/llm_lib2",
     license="MIT",
     author="Fundamental AI Research (FAIR) at Meta",
     keywords=["machine learning"],
@@ -157,7 +157,7 @@ setup(
     ],
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    package_data={"fairseq2n": ["py.typed", "*.pyi"]},
+    package_data={"llm_lib2n": ["py.typed", "*.pyi"]},
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
@@ -167,7 +167,7 @@ setup(
         "tbb>=2021.8;platform_machine=='x86_64'",
         # PyTorch has no ABI compatibility between releases; this means we have
         # to ensure that we depend on the exact same version that we used to
-        # build fairseq2n.
+        # build llm_lib2n.
         "torch==" + torch.__version__.split("+", 1)[0],  # Trim the label.
     ],
 )
