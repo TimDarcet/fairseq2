@@ -13,9 +13,9 @@ import torch.nn as nn
 from torch import Tensor
 from torch.nn import GELU, Conv2d, Conv3d
 
-from fairseq2.models.jepa.config import JepaConfig, JepaEncoderConfig
-from fairseq2.models.jepa.model import JepaModel
-from fairseq2.models.transformer import (
+from llm_lib2.models.jepa.config import JepaConfig, JepaEncoderConfig
+from llm_lib2.models.jepa.model import JepaModel
+from llm_lib2.models.transformer import (
     FeedForwardNetwork,
     IdentityBias,
     MultiheadAttention,
@@ -29,13 +29,13 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.vit import (
+from llm_lib2.models.vit import (
     Conv2dPatchFeatureExtractor,
     Conv3dPatchFeatureExtractor,
     PatchFeatureExtractor,
     StandardViTFrontend,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     DropPathResidualConnect,
     InterpolatedPositionEncoder,
     LayerNorm,

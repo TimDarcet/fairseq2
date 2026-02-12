@@ -10,7 +10,7 @@ from typing import Collection, Mapping, final
 
 from typing_extensions import override
 
-from fairseq2.metrics.recorders.recorder import MetricRecorder
+from llm_lib2.metrics.recorders.recorder import MetricRecorder
 
 
 @final

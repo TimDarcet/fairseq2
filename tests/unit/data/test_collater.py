@@ -10,7 +10,7 @@ import pytest
 import torch
 from torch.nn.functional import pad
 
-from fairseq2.data.data_pipeline import CollateOptionsOverride, Collater
+from llm_lib2.data.data_pipeline import CollateOptionsOverride, Collater
 from tests.common import assert_close, device
 
 

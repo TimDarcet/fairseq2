@@ -13,16 +13,16 @@ from typing import Any, Final
 
 from torch import Tensor
 
-from fairseq2.data.data_pipeline import (
+from llm_lib2.data.data_pipeline import (
     DataPipeline,
     read_sequence,
 )
-from fairseq2.data.text import read_text
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.datasets import DataPipelineReader, DataReader, SequenceBatch, SyncMode
-from fairseq2.error import raise_operational_system_error
-from fairseq2.gang import Gangs
-from fairseq2.nn import BatchLayout
+from llm_lib2.data.text import read_text
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.datasets import DataPipelineReader, DataReader, SequenceBatch, SyncMode
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.gang import Gangs
+from llm_lib2.nn import BatchLayout
 
 # TODO: FIX, INFER
 npc = 10

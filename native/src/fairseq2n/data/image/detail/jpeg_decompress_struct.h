@@ -12,10 +12,10 @@
 //using FILE = struct _IO_FILE;
 #include <jpeglib.h>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class jpeg_decompress {
 public:
@@ -29,4 +29,4 @@ private:
     jpeg_decompress_struct cinfo;
 };
 
-} // namespace fairseq2n::detail
+} // namespace llm_lib2n::detail

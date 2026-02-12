@@ -4,11 +4,11 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/repeat_data_source.h"
+#include "llm_lib2n/data/repeat_data_source.h"
 
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::optional<data>
 repeat_data_source::next()

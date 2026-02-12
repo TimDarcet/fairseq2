@@ -17,12 +17,12 @@
 #include <ATen/Device.h>
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/float.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class sp_encoder_options {
 public:
@@ -165,7 +165,7 @@ class immutable_string;
 
 class sp_model;
 
-class FAIRSEQ2_API sp_encoder final {
+class llm_lib2_API sp_encoder final {
 public:
     explicit
     sp_encoder(std::shared_ptr<const sp_model> model, sp_encoder_options opts = {});
@@ -200,4 +200,4 @@ private:
     std::optional<at::Tensor> suffix_index_tensor_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

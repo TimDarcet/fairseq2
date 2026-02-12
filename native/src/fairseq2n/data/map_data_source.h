@@ -12,15 +12,15 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/data_source.h"
-#include "fairseq2n/detail/thread_pool.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data_source.h"
+#include "llm_lib2n/detail/thread_pool.h"
 
-#ifdef FAIRSEQ2N_USE_TBB
+#ifdef llm_lib2N_USE_TBB
 #include <oneapi/tbb.h>
 #endif
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class map_data_source final : public data_source {
 public:
@@ -88,11 +88,11 @@ private:
     std::atomic<bool> finished_{false};
     std::atomic<size_t> tasks_in_flight_{0};
     std::exception_ptr exception_ptr_{};
-#ifdef FAIRSEQ2N_USE_TBB
+#ifdef llm_lib2N_USE_TBB
     tbb::task_arena pool_;
 #else
     mutable thread_pool pool_;
 #endif
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

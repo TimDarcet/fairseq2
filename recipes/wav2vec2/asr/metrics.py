@@ -11,8 +11,8 @@ import math
 import torch
 from torch import Tensor
 
-from fairseq2.datasets import Seq2SeqBatch
-from fairseq2.metrics import Mean, MetricBag, Sum
+from llm_lib2.datasets import Seq2SeqBatch
+from llm_lib2.metrics import Mean, MetricBag, Sum
 
 
 @torch.inference_mode()

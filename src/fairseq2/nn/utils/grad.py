@@ -17,9 +17,9 @@ from torch.distributed.tensor import DTensor
 from torch.nn import Module
 from torch.nn.utils import clip_grad_norm_  # type: ignore[attr-defined]
 
-from fairseq2.error import OperationalError
-from fairseq2.gang import Gang, all_sum
-from fairseq2.nn.fsdp import FSDP1Module
+from llm_lib2.error import OperationalError
+from llm_lib2.gang import Gang, all_sum
+from llm_lib2.nn.fsdp import FSDP1Module
 
 
 def normalize_grads(module: Module, gang: Gang, num_targets: int) -> None:

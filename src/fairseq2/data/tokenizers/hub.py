@@ -10,19 +10,19 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import Generic, TypeVar, cast, final
 
-from fairseq2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
+from llm_lib2.data.tokenizers.family import (
     TokenizerFamily,
     TokenizerFamilyNotKnownError,
 )
-from fairseq2.data.tokenizers.ref import resolve_tokenizer_reference
-from fairseq2.data.tokenizers.tokenizer import Tokenizer
-from fairseq2.device import CPU
-from fairseq2.error import InternalError
-from fairseq2.gang import Gangs, create_fake_gangs
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.utils.warn import _warn_progress_deprecated
+from llm_lib2.data.tokenizers.ref import resolve_tokenizer_reference
+from llm_lib2.data.tokenizers.tokenizer import Tokenizer
+from llm_lib2.device import CPU
+from llm_lib2.error import InternalError
+from llm_lib2.gang import Gangs, create_fake_gangs
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.utils.warn import _warn_progress_deprecated
 
 TokenizerT = TypeVar("TokenizerT", bound=Tokenizer)
 

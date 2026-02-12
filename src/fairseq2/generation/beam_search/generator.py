@@ -17,14 +17,14 @@ from torch.nn.functional import log_softmax
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import VocabularyInfo
-from fairseq2.error import InternalError
-from fairseq2.generation.beam_search.algo import (
+from llm_lib2.data.tokenizers import VocabularyInfo
+from llm_lib2.error import InternalError
+from llm_lib2.generation.beam_search.algo import (
     BeamSearchAlgorithm,
     BeamStep,
     StandardBeamSearchAlgorithm,
 )
-from fairseq2.generation.generator import (
+from llm_lib2.generation.generator import (
     GenerationCounters,
     Hypothesis,
     Seq2SeqGenerator,
@@ -33,12 +33,12 @@ from fairseq2.generation.generator import (
     SequenceGeneratorOutput,
     StepHook,
 )
-from fairseq2.generation.step_processor import StepProcessor
-from fairseq2.models.clm import CausalLM
-from fairseq2.models.seq2seq import Seq2SeqModel
-from fairseq2.nn import BatchLayout, IncrementalStateBag
-from fairseq2.utils.stopwatch import Stopwatch
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.generation.step_processor import StepProcessor
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.models.seq2seq import Seq2SeqModel
+from llm_lib2.nn import BatchLayout, IncrementalStateBag
+from llm_lib2.utils.stopwatch import Stopwatch
+from llm_lib2.utils.tensor import to_tensor
 
 
 @final
@@ -709,7 +709,7 @@ class _AbstractBeamSearchSequenceGeneratorOp(ABC):
         else:
             self._prompt_mask = None  # Not needed anymore, release.
 
-        # We use the same beam search method as in fairseq, where we take the
+        # We use the same beam search method as in llm_lib, where we take the
         # best 2 x `beam_size` candidates and choose the first `beam_size` of
         # these which don't predict EOS to continue with.
         # (2 x B)

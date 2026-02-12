@@ -12,12 +12,12 @@
 
 #include <sndfile.h>
 
-#include "fairseq2n/float.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/utils/cast.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 // Wraps `memory_block` as a "virtual" file to use with libsndfile.
 class vio_file {
@@ -148,4 +148,4 @@ private:
     std::unique_ptr<vio_file> file_{};
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

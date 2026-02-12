@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from fairseq2.assets import AssetCard, AssetCardError
+from llm_lib2.assets import AssetCard, AssetCardError
 
 
 class TestAssetCard:

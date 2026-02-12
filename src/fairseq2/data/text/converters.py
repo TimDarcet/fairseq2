@@ -9,10 +9,10 @@ from __future__ import annotations
 from collections.abc import Sequence
 from typing import TYPE_CHECKING, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 from torch import Tensor
 
-from fairseq2.data_type import DataType
+from llm_lib2.data_type import DataType
 
 if TYPE_CHECKING or DOC_MODE:
 
@@ -78,12 +78,12 @@ if TYPE_CHECKING or DOC_MODE:
         def __call__(self, s: str) -> Tensor: ...
 
 else:
-    from fairseq2n.bindings.data.text.converters import (  # noqa: F401
+    from llm_lib2n.bindings.data.text.converters import (  # noqa: F401
         StrSplitter as StrSplitter,
     )
-    from fairseq2n.bindings.data.text.converters import (  # noqa: F401
+    from llm_lib2n.bindings.data.text.converters import (  # noqa: F401
         StrToIntConverter as StrToIntConverter,
     )
-    from fairseq2n.bindings.data.text.converters import (  # noqa: F401
+    from llm_lib2n.bindings.data.text.converters import (  # noqa: F401
         StrToTensorConverter as StrToTensorConverter,
     )

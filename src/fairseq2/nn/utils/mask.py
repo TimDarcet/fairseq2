@@ -11,8 +11,8 @@ from typing import Protocol
 import torch
 from torch import Tensor
 
-from fairseq2.device import Device
-from fairseq2.ops import repeat_interleave, unsqueeze
+from llm_lib2.device import Device
+from llm_lib2.ops import repeat_interleave, unsqueeze
 
 
 def apply_mask(
@@ -143,7 +143,7 @@ def _compute_mask_spans(
     # (N) -> (N x M)
     span_start_range = repeat_interleave(span_start_range, dim=0, repeat=num_spans)
 
-    # Unlike the fairseq implementation, we do sample with replacement, which is
+    # Unlike the llm_lib implementation, we do sample with replacement, which is
     # more consistent with the overlap strategy.
     # (N x M)
     rand_scales = torch.rand(num_rows * num_spans, device=device)

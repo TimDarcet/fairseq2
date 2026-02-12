@@ -11,11 +11,11 @@ from typing import final
 from torch.nn import Module
 from torch.optim import Adafactor, AdamW, Optimizer
 
-from fairseq2.gang import Gangs
-from fairseq2.recipe.component import ComponentManager, ComponentNotKnownError
-from fairseq2.recipe.config import AdafactorConfig, AdamWConfig, OptimizerSection
-from fairseq2.recipe.error import OptimizerNotKnownError
-from fairseq2.recipe.optim import prepare_parameter_groups
+from llm_lib2.gang import Gangs
+from llm_lib2.recipe.component import ComponentManager, ComponentNotKnownError
+from llm_lib2.recipe.config import AdafactorConfig, AdamWConfig, OptimizerSection
+from llm_lib2.recipe.error import OptimizerNotKnownError
+from llm_lib2.recipe.optim import prepare_parameter_groups
 
 
 @final

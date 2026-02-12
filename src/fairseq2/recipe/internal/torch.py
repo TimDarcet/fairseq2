@@ -14,22 +14,22 @@ from typing import final
 import numpy as np
 import torch
 
-from fairseq2.device import Device
-from fairseq2.file_system import FileSystem
-from fairseq2.logging import log
-from fairseq2.models.transformer import (
+from llm_lib2.device import Device
+from llm_lib2.file_system import FileSystem
+from llm_lib2.logging import log
+from llm_lib2.models.transformer import (
     Flash2SDPA,
     Flash3SDPA,
     NaiveSDPA,
     TorchSDPA,
     set_default_sdpa_factory,
 )
-from fairseq2.recipe.config import CommonSection
-from fairseq2.utils.env import Environment
-from fairseq2.utils.rng import RngBag
-from fairseq2.utils.threading import get_num_threads
-from fairseq2.utils.version import torch_greater_or_equal
-from fairseq2.world_info import WorldInfo
+from llm_lib2.recipe.config import CommonSection
+from llm_lib2.utils.env import Environment
+from llm_lib2.utils.rng import RngBag
+from llm_lib2.utils.threading import get_num_threads
+from llm_lib2.utils.version import torch_greater_or_equal
+from llm_lib2.world_info import WorldInfo
 
 
 @final

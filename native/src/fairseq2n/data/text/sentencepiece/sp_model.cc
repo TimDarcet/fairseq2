@@ -4,13 +4,13 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/sentencepiece/sp_model.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_model.h"
 
-#include "fairseq2n/data/text/sentencepiece/sp_processor.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_processor.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 sp_model
 sp_model::from_serialized(std::string_view serialized)
@@ -94,4 +94,4 @@ sp_model::serialize() const
     return processor_->serialize();
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

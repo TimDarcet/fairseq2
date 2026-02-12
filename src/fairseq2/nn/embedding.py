@@ -17,13 +17,13 @@ from torch.nn import Module, Parameter
 from torch.nn.functional import embedding
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import META_DEVICE, Device, get_current_device
-from fairseq2.gang import Gang, Gangs, get_current_gangs
-from fairseq2.nn.sharded import Sharded
-from fairseq2.nn.utils.module import get_name_or_self, to_empty
-from fairseq2.ops.tensor_parallel import gather, reduce, reduce_on_backward
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.data_type import DataType
+from llm_lib2.device import META_DEVICE, Device, get_current_device
+from llm_lib2.gang import Gang, Gangs, get_current_gangs
+from llm_lib2.nn.sharded import Sharded
+from llm_lib2.nn.utils.module import get_name_or_self, to_empty
+from llm_lib2.ops.tensor_parallel import gather, reduce, reduce_on_backward
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 class Embedding(Module, ABC):

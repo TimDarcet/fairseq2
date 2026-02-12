@@ -12,8 +12,8 @@ from typing import Any
 import pytest
 import torch
 
-from fairseq2.data.text import StrToTensorConverter
-from fairseq2.data_type import DataType
+from llm_lib2.data.text import StrToTensorConverter
+from llm_lib2.data_type import DataType
 from tests.common import assert_equal
 
 

@@ -4,17 +4,17 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include <fairseq2n/utils/cast.h>
+#include <llm_lib2n/utils/cast.h>
 
 #include <cstdint>
 #include <limits>
 
 #include <gtest/gtest.h>
 
-#include <fairseq2n/float.h>
+#include <llm_lib2n/float.h>
 
-using namespace fairseq2n;
-using namespace fairseq2n::detail;
+using namespace llm_lib2n;
+using namespace llm_lib2n::detail;
 
 TEST(test_cast, maybe_narrow_works_when_value_is_within_range)
 {

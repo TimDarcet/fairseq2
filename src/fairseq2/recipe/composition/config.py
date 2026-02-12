@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     CommonSection,
     EvaluatorSection,
     GangSection,
@@ -22,8 +22,8 @@ from fairseq2.recipe.config import (
     SequenceGeneratorSection,
     TrainerSection,
 )
-from fairseq2.recipe.internal.config import _get_config_section
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.recipe.internal.config import _get_config_section
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 SectionT = TypeVar("SectionT")
 

@@ -8,10 +8,10 @@
 
 #include <utility>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/byte_stream.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/byte_stream.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class memory_stream final : public byte_stream {
 public:
@@ -48,4 +48,4 @@ private:
     memory_block original_block_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

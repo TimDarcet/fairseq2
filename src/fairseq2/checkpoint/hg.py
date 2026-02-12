@@ -19,11 +19,11 @@ from typing import Final, Protocol, final
 
 from typing_extensions import override
 
-from fairseq2.file_system import FileMode, FileSystem
-from fairseq2.gang import Gangs, broadcast_flag
-from fairseq2.logging import log
-from fairseq2.utils.process import ProcessRunner
-from fairseq2.utils.threading import ThreadPool
+from llm_lib2.file_system import FileMode, FileSystem
+from llm_lib2.gang import Gangs, broadcast_flag
+from llm_lib2.logging import log
+from llm_lib2.utils.process import ProcessRunner
+from llm_lib2.utils.threading import ThreadPool
 
 
 @dataclass(kw_only=True)
@@ -107,7 +107,7 @@ class OutOfProcHuggingFaceExporter(HuggingFaceExporter):
         def do_export() -> Callable[[], None]:
             export_dir = self._checkpoint_dir.joinpath(f"step_{step_nr}/hg")
 
-            cmd = [sys.executable, "-m", "fairseq2.models.utils.hg_export", "--no-rich", "--checkpoint-dir", str(self._checkpoint_dir), f"checkpoint_step_{step_nr}", str(export_dir)]  # fmt: skip
+            cmd = [sys.executable, "-m", "llm_lib2.models.utils.hg_export", "--no-rich", "--checkpoint-dir", str(self._checkpoint_dir), f"checkpoint_step_{step_nr}", str(export_dir)]  # fmt: skip
 
             if self._gangs.root.rank == 0:
                 run_file = export_dir.with_suffix(".run")

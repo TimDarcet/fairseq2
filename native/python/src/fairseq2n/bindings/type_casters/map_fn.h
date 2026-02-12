@@ -14,9 +14,9 @@
 
 #include <pybind11/pybind11.h>
 
-#include <fairseq2n/data/data_pipeline.h>
+#include <llm_lib2n/data/data_pipeline.h>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 // We use this registry to support C++ functors that can be directly called from
 // the Python API without acquiring GIL. A registered functor must be compatible
@@ -72,7 +72,7 @@ map_functor_registry::register_()
 map_functor_registry &
 map_functors() noexcept;
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n
 
 namespace pybind11::detail {
 
@@ -82,21 +82,21 @@ namespace pybind11::detail {
 // going through Python. This `type_caster` supports such native functors and
 // can call them directly in C++.
 template <>
-struct type_caster<fairseq2n::map_fn> {
-    PYBIND11_TYPE_CASTER(fairseq2n::map_fn, const_name("Callable[[Any], Any]"));
+struct type_caster<llm_lib2n::map_fn> {
+    PYBIND11_TYPE_CASTER(llm_lib2n::map_fn, const_name("Callable[[Any], Any]"));
 
 public:
     bool
     load(handle src, bool);
 
     static handle
-    cast(const fairseq2n::map_fn &fn, return_value_policy policy, handle)
+    cast(const llm_lib2n::map_fn &fn, return_value_policy policy, handle)
     {
         return cpp_function{fn, policy}.release();
     }
 
     static handle
-    cast(fairseq2n::map_fn &&fn, return_value_policy policy, handle)
+    cast(llm_lib2n::map_fn &&fn, return_value_policy policy, handle)
     {
         return cpp_function{std::move(fn), policy}.release();
     }

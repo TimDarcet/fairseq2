@@ -12,15 +12,15 @@ from typing import cast, final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.composition import register_dataset_family
-from fairseq2.datasets import Seq2SeqBatch, SyncMode
-from fairseq2.logging import log
-from fairseq2.metrics import MetricBag
-from fairseq2.metrics.text import WerMetric
-from fairseq2.models.wav2vec2 import Wav2Vec2Model
-from fairseq2.models.wav2vec2.asr import Wav2Vec2AsrModel
-from fairseq2.nn.utils.module import freeze_parameters, share_parameters
-from fairseq2.recipe import (
+from llm_lib2.composition import register_dataset_family
+from llm_lib2.datasets import Seq2SeqBatch, SyncMode
+from llm_lib2.logging import log
+from llm_lib2.metrics import MetricBag
+from llm_lib2.metrics.text import WerMetric
+from llm_lib2.models.wav2vec2 import Wav2Vec2Model
+from llm_lib2.models.wav2vec2.asr import Wav2Vec2AsrModel
+from llm_lib2.nn.utils.module import freeze_parameters, share_parameters
+from llm_lib2.recipe import (
     EvalUnit,
     RecipeContext,
     RecipeModel,
@@ -28,8 +28,8 @@ from fairseq2.recipe import (
     TrainRecipe,
     TrainUnit,
 )
-from fairseq2.recipe.error import RecipeError
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.recipe.error import RecipeError
+from llm_lib2.runtime.dependency import DependencyContainer
 
 from .config import Wav2Vec2AsrRecipeConfig
 from .criterion import Wav2Vec2AsrCriterion

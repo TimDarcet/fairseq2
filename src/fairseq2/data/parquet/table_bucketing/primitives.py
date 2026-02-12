@@ -6,9 +6,9 @@ import pyarrow as pa
 import pyarrow.compute as pc
 from numpy.typing import NDArray
 
-from fairseq2.data.data_pipeline import DataPipeline, read_sequence
-from fairseq2.data.parquet.arrow_transform import is_list_like
-from fairseq2.logging import log
+from llm_lib2.data.data_pipeline import DataPipeline, read_sequence
+from llm_lib2.data.parquet.arrow_transform import is_list_like
+from llm_lib2.logging import log
 
 
 def compute_length_splits(

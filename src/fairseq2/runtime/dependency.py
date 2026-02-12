@@ -27,9 +27,9 @@ from typing import (
 
 from typing_extensions import override
 
-from fairseq2.error import InternalError, InvalidOperationError
-from fairseq2.runtime.lazy import Lazy
-from fairseq2.runtime.lookup import Lookup
+from llm_lib2.error import InternalError, InvalidOperationError
+from llm_lib2.runtime.lazy import Lazy
+from llm_lib2.runtime.lookup import Lookup
 
 T = TypeVar("T")
 
@@ -377,9 +377,9 @@ _resolver: DependencyResolver | None = None
 
 def get_dependency_resolver() -> DependencyResolver:
     if _resolver is None:
-        from fairseq2 import init_fairseq2
+        from llm_lib2 import init_llm_lib2
 
-        init_fairseq2()
+        init_llm_lib2()
 
     if _resolver is None:
         raise InternalError("`_resolver` is `None`.")

@@ -11,14 +11,14 @@ from typing import Any
 import wandb
 from wandb import Run as WandbRun
 
-from fairseq2.metrics import (
+from llm_lib2.metrics import (
     format_as_byte_size,
     format_as_float,
     format_as_int,
     format_as_percentage,
     format_as_seconds,
 )
-from fairseq2.metrics.recorders import (
+from llm_lib2.metrics.recorders import (
     CompositeMetricRecorder,
     JsonlMetricRecorder,
     LogMetricRecorder,
@@ -28,7 +28,7 @@ from fairseq2.metrics.recorders import (
     TensorBoardRecorder,
     WandbRecorder,
 )
-from fairseq2.recipe.internal.metric_recorders import (
+from llm_lib2.recipe.internal.metric_recorders import (
     _MaybeTensorBoardRecorderFactory,
     _MaybeWandbRecorderFactory,
     _MaybeWandbRunFactory,
@@ -36,7 +36,7 @@ from fairseq2.recipe.internal.metric_recorders import (
     _StandardWandbRunIdManager,
     _WandbRunIdManager,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

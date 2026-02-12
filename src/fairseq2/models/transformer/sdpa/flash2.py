@@ -22,15 +22,15 @@ except ImportError:
 else:
     _has_flash_attn_2 = True
 
-from fairseq2.error import NotSupportedError, OperationalError
-from fairseq2.models.transformer.attention_bias import (
+from llm_lib2.error import NotSupportedError, OperationalError
+from llm_lib2.models.transformer.attention_bias import (
     AttentionBias,
     AttentionBiasCache,
     CausalAttentionBias,
     IdentityBias,
 )
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.nn import BatchLayout
 
 
 @final

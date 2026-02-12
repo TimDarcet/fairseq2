@@ -4,11 +4,11 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/data/iterator_data_source.h"
+#include "llm_lib2n/bindings/data/iterator_data_source.h"
 
 namespace py = pybind11;
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::optional<data>
 iterator_data_source::next()

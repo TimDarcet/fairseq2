@@ -6,11 +6,11 @@
 
 from __future__ import annotations
 
-from fairseq2.data.tokenizers import Tokenizer, TokenizerHubAccessor
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.llama.config import LLAMA_FAMILY, LLaMAConfig
-from fairseq2.models.llama.tokenizer import LLaMATokenizerConfig as LLaMATokenizerConfig
-from fairseq2.models.transformer_lm import TransformerLM
+from llm_lib2.data.tokenizers import Tokenizer, TokenizerHubAccessor
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.llama.config import LLAMA_FAMILY, LLaMAConfig
+from llm_lib2.models.llama.tokenizer import LLaMATokenizerConfig as LLaMATokenizerConfig
+from llm_lib2.models.transformer_lm import TransformerLM
 
 get_llama_model_hub = ModelHubAccessor(
     LLAMA_FAMILY, kls=TransformerLM, config_kls=LLaMAConfig

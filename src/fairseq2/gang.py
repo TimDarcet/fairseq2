@@ -36,20 +36,20 @@ from torch import Tensor
 from torch.distributed import Backend, ProcessGroup, ReduceOp
 from typing_extensions import override
 
-from fairseq2.device import CPU, META_DEVICE, Device, DeviceContext
-from fairseq2.error import (
+from llm_lib2.device import CPU, META_DEVICE, Device, DeviceContext
+from llm_lib2.error import (
     InternalError,
     InvalidOperationError,
     NotSupportedError,
     OperationalError,
 )
-from fairseq2.logging import log
-from fairseq2.runtime.closable import Closable
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.typing import ContextManager
-from fairseq2.utils.tensor import to_tensor
-from fairseq2.utils.threading import ThreadLocalStorage
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.logging import log
+from llm_lib2.runtime.closable import Closable
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.typing import ContextManager
+from llm_lib2.utils.tensor import to_tensor
+from llm_lib2.utils.threading import ThreadLocalStorage
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 class Gang(Closable):
@@ -119,7 +119,7 @@ class Gang(Closable):
             :caption: Computing sum across all processes
 
             import torch
-            from fairseq2.gang import ReduceOperation
+            from llm_lib2.gang import ReduceOperation
 
             # Each process has a different tensor
             tensor = torch.tensor([gang.rank], dtype=torch.float32)
@@ -262,7 +262,7 @@ class FakeGang(Gang):
 
         import torch
 
-        from fairseq2.gang import FakeGang
+        from llm_lib2.gang import FakeGang
 
         device = torch.device("cpu")
 
@@ -770,7 +770,7 @@ def get_current_gangs(device: Device | None = None) -> Gangs:
 
     .. code::
 
-        from fairseq2.gang import Gangs, get_current_gangs, get_default_gangs
+        from llm_lib2.gang import Gangs, get_current_gangs, get_default_gangs
 
         gangs = get_default_gangs()
 
@@ -1194,7 +1194,7 @@ def create_fake_gangs(device: Device) -> Gangs:
 
         import torch
 
-        from fairseq2.gang import create_fake_gangs
+        from llm_lib2.gang import create_fake_gangs
 
         device = torch.device("cpu")
 

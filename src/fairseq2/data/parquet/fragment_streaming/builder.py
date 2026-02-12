@@ -9,17 +9,17 @@ from copy import deepcopy
 
 import pyarrow as pa
 
-from fairseq2.data.data_pipeline import DataPipelineBuilder
-from fairseq2.data.parquet.fragment_streaming.config import FragmentStreamingConfig
-from fairseq2.data.parquet.fragment_streaming.primitives import (
+from llm_lib2.data.data_pipeline import DataPipelineBuilder
+from llm_lib2.data.parquet.fragment_streaming.config import FragmentStreamingConfig
+from llm_lib2.data.parquet.fragment_streaming.primitives import (
     ParquetDatasetWrapper,
     init_parquet_dataset,
     list_parquet_fragments,
     process_filter,
     stream_parquet_fragments,
 )
-from fairseq2.data.parquet.utils import fragment_stable_hash
-from fairseq2.logging import log
+from llm_lib2.data.parquet.utils import fragment_stable_hash
+from llm_lib2.logging import log
 
 
 class ParquetFragmentStreamer:

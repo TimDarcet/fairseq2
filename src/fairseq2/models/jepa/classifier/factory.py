@@ -6,14 +6,14 @@
 
 from copy import copy
 
-from fairseq2.models.jepa import JepaEncoderFactory
-from fairseq2.models.jepa.classifier.config import JepaClassifierConfig
-from fairseq2.models.jepa.classifier.model import (
+from llm_lib2.models.jepa import JepaEncoderFactory
+from llm_lib2.models.jepa.classifier.config import JepaClassifierConfig
+from llm_lib2.models.jepa.classifier.model import (
     AttentivePooler,
     CrossAttentionDecoderLayer,
     JepaClassifierModel,
 )
-from fairseq2.models.transformer import (
+from llm_lib2.models.transformer import (
     IdentityBias,
     MultiheadAttention,
     StandardMultiheadAttention,
@@ -21,7 +21,7 @@ from fairseq2.models.transformer import (
     TransformerFrontend,
     create_default_sdpa,
 )
-from fairseq2.nn import IdentityProjection, Linear, Projection
+from llm_lib2.nn import IdentityProjection, Linear, Projection
 
 
 def create_jepa_classifier_model(config: JepaClassifierConfig) -> JepaClassifierModel:

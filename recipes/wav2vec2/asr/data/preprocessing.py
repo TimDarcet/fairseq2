@@ -13,14 +13,14 @@ import torch
 from torch import Tensor
 from torch.nn.functional import layer_norm
 
-from fairseq2.data.audio import AudioDecoder
-from fairseq2.data.data_pipeline import (
+from llm_lib2.data.audio import AudioDecoder
+from llm_lib2.data.data_pipeline import (
     CollateOptionsOverride,
     Collater,
     DataPipelineBuilder,
     FileMapper,
 )
-from fairseq2.data.tokenizers import TokenEncoder
+from llm_lib2.data.tokenizers import TokenEncoder
 
 
 def add_audio_file_loading(
@@ -52,7 +52,7 @@ def add_audio_decoding(
     npc: int,
     selector: str,
 ) -> DataPipelineBuilder:
-    """Add audio decoding to pipeline by creating a ``fairseq2.data._memory.MemoryBlock`` at
+    """Add audio decoding to pipeline by creating a ``llm_lib2.data._memory.MemoryBlock`` at
     the selector. Waveforms are in ``torch.float32`` if ``normalize_audio``, else ``dtype``.
     """
 

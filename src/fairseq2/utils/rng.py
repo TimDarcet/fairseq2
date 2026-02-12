@@ -14,9 +14,9 @@ import torch
 from torch import Generator, Tensor
 from typing_extensions import override
 
-from fairseq2.device import Device
-from fairseq2.error import StateDictError
-from fairseq2.typing import Stateful
+from llm_lib2.device import Device
+from llm_lib2.error import StateDictError
+from llm_lib2.typing import Stateful
 
 
 def use_deterministic(value: bool, warn_only: bool = False) -> None:

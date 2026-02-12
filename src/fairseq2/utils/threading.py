@@ -15,7 +15,7 @@ from typing import ParamSpec, Protocol, TypeVar, final
 
 from typing_extensions import override
 
-from fairseq2.error import OperationalError
+from llm_lib2.error import OperationalError
 
 T = TypeVar("T")
 

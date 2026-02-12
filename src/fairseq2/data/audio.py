@@ -8,13 +8,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, TypedDict, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 from torch import Tensor
 from typing_extensions import NotRequired
 
-from fairseq2.data._memory import MemoryBlock
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
+from llm_lib2.data._memory import MemoryBlock
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
 
 if TYPE_CHECKING or DOC_MODE:
 
@@ -47,8 +47,8 @@ if TYPE_CHECKING or DOC_MODE:
         def __call__(self, waveform: WaveformToFbankInput) -> WaveformToFbankOutput: ...
 
 else:
-    from fairseq2n.bindings.data.audio import AudioDecoder as AudioDecoder  # noqa: F401
-    from fairseq2n.bindings.data.audio import (  # noqa: F401
+    from llm_lib2n.bindings.data.audio import AudioDecoder as AudioDecoder  # noqa: F401
+    from llm_lib2n.bindings.data.audio import (  # noqa: F401
         WaveformToFbankConverter as WaveformToFbankConverter,
     )
 

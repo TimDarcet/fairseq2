@@ -6,24 +6,24 @@
 
 from __future__ import annotations
 
-from fairseq2.metrics.recorders.composite import (
+from llm_lib2.metrics.recorders.composite import (
     CompositeMetricRecorder as CompositeMetricRecorder,
 )
-from fairseq2.metrics.recorders.descriptor import (
+from llm_lib2.metrics.recorders.descriptor import (
     NOOP_METRIC_DESCRIPTOR as NOOP_METRIC_DESCRIPTOR,
 )
-from fairseq2.metrics.recorders.descriptor import MetricDescriptor as MetricDescriptor
-from fairseq2.metrics.recorders.descriptor import (
+from llm_lib2.metrics.recorders.descriptor import MetricDescriptor as MetricDescriptor
+from llm_lib2.metrics.recorders.descriptor import (
     MetricDescriptorRegistry as MetricDescriptorRegistry,
 )
-from fairseq2.metrics.recorders.descriptor import MetricFormatter as MetricFormatter
-from fairseq2.metrics.recorders.jsonl import JsonlMetricRecorder as JsonlMetricRecorder
-from fairseq2.metrics.recorders.log import LogMetricRecorder as LogMetricRecorder
-from fairseq2.metrics.recorders.recorder import (
+from llm_lib2.metrics.recorders.descriptor import MetricFormatter as MetricFormatter
+from llm_lib2.metrics.recorders.jsonl import JsonlMetricRecorder as JsonlMetricRecorder
+from llm_lib2.metrics.recorders.log import LogMetricRecorder as LogMetricRecorder
+from llm_lib2.metrics.recorders.recorder import (
     NOOP_METRIC_RECORDER as NOOP_METRIC_RECORDER,
 )
-from fairseq2.metrics.recorders.recorder import MetricRecorder as MetricRecorder
-from fairseq2.metrics.recorders.tensorboard import (
+from llm_lib2.metrics.recorders.recorder import MetricRecorder as MetricRecorder
+from llm_lib2.metrics.recorders.tensorboard import (
     TensorBoardRecorder as TensorBoardRecorder,
 )
-from fairseq2.metrics.recorders.wandb import WandbRecorder as WandbRecorder
+from llm_lib2.metrics.recorders.wandb import WandbRecorder as WandbRecorder

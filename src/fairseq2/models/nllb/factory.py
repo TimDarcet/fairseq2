@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import torch.nn as nn
 
-from fairseq2.models.nllb.config import NllbConfig
-from fairseq2.models.transformer import (
+from llm_lib2.models.nllb.config import NllbConfig
+from llm_lib2.models.transformer import (
     FeedForwardNetwork,
     MultiheadAttention,
     StandardFeedForwardNetwork,
@@ -28,11 +28,11 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.transformer.attention_bias import (
+from llm_lib2.models.transformer.attention_bias import (
     CausalAttentionBias,
     IdentityBias,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     Embedding,
     LayerNorm,
     Linear,

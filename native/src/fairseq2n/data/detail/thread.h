@@ -13,7 +13,7 @@
 
 #include <pthread.h>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template<typename Func, typename... Args>
 std::thread
@@ -39,4 +39,4 @@ start_thread(Func &&f, Args &&...args)
     return t;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

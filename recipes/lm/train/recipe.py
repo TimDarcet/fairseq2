@@ -12,20 +12,20 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.composition import register_dataset_family
-from fairseq2.datasets import SequenceBatch
-from fairseq2.metrics import MetricBag
-from fairseq2.metrics.common import (
+from llm_lib2.composition import register_dataset_family
+from llm_lib2.datasets import SequenceBatch
+from llm_lib2.metrics import MetricBag
+from llm_lib2.metrics.common import (
     add_nll_loss_metric,
     add_seq_batch_metrics,
     update_nll_loss_metric,
     update_seq_batch_metrics,
 )
-from fairseq2.models.clm import CausalLM
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.trainer import TrainUnit
-from fairseq2.runtime.dependency import DependencyContainer
-from fairseq2.task import Task
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.trainer import TrainUnit
+from llm_lib2.runtime.dependency import DependencyContainer
+from llm_lib2.task import Task
 
 from ..common import check_model_vocabulary
 from .config import LMTrainConfig

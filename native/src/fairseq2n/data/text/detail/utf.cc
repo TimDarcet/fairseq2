@@ -4,14 +4,14 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/detail/utf.h"
+#include "llm_lib2n/data/text/detail/utf.h"
 
 #include <cstdint>
 
-#include "fairseq2n/span.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::size_t
 compute_code_point_length(std::string_view s)
@@ -70,4 +70,4 @@ infer_bom_encoding(memory_span preamble) noexcept
     return "UTF-8";
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

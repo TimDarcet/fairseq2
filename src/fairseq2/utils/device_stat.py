@@ -11,8 +11,8 @@ from typing import Final, final
 
 from typing_extensions import override
 
-from fairseq2.device import CudaContext, Device
-from fairseq2.error import OperationalError
+from llm_lib2.device import CudaContext, Device
+from llm_lib2.error import OperationalError
 
 
 class DeviceStatTracker(ABC):

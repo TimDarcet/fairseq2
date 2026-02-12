@@ -12,7 +12,7 @@ from typing import Any, Final, final
 
 from typing_extensions import Self, override
 
-from fairseq2.logging import log
+from llm_lib2.logging import log
 
 
 class GarbageCollector(ABC):

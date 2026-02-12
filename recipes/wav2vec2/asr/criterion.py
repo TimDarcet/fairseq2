@@ -11,10 +11,10 @@ from typing import final
 
 from torch import Tensor
 
-from fairseq2.datasets import Seq2SeqBatch
-from fairseq2.metrics import MetricBag
-from fairseq2.nn import BatchLayout
-from fairseq2.recipe import RecipeModel
+from llm_lib2.datasets import Seq2SeqBatch
+from llm_lib2.metrics import MetricBag
+from llm_lib2.nn import BatchLayout
+from llm_lib2.recipe import RecipeModel
 
 # isort: split
 

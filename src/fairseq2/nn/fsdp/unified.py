@@ -10,17 +10,17 @@ from typing import Literal
 
 from torch.nn import Module
 
-from fairseq2.data_type import DataType
-from fairseq2.gang import Gangs
-from fairseq2.nn.fsdp.common import FSDPApplier
-from fairseq2.nn.fsdp.fsdp1 import (
+from llm_lib2.data_type import DataType
+from llm_lib2.gang import Gangs
+from llm_lib2.nn.fsdp.common import FSDPApplier
+from llm_lib2.nn.fsdp.fsdp1 import (
     FSDP1Module,
     fsdp1_load_local_state_dict,
     fsdp1_local_state_dict,
     fsdp1_summon_full_parameters,
     to_fsdp1,
 )
-from fairseq2.nn.fsdp.fsdp2 import (
+from llm_lib2.nn.fsdp.fsdp2 import (
     FSDP2Module,
     fsdp2_load_local_state_dict,
     fsdp2_local_state_dict,
@@ -28,7 +28,7 @@ from fairseq2.nn.fsdp.fsdp2 import (
     fsdp2_summon_full_parameters,
     to_fsdp2,
 )
-from fairseq2.typing import ContextManager
+from llm_lib2.typing import ContextManager
 
 
 def to_fsdp(

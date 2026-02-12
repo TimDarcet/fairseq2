@@ -6,16 +6,16 @@
 
 from __future__ import annotations
 
-from fairseq2.nn.ddp import to_ddp
-from fairseq2.nn.fsdp import to_fsdp
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.internal.data_parallel import (
+from llm_lib2.nn.ddp import to_ddp
+from llm_lib2.nn.fsdp import to_fsdp
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.internal.data_parallel import (
     _DataParallelModelWrapper,
     _DDPModelWrapper,
     _DelegatingDPModelWrapper,
     _FSDPModelWrapper,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

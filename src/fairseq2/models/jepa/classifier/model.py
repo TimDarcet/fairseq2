@@ -14,16 +14,16 @@ from torch import Tensor
 from torch.nn import Module, Parameter
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.models.transformer import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.models.transformer import (
     AttentionBiasCache,
     FeedForwardNetwork,
     MultiheadAttention,
     TransformerEncoder,
     TransformerFrontend,
 )
-from fairseq2.nn import BatchLayout, LayerNorm, Projection
+from llm_lib2.nn import BatchLayout, LayerNorm, Projection
 
 
 @final
@@ -79,7 +79,7 @@ class AttentivePooler(Module):
     a logit of a given task.
 
     TODO:
-    - Move this into fairseq2.nn to benefit other similiar tasks. Internally,
+    - Move this into llm_lib2.nn to benefit other similiar tasks. Internally,
     this module is just a thin transformer encoder without self attention layer.
     Optionally, it can consist of some extra transformer encoders depending on the
     (finetuning) task

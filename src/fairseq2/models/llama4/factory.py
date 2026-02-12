@@ -8,11 +8,11 @@ from __future__ import annotations
 
 from typing_extensions import override
 
-from fairseq2.models.llama import LLaMAFactory
-from fairseq2.models.llama4.config import Llama4Config
-from fairseq2.models.llama4.moe import MoE
-from fairseq2.models.llama.factory import _init_truncated_normal
-from fairseq2.models.transformer import (
+from llm_lib2.models.llama import LLaMAFactory
+from llm_lib2.models.llama4.config import Llama4Config
+from llm_lib2.models.llama4.moe import MoE
+from llm_lib2.models.llama.factory import _init_truncated_normal
+from llm_lib2.models.transformer import (
     AttentionBias,
     CausalAttentionBias,
     ChunkedAttentionBias,
@@ -22,8 +22,8 @@ from fairseq2.models.transformer import (
     StandardMultiheadAttention,
     create_default_sdpa,
 )
-from fairseq2.models.transformer_lm import TransformerLM
-from fairseq2.nn import (
+from llm_lib2.models.transformer_lm import TransformerLM
+from llm_lib2.nn import (
     LayerNorm,
     Linear,
     PositionEncoder,

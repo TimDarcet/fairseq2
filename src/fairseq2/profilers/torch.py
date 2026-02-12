@@ -17,8 +17,8 @@ from torch.profiler import (
 )
 from typing_extensions import override
 
-from fairseq2.gang import Gangs
-from fairseq2.profilers.profiler import Profiler
+from llm_lib2.gang import Gangs
+from llm_lib2.profilers.profiler import Profiler
 
 
 @final

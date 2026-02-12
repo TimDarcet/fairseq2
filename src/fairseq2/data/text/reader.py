@@ -10,9 +10,9 @@ from enum import Enum
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 
-from fairseq2.data.data_pipeline import DataPipelineBuilder
+from llm_lib2.data.data_pipeline import DataPipelineBuilder
 
 if TYPE_CHECKING or DOC_MODE:
 
@@ -36,9 +36,9 @@ if TYPE_CHECKING or DOC_MODE:
         ...
 
 else:
-    from fairseq2n.bindings.data.text.text_reader import (  # noqa: F401
+    from llm_lib2n.bindings.data.text.text_reader import (  # noqa: F401
         LineEnding as LineEnding,
     )
-    from fairseq2n.bindings.data.text.text_reader import (  # noqa: F401
+    from llm_lib2n.bindings.data.text.text_reader import (  # noqa: F401
         read_text as read_text,
     )

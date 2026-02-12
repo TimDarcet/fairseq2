@@ -10,17 +10,17 @@ from collections.abc import Callable, Iterator, Mapping, Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, TypedDict, TypeVar, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 from torch import Tensor
 from typing_extensions import Self
 
-from fairseq2.data._memory import MemoryBlock
+from llm_lib2.data._memory import MemoryBlock
 
 if TYPE_CHECKING or DOC_MODE:
 
     @final
     class DataPipeline:
-        """fairseq2 native data pipeline.
+        """llm_lib2 native data pipeline.
 
         The pipeline state can be persisted to the disk, allowing it to be resumed later.
         It is a Python Iterable, but it also contains the iterator states.
@@ -229,7 +229,7 @@ if TYPE_CHECKING or DOC_MODE:
             """Concatenate a list of inputs into a single inputs.
 
             This is equivalent to calling `.map(Collater())`.
-            See :py:class:`fairseq2.data.Collater` for details.
+            See :py:class:`llm_lib2.data.Collater` for details.
             """
 
         def dynamic_bucket(
@@ -593,41 +593,41 @@ if TYPE_CHECKING or DOC_MODE:
         """Raised when a corrupt record is encountered while reading a dataset."""
 
 else:
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         ByteStreamError as ByteStreamError,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         CollateOptionsOverride as CollateOptionsOverride,
     )
-    from fairseq2n.bindings.data.data_pipeline import Collater as Collater  # noqa: F401
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import Collater as Collater  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         DataPipeline as DataPipeline,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         DataPipelineBuilder as DataPipelineBuilder,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         DataPipelineError as DataPipelineError,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         FileMapper as FileMapper,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         RecordError as RecordError,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         get_last_failed_example as get_last_failed_example,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         list_files as list_files,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         read_iterator as read_iterator,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         read_sequence as read_sequence,
     )
-    from fairseq2n.bindings.data.data_pipeline import (  # noqa: F401
+    from llm_lib2n.bindings.data.data_pipeline import (  # noqa: F401
         read_zipped_records as read_zipped_records,
     )
 

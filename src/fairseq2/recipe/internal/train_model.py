@@ -13,29 +13,29 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.assets import AssetCardError, AssetStore
-from fairseq2.checkpoint import CheckpointManager, ModelMetadataDumper
-from fairseq2.error import InternalError, raise_operational_system_error
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error
-from fairseq2.logging import log
-from fairseq2.models import (
+from llm_lib2.assets import AssetCardError, AssetStore
+from llm_lib2.checkpoint import CheckpointManager, ModelMetadataDumper
+from llm_lib2.error import InternalError, raise_operational_system_error
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error
+from llm_lib2.logging import log
+from llm_lib2.models import (
     ModelArchitectureNotKnownError,
     ModelFamily,
     ModelFamilyNotKnownError,
     ModelNotKnownError,
     _maybe_get_model_family,
 )
-from fairseq2.recipe.config import ModelSection, TrainerSection
-from fairseq2.recipe.error import (
+from llm_lib2.recipe.config import ModelSection, TrainerSection
+from llm_lib2.recipe.error import (
     LayerwiseACNotSupportedError,
     ModelCheckpointNotFoundError,
 )
-from fairseq2.recipe.internal.asset_config import _AssetConfigOverrider
-from fairseq2.recipe.internal.compile import _compile_model
-from fairseq2.recipe.internal.data_parallel import _DataParallelModelWrapper
-from fairseq2.recipe.internal.log import _log_model, _LogHelper
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.runtime.lookup import Lookup
+from llm_lib2.recipe.internal.asset_config import _AssetConfigOverrider
+from llm_lib2.recipe.internal.compile import _compile_model
+from llm_lib2.recipe.internal.data_parallel import _DataParallelModelWrapper
+from llm_lib2.recipe.internal.log import _log_model, _LogHelper
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.runtime.lookup import Lookup
 
 
 @final

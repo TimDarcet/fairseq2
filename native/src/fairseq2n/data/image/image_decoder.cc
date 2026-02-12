@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/image/image_decoder.h"
+#include "llm_lib2n/data/image/image_decoder.h"
 
-#ifdef FAIRSEQ2N_SUPPORT_IMAGE
+#ifdef llm_lib2N_SUPPORT_IMAGE
 #include <cstdint>
 #include <exception>
 #include <stdexcept>
@@ -17,18 +17,18 @@
 #include <png.h>
 #include <jpeglib.h>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/float.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/image/detail/png_read_struct.h"
-#include "fairseq2n/data/image/detail/jpeg_decompress_struct.h"
-#include "fairseq2n/data/detail/tensor_helpers.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/image/detail/png_read_struct.h"
+#include "llm_lib2n/data/image/detail/jpeg_decompress_struct.h"
+#include "llm_lib2n/data/detail/tensor_helpers.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 image_decoder::image_decoder(image_decoder_options opts)
   : opts_{opts}
@@ -226,14 +226,14 @@ image_decoder::decode_jpeg(const memory_block &block) const
     return output;
 }
 
-}; // namespace fairseq2n
+}; // namespace llm_lib2n
 
 #else
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 image_decoder::image_decoder(image_decoder_options opts)
   : opts_{opts}
@@ -243,9 +243,9 @@ data
 image_decoder::operator()(data &&) const
 {
     detail::throw_<not_supported_error>(
-        "fairseq2n is not built with JPEG/PNG decoding support.");
+        "llm_lib2n is not built with JPEG/PNG decoding support.");
 }
 
-}; // namespace fairseq2n
+}; // namespace llm_lib2n
 
 #endif

@@ -10,7 +10,7 @@
 #include <cmath>
 #include <type_traits>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 using float32 = float;
 using float64 = double;
@@ -46,4 +46,4 @@ are_close(T lhs, T rhs, T rel = detail::rel<T>::value) noexcept
     return std::abs(rhs - lhs) < rel * std::max(std::abs(lhs), std::abs(rhs));
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

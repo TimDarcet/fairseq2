@@ -16,27 +16,27 @@ from torch import Tensor
 from torch.profiler import record_function
 from typing_extensions import override
 
-from fairseq2.checkpoint import CheckpointManager, HuggingFaceExporter
-from fairseq2.data_type import DataType
-from fairseq2.datasets import DataReader
-from fairseq2.device import CPU, SupportsDeviceTransfer
-from fairseq2.error import InternalError, InvalidOperationError
-from fairseq2.evaluator import EvalUnit
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error
-from fairseq2.logging import log
-from fairseq2.metrics import MetricBag, sync_and_compute_metrics
-from fairseq2.metrics.common import extend_batch_metric_values
-from fairseq2.metrics.recorders import (
+from llm_lib2.checkpoint import CheckpointManager, HuggingFaceExporter
+from llm_lib2.data_type import DataType
+from llm_lib2.datasets import DataReader
+from llm_lib2.device import CPU, SupportsDeviceTransfer
+from llm_lib2.error import InternalError, InvalidOperationError
+from llm_lib2.evaluator import EvalUnit
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error
+from llm_lib2.logging import log
+from llm_lib2.metrics import MetricBag, sync_and_compute_metrics
+from llm_lib2.metrics.common import extend_batch_metric_values
+from llm_lib2.metrics.recorders import (
     NOOP_METRIC_DESCRIPTOR,
     MetricDescriptor,
     MetricRecorder,
 )
-from fairseq2.profilers import Profiler
-from fairseq2.typing import ContextManager
-from fairseq2.utils.device_stat import DeviceStatTracker
-from fairseq2.utils.progress import ProgressReporter
-from fairseq2.utils.rng import RngBag
-from fairseq2.utils.stopwatch import Stopwatch
+from llm_lib2.profilers import Profiler
+from llm_lib2.typing import ContextManager
+from llm_lib2.utils.device_stat import DeviceStatTracker
+from llm_lib2.utils.progress import ProgressReporter
+from llm_lib2.utils.rng import RngBag
+from llm_lib2.utils.stopwatch import Stopwatch
 
 BatchT = TypeVar("BatchT", bound=SupportsDeviceTransfer)
 

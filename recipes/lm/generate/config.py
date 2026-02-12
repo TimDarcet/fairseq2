@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     CommonSection,
     DatasetSection,
     GangSection,

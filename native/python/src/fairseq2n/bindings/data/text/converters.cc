@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 #include <cstdint>
 #include <optional>
@@ -16,17 +16,17 @@
 
 #include <ATen/ScalarType.h>
 
-#include <fairseq2n/data/data_pipeline.h>
-#include <fairseq2n/data/text/string_splitter.h>
-#include <fairseq2n/data/text/string_to_int_converter.h>
-#include <fairseq2n/data/text/string_to_tensor_converter.h>
-#include <fairseq2n/detail/exception.h>
+#include <llm_lib2n/data/data_pipeline.h>
+#include <llm_lib2n/data/text/string_splitter.h>
+#include <llm_lib2n/data/text/string_to_int_converter.h>
+#include <llm_lib2n/data/text/string_to_tensor_converter.h>
+#include <llm_lib2n/detail/exception.h>
 
 namespace py = pybind11;
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 static std::shared_ptr<string_splitter>
 make_string_splitter(
@@ -122,4 +122,4 @@ def_text_converters(py::module_ &text_module)
     map_functors().register_<string_to_tensor_converter>();
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

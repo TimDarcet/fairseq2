@@ -10,9 +10,9 @@
 #include <string>
 #include <string_view>
 
-#include "fairseq2n/memory.h"
+#include "llm_lib2n/memory.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::size_t
 compute_code_point_length(std::string_view s);
@@ -20,4 +20,4 @@ compute_code_point_length(std::string_view s);
 std::string
 infer_bom_encoding(memory_span preamble) noexcept;
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

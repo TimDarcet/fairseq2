@@ -10,9 +10,9 @@
 #include <ATen/Tensor.h>
 #include <vector>
 
-#include "fairseq2n/float.h"
+#include "llm_lib2n/float.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -99,4 +99,4 @@ ngram_repeat_block_cuda(
     return lprobs;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

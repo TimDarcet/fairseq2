@@ -9,10 +9,10 @@
 #include <memory>
 #include <utility>
 
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class yield_from_data_source final : public data_source {
 public:
@@ -50,4 +50,4 @@ private:
     data_pipeline data_pipeline_{};
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

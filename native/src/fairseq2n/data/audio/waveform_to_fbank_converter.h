@@ -14,11 +14,11 @@
 #include <ATen/Device.h>
 #include <ATen/ScalarType.h>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/float.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class fbank_options {
 public:
@@ -167,7 +167,7 @@ class kaldi_fbank_computer;
 
 }
 
-class FAIRSEQ2_API waveform_to_fbank_converter {
+class llm_lib2_API waveform_to_fbank_converter {
 public:
     explicit
     waveform_to_fbank_converter(fbank_options opts = {}) noexcept;
@@ -199,4 +199,4 @@ private:
     fbank_options opts_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

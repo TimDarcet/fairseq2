@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/data_length_extractor.h"
+#include "llm_lib2n/data/data_length_extractor.h"
 
 #include <algorithm>
 #include <stdexcept>
@@ -12,14 +12,14 @@
 
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/cast.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 data_length_extractor::data_length_extractor(std::optional<std::string> maybe_selector)
 {
@@ -63,4 +63,4 @@ data_length_extractor::operator()(const data &d) const
     return data_len;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

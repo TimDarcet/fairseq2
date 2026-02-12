@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.wav2vec2.config import WAV2VEC2_FAMILY, Wav2Vec2Config
-from fairseq2.models.wav2vec2.model import Wav2Vec2Model
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.wav2vec2.config import WAV2VEC2_FAMILY, Wav2Vec2Config
+from llm_lib2.models.wav2vec2.model import Wav2Vec2Model
 
 get_wav2vec2_model_hub = ModelHubAccessor(
     WAV2VEC2_FAMILY, Wav2Vec2Model, Wav2Vec2Config

@@ -14,11 +14,11 @@ from torch import Tensor
 from torch.nn import Module, SiLU
 from torch.nn.parameter import Parameter
 
-from fairseq2.data_type import DataType
-from fairseq2.device import META_DEVICE, Device
-from fairseq2.gang import Gang
-from fairseq2.nn.utils.module import to_empty
-from fairseq2.ops.tensor_parallel import reduce, reduce_on_backward
+from llm_lib2.data_type import DataType
+from llm_lib2.device import META_DEVICE, Device
+from llm_lib2.gang import Gang
+from llm_lib2.nn.utils.module import to_empty
+from llm_lib2.ops.tensor_parallel import reduce, reduce_on_backward
 
 
 def create_expert_glu_layers(

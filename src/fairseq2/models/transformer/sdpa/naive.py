@@ -13,13 +13,13 @@ from torch import Tensor
 from torch.nn.functional import dropout, softmax
 from typing_extensions import override
 
-from fairseq2.models.transformer.attention_bias import (
+from llm_lib2.models.transformer.attention_bias import (
     AttentionBias,
     AttentionBiasCache,
     maybe_get_attention_bias_tensor,
 )
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.nn import BatchLayout
 
 
 @final

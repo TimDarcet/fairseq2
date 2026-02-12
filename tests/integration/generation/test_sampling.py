@@ -8,9 +8,9 @@ from typing import Final
 
 import torch
 
-from fairseq2.generation.sampling import SamplingSeq2SeqGenerator, TopKSampler
-from fairseq2.generation.text import TextTranslator
-from fairseq2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
+from llm_lib2.generation.sampling import SamplingSeq2SeqGenerator, TopKSampler
+from llm_lib2.generation.text import TextTranslator
+from llm_lib2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
 from tests.common import device
 
 ENG_SENTENCE1: Final = (

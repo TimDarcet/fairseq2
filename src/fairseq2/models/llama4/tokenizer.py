@@ -9,9 +9,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.data.tokenizers.tiktoken import load_tiktoken_model
-from fairseq2.models.llama.tokenizer import LLaMATiktokenTokenizer
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.data.tokenizers.tiktoken import load_tiktoken_model
+from llm_lib2.models.llama.tokenizer import LLaMATiktokenTokenizer
 
 
 def get_reserved_special_tokens(

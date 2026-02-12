@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/element_selector.h"
+#include "llm_lib2n/data/element_selector.h"
 
 #include <algorithm>
 #include <cctype>
@@ -13,13 +13,13 @@
 
 #include <fmt/format.h>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/string.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/string.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 constexpr std::size_t wildcard_index = std::numeric_limits<std::size_t>::max();
 
@@ -318,4 +318,4 @@ repr<element_path_ref>::operator()(element_path_ref path) const
     return output;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

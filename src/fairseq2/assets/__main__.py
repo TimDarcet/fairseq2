@@ -6,6 +6,6 @@
 
 from __future__ import annotations
 
-from fairseq2.assets.cli import _main
+from llm_lib2.assets.cli import _main
 
 _main()

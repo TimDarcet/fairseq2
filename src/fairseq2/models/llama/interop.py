@@ -11,16 +11,16 @@ from typing import Final, cast, final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.models.hg import HuggingFaceConfig, HuggingFaceConverter
-from fairseq2.models.llama.config import LLaMAConfig
-from fairseq2.models.utils.checkpoint import convert_state_dict, create_reverse_key_map
-from fairseq2.utils.config import cast_config_type
+from llm_lib2.models.hg import HuggingFaceConfig, HuggingFaceConverter
+from llm_lib2.models.llama.config import LLaMAConfig
+from llm_lib2.models.utils.checkpoint import convert_state_dict, create_reverse_key_map
+from llm_lib2.utils.config import cast_config_type
 
 
 def convert_to_ref_llama_state_dict(
     state_dict: dict[str, object],
 ) -> dict[str, object]:
-    """Convert a fairseq2 LLaMA state dictionary to the reference format."""
+    """Convert a llm_lib2 LLaMA state dictionary to the reference format."""
     key_map = {
         # fmt: off
         r"^decoder\.layers\.([0-9]+)\.self_attn\.q_proj\.":      r"layers.\1.attention.wq.",

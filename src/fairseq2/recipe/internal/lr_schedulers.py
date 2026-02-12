@@ -10,9 +10,9 @@ from typing import final
 
 from torch.optim import Optimizer
 
-from fairseq2.error import InternalError
-from fairseq2.logging import log
-from fairseq2.optim.lr_schedulers import (
+from llm_lib2.error import InternalError
+from llm_lib2.logging import log
+from llm_lib2.optim.lr_schedulers import (
     CosineAnnealingLR,
     LRScheduler,
     MyleLR,
@@ -20,8 +20,8 @@ from fairseq2.optim.lr_schedulers import (
     PolynomialDecayLR,
     TriStageLR,
 )
-from fairseq2.recipe.component import ComponentManager, ComponentNotKnownError
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.component import ComponentManager, ComponentNotKnownError
+from llm_lib2.recipe.config import (
     COSINE_ANNEALING_LR,
     POLYNOMIAL_DECAY_LR,
     TRI_STAGE_LR,
@@ -33,9 +33,9 @@ from fairseq2.recipe.config import (
     RegimeSection,
     TriStageLRConfig,
 )
-from fairseq2.recipe.error import LRSchedulerNotKnownError
-from fairseq2.recipe.optim import maybe_raise_param_group_length_error
-from fairseq2.utils.validation import ValidationError
+from llm_lib2.recipe.error import LRSchedulerNotKnownError
+from llm_lib2.recipe.optim import maybe_raise_param_group_length_error
+from llm_lib2.utils.validation import ValidationError
 
 
 @final

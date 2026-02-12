@@ -16,9 +16,9 @@
 
 #include <sentencepiece/src/sentencepiece_processor.h>
 
-#include "fairseq2n/data/text/sentencepiece/sp_model.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_model.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class sp_processor {
 public:
@@ -62,4 +62,4 @@ private:
     std::unique_ptr<sentencepiece::SentencePieceProcessor> native_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

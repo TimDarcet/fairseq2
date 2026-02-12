@@ -11,7 +11,7 @@ import pyarrow as pa
 import pyarrow.dataset as ds
 import pytest
 
-from fairseq2.data.parquet.arrow_transform import (
+from llm_lib2.data.parquet.arrow_transform import (
     apply_filter,
     concat_table,
     filter_list_by_range,

@@ -12,9 +12,9 @@
 #include <ATen/Tensor.h>
 #include <torch/version.h>
 
-#include "fairseq2n/memory.h"
+#include "llm_lib2n/memory.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 inline memory_span
 get_raw_storage(const at::Tensor &tensor)
@@ -37,4 +37,4 @@ get_raw_mutable_storage(const at::Tensor &tensor)
 #endif
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

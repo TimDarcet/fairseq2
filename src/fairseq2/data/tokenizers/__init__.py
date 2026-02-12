@@ -6,36 +6,36 @@
 
 from __future__ import annotations
 
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.data.tokenizers.family import (
     StandardTokenizerFamily as StandardTokenizerFamily,
 )
-from fairseq2.data.tokenizers.family import TokenizerFamily as TokenizerFamily
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.data.tokenizers.family import TokenizerFamily as TokenizerFamily
+from llm_lib2.data.tokenizers.family import (
     TokenizerFamilyNotKnownError as TokenizerFamilyNotKnownError,
 )
-from fairseq2.data.tokenizers.family import TokenizerGatedError as TokenizerGatedError
-from fairseq2.data.tokenizers.family import TokenizerLoader as TokenizerLoader
-from fairseq2.data.tokenizers.family import TokenizerModelError as TokenizerModelError
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.data.tokenizers.family import TokenizerGatedError as TokenizerGatedError
+from llm_lib2.data.tokenizers.family import TokenizerLoader as TokenizerLoader
+from llm_lib2.data.tokenizers.family import TokenizerModelError as TokenizerModelError
+from llm_lib2.data.tokenizers.family import (
     _maybe_get_tokenizer_family as _maybe_get_tokenizer_family,
 )
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.data.tokenizers.family import (
     get_tokenizer_family_name as get_tokenizer_family_name,
 )
-from fairseq2.data.tokenizers.family import (
+from llm_lib2.data.tokenizers.family import (
     maybe_get_tokenizer_family_name as maybe_get_tokenizer_family_name,
 )
-from fairseq2.data.tokenizers.hub import GlobalTokenizerLoader as GlobalTokenizerLoader
-from fairseq2.data.tokenizers.hub import TokenizerHub as TokenizerHub
-from fairseq2.data.tokenizers.hub import TokenizerHubAccessor as TokenizerHubAccessor
-from fairseq2.data.tokenizers.hub import (
+from llm_lib2.data.tokenizers.hub import GlobalTokenizerLoader as GlobalTokenizerLoader
+from llm_lib2.data.tokenizers.hub import TokenizerHub as TokenizerHub
+from llm_lib2.data.tokenizers.hub import TokenizerHubAccessor as TokenizerHubAccessor
+from llm_lib2.data.tokenizers.hub import (
     TokenizerNotKnownError as TokenizerNotKnownError,
 )
-from fairseq2.data.tokenizers.hub import load_tokenizer as load_tokenizer
-from fairseq2.data.tokenizers.ref import (
+from llm_lib2.data.tokenizers.hub import load_tokenizer as load_tokenizer
+from llm_lib2.data.tokenizers.ref import (
     resolve_tokenizer_reference as resolve_tokenizer_reference,
 )
-from fairseq2.data.tokenizers.tokenizer import TokenDecoder as TokenDecoder
-from fairseq2.data.tokenizers.tokenizer import TokenEncoder as TokenEncoder
-from fairseq2.data.tokenizers.tokenizer import Tokenizer as Tokenizer
-from fairseq2.data.tokenizers.vocab_info import VocabularyInfo as VocabularyInfo
+from llm_lib2.data.tokenizers.tokenizer import TokenDecoder as TokenDecoder
+from llm_lib2.data.tokenizers.tokenizer import TokenEncoder as TokenEncoder
+from llm_lib2.data.tokenizers.tokenizer import Tokenizer as Tokenizer
+from llm_lib2.data.tokenizers.vocab_info import VocabularyInfo as VocabularyInfo

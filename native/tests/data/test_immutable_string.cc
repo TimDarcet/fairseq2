@@ -4,14 +4,14 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include <fairseq2n/data/immutable_string.h>
+#include <llm_lib2n/data/immutable_string.h>
 
 #include <functional>
 #include <memory>
 
 #include <gtest/gtest.h>
 
-using namespace fairseq2n;
+using namespace llm_lib2n;
 
 // Also see the Python tests.
 TEST(test_immutable_string, constructor_throws_exception_when_string_is_invalid_utf8)

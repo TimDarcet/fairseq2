@@ -8,64 +8,64 @@ from __future__ import annotations
 
 import torch
 
-from fairseq2.assets import AssetMetadataSource
-from fairseq2.checkpoint import CheckpointManager, StandardCheckpointManager
-from fairseq2.error import raise_operational_system_error
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.component import ComponentManager, _StandardComponentManager
-from fairseq2.recipe.composition.beam_search import _register_beam_search
-from fairseq2.recipe.composition.config import _register_config_sections
-from fairseq2.recipe.composition.data_parallel import _register_data_parallel_wrappers
-from fairseq2.recipe.composition.dataset import _register_default_dataset
-from fairseq2.recipe.composition.device_stat import _register_device_stat
-from fairseq2.recipe.composition.evaluator import _register_evaluator_factory
-from fairseq2.recipe.composition.generator import _register_generator_factory
-from fairseq2.recipe.composition.lr_schedulers import _register_lr_schedulers
-from fairseq2.recipe.composition.metric_recorders import _register_metric_recorders
-from fairseq2.recipe.composition.optim import _register_optim
-from fairseq2.recipe.composition.profilers import _register_profilers
-from fairseq2.recipe.composition.reference_model import (
+from llm_lib2.assets import AssetMetadataSource
+from llm_lib2.checkpoint import CheckpointManager, StandardCheckpointManager
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.component import ComponentManager, _StandardComponentManager
+from llm_lib2.recipe.composition.beam_search import _register_beam_search
+from llm_lib2.recipe.composition.config import _register_config_sections
+from llm_lib2.recipe.composition.data_parallel import _register_data_parallel_wrappers
+from llm_lib2.recipe.composition.dataset import _register_default_dataset
+from llm_lib2.recipe.composition.device_stat import _register_device_stat
+from llm_lib2.recipe.composition.evaluator import _register_evaluator_factory
+from llm_lib2.recipe.composition.generator import _register_generator_factory
+from llm_lib2.recipe.composition.lr_schedulers import _register_lr_schedulers
+from llm_lib2.recipe.composition.metric_recorders import _register_metric_recorders
+from llm_lib2.recipe.composition.optim import _register_optim
+from llm_lib2.recipe.composition.profilers import _register_profilers
+from llm_lib2.recipe.composition.reference_model import (
     _register_inference_model,
     _register_reference_model_loader,
 )
-from fairseq2.recipe.composition.sampling import _register_sampling
-from fairseq2.recipe.composition.seq_generator import _register_seq_generators
-from fairseq2.recipe.composition.tokenizer import _register_default_tokenizer
-from fairseq2.recipe.composition.train_model import _register_train_model
-from fairseq2.recipe.composition.trainer import _register_trainer_factory
-from fairseq2.recipe.internal.asset_config import (
+from llm_lib2.recipe.composition.sampling import _register_sampling
+from llm_lib2.recipe.composition.seq_generator import _register_seq_generators
+from llm_lib2.recipe.composition.tokenizer import _register_default_tokenizer
+from llm_lib2.recipe.composition.train_model import _register_train_model
+from llm_lib2.recipe.composition.trainer import _register_trainer_factory
+from llm_lib2.recipe.internal.asset_config import (
     _AssetConfigOverrider,
     _StandardAssetConfigOverrider,
 )
-from fairseq2.recipe.internal.assets import (
+from llm_lib2.recipe.internal.assets import (
     _ExtraAssetMetadataSource,
     _ExtraModelMetadataSource,
 )
-from fairseq2.recipe.internal.cluster import _ClusterPreparer
-from fairseq2.recipe.internal.gang import (
+from llm_lib2.recipe.internal.cluster import _ClusterPreparer
+from llm_lib2.recipe.internal.gang import (
     _FSDPGangsFactory,
     _GangsFactory,
     _warmup_gangs,
 )
-from fairseq2.recipe.internal.hook import _HookManager, _TrainHookManager
-from fairseq2.recipe.internal.log import _log_ranks, _LogHelper, _StandardLogHelper
-from fairseq2.recipe.internal.logging import _DistributedLogConfigurer
-from fairseq2.recipe.internal.output_dir import _OutputDirectoryCreator
-from fairseq2.recipe.internal.sweep_tag import (
+from llm_lib2.recipe.internal.hook import _HookManager, _TrainHookManager
+from llm_lib2.recipe.internal.log import _log_ranks, _LogHelper, _StandardLogHelper
+from llm_lib2.recipe.internal.logging import _DistributedLogConfigurer
+from llm_lib2.recipe.internal.output_dir import _OutputDirectoryCreator
+from llm_lib2.recipe.internal.sweep_tag import (
     _StandardSweepTagGenerator,
     _SweepTagGenerator,
 )
-from fairseq2.recipe.internal.task import _TaskRunner
-from fairseq2.recipe.internal.torch import _TorchConfigurer
-from fairseq2.recipe.run import _RecipeConfigDumper
-from fairseq2.runtime.dependency import (
+from llm_lib2.recipe.internal.task import _TaskRunner
+from llm_lib2.recipe.internal.torch import _TorchConfigurer
+from llm_lib2.recipe.run import _RecipeConfigDumper
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.task import Task
-from fairseq2.utils.stopwatch import Stopwatch
+from llm_lib2.task import Task
+from llm_lib2.utils.stopwatch import Stopwatch
 
 
 def _register_train_recipe(container: DependencyContainer, recipe: Recipe) -> None:

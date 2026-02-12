@@ -7,9 +7,9 @@
 from dataclasses import dataclass, field
 from typing import Final
 
-from fairseq2.models.jepa import JepaConfig, JepaEncoderConfig
-from fairseq2.runtime.config_registry import ConfigRegistrar, get_config
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.models.jepa import JepaConfig, JepaEncoderConfig
+from llm_lib2.runtime.config_registry import ConfigRegistrar, get_config
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 JEPA_CLASSIFIER_FAMILY: Final = "jepa_classifier"
 

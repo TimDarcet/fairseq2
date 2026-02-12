@@ -14,7 +14,7 @@ from ruamel.yaml import YAML
 from ruamel.yaml.error import YAMLError
 from typing_extensions import override
 
-from fairseq2.file_system import FileMode, FileSystem
+from llm_lib2.file_system import FileMode, FileSystem
 
 
 class YamlLoader(ABC):

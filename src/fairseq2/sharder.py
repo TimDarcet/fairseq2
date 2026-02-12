@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-As of v0.6, ``fairseq2.sharder`` module will be deprecated and will be removed
+As of v0.6, ``llm_lib2.sharder`` module will be deprecated and will be removed
 from our codebase in v0.12, which we expect to release in approximately six
 months.
 
@@ -34,7 +34,7 @@ parameter.
 
 Once your model factory has been migrated to handle parallelism as described
 above, the ``shard_spec`` argument to ``register_model_family`` as well as
-your ``get_xyz_model_shard_spec`` must be removed before fairseq2 v0.12.
+your ``get_xyz_model_shard_spec`` must be removed before llm_lib2 v0.12.
 """
 
 from __future__ import annotations
@@ -48,8 +48,8 @@ from typing import final
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.gang import Gangs
-from fairseq2.nn import (
+from llm_lib2.gang import Gangs
+from llm_lib2.nn import (
     ColumnShardedLinear,
     Linear,
     RowShardedLinear,
@@ -57,7 +57,7 @@ from fairseq2.nn import (
     StandardEmbedding,
     VocabShardedEmbedding,
 )
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 @dataclass
@@ -153,7 +153,7 @@ class StandardModelSharder(ModelSharder):
         self, model: Module, gangs: Gangs, specs: Mapping[str, ShardSpec]
     ) -> None:
         _warn_deprecated(
-            "`fairseq2.sharder` module is deprecated and will be removed in fairseq2 0.12."
+            "`llm_lib2.sharder` module is deprecated and will be removed in llm_lib2 0.12."
         )
 
         if gangs.tp.size == 1:

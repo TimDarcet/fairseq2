@@ -12,13 +12,13 @@ from torch import Tensor
 from torch.nn import Dropout
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.models.feature_extractor import SequenceFeatureExtractor
-from fairseq2.models.transformer import TransformerFrontend
-from fairseq2.models.wav2vec2.masker import Wav2Vec2Masker
-from fairseq2.nn import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.feature_extractor import SequenceFeatureExtractor
+from llm_lib2.models.transformer import TransformerFrontend
+from llm_lib2.models.wav2vec2.masker import Wav2Vec2Masker
+from llm_lib2.nn import (
     BatchLayout,
     IncrementalStateBag,
     Linear,

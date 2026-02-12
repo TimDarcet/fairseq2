@@ -8,12 +8,12 @@
 
 #include <cstdint>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API string_to_int_converter final {
+class llm_lib2_API string_to_int_converter final {
 public:
     explicit
     string_to_int_converter(std::int16_t base = 10) noexcept
@@ -27,4 +27,4 @@ private:
     std::int16_t base_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

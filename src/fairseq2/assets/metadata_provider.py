@@ -17,10 +17,10 @@ from importlib_resources import files as get_files
 from importlib_resources.readers import MultiplexedPath
 from typing_extensions import override
 
-from fairseq2.assets.dirs import AssetDirectoryAccessor
-from fairseq2.error import OperationalError, raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.utils.yaml import YamlError, YamlLoader
+from llm_lib2.assets.dirs import AssetDirectoryAccessor
+from llm_lib2.error import OperationalError, raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.utils.yaml import YamlError, YamlLoader
 
 
 class AssetMetadataProvider(ABC):

@@ -4,18 +4,18 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/string_to_int_converter.h"
+#include "llm_lib2n/data/text/string_to_int_converter.h"
 
 #include <stdexcept>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/utils/string.h"
-#include "fairseq2n/data/immutable_string.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/utils/string.h"
+#include "llm_lib2n/data/immutable_string.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 data
 string_to_int_converter::operator()(data &&d) const
@@ -37,4 +37,4 @@ string_to_int_converter::operator()(data &&d) const
     }
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

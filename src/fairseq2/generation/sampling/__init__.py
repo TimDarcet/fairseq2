@@ -6,12 +6,12 @@
 
 from __future__ import annotations
 
-from fairseq2.generation.sampling.generator import (
+from llm_lib2.generation.sampling.generator import (
     SamplingSeq2SeqGenerator as SamplingSeq2SeqGenerator,
 )
-from fairseq2.generation.sampling.generator import (
+from llm_lib2.generation.sampling.generator import (
     SamplingSequenceGenerator as SamplingSequenceGenerator,
 )
-from fairseq2.generation.sampling.sampler import Sampler as Sampler
-from fairseq2.generation.sampling.sampler import TopKSampler as TopKSampler
-from fairseq2.generation.sampling.sampler import TopPSampler as TopPSampler
+from llm_lib2.generation.sampling.sampler import Sampler as Sampler
+from llm_lib2.generation.sampling.sampler import TopKSampler as TopKSampler
+from llm_lib2.generation.sampling.sampler import TopPSampler as TopPSampler

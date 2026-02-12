@@ -23,7 +23,7 @@ jobs:
     runs-on:
       labels: 4-core-ubuntu
     container:
-      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:3-cpu
+      image: ghcr.io/facebookresearch/llm_lib2-ci-manylinux_x86_64:3-cpu
     defaults:
       run:
         shell: bash
@@ -55,14 +55,14 @@ jobs:
         if: inputs.version_override
         run: |
           tools/set-project-version.sh ${{ inputs.version_override }}
-      - name: Configure fairseq2n
+      - name: Configure llm_lib2n
         working-directory: native
         run: |
           scl enable gcc-toolset-11 "cmake -GNinja -B build"
-      - name: Install fairseq2n
+      - name: Install llm_lib2n
         run: |
           pip install --editable native/python
-      - name: Install fairseq2
+      - name: Install llm_lib2
         run: |
           pip install --editable .
       - name: Generate documentation

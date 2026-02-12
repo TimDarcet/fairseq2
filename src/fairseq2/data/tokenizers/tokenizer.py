@@ -11,8 +11,8 @@ from collections.abc import Sequence
 
 from torch import Tensor
 
-from fairseq2.data.tokenizers.vocab_info import VocabularyInfo
-from fairseq2.device import Device
+from llm_lib2.data.tokenizers.vocab_info import VocabularyInfo
+from llm_lib2.device import Device
 
 
 class Tokenizer(ABC):

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from fairseq2.data.data_pipeline import (
+from llm_lib2.data.data_pipeline import (
     DataPipelineError,
     get_last_failed_example,
     read_sequence,

@@ -8,11 +8,11 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, TypedDict, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 from torch import Tensor
 
-from fairseq2.data._memory import MemoryBlock
-from fairseq2.device import Device
+from llm_lib2.data._memory import MemoryBlock
+from llm_lib2.device import Device
 
 if TYPE_CHECKING or DOC_MODE:
 
@@ -27,7 +27,7 @@ if TYPE_CHECKING or DOC_MODE:
         def __call__(self, memory_block: MemoryBlock) -> ImageDecoderOutput: ...
 
 else:
-    from fairseq2n.bindings.data.image import ImageDecoder as ImageDecoder  # noqa: F401
+    from llm_lib2n.bindings.data.image import ImageDecoder as ImageDecoder  # noqa: F401
 
 
 class ImageDecoderOutput(TypedDict):

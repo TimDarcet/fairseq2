@@ -8,11 +8,11 @@
 
 #include <stdexcept>
 
-#include "fairseq2n/api.h"
+#include "llm_lib2n/api.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API internal_error : public std::runtime_error {
+class llm_lib2_API internal_error : public std::runtime_error {
 public:
     using std::runtime_error::runtime_error;
 
@@ -23,7 +23,7 @@ public:
    ~internal_error() override;
 };
 
-class FAIRSEQ2_API not_supported_error : public std::domain_error {
+class llm_lib2_API not_supported_error : public std::domain_error {
 public:
     using std::domain_error::domain_error;
 
@@ -34,4 +34,4 @@ public:
    ~not_supported_error() override;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

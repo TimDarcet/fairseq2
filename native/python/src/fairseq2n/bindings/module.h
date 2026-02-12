@@ -12,13 +12,13 @@
 #include <pybind11/stl.h>
 #include <pybind11/stl/filesystem.h>
 
-#include "fairseq2n/bindings/type_casters/data.h"
-#include "fairseq2n/bindings/type_casters/immutable_string.h"
-#include "fairseq2n/bindings/type_casters/map_fn.h"
-#include "fairseq2n/bindings/type_casters/py.h"
-#include "fairseq2n/bindings/type_casters/torch.h"
+#include "llm_lib2n/bindings/type_casters/data.h"
+#include "llm_lib2n/bindings/type_casters/immutable_string.h"
+#include "llm_lib2n/bindings/type_casters/map_fn.h"
+#include "llm_lib2n/bindings/type_casters/py.h"
+#include "llm_lib2n/bindings/type_casters/torch.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 void
 def_audio(pybind11::module_ &data_module);
@@ -47,4 +47,4 @@ def_text_converters(pybind11::module_ &text_module);
 void
 def_text_reader(pybind11::module_ &text_module);
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

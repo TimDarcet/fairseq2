@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/collater.h"
+#include "llm_lib2n/data/collater.h"
 
 #include <cstddef>
 #include <functional>
@@ -16,15 +16,15 @@
 #include <ATen/Functions.h>
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/float.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 
 class collate_op {
@@ -374,4 +374,4 @@ collater::operator()(data &&d) const
     return collate_op{this, std::move(bucket)}.run();
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

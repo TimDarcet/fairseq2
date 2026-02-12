@@ -6,8 +6,8 @@
 
 from __future__ import annotations
 
-from fairseq2.models.mistral.config import MistralConfig
-from fairseq2.models.utils.checkpoint import convert_state_dict
+from llm_lib2.models.mistral.config import MistralConfig
+from llm_lib2.models.utils.checkpoint import convert_state_dict
 
 
 def convert_mistral_state_dict(

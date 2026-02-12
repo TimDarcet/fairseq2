@@ -13,7 +13,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import cast, final
 
-import fairseq2n
+import llm_lib2n
 import psutil
 import torch
 from rich.pretty import pretty_repr
@@ -22,13 +22,13 @@ from torch.distributed.tensor import DTensor
 from torch.nn import Module
 from typing_extensions import override
 
-import fairseq2
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.device import Device
-from fairseq2.gang import Gangs
-from fairseq2.logging import log
-from fairseq2.metrics import format_as_byte_size
-from fairseq2.utils.structured import ValueConverter
+import llm_lib2
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.device import Device
+from llm_lib2.gang import Gangs
+from llm_lib2.logging import log
+from llm_lib2.metrics import format_as_byte_size
+from llm_lib2.utils.structured import ValueConverter
 
 
 class _LogHelper(ABC):
@@ -179,7 +179,7 @@ class _StandardLogHelper(_LogHelper):
                 f"NCCL: {'.'.join((str(v) for v in torch.cuda.nccl.version()))}"
             )
 
-        s = f"{s} | fairseq2: {fairseq2.__version__} | fairseq2n: {fairseq2n.__version__}"
+        s = f"{s} | llm_lib2: {llm_lib2.__version__} | llm_lib2n: {llm_lib2n.__version__}"
 
         for venv_type, venv_env in [("Conda", "CONDA_PREFIX"), ("venv", "VIRTUAL_ENV")]:
             if venv_path := os.environ.get(venv_env):

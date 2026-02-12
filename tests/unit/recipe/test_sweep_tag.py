@@ -8,12 +8,12 @@ from __future__ import annotations
 
 import pytest
 
-from fairseq2.recipe.config import CommonSection
-from fairseq2.recipe.internal.config import _RecipeConfigHolder
-from fairseq2.recipe.internal.sweep_tag import _StandardSweepTagGenerator
-from fairseq2.utils.structured import StandardValueConverter
-from fairseq2.utils.validation import ValidationError
-from fairseq2.world_info import WorldInfo
+from llm_lib2.recipe.config import CommonSection
+from llm_lib2.recipe.internal.config import _RecipeConfigHolder
+from llm_lib2.recipe.internal.sweep_tag import _StandardSweepTagGenerator
+from llm_lib2.utils.structured import StandardValueConverter
+from llm_lib2.utils.validation import ValidationError
+from llm_lib2.world_info import WorldInfo
 
 
 class TestSweepTagGenerator:

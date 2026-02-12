@@ -14,9 +14,9 @@ from typing import final
 import clusterscope
 from typing_extensions import override
 
-from fairseq2.error import OperationalError
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.utils.env import Environment
+from llm_lib2.error import OperationalError
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.utils.env import Environment
 
 
 def set_torch_distributed_env_variables(cluster: str = "auto") -> str:

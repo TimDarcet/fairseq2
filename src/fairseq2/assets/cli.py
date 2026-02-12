@@ -14,13 +14,13 @@ from typing import final
 from rich.console import Console
 from rich.pretty import pretty_repr
 
-from fairseq2.assets.card import AssetCard, AssetCardError
-from fairseq2.assets.metadata_provider import AssetMetadataError
-from fairseq2.assets.store import AssetNotFoundError, AssetStore, get_asset_store
-from fairseq2.composition import ExtensionError
-from fairseq2.error import InternalError, OperationalError
-from fairseq2.logging import configure_logging, log
-from fairseq2.utils.rich import get_console
+from llm_lib2.assets.card import AssetCard, AssetCardError
+from llm_lib2.assets.metadata_provider import AssetMetadataError
+from llm_lib2.assets.store import AssetNotFoundError, AssetStore, get_asset_store
+from llm_lib2.composition import ExtensionError
+from llm_lib2.error import InternalError, OperationalError
+from llm_lib2.logging import configure_logging, log
+from llm_lib2.utils.rich import get_console
 
 
 def _main() -> None:

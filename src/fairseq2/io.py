@@ -20,8 +20,8 @@ import torch
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.device import CPU, Device
-from fairseq2.file_system import FileMode, FileSystem
+from llm_lib2.device import CPU, Device
+from llm_lib2.file_system import FileMode, FileSystem
 
 MapLocation: TypeAlias = (
     Callable[[Tensor, str], Tensor] | Device | str | dict[str, str] | None

@@ -8,25 +8,25 @@
 
 #include <pybind11/pybind11.h>
 
-#include <fairseq2n/data/py.h>
+#include <llm_lib2n/data/py.h>
 
 namespace pybind11::detail {
 
 template <>
-struct type_caster<fairseq2n::py_object> {
-    PYBIND11_TYPE_CASTER(fairseq2n::py_object, const_name("Any"));
+struct type_caster<llm_lib2n::py_object> {
+    PYBIND11_TYPE_CASTER(llm_lib2n::py_object, const_name("Any"));
 
 public:
     bool
     load(handle src, bool)
     {
-        value = fairseq2n::py_object{src.ptr()};
+        value = llm_lib2n::py_object{src.ptr()};
 
         return true;
     }
 
     static handle
-    cast(const fairseq2n::py_object &src, return_value_policy, handle)
+    cast(const llm_lib2n::py_object &src, return_value_policy, handle)
     {
         auto ptr = static_cast<PyObject *>(src.ptr());
 
@@ -38,7 +38,7 @@ public:
     }
 
     static handle
-    cast(fairseq2n::py_object &&src, return_value_policy, handle)
+    cast(llm_lib2n::py_object &&src, return_value_policy, handle)
     {
         auto ptr = static_cast<PyObject *>(src.release());
 

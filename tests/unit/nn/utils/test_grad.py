@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 import torch
 
-from fairseq2.nn.utils.grad import scale_grad
+from llm_lib2.nn.utils.grad import scale_grad
 from tests.common import assert_close, device
 
 

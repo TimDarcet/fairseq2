@@ -10,22 +10,22 @@ from types import NoneType
 
 from torch.nn import Module
 
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.generation.beam_search import (
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.generation.beam_search import (
     BeamSearchAlgorithm,
     StandardBeamSearchAlgorithm,
 )
-from fairseq2.recipe.component import register_component
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.component import register_component
+from llm_lib2.recipe.config import (
     BEAM_SEARCH_GENERATOR,
     STANDARD_BEAM_SEARCH_ALGO,
     BeamSearchConfig,
 )
-from fairseq2.recipe.internal.beam_search import (
+from llm_lib2.recipe.internal.beam_search import (
     _BeamSearchSeq2SeqGeneratorFactory,
     _BeamSearchSequenceGeneratorFactory,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

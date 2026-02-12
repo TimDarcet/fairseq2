@@ -15,9 +15,9 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.error import InternalError
-from fairseq2.nn.ddp import DDPModule
-from fairseq2.nn.fsdp import (
+from llm_lib2.error import InternalError
+from llm_lib2.nn.ddp import DDPModule
+from llm_lib2.nn.fsdp import (
     FSDP1Module,
     FSDP2Module,
     fsdp1_load_local_state_dict,
@@ -28,9 +28,9 @@ from fairseq2.nn.fsdp import (
     fsdp2_no_sync,
     fsdp2_summon_full_parameters,
 )
-from fairseq2.nn.utils.grad import clip_grad_norm
-from fairseq2.nn.utils.module import load_state_dict
-from fairseq2.typing import ContextManager, Stateful
+from llm_lib2.nn.utils.grad import clip_grad_norm
+from llm_lib2.nn.utils.module import load_state_dict
+from llm_lib2.typing import ContextManager, Stateful
 
 
 class DataParallelFacade(ABC, Stateful):

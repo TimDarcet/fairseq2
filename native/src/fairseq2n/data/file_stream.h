@@ -10,11 +10,11 @@
 #include <filesystem>
 #include <string>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/byte_stream.h"
-#include "fairseq2n/data/detail/file.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/byte_stream.h"
+#include "llm_lib2n/data/detail/file.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class file_stream final : public byte_stream {
 public:
@@ -61,4 +61,4 @@ private:
     bool is_eod_ = false;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

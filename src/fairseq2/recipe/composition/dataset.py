@@ -6,10 +6,10 @@
 
 from __future__ import annotations
 
-from fairseq2.recipe.composition.config import register_config_section
-from fairseq2.recipe.config import DatasetSection
-from fairseq2.recipe.internal.dataset import _DatasetHolder, _DatasetOpener
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.recipe.composition.config import register_config_section
+from llm_lib2.recipe.config import DatasetSection
+from llm_lib2.recipe.internal.dataset import _DatasetHolder, _DatasetOpener
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def register_dataset(container: DependencyContainer, section_name: str) -> None:

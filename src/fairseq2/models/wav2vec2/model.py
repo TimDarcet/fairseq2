@@ -15,18 +15,18 @@ from torch.nn import Module
 from torch.nn.functional import cross_entropy
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import InternalError
-from fairseq2.models.transformer import TransformerEncoder
-from fairseq2.models.wav2vec2.frontend import Wav2Vec2Frontend
-from fairseq2.models.wav2vec2.masker import Wav2Vec2Masker
-from fairseq2.models.wav2vec2.vector_quantizer import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import InternalError
+from llm_lib2.models.transformer import TransformerEncoder
+from llm_lib2.models.wav2vec2.frontend import Wav2Vec2Frontend
+from llm_lib2.models.wav2vec2.masker import Wav2Vec2Masker
+from llm_lib2.models.wav2vec2.vector_quantizer import (
     Wav2Vec2VectorQuantizer,
     Wav2Vec2VectorQuantizerOutput,
 )
-from fairseq2.nn import BatchLayout, Linear
-from fairseq2.ops import repeat_interleave
+from llm_lib2.nn import BatchLayout, Linear
+from llm_lib2.ops import repeat_interleave
 
 
 @final

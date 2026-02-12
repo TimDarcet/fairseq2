@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from typing import final
 
-from fairseq2.cluster import ClusterResolver
-from fairseq2.logging import log
-from fairseq2.recipe.config import CommonSection
+from llm_lib2.cluster import ClusterResolver
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import CommonSection
 
 
 @final

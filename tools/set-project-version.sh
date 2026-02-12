@@ -76,23 +76,23 @@ if [[ $native_only != true ]]; then
 
     # Update Python package.
     replace_match\
-        "$base/src/fairseq2/__init__.py"\
+        "$base/src/llm_lib2/__init__.py"\
         "s/^__version__ = \".*\"$/__version__ = \"$pep_ver\"/"
 fi
 
-# Update fairseq2n CMake project.
+# Update llm_lib2n CMake project.
 replace_match\
     "$base/native/CMakeLists.txt"\
     "s/VERSION .* LANGUAGES/VERSION $mmm_ver LANGUAGES/"
 
-# Update fairseq2n Python distribution.
+# Update llm_lib2n Python distribution.
 replace_match\
     "$base/native/python/setup.py"\
     "s/    version=\".*\",$/    version=\"$pep_ver\",/"
 
-# Update fairseq2n Python package.
+# Update llm_lib2n Python package.
 replace_match\
-    "$base/native/python/src/fairseq2n/__init__.py"\
+    "$base/native/python/src/llm_lib2n/__init__.py"\
     "s/^__version__ = \".*\"$/__version__ = \"$pep_ver\"/"
 
 # Update VERSION file.

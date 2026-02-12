@@ -8,14 +8,14 @@ import torch
 import torch.nn as nn
 from typing_extensions import override
 
-from fairseq2.gang import Gang
-from fairseq2.models.transformer import (
+from llm_lib2.gang import Gang
+from llm_lib2.models.transformer import (
     ExpertNetwork,
     FeedForwardNetwork,
     GLUFeedForwardNetwork,
     GroupedExpertNetwork,
 )
-from fairseq2.ops.tensor_parallel import reduce
+from llm_lib2.ops.tensor_parallel import reduce
 
 
 class MoE(FeedForwardNetwork):

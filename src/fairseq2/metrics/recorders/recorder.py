@@ -12,7 +12,7 @@ from typing import Final, final
 
 from typing_extensions import override
 
-from fairseq2.runtime.closable import Closable
+from llm_lib2.runtime.closable import Closable
 
 
 class MetricRecorder(Closable):

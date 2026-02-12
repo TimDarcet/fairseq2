@@ -12,16 +12,16 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Final, cast
 
-from fairseq2.data.data_pipeline import (
+from llm_lib2.data.data_pipeline import (
     Collater,
     DataPipeline,
     DataPipelineBuilder,
     SequenceData,
     read_sequence,
 )
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.datasets import DataPipelineReader, SequenceBatch, SyncMode
-from fairseq2.gang import Gangs
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.datasets import DataPipelineReader, SequenceBatch, SyncMode
+from llm_lib2.gang import Gangs
 
 # TODO: FIX, INFER
 npc = 10

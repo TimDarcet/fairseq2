@@ -11,9 +11,9 @@
 #include <string>
 #include <vector>
 
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 data_list
 list_files(const std::filesystem::path &path, const std::optional<std::string> &maybe_pattern);

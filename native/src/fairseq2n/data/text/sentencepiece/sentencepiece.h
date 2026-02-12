@@ -6,6 +6,6 @@
 
 #pragma once
 
-#include "fairseq2n/data/text/sentencepiece/sp_decoder.h"
-#include "fairseq2n/data/text/sentencepiece/sp_encoder.h"
-#include "fairseq2n/data/text/sentencepiece/sp_model.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_decoder.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_encoder.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_model.h"

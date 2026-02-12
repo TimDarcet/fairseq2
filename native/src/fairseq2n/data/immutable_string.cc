@@ -4,16 +4,16 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/immutable_string.h"
+#include "llm_lib2n/data/immutable_string.h"
 
 #include <algorithm>
 
-#include "fairseq2n/data/text/detail/utf.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/data/text/detail/utf.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 immutable_string::immutable_string(std::string_view s)
   : storage_{copy_string(s)}
@@ -78,4 +78,4 @@ immutable_string::split(
 
 invalid_utf8_error::~invalid_utf8_error() = default;
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

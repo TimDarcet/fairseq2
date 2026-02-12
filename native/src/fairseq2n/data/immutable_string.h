@@ -14,13 +14,13 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/memory.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/memory.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 // An immutable, ref-counted UTF-8 string type.
-class FAIRSEQ2_API immutable_string {
+class llm_lib2_API immutable_string {
 public:
     using value_type             = std::string_view::value_type;
     using size_type              = std::string_view::size_type;
@@ -204,7 +204,7 @@ remove_suffix(const immutable_string &s, immutable_string::size_type n) noexcept
     return s.remove_suffix(n);
 }
 
-class FAIRSEQ2_API invalid_utf8_error : public std::domain_error {
+class llm_lib2_API invalid_utf8_error : public std::domain_error {
 public:
     using std::domain_error::domain_error;
 
@@ -215,12 +215,12 @@ public:
    ~invalid_utf8_error() override;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n
 
 template <>
-struct std::hash<fairseq2n::immutable_string> {
+struct std::hash<llm_lib2n::immutable_string> {
     inline std::size_t
-    operator()(const fairseq2n::immutable_string &s) const noexcept
+    operator()(const llm_lib2n::immutable_string &s) const noexcept
     {
         return std::hash<std::string_view>{}(s);
     }

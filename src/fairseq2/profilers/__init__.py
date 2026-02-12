@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.profilers.composite import CompositeProfiler as CompositeProfiler
-from fairseq2.profilers.profiler import NOOP_PROFILER as NOOP_PROFILER
-from fairseq2.profilers.profiler import Profiler as Profiler
-from fairseq2.profilers.torch import TorchProfiler as TorchProfiler
+from llm_lib2.profilers.composite import CompositeProfiler as CompositeProfiler
+from llm_lib2.profilers.profiler import NOOP_PROFILER as NOOP_PROFILER
+from llm_lib2.profilers.profiler import Profiler as Profiler
+from llm_lib2.profilers.torch import TorchProfiler as TorchProfiler

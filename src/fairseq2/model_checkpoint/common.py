@@ -40,7 +40,7 @@ def reshard_tensor(
     3. For replicated tensors, concatenating data parallel splits.
 
     ``key`` specifies the name of the parameter to retrieve its sharding
-    information from ``shard_dims``. See :func:`~fairseq2.nn.get_sharding_dims`
+    information from ``shard_dims``. See :func:`~llm_lib2.nn.get_sharding_dims`
     for more information.
 
     ``source_splits`` is a 2D list structure ``[tp_idx][dp_idx]`` containing the
@@ -55,7 +55,7 @@ def reshard_tensor(
 
     ``shard_dims`` specifies the mapping from parameter names to dimensions
     along which parameters should be sharded for tensor parallelism. Omitted for
-    replicated tensors. See :func:`~fairseq2.nn.get_sharding_dims` for more
+    replicated tensors. See :func:`~llm_lib2.nn.get_sharding_dims` for more
     information.
 
     Returns the resharded tensor for the target rank and configuration.

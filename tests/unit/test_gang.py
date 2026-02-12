@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.gang import (
+from llm_lib2.gang import (
     FakeGang,
     create_fake_gangs,
     get_current_gangs,

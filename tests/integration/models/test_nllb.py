@@ -9,9 +9,9 @@ from typing import Final
 import pytest
 import torch
 
-from fairseq2.generation.beam_search import BeamSearchSeq2SeqGenerator
-from fairseq2.generation.text import TextTranslator
-from fairseq2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
+from llm_lib2.generation.beam_search import BeamSearchSeq2SeqGenerator
+from llm_lib2.generation.text import TextTranslator
+from llm_lib2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
 from tests.common import device
 
 ENG_SENTENCE: Final = (

@@ -16,9 +16,9 @@ from torch.nn import Dropout, Module, ModuleList
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.models.transformer import AttentionBiasCache
-from fairseq2.models.transformer_lm.decoder_layer import TransformerLMDecoderLayer
-from fairseq2.nn import BatchLayout, IncrementalStateBag, LayerNorm
+from llm_lib2.models.transformer import AttentionBiasCache
+from llm_lib2.models.transformer_lm.decoder_layer import TransformerLMDecoderLayer
+from llm_lib2.nn import BatchLayout, IncrementalStateBag, LayerNorm
 
 
 class TransformerLMDecoder(Module):

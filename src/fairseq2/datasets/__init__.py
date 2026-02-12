@@ -6,26 +6,26 @@
 
 from __future__ import annotations
 
-from fairseq2.datasets.batch import Seq2SeqBatch as Seq2SeqBatch
-from fairseq2.datasets.batch import SequenceBatch as SequenceBatch
-from fairseq2.datasets.data_reader import DataPipelineReader as DataPipelineReader
-from fairseq2.datasets.data_reader import DataReader as DataReader
-from fairseq2.datasets.data_reader import DataReadError as DataReadError
-from fairseq2.datasets.data_reader import SyncMode as SyncMode
-from fairseq2.datasets.family import DatasetError as DatasetError
-from fairseq2.datasets.family import DatasetFamily as DatasetFamily
-from fairseq2.datasets.family import (
+from llm_lib2.datasets.batch import Seq2SeqBatch as Seq2SeqBatch
+from llm_lib2.datasets.batch import SequenceBatch as SequenceBatch
+from llm_lib2.datasets.data_reader import DataPipelineReader as DataPipelineReader
+from llm_lib2.datasets.data_reader import DataReader as DataReader
+from llm_lib2.datasets.data_reader import DataReadError as DataReadError
+from llm_lib2.datasets.data_reader import SyncMode as SyncMode
+from llm_lib2.datasets.family import DatasetError as DatasetError
+from llm_lib2.datasets.family import DatasetFamily as DatasetFamily
+from llm_lib2.datasets.family import (
     DatasetFamilyNotKnownError as DatasetFamilyNotKnownError,
 )
-from fairseq2.datasets.family import DatasetOpener as DatasetOpener
-from fairseq2.datasets.family import StandardDatasetFamily as StandardDatasetFamily
-from fairseq2.datasets.family import (
+from llm_lib2.datasets.family import DatasetOpener as DatasetOpener
+from llm_lib2.datasets.family import StandardDatasetFamily as StandardDatasetFamily
+from llm_lib2.datasets.family import (
     _maybe_get_dataset_family as _maybe_get_dataset_family,
 )
-from fairseq2.datasets.family import get_dataset_family_name as get_dataset_family_name
-from fairseq2.datasets.family import (
+from llm_lib2.datasets.family import get_dataset_family_name as get_dataset_family_name
+from llm_lib2.datasets.family import (
     maybe_get_dataset_family_name as maybe_get_dataset_family_name,
 )
-from fairseq2.datasets.hub import DatasetHub as DatasetHub
-from fairseq2.datasets.hub import DatasetHubAccessor as DatasetHubAccessor
-from fairseq2.datasets.hub import DatasetNotKnownError as DatasetNotKnownError
+from llm_lib2.datasets.hub import DatasetHub as DatasetHub
+from llm_lib2.datasets.hub import DatasetHubAccessor as DatasetHubAccessor
+from llm_lib2.datasets.hub import DatasetNotKnownError as DatasetNotKnownError

@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from typing import Protocol, TypeVar
 
-from fairseq2.datasets import DatasetFamily, DatasetOpener, StandardDatasetFamily
-from fairseq2.error import InternalError
-from fairseq2.runtime.dependency import (
+from llm_lib2.datasets import DatasetFamily, DatasetOpener, StandardDatasetFamily
+from llm_lib2.error import InternalError
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

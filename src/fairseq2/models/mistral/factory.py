@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import torch.nn as nn
 
-from fairseq2.models.mistral.config import MistralConfig
-from fairseq2.models.transformer import (
+from llm_lib2.models.mistral.config import MistralConfig
+from llm_lib2.models.transformer import (
     CausalAttentionBias,
     FeedForwardNetwork,
     GLUFeedForwardNetwork,
@@ -21,14 +21,14 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.transformer_lm import (
+from llm_lib2.models.transformer_lm import (
     StandardTransformerLMDecoder,
     StandardTransformerLMDecoderLayer,
     TransformerLM,
     TransformerLMDecoder,
     TransformerLMDecoderLayer,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     Embedding,
     LayerNorm,
     Linear,

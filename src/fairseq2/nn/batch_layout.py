@@ -12,8 +12,8 @@ from typing import ClassVar, final
 import torch
 from torch import Tensor
 
-from fairseq2.device import Device
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.device import Device
+from llm_lib2.utils.tensor import to_tensor
 
 
 @final

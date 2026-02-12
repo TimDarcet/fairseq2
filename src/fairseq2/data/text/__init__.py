@@ -6,8 +6,8 @@
 
 from __future__ import annotations
 
-from fairseq2.data.text.converters import StrSplitter as StrSplitter
-from fairseq2.data.text.converters import StrToIntConverter as StrToIntConverter
-from fairseq2.data.text.converters import StrToTensorConverter as StrToTensorConverter
-from fairseq2.data.text.reader import LineEnding as LineEnding
-from fairseq2.data.text.reader import read_text as read_text
+from llm_lib2.data.text.converters import StrSplitter as StrSplitter
+from llm_lib2.data.text.converters import StrToIntConverter as StrToIntConverter
+from llm_lib2.data.text.converters import StrToTensorConverter as StrToTensorConverter
+from llm_lib2.data.text.reader import LineEnding as LineEnding
+from llm_lib2.data.text.reader import read_text as read_text

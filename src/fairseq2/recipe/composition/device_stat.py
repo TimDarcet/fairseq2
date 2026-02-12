@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-from fairseq2.recipe.internal.device_stat import _DeviceStatTrackerProvider
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
-from fairseq2.utils.device_stat import (
+from llm_lib2.recipe.internal.device_stat import _DeviceStatTrackerProvider
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.utils.device_stat import (
     NOOP_DEVICE_STAT_TRACKER,
     CudaDeviceStatTracker,
     DeviceStatTracker,

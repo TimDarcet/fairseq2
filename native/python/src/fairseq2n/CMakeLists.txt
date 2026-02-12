@@ -10,13 +10,13 @@ add_subdirectory(bindings)
 # Library Configuration
 # ------------------------------------------------------------
 
-if(FAIRSEQ2N_SUPPORT_IMAGE)
+if(llm_lib2N_SUPPORT_IMAGE)
     set(SUPPORTS_IMAGE "True")
 else()
     set(SUPPORTS_IMAGE "False")
 endif()
 
-if(FAIRSEQ2N_USE_CUDA)
+if(llm_lib2N_USE_CUDA)
     set(USES_CUDA "True")
 
     set(CUDA_VERSION "(${CUDAToolkit_VERSION_MAJOR}, ${CUDAToolkit_VERSION_MINOR})")

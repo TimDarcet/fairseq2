@@ -11,10 +11,10 @@ from typing import final
 
 from torch import Tensor
 
-from fairseq2.datasets import SequenceBatch
-from fairseq2.metrics import MetricBag
-from fairseq2.models.wav2vec2 import Wav2Vec2Loss, Wav2Vec2Model, Wav2Vec2Output
-from fairseq2.recipe import RecipeModel
+from llm_lib2.datasets import SequenceBatch
+from llm_lib2.metrics import MetricBag
+from llm_lib2.models.wav2vec2 import Wav2Vec2Loss, Wav2Vec2Model, Wav2Vec2Output
+from llm_lib2.recipe import RecipeModel
 
 from .metrics import (
     add_ssl_metrics,

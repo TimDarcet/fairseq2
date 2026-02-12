@@ -9,7 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Iterator, Sequence
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetDirectoryAccessor,
     AssetDownloadManager,
     AssetEnvironmentDetector,
@@ -35,13 +35,13 @@ from fairseq2.assets import (
     WellKnownAssetMetadataSource,
     YamlAssetMetadataFileLoader,
 )
-from fairseq2.checkpoint import ModelMetadataSource
-from fairseq2.runtime.dependency import (
+from llm_lib2.checkpoint import ModelMetadataSource
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.utils.progress import ProgressReporter
+from llm_lib2.utils.progress import ProgressReporter
 
 
 def register_file_assets(
@@ -111,7 +111,7 @@ def _register_asset(container: DependencyContainer) -> None:
     container.register_type(AssetEnvironmentDetector)
 
     # Asset Metadata
-    register_package_assets(container, package="fairseq2.assets.cards")
+    register_package_assets(container, package="llm_lib2.assets.cards")
 
     container.collection.register_type(
         AssetMetadataSource, WellKnownAssetMetadataSource

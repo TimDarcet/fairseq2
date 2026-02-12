@@ -8,10 +8,10 @@ from __future__ import annotations
 
 import torch.nn as nn
 
-from fairseq2.models.s2t_transformer.config import S2TTransformerConfig
-from fairseq2.models.s2t_transformer.feature_extractor import Conv1dFbankSubsampler
-from fairseq2.models.s2t_transformer.frontend import S2TTransformerFrontend
-from fairseq2.models.transformer import (
+from llm_lib2.models.s2t_transformer.config import S2TTransformerConfig
+from llm_lib2.models.s2t_transformer.feature_extractor import Conv1dFbankSubsampler
+from llm_lib2.models.s2t_transformer.frontend import S2TTransformerFrontend
+from llm_lib2.models.transformer import (
     CausalAttentionBias,
     FeedForwardNetwork,
     IdentityBias,
@@ -32,7 +32,7 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     Embedding,
     LayerNorm,
     Linear,

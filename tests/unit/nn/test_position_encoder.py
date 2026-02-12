@@ -10,7 +10,7 @@ import pytest
 import torch
 from torch import Tensor
 
-from fairseq2.nn import (
+from llm_lib2.nn import (
     BatchLayout,
     IncrementalStateBag,
     LearnedPositionEncoder,

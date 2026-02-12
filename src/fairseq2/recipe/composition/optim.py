@@ -8,19 +8,19 @@ from __future__ import annotations
 
 from torch.optim import Optimizer
 
-from fairseq2.recipe.component import register_component
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.component import register_component
+from llm_lib2.recipe.config import (
     ADAFACTOR_OPTIMIZER,
     ADAMW_OPTIMIZER,
     AdafactorConfig,
     AdamWConfig,
 )
-from fairseq2.recipe.internal.optim import (
+from llm_lib2.recipe.internal.optim import (
     _AdafactorFactory,
     _AdamWFactory,
     _OptimizerFactory,
 )
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_optim(container: DependencyContainer) -> None:

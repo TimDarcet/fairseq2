@@ -12,8 +12,8 @@ import torch
 from torch import Tensor
 from torch.nn.modules.utils import consume_prefix_in_state_dict_if_present
 
-from fairseq2.models.nllb.config import NllbConfig
-from fairseq2.models.utils.checkpoint import convert_fairseq_state_dict
+from llm_lib2.models.nllb.config import NllbConfig
+from llm_lib2.models.utils.checkpoint import convert_llm_lib_state_dict
 
 
 def convert_nllb_state_dict(
@@ -24,7 +24,7 @@ def convert_nllb_state_dict(
     except KeyError:
         pass
 
-    if "decoder.embed_tokens.weight" in state_dict:  # fairseq
+    if "decoder.embed_tokens.weight" in state_dict:  # llm_lib
         key_map = {
             # fmt: off
             r"^encoder\.embed_tokens\.":                              r"encoder_frontend.embed.",
@@ -46,23 +46,23 @@ def convert_nllb_state_dict(
             # fmt: on
         }
 
-        state_dict = convert_fairseq_state_dict(state_dict, key_map)
+        state_dict = convert_llm_lib_state_dict(state_dict, key_map)
 
         embeds = cast(Tensor, state_dict["final_proj.weight"])
 
-        # fairseq had a bug that accidentally introduced a dummy token in the
+        # llm_lib had a bug that accidentally introduced a dummy token in the
         # embedding table of NLLB-100. We just discard it.
         if embeds.size(0) == 256103:  # means NLLB-100
             embeds = embeds[:-1]
 
             state_dict["final_proj.weight"] = embeds
 
-        # fairseq checkpoints have duplicate embedding weights. Ensure that we
-        # use a single embedding table in fairseq2.
+        # llm_lib checkpoints have duplicate embedding weights. Ensure that we
+        # use a single embedding table in llm_lib2.
         state_dict["encoder_frontend.embed.weight"] = embeds
         state_dict["decoder_frontend.embed.weight"] = embeds
 
-        # The embedding positions of the control symbols in fairseq's dict do
+        # The embedding positions of the control symbols in llm_lib's dict do
         # not match the SentencePiece model of the tokenizer.
         with torch.inference_mode():
             # (BOS, PAD, EOS, UNK) -> (PAD, UNK, BOS, EOS)

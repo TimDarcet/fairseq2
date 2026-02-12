@@ -11,10 +11,10 @@
 #include <type_traits>
 #include <vector>
 
-#include "fairseq2n/float.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/utils/cast.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 
 template <typename T>
@@ -150,4 +150,4 @@ tape::read()
     throw_corrupt();
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

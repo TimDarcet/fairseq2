@@ -14,7 +14,7 @@ from ctypes import CDLL, RTLD_GLOBAL
 from os import environ
 from pathlib import Path
 
-from fairseq2n.config import (
+from llm_lib2n.config import (
     _CUDA_VERSION,
     _SUPPORTS_CUDA,
     _SUPPORTS_IMAGE,
@@ -24,42 +24,42 @@ from fairseq2n.config import (
 
 
 def get_lib() -> Path:
-    """Return the directory that contains fairseq2n shared library."""
+    """Return the directory that contains llm_lib2n shared library."""
     return Path(__file__).parent.joinpath("lib")
 
 
 def get_include() -> Path:
-    """Return the directory that contains fairseq2n header files."""
+    """Return the directory that contains llm_lib2n header files."""
     return Path(__file__).parent.joinpath("include")
 
 
 def get_cmake_prefix_path() -> Path:
-    """Return the directory that contains fairseq2n CMake package."""
+    """Return the directory that contains llm_lib2n CMake package."""
     return Path(__file__).parent.joinpath("lib/cmake")
 
 
 def torch_version() -> str:
-    """Return the version of PyTorch that was used to build fairseq2n."""
+    """Return the version of PyTorch that was used to build llm_lib2n."""
     return _TORCH_VERSION
 
 
 def torch_variant() -> str:
-    """Return the variant of PyTorch that was used to build fairseq2n."""
+    """Return the variant of PyTorch that was used to build llm_lib2n."""
     return _TORCH_VARIANT
 
 
 def supports_image() -> bool:
-    """Return ``True`` if fairseq2n supports JPEG/PNG decoding."""
+    """Return ``True`` if llm_lib2n supports JPEG/PNG decoding."""
     return _SUPPORTS_IMAGE
 
 
 def supports_cuda() -> bool:
-    """Return ``True`` if fairseq2n supports CUDA."""
+    """Return ``True`` if llm_lib2n supports CUDA."""
     return _SUPPORTS_CUDA
 
 
 def cuda_version() -> tuple[int, int] | None:
-    """Return the version of CUDA that fairseq2n supports.
+    """Return the version of CUDA that llm_lib2n supports.
 
     :returns:
         The major and minor version segments.
@@ -97,7 +97,7 @@ def _load_tbb() -> None:
     libtbb = _load_shared_library(lib_name)
     if libtbb is None:
         raise OSError(
-            "fairseq2 requires Intel oneTBB which is normally installed along with fairseq2 as a dependency. Check your environment and reinstall fairseq2 if necessary."
+            "llm_lib2 requires Intel oneTBB which is normally installed along with llm_lib2 as a dependency. Check your environment and reinstall llm_lib2 if necessary."
         )
 
     _libs.append(libtbb)
@@ -113,11 +113,11 @@ def _load_sndfile() -> None:
     if libsndfile is None:
         if "CONDA_PREFIX" in environ:
             raise OSError(
-                "fairseq2 requires libsndfile. Since you are in a Conda environment, use `conda install -c conda-forge libsndfile==1.0.31` to install it."
+                "llm_lib2 requires libsndfile. Since you are in a Conda environment, use `conda install -c conda-forge libsndfile==1.0.31` to install it."
             )
         else:
             raise OSError(
-                "fairseq2 requires libsndfile. Use your system package manager to install it (e.g. `apt install libsndfile1`)."
+                "llm_lib2 requires libsndfile. Use your system package manager to install it (e.g. `apt install libsndfile1`)."
             )
 
     _libs.append(libsndfile)
@@ -188,7 +188,7 @@ def _check_torch_version() -> None:
     if source_version != target_version:
         if target_variant != "CPU-only" and source_variant != target_variant:
             raise RuntimeError(
-                f"fairseq2 requires a {target_variant} build of PyTorch {target_version}, but the installed version is a {source_variant} build of PyTorch {source_version}. Either follow the instructions at https://pytorch.org/get-started/locally to update PyTorch, or the instructions at https://github.com/facebookresearch/fairseq2#variants to update fairseq2."
+                f"llm_lib2 requires a {target_variant} build of PyTorch {target_version}, but the installed version is a {source_variant} build of PyTorch {source_version}. Either follow the instructions at https://pytorch.org/get-started/locally to update PyTorch, or the instructions at https://github.com/facebookresearch/llm_lib2#variants to update llm_lib2."
             )
 
 

@@ -7,24 +7,24 @@ import pyarrow.parquet as pq
 import pytest
 import torch
 
-from fairseq2.data.parquet import (
+from llm_lib2.data.parquet import (
     BasicDataLoadingConfig,
     build_basic_parquet_data_pipeline,
 )
-from fairseq2.data.parquet.fragment_loading.builder import SafeFragment
-from fairseq2.data.parquet.fragment_loading.config import FragmentLoadingConfig
-from fairseq2.data.parquet.fragment_streaming.config import (
+from llm_lib2.data.parquet.fragment_loading.builder import SafeFragment
+from llm_lib2.data.parquet.fragment_loading.config import FragmentLoadingConfig
+from llm_lib2.data.parquet.fragment_streaming.config import (
     FragmentStreamingConfig,
     ParquetDatasetLimitOptions,
 )
-from fairseq2.data.parquet.fragment_streaming.primitives import (
+from llm_lib2.data.parquet.fragment_streaming.primitives import (
     list_parquet_fragments,
 )
-from fairseq2.data.parquet.table_bucketing.config import TableBucketingConfig
-from fairseq2.data.parquet.table_bucketing.primitives import (
+from llm_lib2.data.parquet.table_bucketing.config import TableBucketingConfig
+from llm_lib2.data.parquet.table_bucketing.primitives import (
     build_batching_loop_over_one_table,
 )
-from fairseq2.data.parquet.utils import pyarrow_table_to_torch_dict
+from llm_lib2.data.parquet.utils import pyarrow_table_to_torch_dict
 
 
 class TestSafeFragmentIntegration:

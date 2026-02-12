@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from abc import abstractmethod
 
-from fairseq2.runtime.closable import Closable
+from llm_lib2.runtime.closable import Closable
 
 
 class Task(Closable):

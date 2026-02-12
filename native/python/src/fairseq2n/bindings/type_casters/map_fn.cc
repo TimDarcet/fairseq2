@@ -4,17 +4,17 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/type_casters/map_fn.h"
+#include "llm_lib2n/bindings/type_casters/map_fn.h"
 
-#include <fairseq2n/data/py.h>
-#include <fairseq2n/data/text/string_to_int_converter.h>
-#include <fairseq2n/data/text/string_to_tensor_converter.h>
+#include <llm_lib2n/data/py.h>
+#include <llm_lib2n/data/text/string_to_int_converter.h>
+#include <llm_lib2n/data/text/string_to_tensor_converter.h>
 
-#include "fairseq2n/bindings/type_casters/data.h"
+#include "llm_lib2n/bindings/type_casters/data.h"
 
 namespace py = pybind11;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 map_fn
 map_functor_registry::maybe_as_functor(py::handle src)
@@ -39,9 +39,9 @@ map_functors() noexcept
     return registry;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n
 
-using namespace fairseq2n;
+using namespace llm_lib2n;
 
 namespace pybind11::detail {
 

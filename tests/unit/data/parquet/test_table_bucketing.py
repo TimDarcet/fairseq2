@@ -12,16 +12,16 @@ from typing import List
 import pyarrow as pa
 import pytest
 
-from fairseq2.data.parquet.fragment_loading import (
+from llm_lib2.data.parquet.fragment_loading import (
     FragmentLoadingConfig,
     NamedColumns,
     ParquetFragmentLoader,
 )
-from fairseq2.data.parquet.fragment_streaming import (
+from llm_lib2.data.parquet.fragment_streaming import (
     FragmentStreamingConfig,
     ParquetFragmentStreamer,
 )
-from fairseq2.data.parquet.table_bucketing import TableBucketer, TableBucketingConfig
+from llm_lib2.data.parquet.table_bucketing import TableBucketer, TableBucketingConfig
 
 
 @dataclass

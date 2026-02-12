@@ -4,13 +4,13 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/prefetch_data_source.h"
+#include "llm_lib2n/data/prefetch_data_source.h"
 
 #include <exception>
 
-#include "fairseq2n/data/detail/thread.h"
+#include "llm_lib2n/data/detail/thread.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 prefetch_data_source::~prefetch_data_source()
 {
@@ -190,4 +190,4 @@ prefetch_data_source::stop_prefetch_thread() const noexcept
     should_stop_prefetch_ = false;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

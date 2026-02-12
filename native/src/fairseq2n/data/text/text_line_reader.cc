@@ -4,12 +4,12 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/text_line_reader.h"
+#include "llm_lib2n/data/text/text_line_reader.h"
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::optional<std::size_t>
 text_line_reader::maybe_find_record_end(memory_span chunk, bool)
@@ -75,4 +75,4 @@ text_line_reader::infer_line_ending(span<const char> chars)
     return line_ending_ != line_ending::infer;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

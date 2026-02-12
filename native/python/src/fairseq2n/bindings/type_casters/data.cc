@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/type_casters/data.h"
+#include "llm_lib2n/bindings/type_casters/data.h"
 
 #include <cstdint>
 #include <stdexcept>
@@ -17,17 +17,17 @@
 
 #include <ATen/Tensor.h>
 
-#include <fairseq2n/exception.h>
-#include <fairseq2n/float.h>
-#include <fairseq2n/data/immutable_string.h>
-#include <fairseq2n/detail/exception.h>
+#include <llm_lib2n/exception.h>
+#include <llm_lib2n/float.h>
+#include <llm_lib2n/data/immutable_string.h>
+#include <llm_lib2n/detail/exception.h>
 
-#include "fairseq2n/bindings/type_casters/immutable_string.h"
-#include "fairseq2n/bindings/type_casters/py.h"
-#include "fairseq2n/bindings/type_casters/torch.h"
+#include "llm_lib2n/bindings/type_casters/immutable_string.h"
+#include "llm_lib2n/bindings/type_casters/py.h"
+#include "llm_lib2n/bindings/type_casters/torch.h"
 
-using namespace fairseq2n;
-using namespace fairseq2n::detail;
+using namespace llm_lib2n;
+using namespace llm_lib2n::detail;
 
 namespace pybind11::detail {
 

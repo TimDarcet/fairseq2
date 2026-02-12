@@ -10,14 +10,14 @@
 #include <optional>
 #include <string>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/element_selector.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/element_selector.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class data;
 
-class FAIRSEQ2_API data_length_extractor {
+class llm_lib2_API data_length_extractor {
 public:
     explicit
     data_length_extractor(std::optional<std::string> maybe_selector);
@@ -29,4 +29,4 @@ private:
     std::optional<element_selector> maybe_selector_{};
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

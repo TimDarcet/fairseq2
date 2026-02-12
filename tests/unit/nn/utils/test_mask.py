@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 import torch
 
-from fairseq2.nn.utils.mask import compute_row_mask
+from llm_lib2.nn.utils.mask import compute_row_mask
 from tests.common import device
 
 

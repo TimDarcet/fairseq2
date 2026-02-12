@@ -12,9 +12,9 @@
 #include <string>
 #include <utility>
 
-#include "fairseq2n/api.h"
+#include "llm_lib2n/api.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 enum class line_ending {
     infer,
@@ -39,14 +39,14 @@ public:
     }
 
     text_options
-    line_ending(fairseq2n::line_ending value) && noexcept
+    line_ending(llm_lib2n::line_ending value) && noexcept
     {
         line_ending_ = value;
 
         return std::move(*this);
     }
 
-    fairseq2n::line_ending
+    llm_lib2n::line_ending
     line_ending() const noexcept
     {
         return line_ending_;
@@ -124,7 +124,7 @@ public:
 
 private:
     std::optional<std::string> maybe_encoding_{};
-    fairseq2n::line_ending line_ending_{};
+    llm_lib2n::line_ending line_ending_{};
     bool ltrim_ = false;
     bool rtrim_ = false;
     bool skip_empty_ = false;
@@ -134,8 +134,8 @@ private:
 
 class data_pipeline_builder;
 
-FAIRSEQ2_API data_pipeline_builder
+llm_lib2_API data_pipeline_builder
 read_text(
     std::filesystem::path path, std::optional<std::string> maybe_key = {}, text_options opts = {});
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

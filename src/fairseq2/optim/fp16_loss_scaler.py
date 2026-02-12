@@ -19,10 +19,10 @@ from torch.distributed.fsdp.sharded_grad_scaler import ShardedGradScaler
 from torch.optim import Optimizer
 from typing_extensions import override
 
-from fairseq2.device import Device
-from fairseq2.error import InternalError, StateDictError
-from fairseq2.gang import Gangs
-from fairseq2.typing import Stateful
+from llm_lib2.device import Device
+from llm_lib2.error import InternalError, StateDictError
+from llm_lib2.gang import Gangs
+from llm_lib2.typing import Stateful
 
 
 class Float16LossScaler(ABC, Stateful):

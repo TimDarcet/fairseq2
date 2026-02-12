@@ -12,9 +12,9 @@ from typing import Any
 import pytest
 from torch.optim import SGD
 
-from fairseq2.error import InternalError
-from fairseq2.nn import Linear
-from fairseq2.recipe.config import (
+from llm_lib2.error import InternalError
+from llm_lib2.nn import Linear
+from llm_lib2.recipe.config import (
     CosineAnnealingLRConfig,
     MyleLRConfig,
     NoamLRConfig,
@@ -22,14 +22,14 @@ from fairseq2.recipe.config import (
     RegimeSection,
     TriStageLRConfig,
 )
-from fairseq2.recipe.internal.lr_schedulers import (
+from llm_lib2.recipe.internal.lr_schedulers import (
     _CosineAnnealingLRFactory,
     _MyleLRFactory,
     _NoamLRFactory,
     _PolynomialDecayLRFactory,
     _TriStageLRFactory,
 )
-from fairseq2.utils.validation import ValidationError
+from llm_lib2.utils.validation import ValidationError
 
 
 class TestCosineAnnealingLRFactory:
@@ -333,7 +333,7 @@ class TestCosineAnnealingLRFactory:
             factory.create(config)
 
     def test_create_warns_when_final_lr_is_larger_than_lr(self, caplog: Any) -> None:
-        caplog.set_level(logging.INFO, logger="fairseq2")
+        caplog.set_level(logging.INFO, logger="llm_lib2")
 
         proj = Linear(10, 10, bias=True)
 
@@ -350,7 +350,7 @@ class TestCosineAnnealingLRFactory:
         factory.create(config)
 
         assert caplog.record_tuples == [
-            ("fairseq2", logging.WARNING, "The final learning rate (2.4) of optimizer parameter group 1 is greater than the learning rate (2.0). This means the learning rate will increase over the course of the training.")  # fmt: skip
+            ("llm_lib2", logging.WARNING, "The final learning rate (2.4) of optimizer parameter group 1 is greater than the learning rate (2.0). This means the learning rate will increase over the course of the training.")  # fmt: skip
         ]
 
 

@@ -10,22 +10,22 @@ The documentation for this module is work in progress.
 
 from __future__ import annotations
 
-from fairseq2.recipe.composition.assets import (
+from llm_lib2.recipe.composition.assets import (
     register_recipe_assets as register_recipe_assets,
 )
-from fairseq2.recipe.composition.config import (
+from llm_lib2.recipe.composition.config import (
     register_config_section as register_config_section,
 )
-from fairseq2.recipe.composition.dataset import register_dataset as register_dataset
-from fairseq2.recipe.composition.reference_model import (
+from llm_lib2.recipe.composition.dataset import register_dataset as register_dataset
+from llm_lib2.recipe.composition.reference_model import (
     register_reference_model as register_reference_model,
 )
-from fairseq2.recipe.composition.root import (
+from llm_lib2.recipe.composition.root import (
     _register_inference_recipe as _register_inference_recipe,
 )
-from fairseq2.recipe.composition.root import (
+from llm_lib2.recipe.composition.root import (
     _register_train_recipe as _register_train_recipe,
 )
-from fairseq2.recipe.composition.tokenizer import (
+from llm_lib2.recipe.composition.tokenizer import (
     register_tokenizer as register_tokenizer,
 )

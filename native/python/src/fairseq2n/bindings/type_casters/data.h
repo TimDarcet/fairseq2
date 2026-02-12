@@ -8,13 +8,13 @@
 
 #include <pybind11/pybind11.h>
 
-#include <fairseq2n/data/data.h>
+#include <llm_lib2n/data/data.h>
 
 namespace pybind11::detail {
 
 template <>
-struct type_caster<fairseq2n::data> {
-    PYBIND11_TYPE_CASTER(fairseq2n::data, const_name("Any"));
+struct type_caster<llm_lib2n::data> {
+    PYBIND11_TYPE_CASTER(llm_lib2n::data, const_name("Any"));
 
 public:
     bool
@@ -26,7 +26,7 @@ public:
     }
 
     static handle
-    cast(const fairseq2n::data &src, return_value_policy, handle)
+    cast(const llm_lib2n::data &src, return_value_policy, handle)
     {
         object obj = cast_from_cc(src);
 
@@ -34,7 +34,7 @@ public:
     }
 
     static handle
-    cast(fairseq2n::data &&src, return_value_policy, handle)
+    cast(llm_lib2n::data &&src, return_value_policy, handle)
     {
         object obj = cast_from_cc(std::move(src));
 
@@ -42,7 +42,7 @@ public:
     }
 
 private:
-    static fairseq2n::data
+    static llm_lib2n::data
     cast_from_py(handle src);
 
     template <typename T>
@@ -52,10 +52,10 @@ private:
 
 extern template
 object
-type_caster<fairseq2n::data>::cast_from_cc(const fairseq2n::data &src);
+type_caster<llm_lib2n::data>::cast_from_cc(const llm_lib2n::data &src);
 
 extern template
 object
-type_caster<fairseq2n::data>::cast_from_cc(fairseq2n::data &&src);
+type_caster<llm_lib2n::data>::cast_from_cc(llm_lib2n::data &&src);
 
 }  // namespace pybind11::detail

@@ -17,7 +17,7 @@ from typing import (
     overload,
 )
 
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyNotFoundError,
     DependencyResolver,

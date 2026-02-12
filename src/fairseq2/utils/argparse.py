@@ -19,8 +19,8 @@ from typing import Any, final
 import torch
 from ruamel.yaml import YAML
 
-from fairseq2.data_type import DataType
-from fairseq2.utils.yaml import YamlError
+from llm_lib2.data_type import DataType
+from llm_lib2.utils.yaml import YamlError
 
 
 @final

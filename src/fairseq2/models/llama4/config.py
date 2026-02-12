@@ -9,9 +9,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Final
 
-from fairseq2.models.llama import LLaMAConfig
-from fairseq2.runtime.config_registry import ConfigRegistrar
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.models.llama import LLaMAConfig
+from llm_lib2.runtime.config_registry import ConfigRegistrar
+from llm_lib2.runtime.dependency import DependencyContainer
 
 LLAMA4_FAMILY: Final = "llama4"
 

@@ -15,9 +15,9 @@ from torch.futures import Future
 from torch.nn import Module, SyncBatchNorm
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from fairseq2.error import NotSupportedError
-from fairseq2.gang import Gang, GangError, Gangs
-from fairseq2.nn.utils.module import (
+from llm_lib2.error import NotSupportedError
+from llm_lib2.gang import Gang, GangError, Gangs
+from llm_lib2.nn.utils.module import (
     maybe_infer_device,
     reset_non_persistent_buffers,
     to_device,
@@ -131,7 +131,7 @@ def _broadcast_buffers(module: Module, gang: Gang) -> None:
 
     from torch.distributed import _broadcast_coalesced
 
-    # TODO(balioglu): Call c10d in fairseq2n instead.
+    # TODO(balioglu): Call c10d in llm_lib2n instead.
     try:
         _broadcast_coalesced(pg, buffers, bucket_size, source_rank)
     except RuntimeError as ex:

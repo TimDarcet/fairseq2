@@ -8,9 +8,9 @@ from typing import Final
 
 import torch
 
-from fairseq2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
-from fairseq2.nn import BatchLayout, IncrementalStateBag
-from fairseq2.nn.utils.padding import pad_seqs
+from llm_lib2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
+from llm_lib2.nn import BatchLayout, IncrementalStateBag
+from llm_lib2.nn.utils.padding import pad_seqs
 from tests.common import assert_close, device
 
 # fmt: off

@@ -9,8 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Final
 
-from fairseq2.runtime.config_registry import ConfigRegistrar
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.runtime.config_registry import ConfigRegistrar
+from llm_lib2.runtime.dependency import DependencyContainer
 
 JEPA_FAMILY: Final = "jepa"
 

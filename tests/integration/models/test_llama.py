@@ -8,14 +8,14 @@ import os
 
 import pytest
 
-from fairseq2.models.llama import (
+from llm_lib2.models.llama import (
     LLaMAConfig,
     LLaMAFactory,
     convert_llama_state_dict,
     convert_to_ref_llama_state_dict,
 )
-from fairseq2.runtime.config_registry import get_config
-from fairseq2.runtime.dependency import get_dependency_resolver
+from llm_lib2.runtime.config_registry import get_config
+from llm_lib2.runtime.dependency import get_dependency_resolver
 
 
 @pytest.mark.skipif(

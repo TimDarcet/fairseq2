@@ -11,9 +11,9 @@ from typing import cast
 import torch
 from torch.nn.modules.utils import consume_prefix_in_state_dict_if_present
 
-from fairseq2.device import CPU
-from fairseq2.models.utils.checkpoint import convert_fairseq_state_dict
-from fairseq2.models.w2vbert.config import W2VBertConfig
+from llm_lib2.device import CPU
+from llm_lib2.models.utils.checkpoint import convert_llm_lib_state_dict
+from llm_lib2.models.w2vbert.config import W2VBertConfig
 
 
 def convert_w2vbert_state_dict(
@@ -24,7 +24,7 @@ def convert_w2vbert_state_dict(
     except KeyError:
         pass
 
-    if "mlm_proj.weight" in state_dict:  # fairseq
+    if "mlm_proj.weight" in state_dict:  # llm_lib
         state_dict["w2v2_model.quantizer.num_updates"] = torch.zeros((), device=CPU)
 
         key_map = {
@@ -59,7 +59,7 @@ def convert_w2vbert_state_dict(
             # fmt: on
         }
 
-        return convert_fairseq_state_dict(state_dict, key_map)
+        return convert_llm_lib_state_dict(state_dict, key_map)
 
     consume_prefix_in_state_dict_if_present(state_dict, prefix="module.")
 

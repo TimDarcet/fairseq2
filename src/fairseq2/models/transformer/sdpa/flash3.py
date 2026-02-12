@@ -19,15 +19,15 @@ except ImportError:
 else:
     _has_flash_attn_3 = True
 
-from fairseq2.error import NotSupportedError, OperationalError
-from fairseq2.models.transformer.attention_bias import (
+from llm_lib2.error import NotSupportedError, OperationalError
+from llm_lib2.models.transformer.attention_bias import (
     AttentionBias,
     AttentionBiasCache,
     CausalAttentionBias,
     IdentityBias,
 )
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.nn import BatchLayout
 
 
 @final
@@ -132,7 +132,7 @@ def flash_attn_3(
 
 
 @torch.library.custom_op(
-    "fairseq2::_flash_attn_3", mutates_args=(), device_types="cuda"
+    "llm_lib2::_flash_attn_3", mutates_args=(), device_types="cuda"
 )
 def _flash_attn_3_op(
     q: Tensor,
@@ -301,7 +301,7 @@ def flash_attn_3_varlen(
 
 
 @torch.library.custom_op(
-    "fairseq2::_flash_attn_3_varlen", mutates_args=(), device_types="cuda"
+    "llm_lib2::_flash_attn_3_varlen", mutates_args=(), device_types="cuda"
 )
 def _flash_attn_3_varlen_op(
     q: Tensor,
@@ -461,7 +461,7 @@ _flash_attn_3_varlen_op.register_autograd(
 
 
 @torch.library.custom_op(
-    "fairseq2::_flash_attn_3_bwd", mutates_args=("dq", "dk", "dv"), device_types="cuda"
+    "llm_lib2::_flash_attn_3_bwd", mutates_args=("dq", "dk", "dv"), device_types="cuda"
 )
 def _flash_attn_3_bwd_op(
     dout: Tensor,

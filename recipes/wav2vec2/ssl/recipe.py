@@ -11,13 +11,13 @@ from typing import final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.composition import register_dataset_family
-from fairseq2.datasets import SequenceBatch, SyncMode
-from fairseq2.metrics import MetricBag
-from fairseq2.recipe import EvalUnit, RecipeModel, Trainer, TrainUnit
-from fairseq2.recipe.base import RecipeContext, TrainRecipe
-from fairseq2.recipe.error import RecipeError
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.composition import register_dataset_family
+from llm_lib2.datasets import SequenceBatch, SyncMode
+from llm_lib2.metrics import MetricBag
+from llm_lib2.recipe import EvalUnit, RecipeModel, Trainer, TrainUnit
+from llm_lib2.recipe.base import RecipeContext, TrainRecipe
+from llm_lib2.recipe.error import RecipeError
+from llm_lib2.runtime.dependency import DependencyContainer
 
 from .config import Wav2Vec2SslRecipeConfig
 from .criterion import Wav2Vec2SslCriterion

@@ -12,7 +12,7 @@ import pytest
 import torch
 from torch.nn.functional import cross_entropy as torch_cross_entropy
 
-from fairseq2.nn.functional import cross_entropy
+from llm_lib2.nn.functional import cross_entropy
 from tests.common import assert_close, device
 
 

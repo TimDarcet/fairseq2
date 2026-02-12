@@ -15,20 +15,20 @@ from typing import List, Optional
 import pyarrow as pa
 from retrying import retry
 
-from fairseq2.data.data_pipeline import DataPipelineBuilder
-from fairseq2.data.parquet.arrow_transform import (
+from llm_lib2.data.data_pipeline import DataPipelineBuilder
+from llm_lib2.data.parquet.arrow_transform import (
     apply_filter,
 )
-from fairseq2.data.parquet.fragment_loading.config import FragmentLoadingConfig
-from fairseq2.data.parquet.fragment_streaming.primitives import process_filter
-from fairseq2.data.parquet.utils import (
+from llm_lib2.data.parquet.fragment_loading.config import FragmentLoadingConfig
+from llm_lib2.data.parquet.fragment_streaming.primitives import process_filter
+from llm_lib2.data.parquet.utils import (
     add_fragments_trace,
     add_partitioning_values,
     fragment_stable_hash,
     rename_table_columns,
     table_to_mmap_table,
 )
-from fairseq2.logging import log
+from llm_lib2.logging import log
 
 loading_retry = retry(
     retry_on_exception=lambda exception: isinstance(exception, OSError),

@@ -11,10 +11,10 @@ from typing import Any, Final
 
 import pytest
 import torch
-from fairseq2n import supports_image
+from llm_lib2n import supports_image
 
-from fairseq2.data._memory import MemoryBlock
-from fairseq2.data.image import ImageDecoder
+from llm_lib2.data._memory import MemoryBlock
+from llm_lib2.data.image import ImageDecoder
 from tests.common import assert_close, device
 
 TEST_PNG_PATH: Final = Path(__file__).parent.joinpath("test.png")
@@ -24,7 +24,7 @@ TEST_CORRUPT_PNG_PATH: Final = Path(__file__).parent.joinpath("test_corrupt.png"
 
 
 @pytest.mark.skipif(
-    not supports_image(), reason="fairseq2n is not built with JPEG/PNG decoding support"
+    not supports_image(), reason="llm_lib2n is not built with JPEG/PNG decoding support"
 )
 class TestImageDecoder:
     def test_init(self) -> None:

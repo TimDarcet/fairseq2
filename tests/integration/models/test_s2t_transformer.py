@@ -9,15 +9,15 @@ from typing import Final
 
 import torch
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.generation.beam_search import BeamSearchSeq2SeqGenerator
-from fairseq2.generation.text import SequenceToTextConverter
-from fairseq2.models.s2t_conformer import get_s2t_conformer_model_hub
-from fairseq2.models.s2t_transformer import (
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.generation.beam_search import BeamSearchSeq2SeqGenerator
+from llm_lib2.generation.text import SequenceToTextConverter
+from llm_lib2.models.s2t_conformer import get_s2t_conformer_model_hub
+from llm_lib2.models.s2t_transformer import (
     get_s2t_transformer_model_hub,
     get_s2t_transformer_tokenizer_hub,
 )
-from fairseq2.models.transformer import TransformerModel
+from llm_lib2.models.transformer import TransformerModel
 from tests.common import device
 
 TEST_FBANK_PATH: Final = Path(__file__).parent.joinpath("fbank.pt")

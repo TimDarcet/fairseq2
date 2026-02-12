@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/text_data_source.h"
+#include "llm_lib2n/data/text/text_data_source.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -12,15 +12,15 @@
 #include <system_error>
 #include <utility>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/data/byte_stream.h"
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/file.h"
-#include "fairseq2n/data/immutable_string.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/string.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/data/byte_stream.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/file.h"
+#include "llm_lib2n/data/immutable_string.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/string.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 text_data_source::text_data_source(
     std::filesystem::path &&path, std::optional<std::string> &&maybe_key, text_options &&opts)
@@ -153,4 +153,4 @@ text_data_source::throw_read_failure()
         "The data pipeline cannot read from '{}'. See nested exception for details.", path_.string());
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

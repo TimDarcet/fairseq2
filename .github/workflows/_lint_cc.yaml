@@ -20,7 +20,7 @@ jobs:
     runs-on:
       labels: 4-core-ubuntu
     container:
-      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:3-cu118
+      image: ghcr.io/facebookresearch/llm_lib2-ci-manylinux_x86_64:3-cu118
     defaults:
       run:
         shell: bash
@@ -49,9 +49,9 @@ jobs:
           # CUDA compatibility.
           export CUDAFLAGS="--allow-unsupported-compiler"
 
-          # TODO: set FAIRSEQ2N_USE_CUDA once lint issues are fixed.
+          # TODO: set llm_lib2N_USE_CUDA once lint issues are fixed.
           CC=clang CXX=clang++ scl enable gcc-toolset-11\
-             "cmake -GNinja -DFAIRSEQ2N_PYTHON_DEVEL=OFF -B build"
+             "cmake -GNinja -Dllm_lib2N_PYTHON_DEVEL=OFF -B build"
 
           scl enable gcc-toolset-11 "cmake --build build"
       - name: Run clang-tidy

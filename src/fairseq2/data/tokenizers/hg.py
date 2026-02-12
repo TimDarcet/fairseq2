@@ -15,11 +15,11 @@ from torch import Tensor
 from transformers import AutoTokenizer, PreTrainedTokenizer
 from typing_extensions import override
 
-from fairseq2.data.tokenizers.family import TokenizerModelError
-from fairseq2.data.tokenizers.tokenizer import TokenDecoder, TokenEncoder
-from fairseq2.data.tokenizers.vocab_info import VocabularyInfo
-from fairseq2.device import Device
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.data.tokenizers.family import TokenizerModelError
+from llm_lib2.data.tokenizers.tokenizer import TokenDecoder, TokenEncoder
+from llm_lib2.data.tokenizers.vocab_info import VocabularyInfo
+from llm_lib2.device import Device
+from llm_lib2.utils.tensor import to_tensor
 
 if TYPE_CHECKING:
 

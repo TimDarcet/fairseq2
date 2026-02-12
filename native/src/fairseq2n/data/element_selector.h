@@ -14,19 +14,19 @@
 #include <variant>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 using element_path_segment = std::variant<std::string, std::size_t>;
 
 using element_path = std::vector<element_path_segment>;
 using element_path_ref = span<const element_path_segment>;
 
-class FAIRSEQ2_API element_selector {
+class llm_lib2_API element_selector {
     enum class path_parser_state { parsing_key, parsing_index, parsed_index };
 
 public:
@@ -79,7 +79,7 @@ private:
 };
 
 template <>
-struct FAIRSEQ2_API repr<element_path_ref> {
+struct llm_lib2_API repr<element_path_ref> {
     std::string
     operator()(element_path_ref path) const;
 };
@@ -93,4 +93,4 @@ struct repr<element_path> {
     }
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

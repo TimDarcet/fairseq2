@@ -15,8 +15,8 @@ from torch import Tensor
 from torcheval.metrics import Metric
 from typing_extensions import Self, override
 
-from fairseq2.device import Device
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.device import Device
+from llm_lib2.utils.tensor import to_tensor
 
 
 @final

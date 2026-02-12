@@ -15,9 +15,9 @@
 #include <thread>
 #include <utility>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class prefetch_data_source final : public data_source {
     enum class prefetch_state { not_running, running, eod, faulted };
@@ -75,4 +75,4 @@ private:
     std::exception_ptr exception_ptr_{};
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

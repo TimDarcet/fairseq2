@@ -10,7 +10,7 @@
 #include <memory>
 #include <type_traits>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 
 template <typename T>
@@ -200,4 +200,4 @@ as_singleton_span(T &v) noexcept
     return {std::addressof(v), 1};
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -17,9 +17,9 @@ from torch.nn.functional import softmax
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import VocabularyInfo
-from fairseq2.error import InternalError
-from fairseq2.generation.generator import (
+from llm_lib2.data.tokenizers import VocabularyInfo
+from llm_lib2.error import InternalError
+from llm_lib2.generation.generator import (
     GenerationCounters,
     Hypothesis,
     Seq2SeqGenerator,
@@ -28,13 +28,13 @@ from fairseq2.generation.generator import (
     SequenceGeneratorOutput,
     StepHook,
 )
-from fairseq2.generation.sampling.sampler import Sampler
-from fairseq2.generation.step_processor import StepProcessor
-from fairseq2.models.clm import CausalLM
-from fairseq2.models.seq2seq import Seq2SeqModel
-from fairseq2.nn import BatchLayout, IncrementalStateBag
-from fairseq2.ops import repeat_interleave
-from fairseq2.utils.stopwatch import Stopwatch
+from llm_lib2.generation.sampling.sampler import Sampler
+from llm_lib2.generation.step_processor import StepProcessor
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.models.seq2seq import Seq2SeqModel
+from llm_lib2.nn import BatchLayout, IncrementalStateBag
+from llm_lib2.ops import repeat_interleave
+from llm_lib2.utils.stopwatch import Stopwatch
 
 
 @final

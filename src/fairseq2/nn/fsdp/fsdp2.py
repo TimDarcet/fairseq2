@@ -25,11 +25,11 @@ from torch.distributed.fsdp import (
 from torch.distributed.tensor import DTensor
 from torch.nn import Module, Parameter, SyncBatchNorm
 
-from fairseq2.data_type import DataType
-from fairseq2.error import NotSupportedError, OperationalError
-from fairseq2.gang import Gangs
-from fairseq2.nn.fsdp.common import FSDPApplier, FSDPParameterInitializer
-from fairseq2.nn.utils.module import (
+from llm_lib2.data_type import DataType
+from llm_lib2.error import NotSupportedError, OperationalError
+from llm_lib2.gang import Gangs
+from llm_lib2.nn.fsdp.common import FSDPApplier, FSDPParameterInitializer
+from llm_lib2.nn.utils.module import (
     apply_to_parameters,
     broadcast_module,
     load_state_dict,

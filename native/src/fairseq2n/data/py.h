@@ -8,11 +8,11 @@
 
 #include <utility>
 
-#include "fairseq2n/api.h"
+#include "llm_lib2n/api.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API py_object {
+class llm_lib2_API py_object {
 public:
     py_object() noexcept = default;
 
@@ -106,10 +106,10 @@ private:
 
 namespace detail {
 
-FAIRSEQ2_API void
+llm_lib2_API void
 register_py_interpreter(
     void (*inc_ref_fn)(py_object &) noexcept,
     void (*dec_ref_fn)(py_object &) noexcept);
 
 }  // namespace detail
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

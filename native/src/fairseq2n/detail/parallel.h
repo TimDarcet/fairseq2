@@ -8,17 +8,17 @@
 
 #include <functional>
 
-#ifdef FAIRSEQ2N_USE_TBB
+#ifdef llm_lib2N_USE_TBB
 #include <oneapi/tbb.h>
 #endif
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template<typename T>
 void
 parallel_for(const std::function<void(T begin, T end)> &fn, T begin, T end)
 {
-#ifdef FAIRSEQ2N_USE_TBB
+#ifdef llm_lib2N_USE_TBB
     tbb::blocked_range<T> range{begin, end};
 
     tbb::parallel_for(
@@ -39,4 +39,4 @@ parallel_for(const std::function<void(T begin, T end)> &fn, T size)
     parallel_for(fn, T{}, size);
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

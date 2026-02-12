@@ -14,12 +14,12 @@ from typing import final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.device import CPU
-from fairseq2.file_system import FileSystem, raise_if_not_exists
-from fairseq2.gang import GangContext
-from fairseq2.io import CorruptFileError, TensorFileLoader, TensorFileLoadOptions
-from fairseq2.model_checkpoint.common import reshard_tensor
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.device import CPU
+from llm_lib2.file_system import FileSystem, raise_if_not_exists
+from llm_lib2.gang import GangContext
+from llm_lib2.io import CorruptFileError, TensorFileLoader, TensorFileLoadOptions
+from llm_lib2.model_checkpoint.common import reshard_tensor
+from llm_lib2.model_checkpoint.loader import (
     CorruptModelCheckpointError,
     ModelCheckpointLoader,
     ModelCheckpointLoadOptions,
@@ -29,9 +29,9 @@ from fairseq2.model_checkpoint.loader import (
 @final
 class _NativeModelCheckpointLoader(ModelCheckpointLoader):
     """
-    Loads native fairseq2 checkpoints.
+    Loads native llm_lib2 checkpoints.
 
-    The native fairseq2 format is optimized for efficient storage and loading of
+    The native llm_lib2 format is optimized for efficient storage and loading of
     model checkpoints in distributed configurations.
     """
 
@@ -59,7 +59,7 @@ class _NativeModelCheckpointLoader(ModelCheckpointLoader):
 
         is_dir = self._file_system.is_dir(path)
         if not is_dir:
-            message = f"{path} does not point to a fairseq2 checkpoint."
+            message = f"{path} does not point to a llm_lib2 checkpoint."
 
             raise CorruptModelCheckpointError(path, message)
 

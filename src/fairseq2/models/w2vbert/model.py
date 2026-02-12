@@ -13,17 +13,17 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.models.wav2vec2 import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.models.wav2vec2 import (
     Wav2Vec2Loss,
     Wav2Vec2Masker,
     Wav2Vec2Model,
     Wav2Vec2Output,
     Wav2Vec2VectorQuantizerOutput,
 )
-from fairseq2.nn import BatchLayout, Linear
-from fairseq2.nn.functional import cross_entropy
+from llm_lib2.nn import BatchLayout, Linear
+from llm_lib2.nn.functional import cross_entropy
 
 
 @final

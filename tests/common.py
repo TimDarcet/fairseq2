@@ -9,9 +9,9 @@ from __future__ import annotations
 import torch
 from torch import Tensor
 
-from fairseq2.device import CPU, Device
-from fairseq2.typing import ContextManager
-from fairseq2.utils.rng import RngBag
+from llm_lib2.device import CPU, Device
+from llm_lib2.typing import ContextManager
+from llm_lib2.utils.rng import RngBag
 
 # The default device that tests should use. Note that pytest can change it based
 # on the provided command line arguments.

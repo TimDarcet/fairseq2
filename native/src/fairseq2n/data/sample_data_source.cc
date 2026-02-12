@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/sample_data_source.h"
+#include "llm_lib2n/data/sample_data_source.h"
 
 #include <algorithm>
 #include <stdexcept>
@@ -14,11 +14,11 @@
 #include <ATen/Context.h>
 #include <ATen/core/TransformationHelper.h>
 
-#include "fairseq2n/data/detail/exception.h"
-#include "fairseq2n/data/detail/rng.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/data/detail/exception.h"
+#include "llm_lib2n/data/detail/rng.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 sample_data_source::sample_data_source(
     std::vector<data_pipeline> &&pipelines,
@@ -245,4 +245,4 @@ sample_data_source::are_all_done() noexcept
     return is_eod_;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

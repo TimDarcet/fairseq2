@@ -9,9 +9,9 @@ from __future__ import annotations
 import torch.nn as nn
 from torch import Tensor
 
-from fairseq2.error import NotSupportedError
-from fairseq2.models.qwen.config import QwenConfig
-from fairseq2.models.transformer import (
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.qwen.config import QwenConfig
+from llm_lib2.models.transformer import (
     CausalAttentionBias,
     FeedForwardNetwork,
     GLUFeedForwardNetwork,
@@ -22,14 +22,14 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.transformer_lm import (
+from llm_lib2.models.transformer_lm import (
     StandardTransformerLMDecoder,
     StandardTransformerLMDecoderLayer,
     TransformerLM,
     TransformerLMDecoder,
     TransformerLMDecoderLayer,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     ColumnShardedLinear,
     Embedding,
     LayerNorm,
@@ -41,7 +41,7 @@ from fairseq2.nn import (
     TiedProjection,
     VocabShardedEmbedding,
 )
-from fairseq2.nn.position_encoder import ReferenceRotaryEncoder
+from llm_lib2.nn.position_encoder import ReferenceRotaryEncoder
 
 
 def create_qwen_model(config: QwenConfig) -> TransformerLM:

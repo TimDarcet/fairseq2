@@ -10,7 +10,7 @@ pa = pytest.importorskip("pyarrow")
 import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 
-from fairseq2.data.parquet.fragment_loading.builder import SafeFragment
+from llm_lib2.data.parquet.fragment_loading.builder import SafeFragment
 
 
 @pytest.fixture

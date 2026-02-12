@@ -12,9 +12,9 @@
 
 #include <unistd.h>
 
-#include "fairseq2n/memory.h"
+#include "llm_lib2n/memory.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 constexpr int invalid_fd = -1;
 

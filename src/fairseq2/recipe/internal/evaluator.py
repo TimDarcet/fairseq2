@@ -9,9 +9,9 @@ from __future__ import annotations
 from collections.abc import Callable, Sequence
 from typing import final
 
-from fairseq2.datasets import DataReader
-from fairseq2.evaluator import BatchT, Evaluator, EvalUnit
-from fairseq2.recipe.config import CommonSection, EvaluatorSection
+from llm_lib2.datasets import DataReader
+from llm_lib2.evaluator import BatchT, Evaluator, EvalUnit
+from llm_lib2.recipe.config import CommonSection, EvaluatorSection
 
 
 @final

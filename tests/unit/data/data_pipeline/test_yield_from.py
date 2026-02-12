@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pytest
 
-from fairseq2.data.data_pipeline import DataPipeline, DataPipelineError, read_sequence
+from llm_lib2.data.data_pipeline import DataPipeline, DataPipelineError, read_sequence
 
 
 class TestYieldFromOp:

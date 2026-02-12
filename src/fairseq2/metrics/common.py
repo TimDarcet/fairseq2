@@ -12,10 +12,10 @@ import torch
 from torch import Tensor
 from torcheval.metrics import Throughput
 
-from fairseq2.datasets import Seq2SeqBatch, SequenceBatch
-from fairseq2.generation import SequenceGeneratorOutput
-from fairseq2.metrics.aggregation import Max, Mean, Sum
-from fairseq2.metrics.bag import MetricBag
+from llm_lib2.datasets import Seq2SeqBatch, SequenceBatch
+from llm_lib2.generation import SequenceGeneratorOutput
+from llm_lib2.metrics.aggregation import Max, Mean, Sum
+from llm_lib2.metrics.bag import MetricBag
 
 
 @torch.inference_mode()

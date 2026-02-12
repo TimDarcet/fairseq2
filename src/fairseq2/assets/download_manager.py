@@ -25,12 +25,12 @@ from huggingface_hub.constants import HF_HUB_CACHE
 from huggingface_hub.errors import HfHubHTTPError
 from typing_extensions import NoReturn, override
 
-from fairseq2.error import InternalError, NotSupportedError
-from fairseq2.file_system import FileSystem, _flush_nfs_lookup_cache
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.utils.progress import ProgressReporter
-from fairseq2.utils.uri import Uri
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.error import InternalError, NotSupportedError
+from llm_lib2.file_system import FileSystem, _flush_nfs_lookup_cache
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.utils.progress import ProgressReporter
+from llm_lib2.utils.uri import Uri
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 def get_asset_download_manager() -> AssetDownloadManager:
@@ -64,8 +64,8 @@ class AssetDownloadManager(ABC):
         ``model_name`` is deprecated and will be removed in v0.13.
 
         ``progress`` is deprecated and will be removed in v0.13. Use
-        ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress``
-        parameter of :func:`init_fairseq` to disable progress bars.
+        ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress``
+        parameter of :func:`init_llm_lib` to disable progress bars.
 
         :raises AssetDownloadError: The download operation failed due to a
             network or server error.
@@ -96,8 +96,8 @@ class AssetDownloadManager(ABC):
         ``tokenizer_name`` is deprecated and will be removed in v0.13.
 
         ``progress`` is deprecated and will be removed in v0.13. Use
-        ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress``
-        parameter of :func:`init_fairseq` to disable progress bars.
+        ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress``
+        parameter of :func:`init_llm_lib` to disable progress bars.
 
         :raises AssetDownloadError: The download operation failed due to a
             network or server error.
@@ -127,8 +127,8 @@ class AssetDownloadManager(ABC):
         ``dataset_name`` is deprecated and will be removed in v0.13.
 
         ``progress`` is deprecated and will be removed in v0.13. Use
-        ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress``
-        parameter of :func:`init_fairseq` to disable progress bars.
+        ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress``
+        parameter of :func:`init_llm_lib` to disable progress bars.
 
         :raises AssetDownloadError: The download operation failed due to a
             network or server error.

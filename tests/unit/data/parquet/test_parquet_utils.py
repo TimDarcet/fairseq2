@@ -20,12 +20,12 @@ import pytest
 import torch
 from pyarrow.dataset import Fragment
 
-from fairseq2.data.parquet.arrow_transform import _fix_list_offset, is_list_like
-from fairseq2.data.parquet.table_bucketing.primitives import (
+from llm_lib2.data.parquet.arrow_transform import _fix_list_offset, is_list_like
+from llm_lib2.data.parquet.table_bucketing.primitives import (
     compute_length_splits,
     compute_rows_length,
 )
-from fairseq2.data.parquet.utils import (
+from llm_lib2.data.parquet.utils import (
     add_fragments_trace,
     add_partitioning_values,
     get_dataset_fragments,

@@ -12,8 +12,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from fairseq2.data.data_pipeline import DataPipeline, DataPipelineError, read_sequence
-from fairseq2.data.text import read_text
+from llm_lib2.data.data_pipeline import DataPipeline, DataPipelineError, read_sequence
+from llm_lib2.data.text import read_text
 
 
 class TestSampleOp:

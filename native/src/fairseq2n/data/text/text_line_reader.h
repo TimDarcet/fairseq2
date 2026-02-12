@@ -9,12 +9,12 @@
 #include <memory>
 #include <utility>
 
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/byte_stream.h"
-#include "fairseq2n/data/record_reader.h"
-#include "fairseq2n/data/text/text_reader.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/byte_stream.h"
+#include "llm_lib2n/data/record_reader.h"
+#include "llm_lib2n/data/text/text_reader.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class text_line_reader final : public record_reader {
 public:
@@ -40,4 +40,4 @@ private:
     line_ending line_ending_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -16,10 +16,10 @@ from torch import Tensor
 from torch.nn import Module, Parameter
 from torch.nn.utils import remove_weight_norm  # type: ignore[attr-defined]
 
-from fairseq2.device import CPU, Device
-from fairseq2.error import StateDictError
-from fairseq2.gang import Gang, GangError
-from fairseq2.logging import log
+from llm_lib2.device import CPU, Device
+from llm_lib2.error import StateDictError
+from llm_lib2.gang import Gang, GangError
+from llm_lib2.logging import log
 
 
 @runtime_checkable
@@ -435,7 +435,7 @@ def broadcast_module(
 
     from torch.distributed import _broadcast_coalesced
 
-    # TODO(balioglu): Call c10d in fairseq2n instead.
+    # TODO(balioglu): Call c10d in llm_lib2n instead.
     try:
         _broadcast_coalesced(pg, tensors, bucket_size, source_rank)
     except RuntimeError as ex:

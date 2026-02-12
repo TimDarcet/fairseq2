@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.metrics.text.bleu import DEFAULT_BLEU_TOKENIZER as DEFAULT_BLEU_TOKENIZER
-from fairseq2.metrics.text.bleu import BleuMetric as BleuMetric
-from fairseq2.metrics.text.chrf import ChrfMetric as ChrfMetric
-from fairseq2.metrics.text.wer import WerMetric as WerMetric
+from llm_lib2.metrics.text.bleu import DEFAULT_BLEU_TOKENIZER as DEFAULT_BLEU_TOKENIZER
+from llm_lib2.metrics.text.bleu import BleuMetric as BleuMetric
+from llm_lib2.metrics.text.chrf import ChrfMetric as ChrfMetric
+from llm_lib2.metrics.text.wer import WerMetric as WerMetric

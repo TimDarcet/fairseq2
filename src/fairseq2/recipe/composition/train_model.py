@@ -11,11 +11,11 @@ from typing import final
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.gang import GangError, raise_operational_gang_error
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.recipe.internal.train_model import (
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.gang import GangError, raise_operational_gang_error
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.recipe.internal.train_model import (
     _DelegatingTrainModelPreparer,
     _LastTrainModelPreparer,
     _StandardTrainModelBootstrapper,
@@ -25,8 +25,8 @@ from fairseq2.recipe.internal.train_model import (
     _TrainModelPreparer,
     _TrainModelProvider,
 )
-from fairseq2.recipe.model import RecipeModel, _StandardRecipeModel
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.recipe.model import RecipeModel, _StandardRecipeModel
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_train_model(container: DependencyContainer) -> None:

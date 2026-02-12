@@ -15,16 +15,16 @@ from torch.nn import GELU, Conv1d, Module, Sequential
 from torch.nn.utils import remove_weight_norm, weight_norm  # type: ignore[attr-defined]
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.nn import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.nn import (
     BatchLayout,
     IncrementalStateBag,
     PositionEncoder,
     StandardLayerNorm,
 )
-from fairseq2.nn.utils.mask import apply_mask
+from llm_lib2.nn.utils.mask import apply_mask
 
 
 @final

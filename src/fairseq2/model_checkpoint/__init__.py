@@ -22,8 +22,8 @@ The loaders support:
 .. code:: python
     :caption: Example Usage
 
-    from fairseq2.model_checkpoint import get_model_checkpoint_loader
-    from fairseq2.nn import get_shard_dims
+    from llm_lib2.model_checkpoint import get_model_checkpoint_loader
+    from llm_lib2.nn import get_shard_dims
 
     model = ... # PyTorch Module
 
@@ -39,29 +39,29 @@ The loaders support:
 
 from __future__ import annotations
 
-from fairseq2.model_checkpoint.basic import (
+from llm_lib2.model_checkpoint.basic import (
     _BasicModelCheckpointLoader as _BasicModelCheckpointLoader,
 )
-from fairseq2.model_checkpoint.common import reshard_tensor as reshard_tensor
-from fairseq2.model_checkpoint.delegating import (
+from llm_lib2.model_checkpoint.common import reshard_tensor as reshard_tensor
+from llm_lib2.model_checkpoint.delegating import (
     _DelegatingModelCheckpointLoader as _DelegatingModelCheckpointLoader,
 )
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.model_checkpoint.loader import (
     CorruptModelCheckpointError as CorruptModelCheckpointError,
 )
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.model_checkpoint.loader import (
     ModelCheckpointLoader as ModelCheckpointLoader,
 )
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.model_checkpoint.loader import (
     ModelCheckpointLoadOptions as ModelCheckpointLoadOptions,
 )
-from fairseq2.model_checkpoint.loader import StateDictConverter as StateDictConverter
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.model_checkpoint.loader import StateDictConverter as StateDictConverter
+from llm_lib2.model_checkpoint.loader import (
     get_model_checkpoint_loader as get_model_checkpoint_loader,
 )
-from fairseq2.model_checkpoint.native import (
+from llm_lib2.model_checkpoint.native import (
     _NativeModelCheckpointLoader as _NativeModelCheckpointLoader,
 )
-from fairseq2.model_checkpoint.safetensors import (
+from llm_lib2.model_checkpoint.safetensors import (
     _SafetensorsCheckpointLoader as _SafetensorsCheckpointLoader,
 )

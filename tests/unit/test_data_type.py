@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import torch
 
-from fairseq2.data_type import DataType, get_current_dtype, set_dtype
+from llm_lib2.data_type import DataType, get_current_dtype, set_dtype
 from tests.common import device
 
 

@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from typing import final
 
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.recipe.component import ComponentManager, ComponentNotKnownError
-from fairseq2.recipe.config import Seq2SeqGeneratorSection, SequenceGeneratorSection
-from fairseq2.recipe.error import SequenceGeneratorNotKnownError
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.recipe.component import ComponentManager, ComponentNotKnownError
+from llm_lib2.recipe.config import Seq2SeqGeneratorSection, SequenceGeneratorSection
+from llm_lib2.recipe.error import SequenceGeneratorNotKnownError
 
 
 @final

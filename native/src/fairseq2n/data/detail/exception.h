@@ -12,10 +12,10 @@
 
 #include <fmt/core.h>
 
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/data_pipeline.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template <typename... Args>
 [[noreturn]] inline void
@@ -43,4 +43,4 @@ throw_data_pipeline_error_with_nested(
         recoverable});
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

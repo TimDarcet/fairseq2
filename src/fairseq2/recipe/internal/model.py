@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 
 from torch.nn import Module
 
-from fairseq2.models import ModelFamily
+from llm_lib2.models import ModelFamily
 
 
 @dataclass

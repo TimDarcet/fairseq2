@@ -10,9 +10,9 @@ from typing import cast
 
 from torch.nn.modules.utils import consume_prefix_in_state_dict_if_present
 
-from fairseq2.models.transformer import TransformerNormOrder
-from fairseq2.models.utils.checkpoint import convert_fairseq_state_dict
-from fairseq2.models.wav2vec2.asr.config import Wav2Vec2AsrConfig
+from llm_lib2.models.transformer import TransformerNormOrder
+from llm_lib2.models.utils.checkpoint import convert_llm_lib_state_dict
+from llm_lib2.models.wav2vec2.asr.config import Wav2Vec2AsrConfig
 
 
 def convert_wav2vec2_asr_state_dict(
@@ -24,7 +24,7 @@ def convert_wav2vec2_asr_state_dict(
     except KeyError:
         pass
 
-    if "w2v_encoder.proj.weight" in state_dict:  # fairseq
+    if "w2v_encoder.proj.weight" in state_dict:  # llm_lib
         if config.encoder_config.norm_order == TransformerNormOrder.POST:
             # fmt: off
             state_dict["encoder_frontend.layer_norm.weight"] = state_dict["w2v_encoder.w2v_model.encoder.layer_norm.weight"]
@@ -57,7 +57,7 @@ def convert_wav2vec2_asr_state_dict(
             # fmt: on
         }
 
-        return convert_fairseq_state_dict(state_dict, key_map)
+        return convert_llm_lib_state_dict(state_dict, key_map)
 
     consume_prefix_in_state_dict_if_present(state_dict, prefix="module.")
 

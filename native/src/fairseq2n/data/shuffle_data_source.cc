@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/shuffle_data_source.h"
+#include "llm_lib2n/data/shuffle_data_source.h"
 
 #include <algorithm>
 #include <cstdint>
@@ -13,10 +13,10 @@
 #include <ATen/CPUGeneratorImpl.h>
 #include <ATen/Context.h>
 
-#include "fairseq2n/data/detail/rng.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/data/detail/rng.h"
+#include "llm_lib2n/utils/cast.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 shuffle_data_source::shuffle_data_source(
     std::unique_ptr<data_source> &&inner,
@@ -177,4 +177,4 @@ shuffle_data_source::shuffle()
     }
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

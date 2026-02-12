@@ -12,8 +12,8 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.models.transformer import TransformerEncoder, TransformerFrontend
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.transformer import TransformerEncoder, TransformerFrontend
+from llm_lib2.nn import BatchLayout
 
 # TODO(balioglu): This implementation is not complete. As of this commit, only
 # the encoder and encoder-frontend are available for parity check purposes.

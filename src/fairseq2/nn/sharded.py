@@ -18,7 +18,7 @@ class Sharded(ABC):
     Modules implementing this interface must specify which of their parameters
     are sharded and along which dimensions the sharding occurs.
 
-    See :class:`fairseq2.nn.ColumnShardedLinear` for an example.
+    See :class:`llm_lib2.nn.ColumnShardedLinear` for an example.
     """
 
     @abstractmethod

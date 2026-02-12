@@ -8,9 +8,9 @@
 
 #include <cstdint>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class count_data_source final : public data_source {
 public:
@@ -42,4 +42,4 @@ private:
     std::optional<std::string> maybe_key_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

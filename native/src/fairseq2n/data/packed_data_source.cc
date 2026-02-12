@@ -4,17 +4,17 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/packed_data_source.h"
+#include "llm_lib2n/data/packed_data_source.h"
 
 #include <utility>
 #include <vector>
 
 #include <ATen/Functions.h>
 
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/detail/exception.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::optional<data>
 packed_data_source::next()
@@ -159,4 +159,4 @@ packed_data_source::finitude_type() const noexcept
     return inner_->finitude_type();
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -17,7 +17,7 @@ jobs:
     runs-on:
       labels: 4-core-ubuntu
     container:
-      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_x86_64:3-cpu
+      image: ghcr.io/facebookresearch/llm_lib2-ci-manylinux_x86_64:3-cpu
     defaults:
       run:
         shell: bash

@@ -4,8 +4,8 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
-#include "fairseq2n/bindings/data/iterator_data_source.h"
+#include "llm_lib2n/bindings/module.h"
+#include "llm_lib2n/bindings/data/iterator_data_source.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -20,23 +20,23 @@
 #include <variant>
 #include <vector>
 
-#include <fairseq2n/exception.h>
-#include <fairseq2n/data/byte_stream.h>
-#include <fairseq2n/data/collater.h>
-#include <fairseq2n/data/element_mapper.h>
-#include <fairseq2n/data/data.h>
-#include <fairseq2n/data/data_length_extractor.h>
-#include <fairseq2n/data/data_pipeline.h>
-#include <fairseq2n/data/file_mapper.h>
-#include <fairseq2n/data/record_reader.h>
-#include <fairseq2n/data/tape.h>
-#include <fairseq2n/detail/exception.h>
+#include <llm_lib2n/exception.h>
+#include <llm_lib2n/data/byte_stream.h>
+#include <llm_lib2n/data/collater.h>
+#include <llm_lib2n/data/element_mapper.h>
+#include <llm_lib2n/data/data.h>
+#include <llm_lib2n/data/data_length_extractor.h>
+#include <llm_lib2n/data/data_pipeline.h>
+#include <llm_lib2n/data/file_mapper.h>
+#include <llm_lib2n/data/record_reader.h>
+#include <llm_lib2n/data/tape.h>
+#include <llm_lib2n/detail/exception.h>
 
 namespace py = pybind11;
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -809,4 +809,4 @@ def_data_pipeline(py::module_ &data_module)
     });
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

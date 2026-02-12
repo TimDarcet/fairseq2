@@ -9,7 +9,7 @@
 #include <cerrno>
 #include <system_error>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 inline std::error_code
 last_error() noexcept
@@ -17,4 +17,4 @@ last_error() noexcept
     return std::error_code{errno, std::generic_category()};
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

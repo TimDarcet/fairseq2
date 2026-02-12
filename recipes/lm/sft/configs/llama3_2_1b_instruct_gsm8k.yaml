@@ -11,7 +11,7 @@ dataset:
   config_overrides:
     sources:
       train:
-      - path: "hg://facebook/fairseq2-lm-gsm8k"
+      - path: "hg://facebook/llm_lib2-lm-gsm8k"
         split: "sft_train"
         weight: 1.0
 model:
@@ -22,7 +22,7 @@ common:
   metric_recorders:
     wandb:
       enabled: False
-      project: "fairseq2"
+      project: "llm_lib2"
       run_name: "sft_llama3_2_1b_instruct_gsm8k"
 regime:
   num_steps: 100000

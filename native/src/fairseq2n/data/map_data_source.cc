@@ -4,23 +4,23 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/map_data_source.h"
+#include "llm_lib2n/data/map_data_source.h"
 
 #include <exception>
 
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/detail/exception.h"
-#include "fairseq2n/detail/parallel.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/detail/exception.h"
+#include "llm_lib2n/detail/parallel.h"
+#include "llm_lib2n/utils/cast.h"
 
-#ifdef FAIRSEQ2N_USE_TBB
+#ifdef llm_lib2N_USE_TBB
 using PoolArgType = int;
 #include <oneapi/tbb.h>
 #else
 using PoolArgType = std::size_t;
 #endif
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 map_data_source::map_data_source(
     std::unique_ptr<data_source> &&inner,
@@ -272,4 +272,4 @@ map_data_source::invoke_function(data &&example, std::size_t fn_idx)
     return map_fns_[fn_idx](std::move(example));
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

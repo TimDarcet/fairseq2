@@ -13,15 +13,15 @@ from torch import Tensor
 from torch.nn import Dropout, Module
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.models.transformer import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.models.transformer import (
     AttentionBiasCache,
     FeedForwardNetwork,
     MultiheadAttention,
     TransformerNormOrder,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     AdditiveResidualConnect,
     BatchLayout,
     IncrementalStateBag,

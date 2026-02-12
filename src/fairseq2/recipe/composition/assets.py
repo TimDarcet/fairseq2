@@ -9,9 +9,9 @@ from __future__ import annotations
 import inspect
 from pathlib import Path
 
-from fairseq2.composition import register_file_assets
-from fairseq2.error import InternalError
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.composition import register_file_assets
+from llm_lib2.error import InternalError
+from llm_lib2.runtime.dependency import DependencyContainer
 
 
 def register_recipe_assets(
@@ -36,9 +36,9 @@ def register_recipe_assets(
 
     .. code:: python
 
-        from fairseq2.runtime.dependency import DependencyContainer
-        from fairseq2.recipe import Recipe
-        from fairseq2.recipe.composition import register_recipe_assets
+        from llm_lib2.runtime.dependency import DependencyContainer
+        from llm_lib2.recipe import Recipe
+        from llm_lib2.recipe.composition import register_recipe_assets
 
         class MyRecipe(Recipe):
             def register(self, container: DependencyContainer) -> None:
@@ -52,8 +52,8 @@ def register_recipe_assets(
     .. code:: python
         :caption: A helper function in a Python file named "my_helpers.py"
 
-        from fairseq2.recipe.composition import register_recipe_assets
-        from fairseq2.runtime.dependency import DependencyContainer
+        from llm_lib2.recipe.composition import register_recipe_assets
+        from llm_lib2.runtime.dependency import DependencyContainer
 
         def my_recipe_helper_function(container: DependencyContainer) -> None:
             # Note that `stack_level` is set to 2, so that the actual calling

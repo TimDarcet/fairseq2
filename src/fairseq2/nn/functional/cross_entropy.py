@@ -27,7 +27,7 @@ def cross_entropy(
 
     .. note::
         The loss smoothing implementation of this function is compatible with
-        fairseq.
+        llm_lib.
     """
     if logits.ndim == 3:
         batch_size = logits.size(0)
@@ -168,7 +168,7 @@ def cross_entropy(
         )
 
     if smooth_loss is not None:
-        # This label smoothing implementation is identical to the one in fairseq
+        # This label smoothing implementation is identical to the one in llm_lib
         # and varies slightly from PyTorch's version in `cross_entropy`.
         eps = label_smoothing / (log_probs.size(-1) - 1)
 

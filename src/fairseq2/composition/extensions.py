@@ -10,14 +10,14 @@ import os
 
 from importlib_metadata import entry_points
 
-from fairseq2.logging import log
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.logging import log
+from llm_lib2.runtime.dependency import DependencyContainer
 
 
 def _register_extensions(container: DependencyContainer) -> None:
-    should_trace = "FAIRSEQ2_EXTENSION_TRACE" in os.environ
+    should_trace = "llm_lib2_EXTENSION_TRACE" in os.environ
 
-    for entry_point in entry_points(group="fairseq2.extension"):
+    for entry_point in entry_points(group="llm_lib2.extension"):
         try:
             extension = entry_point.load()
 
@@ -33,14 +33,14 @@ def _register_extensions(container: DependencyContainer) -> None:
 
                 raise ExtensionError(entry_point.value, msg) from None
 
-            log.warning("{} entry point is not a valid extension. Set `FAIRSEQ2_EXTENSION_TRACE` environment variable to print the stack trace.", entry_point.value)  # fmt: skip
+            log.warning("{} entry point is not a valid extension. Set `llm_lib2_EXTENSION_TRACE` environment variable to print the stack trace.", entry_point.value)  # fmt: skip
         except Exception as ex:
             if should_trace:
                 msg = f"{entry_point.value} extension failed."
 
                 raise ExtensionError(entry_point.value, msg) from ex
 
-            log.warning("{} extension failed. Set `FAIRSEQ2_EXTENSION_TRACE` environment variable to print the stack trace.", entry_point.value)  # fmt: skip
+            log.warning("{} extension failed. Set `llm_lib2_EXTENSION_TRACE` environment variable to print the stack trace.", entry_point.value)  # fmt: skip
 
         if should_trace:
             log.info("{} extension registered successfully.", entry_point.value)  # fmt: skip

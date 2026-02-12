@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/byte_stream.h"
+#include "llm_lib2n/data/byte_stream.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 byte_stream::~byte_stream() = default;
 

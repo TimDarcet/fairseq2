@@ -8,8 +8,8 @@ from typing import Iterator
 
 import pytest
 
-from fairseq2.data.data_pipeline import read_iterator
-from fairseq2.data.utils import read_pickle_wrapped_iterator
+from llm_lib2.data.data_pipeline import read_iterator
+from llm_lib2.data.utils import read_pickle_wrapped_iterator
 
 
 def example_generator() -> Iterator[int]:

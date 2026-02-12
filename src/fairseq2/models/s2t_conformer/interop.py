@@ -10,8 +10,8 @@ from typing import cast
 
 from torch.nn.modules.utils import consume_prefix_in_state_dict_if_present
 
-from fairseq2.models.s2t_conformer.config import S2TConformerConfig
-from fairseq2.models.utils.checkpoint import convert_fairseq_state_dict
+from llm_lib2.models.s2t_conformer.config import S2TConformerConfig
+from llm_lib2.models.utils.checkpoint import convert_llm_lib_state_dict
 
 
 def convert_s2t_conformer_state_dict(
@@ -22,7 +22,7 @@ def convert_s2t_conformer_state_dict(
     except KeyError:
         pass
 
-    if "decoder.embed_tokens.weight" in state_dict:  # fairseq
+    if "decoder.embed_tokens.weight" in state_dict:  # llm_lib
         key_map = {
             # fmt: off
             r"^encoder\.subsample\.conv_layers\.([0-9]+)\.":                         r"encoder_frontend.feature_extractor.layers.\1.conv.",
@@ -59,7 +59,7 @@ def convert_s2t_conformer_state_dict(
             # fmt: on
         }
 
-        return convert_fairseq_state_dict(state_dict, key_map)
+        return convert_llm_lib_state_dict(state_dict, key_map)
 
     consume_prefix_in_state_dict_if_present(state_dict, prefix="module.")
 

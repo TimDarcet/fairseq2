@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-from fairseq2.profilers import CompositeProfiler, Profiler
-from fairseq2.recipe.internal.profilers import _MaybeTorchProfilerFactory
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.profilers import CompositeProfiler, Profiler
+from llm_lib2.recipe.internal.profilers import _MaybeTorchProfilerFactory
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_profilers(container: DependencyContainer) -> None:

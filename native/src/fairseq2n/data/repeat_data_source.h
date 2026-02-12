@@ -11,9 +11,9 @@
 #include <optional>
 #include <utility>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class repeat_data_source final : public data_source {
 public:
@@ -48,4 +48,4 @@ private:
     std::size_t repeat_nr_ = 0;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

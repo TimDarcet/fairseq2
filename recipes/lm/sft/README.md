@@ -1,6 +1,6 @@
 # Language Model Supervised Fine-Tuning (SFT)
 
-This directory contains the implementation for supervised fine-tuning of language models using fairseq2. The SFT recipe allows you to fine-tune pre-trained language models on instruction-following datasets.
+This directory contains the implementation for supervised fine-tuning of language models using llm_lib2. The SFT recipe allows you to fine-tune pre-trained language models on instruction-following datasets.
 
 ## Overview
 
@@ -66,12 +66,12 @@ regime:
 
 ##### LLaMA 3.2 1B on GSM8K
 ```bash
-python -m fairseq2.recipes.lm.sft --config-file sft/configs/llama3_2_1b_gsm8k.yaml
+python -m llm_lib2.recipes.lm.sft --config-file sft/configs/llama3_2_1b_gsm8k.yaml
 ```
 
 ##### LLaMA 3.2 1B Instruct on GSM8K  
 ```bash
-python -m fairseq2.recipes.lm.sft --config-file sft/configs/llama3_2_1b_instruct_gsm8k.yaml
+python -m llm_lib2.recipes.lm.sft --config-file sft/configs/llama3_2_1b_instruct_gsm8k.yaml
 ```
 
 ## Data Format

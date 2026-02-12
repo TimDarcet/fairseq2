@@ -6,12 +6,12 @@
 
 #pragma once
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 template <typename T>
 struct repr {};  // disabled (i.e. poisoned)
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n
 
 
 // Allow the use of this header file even if libfmt is not available.
@@ -24,13 +24,13 @@ struct repr {};  // disabled (i.e. poisoned)
 #include <fmt/format.h>
 
 template <typename T>
-struct fmt::formatter<T, std::enable_if_t<std::is_invocable_v<fairseq2n::repr<T>, T>, char>>
+struct fmt::formatter<T, std::enable_if_t<std::is_invocable_v<llm_lib2n::repr<T>, T>, char>>
   : fmt::formatter<std::string> {
 
     auto
     format(const T &t, format_context &ctx) const
     {
-        return formatter<std::string>::format(fairseq2n::repr<T>{}(t), ctx);
+        return formatter<std::string>::format(llm_lib2n::repr<T>{}(t), ctx);
     }
 };
 

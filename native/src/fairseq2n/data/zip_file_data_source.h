@@ -14,11 +14,11 @@
 
 #include <zip.h>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class zip_file_data_source final : public data_source {
 public:
@@ -57,4 +57,4 @@ private:
     std::size_t num_files_read_ = 0;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

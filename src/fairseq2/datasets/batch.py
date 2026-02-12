@@ -12,9 +12,9 @@ from typing import final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.device import Device, SupportsDeviceTransfer
-from fairseq2.error import InvalidOperationError
-from fairseq2.nn import BatchLayout
+from llm_lib2.device import Device, SupportsDeviceTransfer
+from llm_lib2.error import InvalidOperationError
+from llm_lib2.nn import BatchLayout
 
 
 @final

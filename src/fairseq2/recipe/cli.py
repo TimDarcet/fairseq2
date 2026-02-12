@@ -17,47 +17,47 @@ from typing import Any, NoReturn, Protocol, TextIO, TypeVar, final, runtime_chec
 import torch
 from torch.cuda import OutOfMemoryError
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetCardError,
     AssetDownloadError,
     AssetMetadataError,
     AssetSourceNotFoundError,
 )
-from fairseq2.checkpoint import CheckpointError, CheckpointNotFoundError
-from fairseq2.cluster import ClusterNotDetectedError, ClusterNotKnownError
-from fairseq2.composition import ExtensionError, _register_library
-from fairseq2.data.tokenizers import (
+from llm_lib2.checkpoint import CheckpointError, CheckpointNotFoundError
+from llm_lib2.cluster import ClusterNotDetectedError, ClusterNotKnownError
+from llm_lib2.composition import ExtensionError, _register_library
+from llm_lib2.data.tokenizers import (
     TokenizerFamilyNotKnownError,
     TokenizerGatedError,
     TokenizerModelError,
     TokenizerNotKnownError,
 )
-from fairseq2.datasets import (
+from llm_lib2.datasets import (
     DataReadError,
     DatasetError,
     DatasetFamilyNotKnownError,
     DatasetNotKnownError,
 )
-from fairseq2.device import LocalRankOutOfRangeError
-from fairseq2.error import (
+from llm_lib2.device import LocalRankOutOfRangeError
+from llm_lib2.error import (
     InternalError,
     OperationalError,
     raise_operational_system_error,
 )
-from fairseq2.file_system import FileSystem
-from fairseq2.generation import SequenceGenerationError
-from fairseq2.logging import configure_logging, log
-from fairseq2.model_checkpoint import CorruptModelCheckpointError
-from fairseq2.models import (
+from llm_lib2.file_system import FileSystem
+from llm_lib2.generation import SequenceGenerationError
+from llm_lib2.logging import configure_logging, log
+from llm_lib2.model_checkpoint import CorruptModelCheckpointError
+from llm_lib2.models import (
     ModelArchitectureNotKnownError,
     ModelFamilyNotKnownError,
     ModelGatedError,
     ModelNotKnownError,
 )
-from fairseq2.nn.utils.grad import InconsistentGradNormError
-from fairseq2.recipe.base import Recipe
-from fairseq2.recipe.component import ComponentNotKnownError
-from fairseq2.recipe.error import (
+from llm_lib2.nn.utils.grad import InconsistentGradNormError
+from llm_lib2.recipe.base import Recipe
+from llm_lib2.recipe.component import ComponentNotKnownError
+from llm_lib2.recipe.error import (
     BeamSearchAlgorithmNotKnownError,
     DatasetTypeNotValidError,
     DeviceTypeNotSupportedError,
@@ -84,32 +84,32 @@ from fairseq2.recipe.error import (
     TorchCompileNotSupportedError,
     WandbInitializationError,
 )
-from fairseq2.recipe.internal.config import (
+from llm_lib2.recipe.internal.config import (
     _is_train_config,
     _RecipeConfigHolder,
     _RecipeConfigStructurer,
     _StandardRecipeConfigStructurer,
 )
-from fairseq2.recipe.internal.output_dir import _OutputDirectoryCreator
-from fairseq2.recipe.run import _run_recipe, _swap_default_resolver
-from fairseq2.runtime.dependency import (
+from llm_lib2.recipe.internal.output_dir import _OutputDirectoryCreator
+from llm_lib2.recipe.run import _run_recipe, _swap_default_resolver
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyNotFoundError,
     DependencyResolver,
 )
-from fairseq2.task import TaskStopException
-from fairseq2.utils.argparse import ConfigAction
-from fairseq2.utils.config import (
+from llm_lib2.task import TaskStopException
+from llm_lib2.utils.argparse import ConfigAction
+from llm_lib2.utils.config import (
     ConfigDirectiveError,
     ConfigMerger,
     ConfigProcessor,
     ReplacePathDirective,
 )
-from fairseq2.utils.env import EnvironmentVariableError
-from fairseq2.utils.structured import StructureError, ValueConverter
-from fairseq2.utils.validation import ObjectValidator, ValidationError
-from fairseq2.utils.warn import _warn_deprecated, enable_deprecation_warnings
-from fairseq2.utils.yaml import YamlDumper, YamlError, YamlLoader
+from llm_lib2.utils.env import EnvironmentVariableError
+from llm_lib2.utils.structured import StructureError, ValueConverter
+from llm_lib2.utils.validation import ObjectValidator, ValidationError
+from llm_lib2.utils.warn import _warn_deprecated, enable_deprecation_warnings
+from llm_lib2.utils.yaml import YamlDumper, YamlError, YamlLoader
 
 #
 # DEPRECATED - BEGIN
@@ -152,7 +152,7 @@ def generate_main(recipe: Recipe) -> None:
 
 
 def main(recipe: Recipe) -> None:
-    from fairseq2.recipe.composition import (
+    from llm_lib2.recipe.composition import (
         _register_inference_recipe,
         _register_train_recipe,
     )
@@ -640,7 +640,7 @@ def _handle_dataset_family_not_known_error(ex: DatasetFamilyNotKnownError) -> in
 
 
 def _handle_dataset_not_known_error(ex: DatasetNotKnownError) -> int:
-    log.error("{} is not a known dataset. To see the list of available datasets run: `python -m fairseq2.assets list --kind dataset`.", ex.name)
+    log.error("{} is not a known dataset. To see the list of available datasets run: `python -m llm_lib2.assets list --kind dataset`.", ex.name)
 
     return 2
 
@@ -777,7 +777,7 @@ def _handle_model_gated_error(ex: ModelGatedError) -> int:
 
 
 def _handle_model_not_known_error(ex: ModelNotKnownError) -> int:
-    log.error("{} is not a known model. To see the list of available models run: `python -m fairseq2.assets list --kind model`.", ex.name)
+    log.error("{} is not a known model. To see the list of available models run: `python -m llm_lib2.assets list --kind model`.", ex.name)
 
     return 2
 
@@ -851,7 +851,7 @@ def _handle_tokenizer_model_not_found_error(ex: TokenizerModelNotFoundError) -> 
 
 
 def _handle_tokenizer_not_known_error(ex: TokenizerNotKnownError) -> int:
-    log.error("{} is not a known tokenizer. To see the list of available tokenizers run: `python -m fairseq2.assets list --kind tokenizer`.", ex.name)
+    log.error("{} is not a known tokenizer. To see the list of available tokenizers run: `python -m llm_lib2.assets list --kind tokenizer`.", ex.name)
 
     return 2
 

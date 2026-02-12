@@ -19,18 +19,18 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/data_source.h"
-#include "fairseq2n/data/tape.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/data_source.h"
+#include "llm_lib2n/data/tape.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 using data_source_factory = std::function<std::unique_ptr<data_source>()>;
 
 class data_pipeline_builder;
 
-class FAIRSEQ2_API data_pipeline {
+class llm_lib2_API data_pipeline {
     friend class data_pipeline_builder;
 
 private:
@@ -124,7 +124,7 @@ using predicate_fn = std::function<bool(const data &)>;
 
 using yield_fn = std::function<data_pipeline(const data &)>;
 
-class FAIRSEQ2_API data_pipeline_builder {
+class llm_lib2_API data_pipeline_builder {
 public:
     explicit
     data_pipeline_builder(data_source_factory factory) noexcept
@@ -206,7 +206,7 @@ private:
     data_source_factory factory_;
 };
 
-class FAIRSEQ2_API data_pipeline_error : public std::runtime_error {
+class llm_lib2_API data_pipeline_error : public std::runtime_error {
 public:
     explicit
     data_pipeline_error(
@@ -246,13 +246,13 @@ private:
     bool recoverable_;
 };
 
-FAIRSEQ2_API data_pipeline_builder
+llm_lib2_API data_pipeline_builder
 list_files(const std::filesystem::path &path, std::optional<std::string> maybe_pattern = {});
 
-FAIRSEQ2_API data_pipeline_builder
+llm_lib2_API data_pipeline_builder
 read_list(data_list list);
 
-FAIRSEQ2_API data_pipeline_builder
+llm_lib2_API data_pipeline_builder
 read_zipped_records(std::string pathname);
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

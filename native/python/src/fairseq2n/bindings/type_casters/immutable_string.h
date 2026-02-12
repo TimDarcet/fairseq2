@@ -8,12 +8,12 @@
 
 #include <pybind11/pybind11.h>
 
-#include <fairseq2n/data/immutable_string.h>
+#include <llm_lib2n/data/immutable_string.h>
 
 namespace pybind11::detail {
 
 template <>
-struct type_caster<fairseq2n::immutable_string> : string_caster<fairseq2n::immutable_string>
+struct type_caster<llm_lib2n::immutable_string> : string_caster<llm_lib2n::immutable_string>
 {};
 
 }  // namespace pybind11::detail

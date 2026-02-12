@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from torch.nn import Parameter
 
-from fairseq2.models.nllb import get_nllb_model_hub
-from fairseq2.nn.utils.module import select_parameters
+from llm_lib2.models.nllb import get_nllb_model_hub
+from llm_lib2.nn.utils.module import select_parameters
 
 
 def test_select_parameters() -> None:

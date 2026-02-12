@@ -13,13 +13,13 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/byte_stream.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/byte_stream.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API record_reader {
+class llm_lib2_API record_reader {
 protected:
     explicit
     record_reader(std::unique_ptr<byte_stream> &&stream) noexcept
@@ -74,7 +74,7 @@ private:
     std::size_t record_end_offset_ = 0;
 };
 
-class FAIRSEQ2_API record_error : public std::runtime_error {
+class llm_lib2_API record_error : public std::runtime_error {
 public:
     using std::runtime_error::runtime_error;
 
@@ -85,4 +85,4 @@ public:
    ~record_error() override;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

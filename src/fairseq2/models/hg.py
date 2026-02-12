@@ -6,7 +6,7 @@
 
 """
 This module provides an API for converting state dicts and configurations of
-fairseq2 models to their Hugging Face Transformer equivalents.
+llm_lib2 models to their Hugging Face Transformer equivalents.
 """
 
 from __future__ import annotations
@@ -22,9 +22,9 @@ from torch import Tensor
 from transformers import PretrainedConfig
 from typing_extensions import override
 
-from fairseq2.error import NotSupportedError
-from fairseq2.models.family import HuggingFaceExporter
-from fairseq2.runtime.dependency import get_dependency_resolver
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.family import HuggingFaceExporter
+from llm_lib2.runtime.dependency import get_dependency_resolver
 
 
 @dataclass
@@ -33,7 +33,7 @@ class HuggingFaceConfig:
     Represents the configuration of a Hugging Face Transformers model.
 
     This class is part of the :class:`HuggingFaceConverter` interface which
-    converts fairseq2 models to their Hugging Face equivalents.
+    converts llm_lib2 models to their Hugging Face equivalents.
     """
 
     data: Mapping[str, object]
@@ -59,16 +59,16 @@ class HuggingFaceConfig:
 
 class HuggingFaceConverter(ABC):
     """
-    Converts the state dict and configuration of a fairseq2 model to its Hugging
+    Converts the state dict and configuration of a llm_lib2 model to its Hugging
     Face Transformers equivalent.
 
-    Model authors must register their converter implementations with fairseq2
+    Model authors must register their converter implementations with llm_lib2
     as part of library initialization as shown below:
 
     .. code:: python
 
-        from fairseq2.models.hg import HuggingFaceConverter
-        from fairseq2.runtime.dependency import DependencyContainer, register_model_family
+        from llm_lib2.models.hg import HuggingFaceConverter
+        from llm_lib2.runtime.dependency import DependencyContainer, register_model_family
 
         class MyModelConverter(HuggingFaceConverter):
             ...
@@ -84,7 +84,7 @@ class HuggingFaceConverter(ABC):
     @abstractmethod
     def to_hg_config(self, config: object) -> HuggingFaceConfig:
         """
-        Converts the specified fairseq2 model configuration to its Hugging Face
+        Converts the specified llm_lib2 model configuration to its Hugging Face
         Transformers equivalent.
 
         :raises TypeError: ``config`` is not of valid type. The expected type
@@ -96,10 +96,10 @@ class HuggingFaceConverter(ABC):
         self, state_dict: dict[str, object], config: object
     ) -> dict[str, object]:
         """
-        Converts the specified fairseq2 state dict to its Hugging Face
+        Converts the specified llm_lib2 state dict to its Hugging Face
         Transformers equivalent.
 
-        ``config`` is the fairseq2 model configuration and can be used to
+        ``config`` is the llm_lib2 model configuration and can be used to
         adjust the converted state dict when necessary.
 
         :raises TypeError: ``config`` is not of valid type. The expected type

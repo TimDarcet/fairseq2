@@ -9,7 +9,7 @@ from __future__ import annotations
 import pytest
 import torch
 
-from fairseq2.data.data_pipeline import Collater, read_sequence
+from llm_lib2.data.data_pipeline import Collater, read_sequence
 from tests.common import assert_equal, device
 
 

@@ -10,8 +10,8 @@ from collections.abc import Sequence
 
 from torch import Tensor
 
-from fairseq2.device import Device
-from fairseq2.nn import BatchLayout
+from llm_lib2.device import Device
+from llm_lib2.nn import BatchLayout
 
 
 def pad_seqs(
@@ -35,7 +35,7 @@ def pad_seqs(
           is the batch size, :math:`S` is the sequence length, and :math:`*` is
           any number of sequence-specific dimensions including none.
     """
-    from fairseq2n.bindings.data.data_pipeline import (  # type: ignore[import-not-found]
+    from llm_lib2n.bindings.data.data_pipeline import (  # type: ignore[import-not-found]
         Collater,
     )
 

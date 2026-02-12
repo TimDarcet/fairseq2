@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from typing import final
 
-from fairseq2.gang import Gangs
-from fairseq2.recipe.error import DeviceTypeNotSupportedError
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.utils.device_stat import NOOP_DEVICE_STAT_TRACKER, DeviceStatTracker
+from llm_lib2.gang import Gangs
+from llm_lib2.recipe.error import DeviceTypeNotSupportedError
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.utils.device_stat import NOOP_DEVICE_STAT_TRACKER, DeviceStatTracker
 
 
 @final

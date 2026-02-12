@@ -6,11 +6,11 @@
 
 from __future__ import annotations
 
-from fairseq2.data.tokenizers import TokenizerHubAccessor
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.nllb.config import NLLB_FAMILY, NllbConfig
-from fairseq2.models.nllb.tokenizer import NllbTokenizer, NllbTokenizerConfig
-from fairseq2.models.transformer import TransformerModel
+from llm_lib2.data.tokenizers import TokenizerHubAccessor
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.nllb.config import NLLB_FAMILY, NllbConfig
+from llm_lib2.models.nllb.tokenizer import NllbTokenizer, NllbTokenizerConfig
+from llm_lib2.models.transformer import TransformerModel
 
 get_nllb_model_hub = ModelHubAccessor(
     NLLB_FAMILY, kls=TransformerModel, config_kls=NllbConfig

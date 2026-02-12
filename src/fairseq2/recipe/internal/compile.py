@@ -6,10 +6,10 @@
 
 from __future__ import annotations
 
-from fairseq2.logging import log
-from fairseq2.recipe.config import CompileOptions
-from fairseq2.recipe.error import TorchCompileError, TorchCompileNotSupportedError
-from fairseq2.recipe.internal.model import _ModelHolder
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import CompileOptions
+from llm_lib2.recipe.error import TorchCompileError, TorchCompileNotSupportedError
+from llm_lib2.recipe.internal.model import _ModelHolder
 
 
 def _compile_model(

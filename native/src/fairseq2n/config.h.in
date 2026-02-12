@@ -9,7 +9,7 @@
 #include <cstdint>
 #include <optional>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 inline constexpr std::int32_t version_major = @PROJECT_VERSION_MAJOR@;
 inline constexpr std::int32_t version_minor = @PROJECT_VERSION_MINOR@;
@@ -24,4 +24,4 @@ inline constexpr bool supports_cuda = @USES_CUDA@;
 inline constexpr std::optional<std::int32_t> cuda_version_major = @CUDA_VERSION_MAJOR@;
 inline constexpr std::optional<std::int32_t> cuda_version_minor = @CUDA_VERSION_MINOR@;
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

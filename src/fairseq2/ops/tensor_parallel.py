@@ -12,7 +12,7 @@ import torch
 from torch import Tensor
 from torch.autograd import Function
 
-from fairseq2.gang import Gang, ReduceOperation
+from llm_lib2.gang import Gang, ReduceOperation
 
 # mypy: disable-error-code="no-any-return,override"
 

@@ -10,7 +10,7 @@ from itertools import islice
 
 import pytest
 
-from fairseq2.data.data_pipeline import read_sequence
+from llm_lib2.data.data_pipeline import read_sequence
 
 
 class TestPrefetchOp:

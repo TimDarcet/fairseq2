@@ -4,16 +4,16 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/audio/detail/sndfile.h"
+#include "llm_lib2n/data/audio/detail/sndfile.h"
 
 #include <algorithm>
 #include <cstdio>
 #include <stdexcept>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 ::sf_count_t
 vio_file::seek(::sf_count_t offset, int whence) noexcept
@@ -168,4 +168,4 @@ sndfile::check_handle(::SNDFILE *handle)
         throw_<std::invalid_argument>(err_msg);
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

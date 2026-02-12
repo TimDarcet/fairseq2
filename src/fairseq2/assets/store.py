@@ -12,10 +12,10 @@ from typing import Protocol, final, runtime_checkable
 
 from typing_extensions import override
 
-from fairseq2.assets.card import AssetCard, AssetCardError
-from fairseq2.assets.metadata_provider import AssetMetadataError, AssetMetadataProvider
-from fairseq2.error import InternalError
-from fairseq2.runtime.dependency import DependencyResolver, get_dependency_resolver
+from llm_lib2.assets.card import AssetCard, AssetCardError
+from llm_lib2.assets.metadata_provider import AssetMetadataError, AssetMetadataProvider
+from llm_lib2.error import InternalError
+from llm_lib2.runtime.dependency import DependencyResolver, get_dependency_resolver
 
 
 def get_asset_store() -> AssetStore:

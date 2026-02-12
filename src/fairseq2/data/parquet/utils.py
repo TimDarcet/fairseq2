@@ -21,8 +21,8 @@ import torch
 import xxhash
 from pyarrow.dataset import get_partition_keys  # requires pyarrow >= 13
 
-from fairseq2.data.parquet.arrow_transform import pyarrow_column_to_array
-from fairseq2.logging import log
+from llm_lib2.data.parquet.arrow_transform import pyarrow_column_to_array
+from llm_lib2.logging import log
 
 NestedDict = dict[str, "NestedDictValue"]
 NestedDictValue = torch.Tensor | list[str] | pd.Series | NestedDict
@@ -124,7 +124,7 @@ def pyarrow_table_to_torch_dict(tt: pa.Table, strict: bool = False) -> NestedDic
     If strict is False, then the function will return the column as is if it cannot convert it to a torch tensor.
     example:
     >>> import pyarrow as pa
-    >>> from fairseq2.data.parquet.utils import pyarrow_table_to_torch_dict
+    >>> from llm_lib2.data.parquet.utils import pyarrow_table_to_torch_dict
     >>> table = pa.Table.from_pydict({
     ...     'a': [1, 2, 3],
     ...     'b': [4.4, 5.5, 6.2],

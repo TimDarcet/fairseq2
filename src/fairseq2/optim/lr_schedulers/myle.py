@@ -13,7 +13,7 @@ from torch import Tensor
 from torch.optim import Optimizer
 from typing_extensions import override
 
-from fairseq2.optim.lr_schedulers.lr_scheduler import (
+from llm_lib2.optim.lr_schedulers.lr_scheduler import (
     AbstractLRScheduler,
     get_per_param_group,
 )
@@ -30,7 +30,7 @@ class MyleLR(AbstractLRScheduler):
 
     Essentially, this is Noam learning rate schedule scaled by the square root
     of the number of warmup steps. It was originally proposed and implemented by
-    Myle Ott in fairseq under the name ``InverseSquareRootLR``.
+    Myle Ott in llm_lib under the name ``InverseSquareRootLR``.
 
     It corresponds to increasing the learning rate linearly for the first
     :math:`T_{warmup}` training steps to the base learning rate, and decreasing

@@ -13,9 +13,9 @@ from typing import TypeVar, final
 
 from typing_extensions import override
 
-from fairseq2.utils.config import ConfigDirectiveError, ConfigMerger, ConfigProcessor
-from fairseq2.utils.structured import StructureError, ValueConverter
-from fairseq2.utils.uri import Uri
+from llm_lib2.utils.config import ConfigDirectiveError, ConfigMerger, ConfigProcessor
+from llm_lib2.utils.structured import StructureError, ValueConverter
+from llm_lib2.utils.uri import Uri
 
 T = TypeVar("T", bool, int, float, str)
 

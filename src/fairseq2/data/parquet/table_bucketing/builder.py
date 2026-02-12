@@ -14,15 +14,15 @@ from pathlib import Path
 import numpy as np
 import pyarrow as pa
 
-from fairseq2.data.data_pipeline import DataPipeline, DataPipelineBuilder
-from fairseq2.data.parquet.arrow_transform import concat_table, shuffle_table
-from fairseq2.data.parquet.table_bucketing.config import TableBucketingConfig
-from fairseq2.data.parquet.table_bucketing.primitives import (
+from llm_lib2.data.data_pipeline import DataPipeline, DataPipelineBuilder
+from llm_lib2.data.parquet.arrow_transform import concat_table, shuffle_table
+from llm_lib2.data.parquet.table_bucketing.config import TableBucketingConfig
+from llm_lib2.data.parquet.table_bucketing.primitives import (
     build_batching_loop_over_one_table,
     compute_rows_length,
 )
-from fairseq2.data.parquet.utils import table_to_mmap_table
-from fairseq2.logging import log
+from llm_lib2.data.parquet.utils import table_to_mmap_table
+from llm_lib2.logging import log
 
 
 class TableBucketer:

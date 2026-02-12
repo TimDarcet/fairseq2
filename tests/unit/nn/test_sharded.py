@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from torch.nn import Sequential
 
-from fairseq2.gang import FakeGang, Gangs
-from fairseq2.nn import ColumnShardedLinear, Linear, RowShardedLinear, get_shard_dims
+from llm_lib2.gang import FakeGang, Gangs
+from llm_lib2.nn import ColumnShardedLinear, Linear, RowShardedLinear, get_shard_dims
 from tests.common import device
 
 

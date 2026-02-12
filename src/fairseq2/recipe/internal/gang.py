@@ -11,8 +11,8 @@ from typing import final
 
 import torch.distributed as dist
 
-from fairseq2.device import Device
-from fairseq2.gang import (
+from llm_lib2.device import Device
+from llm_lib2.gang import (
     FakeGang,
     Gang,
     GangError,
@@ -22,16 +22,16 @@ from fairseq2.gang import (
     create_parallel_gangs,
     raise_operational_gang_error,
 )
-from fairseq2.logging import log
-from fairseq2.recipe.config import GangSection, TrainerSection
-from fairseq2.recipe.error import (
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import GangSection, TrainerSection
+from llm_lib2.recipe.error import (
     DeviceTypeNotSupportedError,
     GangTopologyError,
     HSDPTopologyError,
     TorchDistributedNotAvailableError,
 )
-from fairseq2.utils.validation import ValidationError
-from fairseq2.world_info import WorldInfo
+from llm_lib2.utils.validation import ValidationError
+from llm_lib2.world_info import WorldInfo
 
 
 @final

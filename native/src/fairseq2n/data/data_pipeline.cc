@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data_pipeline.h"
 
 #include <algorithm>
 #include <cmath>
@@ -14,34 +14,34 @@
 #include <utility>
 
 #include "data_pipeline.h"
-#include "fairseq2n/data/bucket_by_length_data_source.h"
-#include "fairseq2n/data/bucket_data_source.h"
-#include "fairseq2n/data/concat_data_source.h"
-#include "fairseq2n/data/constant_data_source.h"
-#include "fairseq2n/data/count_data_source.h"
-#include "fairseq2n/data/detail/file_system.h"
-#include "fairseq2n/data/dynamic_bucket_data_source.h"
-#include "fairseq2n/data/filter_data_source.h"
-#include "fairseq2n/data/list_data_source.h"
-#include "fairseq2n/data/map_data_source.h"
-#include "fairseq2n/data/packed_data_source.h"
-#include "fairseq2n/data/prefetch_data_source.h"
-#include "fairseq2n/data/repeat_data_source.h"
-#include "fairseq2n/data/round_robin_data_source.h"
-#include "fairseq2n/data/sample_data_source.h"
-#include "fairseq2n/data/shard_data_source.h"
-#include "fairseq2n/data/shuffle_data_source.h"
-#include "fairseq2n/data/skip_data_source.h"
-#include "fairseq2n/data/take_data_source.h"
-#include "fairseq2n/data/tape.h"
-#include "fairseq2n/data/yield_from_data_source.h"
-#include "fairseq2n/data/zip_data_source.h"
-#include "fairseq2n/data/zip_file_data_source.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/data/bucket_by_length_data_source.h"
+#include "llm_lib2n/data/bucket_data_source.h"
+#include "llm_lib2n/data/concat_data_source.h"
+#include "llm_lib2n/data/constant_data_source.h"
+#include "llm_lib2n/data/count_data_source.h"
+#include "llm_lib2n/data/detail/file_system.h"
+#include "llm_lib2n/data/dynamic_bucket_data_source.h"
+#include "llm_lib2n/data/filter_data_source.h"
+#include "llm_lib2n/data/list_data_source.h"
+#include "llm_lib2n/data/map_data_source.h"
+#include "llm_lib2n/data/packed_data_source.h"
+#include "llm_lib2n/data/prefetch_data_source.h"
+#include "llm_lib2n/data/repeat_data_source.h"
+#include "llm_lib2n/data/round_robin_data_source.h"
+#include "llm_lib2n/data/sample_data_source.h"
+#include "llm_lib2n/data/shard_data_source.h"
+#include "llm_lib2n/data/shuffle_data_source.h"
+#include "llm_lib2n/data/skip_data_source.h"
+#include "llm_lib2n/data/take_data_source.h"
+#include "llm_lib2n/data/tape.h"
+#include "llm_lib2n/data/yield_from_data_source.h"
+#include "llm_lib2n/data/zip_data_source.h"
+#include "llm_lib2n/data/zip_file_data_source.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 std::optional<data>
 data_pipeline::next()
@@ -632,4 +632,4 @@ read_zipped_records(std::string pathname)
     return data_pipeline_builder{std::move(factory)};
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

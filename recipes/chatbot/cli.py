@@ -16,23 +16,23 @@ from rich.console import Console
 from torch.cuda import OutOfMemoryError
 from typing_extensions import override
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetCardError,
     AssetDownloadError,
     AssetMetadataError,
     AssetNotFoundError,
     get_asset_store,
 )
-from fairseq2.cluster import (
+from llm_lib2.cluster import (
     ClusterNotDetectedError,
     ClusterNotKnownError,
     set_torch_distributed_env_variables,
 )
-from fairseq2.composition import ExtensionError
-from fairseq2.data.tokenizers import load_tokenizer
-from fairseq2.device import CPU, get_default_device
-from fairseq2.error import OperationalError
-from fairseq2.gang import (
+from llm_lib2.composition import ExtensionError
+from llm_lib2.data.tokenizers import load_tokenizer
+from llm_lib2.device import CPU, get_default_device
+from llm_lib2.error import OperationalError
+from llm_lib2.gang import (
     FakeGang,
     Gang,
     GangError,
@@ -40,20 +40,20 @@ from fairseq2.gang import (
     create_parallel_gangs,
     raise_operational_gang_error,
 )
-from fairseq2.generation.sampling import SamplingSequenceGenerator, TopPSampler
-from fairseq2.logging import configure_logging, log
-from fairseq2.model_checkpoint import CorruptModelCheckpointError
-from fairseq2.models import ModelGatedError, ModelNotKnownError, load_model
-from fairseq2.models.clm import CausalLM
-from fairseq2.recipe.error import (
+from llm_lib2.generation.sampling import SamplingSequenceGenerator, TopPSampler
+from llm_lib2.logging import configure_logging, log
+from llm_lib2.model_checkpoint import CorruptModelCheckpointError
+from llm_lib2.models import ModelGatedError, ModelNotKnownError, load_model
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.recipe.error import (
     GangTopologyError,
     ModelTypeNotValidError,
     raise_model_type_not_valid_error,
 )
-from fairseq2.utils.argparse import parse_dtype
-from fairseq2.utils.rich import get_console
-from fairseq2.utils.rng import RngBag
-from fairseq2.world_info import get_world_info
+from llm_lib2.utils.argparse import parse_dtype
+from llm_lib2.utils.rich import get_console
+from llm_lib2.utils.rng import RngBag
+from llm_lib2.world_info import get_world_info
 
 from .chatbot import StandardChatbot
 from .llama import create_llama_dialog_encoder

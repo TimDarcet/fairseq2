@@ -14,10 +14,10 @@ from typing import Literal, TypeAlias, final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import TokenDecoder
-from fairseq2.error import InternalError
-from fairseq2.generation import SequenceGenerator, SequenceGeneratorOutput
-from fairseq2.nn import BatchLayout
+from llm_lib2.data.tokenizers import TokenDecoder
+from llm_lib2.error import InternalError
+from llm_lib2.generation import SequenceGenerator, SequenceGeneratorOutput
+from llm_lib2.nn import BatchLayout
 
 
 @dataclass

@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/file.h"
+#include "llm_lib2n/data/file.h"
 
 #include <string_view>
 #include <system_error>
@@ -12,17 +12,17 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
-#include "fairseq2n/data/byte_stream.h"
-#include "fairseq2n/data/file_stream.h"
-#include "fairseq2n/data/memory_stream.h"
-#include "fairseq2n/data/detail/file.h"
-#include "fairseq2n/data/text/utf8_stream.h"
-#include "fairseq2n/detail/error.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/data/byte_stream.h"
+#include "llm_lib2n/data/file_stream.h"
+#include "llm_lib2n/data/memory_stream.h"
+#include "llm_lib2n/data/detail/file.h"
+#include "llm_lib2n/data/text/utf8_stream.h"
+#include "llm_lib2n/detail/error.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 

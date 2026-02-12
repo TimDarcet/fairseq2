@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from fairseq2.error import NotSupportedError
-from fairseq2.utils.uri import Uri, UriFormatError
+from llm_lib2.error import NotSupportedError
+from llm_lib2.utils.uri import Uri, UriFormatError
 
 
 class TestUri:

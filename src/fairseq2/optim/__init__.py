@@ -6,5 +6,5 @@
 
 from __future__ import annotations
 
-from fairseq2.optim.optimizer import AbstractOptimizer as AbstractOptimizer
-from fairseq2.optim.optimizer import ParameterCollection as ParameterCollection
+from llm_lib2.optim.optimizer import AbstractOptimizer as AbstractOptimizer
+from llm_lib2.optim.optimizer import ParameterCollection as ParameterCollection

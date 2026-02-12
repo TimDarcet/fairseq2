@@ -10,9 +10,9 @@
 #include <kaldi-native-fbank/csrc/feature-fbank.h>
 #include <kaldi-native-fbank/csrc/feature-window.h>
 
-#include "fairseq2n/float.h"
+#include "llm_lib2n/float.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class kaldi_fbank_computer {
     friend class kaldi_fbank_compute_op;
@@ -49,4 +49,4 @@ private:
     const knf::FbankOptions *opts_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from fairseq2.generator import Generator
-from fairseq2.recipe.internal.generator import _GeneratorFactory
-from fairseq2.runtime.dependency import (
+from llm_lib2.generator import Generator
+from llm_lib2.recipe.internal.generator import _GeneratorFactory
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

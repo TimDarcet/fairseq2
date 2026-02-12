@@ -16,13 +16,13 @@ from typing import Final, TextIO, final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileMode, FileSystem
-from fairseq2.metrics.recorders.descriptor import (
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileMode, FileSystem
+from llm_lib2.metrics.recorders.descriptor import (
     MetricDescriptor,
     MetricDescriptorRegistry,
 )
-from fairseq2.metrics.recorders.recorder import MetricRecorder
+from llm_lib2.metrics.recorders.recorder import MetricRecorder
 
 
 @final

@@ -10,7 +10,7 @@ from dataclasses import dataclass
 
 import pytest
 
-from fairseq2.utils.validation import (
+from llm_lib2.utils.validation import (
     StandardObjectValidator,
     Validatable,
     ValidationError,

@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/sentencepiece/sp_decoder.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_decoder.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -18,16 +18,16 @@
 #include <ATen/ScalarType.h>
 #include <ATen/Storage.h>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/data/text/sentencepiece/sp_model.h"
-#include "fairseq2n/data/text/sentencepiece/sp_processor.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_model.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_processor.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/cast.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 sp_decoder::sp_decoder(std::shared_ptr<const sp_model> model, bool reverse) noexcept
   : model_{std::move(model)}, reverse_{reverse}
@@ -106,4 +106,4 @@ sp_decoder::do_decode(const at::Tensor &tensor) const
     return model_->processor_->decode(tokens);
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

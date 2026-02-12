@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/zip_file_data_source.h"
+#include "llm_lib2n/data/zip_file_data_source.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -14,15 +14,15 @@
 
 #include <zip/src/zip.h>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/byte_stream.h"
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/file.h"
-#include "fairseq2n/data/immutable_string.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/string.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/byte_stream.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/file.h"
+#include "llm_lib2n/data/immutable_string.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/string.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 zip_file_data_source::zip_file_data_source(std::filesystem::path &&path)
     : path_{std::move(path)}
@@ -41,11 +41,11 @@ zip_file_data_source::next()
     if (num_files_read_ >= num_entries_)
         return std::nullopt;
 
-    fairseq2n::writable_memory_block zip_entry;
+    llm_lib2n::writable_memory_block zip_entry;
     zip_entry_openbyindex(zip_reader_, num_files_read_);
     {
         auto size = zip_entry_size(zip_reader_);
-        zip_entry = fairseq2n::allocate_memory(size);
+        zip_entry = llm_lib2n::allocate_memory(size);
         zip_entry_noallocread(zip_reader_, (void *)zip_entry.data(), size);
     }
     zip_entry_close(zip_reader_);
@@ -103,4 +103,4 @@ zip_file_data_source::throw_read_failure()
         "The data pipeline cannot read from '{}'. See nested exception for details.", path_.string());
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

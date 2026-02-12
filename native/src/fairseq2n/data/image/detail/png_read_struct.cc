@@ -4,12 +4,12 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/image/detail/png_read_struct.h"
+#include "llm_lib2n/data/image/detail/png_read_struct.h"
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 png_read::png_read() {
     png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
@@ -37,4 +37,4 @@ png_infop png_read::getInfoPtr() const {
     return info_ptr;
 }
 
-} // namespace fairseq2n::detail
+} // namespace llm_lib2n::detail

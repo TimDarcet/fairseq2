@@ -6,11 +6,11 @@
 
 from __future__ import annotations
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.recipe.composition.config import register_config_section
-from fairseq2.recipe.config import TokenizerSection
-from fairseq2.recipe.internal.tokenizer import _TokenizerHolder, _TokenizerLoader
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.recipe.composition.config import register_config_section
+from llm_lib2.recipe.config import TokenizerSection
+from llm_lib2.recipe.internal.tokenizer import _TokenizerHolder, _TokenizerLoader
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def register_tokenizer(container: DependencyContainer, section_name: str) -> None:

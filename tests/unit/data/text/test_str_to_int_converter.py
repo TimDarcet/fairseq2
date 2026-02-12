@@ -10,7 +10,7 @@ from typing import Any
 
 import pytest
 
-from fairseq2.data.text import StrToIntConverter
+from llm_lib2.data.text import StrToIntConverter
 
 
 class TestStrToIntConverter:

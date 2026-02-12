@@ -17,22 +17,22 @@ import torch
 from torch.optim import Optimizer
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.generation.beam_search import BeamSearchAlgorithm
-from fairseq2.generation.sampling import Sampler
-from fairseq2.optim.lr_schedulers import LRScheduler
-from fairseq2.recipe.component import ComponentManager, ComponentNotKnownError
-from fairseq2.recipe.error import (
+from llm_lib2.data_type import DataType
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.generation.beam_search import BeamSearchAlgorithm
+from llm_lib2.generation.sampling import Sampler
+from llm_lib2.optim.lr_schedulers import LRScheduler
+from llm_lib2.recipe.component import ComponentManager, ComponentNotKnownError
+from llm_lib2.recipe.error import (
     BeamSearchAlgorithmNotKnownError,
     LRSchedulerNotKnownError,
     OptimizerNotKnownError,
     SamplerNotKnownError,
     SequenceGeneratorNotKnownError,
 )
-from fairseq2.runtime.dependency import DependencyResolver
-from fairseq2.utils.structured import StructureError
-from fairseq2.utils.validation import Validatable, ValidationResult
+from llm_lib2.runtime.dependency import DependencyResolver
+from llm_lib2.utils.structured import StructureError
+from llm_lib2.utils.validation import Validatable, ValidationResult
 
 ConfigT = TypeVar("ConfigT")
 
@@ -72,7 +72,7 @@ indicating that the default value must be used.
 
     from dataclasses import dataclass, field
 
-    from fairseq2.recipe.config import Default, default
+    from llm_lib2.recipe.config import Default, default
 
     @dataclass(kw_only=True)
     class MyOptimizerConfig:

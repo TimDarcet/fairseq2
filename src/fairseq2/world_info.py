@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.utils.env import (
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.utils.env import (
     Environment,
     EnvironmentVariableError,
     get_local_rank,

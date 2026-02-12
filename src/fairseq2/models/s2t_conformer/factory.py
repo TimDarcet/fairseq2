@@ -9,11 +9,11 @@ from __future__ import annotations
 import torch.nn as nn
 from torch.nn import SiLU
 
-from fairseq2.models.conformer import ConformerBlock, ConformerConvolution
-from fairseq2.models.s2t_conformer.config import S2TConformerConfig
-from fairseq2.models.s2t_transformer.feature_extractor import Conv1dFbankSubsampler
-from fairseq2.models.s2t_transformer.frontend import S2TTransformerFrontend
-from fairseq2.models.transformer import (
+from llm_lib2.models.conformer import ConformerBlock, ConformerConvolution
+from llm_lib2.models.s2t_conformer.config import S2TConformerConfig
+from llm_lib2.models.s2t_transformer.feature_extractor import Conv1dFbankSubsampler
+from llm_lib2.models.s2t_transformer.frontend import S2TTransformerFrontend
+from llm_lib2.models.transformer import (
     SDPA,
     CausalAttentionBias,
     FeedForwardNetwork,
@@ -35,7 +35,7 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     Embedding,
     LayerNorm,
     Linear,
@@ -46,7 +46,7 @@ from fairseq2.nn import (
     StandardLayerNorm,
     init_scaled_embedding,
 )
-from fairseq2.runtime.lazy import Lazy
+from llm_lib2.runtime.lazy import Lazy
 
 
 def create_s2t_conformer_model(config: S2TConformerConfig) -> TransformerModel:

@@ -6,41 +6,41 @@
 
 from __future__ import annotations
 
-from fairseq2.checkpoint.hg import NOOP_HG_EXPORTER as NOOP_HG_EXPORTER
-from fairseq2.checkpoint.hg import (
+from llm_lib2.checkpoint.hg import NOOP_HG_EXPORTER as NOOP_HG_EXPORTER
+from llm_lib2.checkpoint.hg import (
     HuggingFaceExportCallbackArgs as HuggingFaceExportCallbackArgs,
 )
-from fairseq2.checkpoint.hg import HuggingFaceExporter as HuggingFaceExporter
-from fairseq2.checkpoint.hg import HuggingFaceExportOptions as HuggingFaceExportOptions
-from fairseq2.checkpoint.hg import (
+from llm_lib2.checkpoint.hg import HuggingFaceExporter as HuggingFaceExporter
+from llm_lib2.checkpoint.hg import HuggingFaceExportOptions as HuggingFaceExportOptions
+from llm_lib2.checkpoint.hg import (
     OutOfProcHuggingFaceExporter as OutOfProcHuggingFaceExporter,
 )
-from fairseq2.checkpoint.manager import CheckpointError as CheckpointError
-from fairseq2.checkpoint.manager import CheckpointManager as CheckpointManager
-from fairseq2.checkpoint.manager import (
+from llm_lib2.checkpoint.manager import CheckpointError as CheckpointError
+from llm_lib2.checkpoint.manager import CheckpointManager as CheckpointManager
+from llm_lib2.checkpoint.manager import (
     CheckpointNotFoundError as CheckpointNotFoundError,
 )
-from fairseq2.checkpoint.manager import (
+from llm_lib2.checkpoint.manager import (
     CheckpointReadyCallback as CheckpointReadyCallback,
 )
-from fairseq2.checkpoint.manager import (
+from llm_lib2.checkpoint.manager import (
     CheckpointSavedCallback as CheckpointSavedCallback,
 )
-from fairseq2.checkpoint.manager import (
+from llm_lib2.checkpoint.manager import (
     StandardCheckpointManager as StandardCheckpointManager,
 )
-from fairseq2.checkpoint.model_metadata import (
+from llm_lib2.checkpoint.model_metadata import (
     ModelMetadataDumper as ModelMetadataDumper,
 )
-from fairseq2.checkpoint.model_metadata import (
+from llm_lib2.checkpoint.model_metadata import (
     ModelMetadataLoader as ModelMetadataLoader,
 )
-from fairseq2.checkpoint.model_metadata import (
+from llm_lib2.checkpoint.model_metadata import (
     ModelMetadataSource as ModelMetadataSource,
 )
-from fairseq2.checkpoint.model_metadata import (
+from llm_lib2.checkpoint.model_metadata import (
     StandardModelMetadataDumper as StandardModelMetadataDumper,
 )
-from fairseq2.checkpoint.model_metadata import (
+from llm_lib2.checkpoint.model_metadata import (
     StandardModelMetadataLoader as StandardModelMetadataLoader,
 )

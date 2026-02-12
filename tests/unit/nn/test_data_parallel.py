@@ -13,13 +13,13 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.nn.data_parallel import (
+from llm_lib2.nn.data_parallel import (
     DataParallelFacade,
     _NoopDataParallelFacade,
     get_data_parallel_facade,
     set_data_parallel_facade,
 )
-from fairseq2.typing import ContextManager
+from llm_lib2.typing import ContextManager
 
 
 class FooFacade(DataParallelFacade):

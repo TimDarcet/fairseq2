@@ -9,7 +9,7 @@
 #include <cstddef>
 #include <random>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 inline std::uint64_t
 pseudo_random()
@@ -19,4 +19,4 @@ pseudo_random()
     return ((static_cast<std::uint64_t>(rd()) << 32) + rd()) & 0x1FFFFFFFFFFFFF;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

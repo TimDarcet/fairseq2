@@ -11,15 +11,15 @@ from typing import TextIO, cast, final
 
 from torch import Tensor
 
-from fairseq2.data.tokenizers import TokenDecoder, Tokenizer
-from fairseq2.datasets import Seq2SeqBatch
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileMode
-from fairseq2.metrics import MetricBag
-from fairseq2.metrics.text import WerMetric
-from fairseq2.nn import BatchLayout
-from fairseq2.nn.utils.padding import pad_seqs
-from fairseq2.recipe import RecipeContext
+from llm_lib2.data.tokenizers import TokenDecoder, Tokenizer
+from llm_lib2.datasets import Seq2SeqBatch
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileMode
+from llm_lib2.metrics import MetricBag
+from llm_lib2.metrics.text import WerMetric
+from llm_lib2.nn import BatchLayout
+from llm_lib2.nn.utils.padding import pad_seqs
+from llm_lib2.recipe import RecipeContext
 
 
 @final

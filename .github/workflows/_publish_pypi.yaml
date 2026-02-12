@@ -39,20 +39,20 @@ jobs:
         with:
           name: pypi-pt${{ inputs.torch }}-py${{ inputs.py }}-${{ inputs.os }}_${{ inputs.arch }}-${{ inputs.variant }}-nosan
           path: artifacts/
-      - name: Publish fairseq2n
+      - name: Publish llm_lib2n
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
             packages-dir: artifacts/native/python/build/wheelhouse
             # Disable digital attestation checks as the plugin's support for it
             # is broken as of this commit.
             attestations: false
-      - name: Publish fairseq2
+      - name: Publish llm_lib2
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
             packages-dir: artifacts/build/wheelhouse
             # Disable digital attestation checks as the plugin's support for it
             # is broken as of this commit.
             attestations: false
-            # Multiple build variants will attempt to publish the same fairseq2
+            # Multiple build variants will attempt to publish the same llm_lib2
             # package. Ignore all but the first one.
             skip-existing: true

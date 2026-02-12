@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from torch.nn import ModuleList
 
-from fairseq2.nn.fsdp import FSDPWrapper
+from llm_lib2.nn.fsdp import FSDPWrapper
 
 
 def apply_layerwise_fsdp(stack: ModuleList, wrapper: FSDPWrapper) -> None:

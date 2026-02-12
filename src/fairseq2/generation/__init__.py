@@ -6,14 +6,14 @@
 
 from __future__ import annotations
 
-from fairseq2.generation.generator import GenerationCounters as GenerationCounters
-from fairseq2.generation.generator import Hypothesis as Hypothesis
-from fairseq2.generation.generator import Seq2SeqGenerator as Seq2SeqGenerator
-from fairseq2.generation.generator import (
+from llm_lib2.generation.generator import GenerationCounters as GenerationCounters
+from llm_lib2.generation.generator import Hypothesis as Hypothesis
+from llm_lib2.generation.generator import Seq2SeqGenerator as Seq2SeqGenerator
+from llm_lib2.generation.generator import (
     SequenceGenerationError as SequenceGenerationError,
 )
-from fairseq2.generation.generator import SequenceGenerator as SequenceGenerator
-from fairseq2.generation.generator import (
+from llm_lib2.generation.generator import SequenceGenerator as SequenceGenerator
+from llm_lib2.generation.generator import (
     SequenceGeneratorOutput as SequenceGeneratorOutput,
 )
-from fairseq2.generation.generator import StepHook as StepHook
+from llm_lib2.generation.generator import StepHook as StepHook

@@ -1,4 +1,4 @@
-# Parquet Data Loading with fairseq2
+# Parquet Data Loading with llm_lib2
 [Parquet](https://parquet.apache.org/docs/) is a popular binary columnar file format optimized for data storage and large-scale distributed data processing.
 
 > [!NOTE]
@@ -10,10 +10,10 @@ A Parquet dataset is a collection of Parquet files that can be partitioned or no
 > The row group size, when writing a Parquet file, should be chosen carefully to balance the trade-off between memory usage, read performance, and shuffling quality. As a rule of thumb, a good initial recommendation is to adjust the row group size so that each row group is between 50MB and 500MB.
 
 
-This module provides an efficient and flexible data loading pipeline for Apache Parquet datasets in fairseq2.
+This module provides an efficient and flexible data loading pipeline for Apache Parquet datasets in llm_lib2.
 The present tooling of general purpose and can be combined with various downstream workflows for large-scale machine learning workloads with features like sharding, filtering, column selection, and dynamic batching.
 
-**Requirements**: Install the Arrow dependencies with `pip install fairseq2[arrow]`, since we rely on the
+**Requirements**: Install the Arrow dependencies with `pip install llm_lib2[arrow]`, since we rely on the
 [pyarrow](https://arrow.apache.org/docs/python/index.html) library to interface with parquet files.
 
 ## Table of Contents
@@ -45,7 +45,7 @@ The `fragment_streaming/config.py:FragmentStreamingConfig` class defines how fra
 ### Basic Usage
 
 ```python
-from fairseq2.data.parquet.fragment_streaming import (
+from llm_lib2.data.parquet.fragment_streaming import (
     FragmentStreamingConfig, ParquetFragmentStreamer
 )
 
@@ -147,7 +147,7 @@ Use the `NamedColumns` class to define which columns to load and how to rename t
 ```python
 from dataclasses import dataclass, field
 from typing import List
-from fairseq2.data.parquet.fragment_loading import (
+from llm_lib2.data.parquet.fragment_loading import (
     FragmentLoadingConfig, NamedColumns, ParquetFragmentLoader
 )
 
@@ -190,7 +190,7 @@ loading_config = FragmentLoadingConfig(
 The `table_bucketing/config.py:TableBucketingConfig` controls how tables are combined and batched:
 
 ```python
-from fairseq2.data.parquet.table_bucketing import (
+from llm_lib2.data.parquet.table_bucketing import (
     TableBucketingConfig, TableBucketer
 )
 
@@ -219,7 +219,7 @@ for batch in final_pipeline.and_return():
 ### Basic End-to-End Pipeline
 
 ```python
-from fairseq2.data.parquet import (
+from llm_lib2.data.parquet import (
     BasicDataLoadingConfig,
     build_basic_parquet_data_pipeline,
     FragmentStreamingConfig,
@@ -294,7 +294,7 @@ df = batch.to_pandas()
 batch_dict = batch.to_pydict()
 
 # Convert to torch tensors
-from fairseq2.data.parquet.utils import pyarrow_table_to_torch_dict
+from llm_lib2.data.parquet.utils import pyarrow_table_to_torch_dict
 tensor_dict = pyarrow_table_to_torch_dict(batch)
 
 # Using Polars (fast with zero-copy)
@@ -388,7 +388,7 @@ For maximum memory efficiency, combine with:
 You can apply custom transformations to the pipeline:
 
 ```python
-from fairseq2.data.parquet.arrow_transform import filter_strings_by_length
+from llm_lib2.data.parquet.arrow_transform import filter_strings_by_length
 
 # Create a custom transformation
 def my_transform(table):
@@ -402,15 +402,15 @@ final_pipeline = loading_pipeline.map(my_transform)
 
 ## Integration with Hugging Face Datasets
 
-fairseq2's parquet dataloader can easily integrate with datasets from the [Hugging Face Hub](https://huggingface.co/datasets) that are available in parquet format. This integration leverages the `huggingface_hub` package's `HfFileSystem` to seamlessly access parquet files stored on the Hub.
+llm_lib2's parquet dataloader can easily integrate with datasets from the [Hugging Face Hub](https://huggingface.co/datasets) that are available in parquet format. This integration leverages the `huggingface_hub` package's `HfFileSystem` to seamlessly access parquet files stored on the Hub.
 
 ### Basic Integration Example
 
 ```python
-from fairseq2.data.parquet.fragment_streaming import (
+from llm_lib2.data.parquet.fragment_streaming import (
     FragmentStreamingConfig, ParquetFragmentStreamer
 )
-from fairseq2.data.parquet.fragment_loading import (
+from llm_lib2.data.parquet.fragment_loading import (
     FragmentLoadingConfig, ParquetFragmentLoader
 )
 
@@ -458,12 +458,12 @@ tables = list(iter(loading_pipeline.and_return()))
 # - Convert to polars (efficient): pl.from_arrow(table)
 ```
 
-### Benefits of Using Hugging Face Datasets with fairseq2
+### Benefits of Using Hugging Face Datasets with llm_lib2
 
 - **No Download Required**: Access datasets directly from Hugging Face Hub without downloading them first
 - **Efficient Loading**: Only load the necessary parts of the dataset
-- **Advanced Processing**: Apply all fairseq2's parquet capabilities (filtering, batching, sharding, etc.)
+- **Advanced Processing**: Apply all llm_lib2's parquet capabilities (filtering, batching, sharding, etc.)
 - **Memory Efficiency**: Stream data without loading entire datasets into memory
-- **High Performance**: Leverage the optimized data loading pipeline of fairseq2
+- **High Performance**: Leverage the optimized data loading pipeline of llm_lib2
 
 This integration is particularly useful for large-scale datasets like multilingual text corpora, embedding collections, or multimodal datasets where efficient data handling is crucial.

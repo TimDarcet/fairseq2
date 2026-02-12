@@ -11,10 +11,10 @@ from typing import final
 
 from torch import Tensor
 
-from fairseq2.data.tokenizers import TokenDecoder, Tokenizer
-from fairseq2.error import InternalError
-from fairseq2.gang import Gang
-from fairseq2.generation import SequenceGenerator
+from llm_lib2.data.tokenizers import TokenDecoder, Tokenizer
+from llm_lib2.error import InternalError
+from llm_lib2.gang import Gang
+from llm_lib2.generation import SequenceGenerator
 
 from .chatbot import Chatbot, Message
 

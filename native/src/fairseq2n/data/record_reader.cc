@@ -4,18 +4,18 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/record_reader.h"
+#include "llm_lib2n/data/record_reader.h"
 
 #include <algorithm>
 #include <stdexcept>
 
 #include <fmt/format.h>
 
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 record_reader::~record_reader() = default;
 
@@ -162,4 +162,4 @@ record_reader::move_to_next_record()
 
 record_error::~record_error() = default;
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

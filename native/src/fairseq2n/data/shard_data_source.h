@@ -10,9 +10,9 @@
 #include <memory>
 #include <utility>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class shard_data_source final : public data_source {
 public:
@@ -45,4 +45,4 @@ private:
     bool allow_uneven_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

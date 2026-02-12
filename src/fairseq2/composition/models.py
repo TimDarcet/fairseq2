@@ -10,8 +10,8 @@ from typing import Protocol, TypeVar
 
 from torch.nn import Module
 
-from fairseq2.error import InternalError
-from fairseq2.models import (
+from llm_lib2.error import InternalError
+from llm_lib2.models import (
     HuggingFaceExporter,
     LayerwiseACApplier,
     ModelCompiler,
@@ -22,8 +22,8 @@ from fairseq2.models import (
     ShardSpecsProvider,
     StandardModelFamily,
 )
-from fairseq2.models.hg import HuggingFaceConverter, _LegacyHuggingFaceConverter
-from fairseq2.models.jepa import (
+from llm_lib2.models.hg import HuggingFaceConverter, _LegacyHuggingFaceConverter
+from llm_lib2.models.jepa import (
     JEPA_FAMILY,
     JepaConfig,
     JepaModel,
@@ -31,14 +31,14 @@ from fairseq2.models.jepa import (
     create_jepa_model,
     register_jepa_configs,
 )
-from fairseq2.models.jepa.classifier import (
+from llm_lib2.models.jepa.classifier import (
     JEPA_CLASSIFIER_FAMILY,
     JepaClassifierConfig,
     JepaClassifierModel,
     create_jepa_classifier_model,
     register_jepa_classifier_configs,
 )
-from fairseq2.models.llama import (
+from llm_lib2.models.llama import (
     LLAMA_FAMILY,
     LLaMAConfig,
     _LLaMAHuggingFaceConverter,
@@ -46,7 +46,7 @@ from fairseq2.models.llama import (
     create_llama_model,
     register_llama_configs,
 )
-from fairseq2.models.llama4 import (
+from llm_lib2.models.llama4 import (
     LLAMA4_FAMILY,
     Llama4Config,
     convert_llama4_state_dict,
@@ -54,21 +54,21 @@ from fairseq2.models.llama4 import (
     get_llama4_shard_specs,
     register_llama4_configs,
 )
-from fairseq2.models.mistral import (
+from llm_lib2.models.mistral import (
     MISTRAL_FAMILY,
     MistralConfig,
     convert_mistral_state_dict,
     create_mistral_model,
     register_mistral_configs,
 )
-from fairseq2.models.nllb import (
+from llm_lib2.models.nllb import (
     NLLB_FAMILY,
     NllbConfig,
     convert_nllb_state_dict,
     create_nllb_model,
     register_nllb_configs,
 )
-from fairseq2.models.qwen import (
+from llm_lib2.models.qwen import (
     QWEN_FAMILY,
     QwenConfig,
     _QwenHuggingFaceConverter,
@@ -76,32 +76,32 @@ from fairseq2.models.qwen import (
     create_qwen_model,
     register_qwen_configs,
 )
-from fairseq2.models.s2t_conformer import (
+from llm_lib2.models.s2t_conformer import (
     S2T_CONFORMER_FAMILY,
     S2TConformerConfig,
     convert_s2t_conformer_state_dict,
     create_s2t_conformer_model,
     register_s2t_conformer_configs,
 )
-from fairseq2.models.s2t_transformer import (
+from llm_lib2.models.s2t_transformer import (
     S2T_TRANSFORMER_FAMILY,
     S2TTransformerConfig,
     convert_s2t_transformer_state_dict,
     create_s2t_transformer_model,
     register_s2t_transformer_configs,
 )
-from fairseq2.models.transformer import (
+from llm_lib2.models.transformer import (
     TransformerModel,
     apply_ac_to_transformer,
     apply_fsdp_to_transformer,
 )
-from fairseq2.models.transformer_lm import (
+from llm_lib2.models.transformer_lm import (
     TransformerLM,
     apply_ac_to_transformer_lm,
     apply_fsdp_to_transformer_lm,
     compile_transformer_lm,
 )
-from fairseq2.models.w2vbert import (
+from llm_lib2.models.w2vbert import (
     W2VBERT_FAMILY,
     W2VBertConfig,
     W2VBertModel,
@@ -109,7 +109,7 @@ from fairseq2.models.w2vbert import (
     create_w2vbert_model,
     register_w2vbert_configs,
 )
-from fairseq2.models.wav2vec2 import (
+from llm_lib2.models.wav2vec2 import (
     WAV2VEC2_FAMILY,
     Wav2Vec2Config,
     Wav2Vec2Model,
@@ -119,7 +119,7 @@ from fairseq2.models.wav2vec2 import (
     create_wav2vec2_model,
     register_wav2vec2_configs,
 )
-from fairseq2.models.wav2vec2.asr import (
+from llm_lib2.models.wav2vec2.asr import (
     WAV2VEC2_ASR_FAMILY,
     Wav2Vec2AsrConfig,
     Wav2Vec2AsrModel,
@@ -129,13 +129,13 @@ from fairseq2.models.wav2vec2.asr import (
     create_wav2vec2_asr_model,
     register_wav2vec2_asr_configs,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyLookup,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.utils.warn import _warn_deprecated
 
 ModelT_co = TypeVar("ModelT_co", bound=Module, covariant=True)
 
@@ -172,7 +172,7 @@ def register_model_family(
 ) -> None:
     if hg_exporter is not None:
         _warn_deprecated(
-            "`hg_exporter` is deprecated and will be removed in v0.9. Use `fairseq2.models.hg.HuggingFaceConverter` instead."
+            "`hg_exporter` is deprecated and will be removed in v0.9. Use `llm_lib2.models.hg.HuggingFaceConverter` instead."
         )
 
         hg_converter = _LegacyHuggingFaceConverter(hg_exporter)

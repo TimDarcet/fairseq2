@@ -16,42 +16,42 @@ from torch.nn import Module
 from torch.optim import Optimizer
 from typing_extensions import override
 
-from fairseq2.assets import AssetStore
-from fairseq2.checkpoint import CheckpointManager
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.datasets import DataReader
-from fairseq2.device import Device, SupportsDeviceTransfer
-from fairseq2.error import InvalidOperationError
-from fairseq2.evaluator import Evaluator, EvalUnit
-from fairseq2.file_system import FileSystem
-from fairseq2.gang import Gangs
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.generator import Generator, GeneratorUnit
-from fairseq2.metrics.recorders import MetricRecorder
-from fairseq2.optim.lr_schedulers import LRScheduler
-from fairseq2.recipe.config import RecipeConfig, ReferenceModelSection
-from fairseq2.recipe.dataset import RecipeDataset
-from fairseq2.recipe.error import (
+from llm_lib2.assets import AssetStore
+from llm_lib2.checkpoint import CheckpointManager
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.datasets import DataReader
+from llm_lib2.device import Device, SupportsDeviceTransfer
+from llm_lib2.error import InvalidOperationError
+from llm_lib2.evaluator import Evaluator, EvalUnit
+from llm_lib2.file_system import FileSystem
+from llm_lib2.gang import Gangs
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.generator import Generator, GeneratorUnit
+from llm_lib2.metrics.recorders import MetricRecorder
+from llm_lib2.optim.lr_schedulers import LRScheduler
+from llm_lib2.recipe.config import RecipeConfig, ReferenceModelSection
+from llm_lib2.recipe.dataset import RecipeDataset
+from llm_lib2.recipe.error import (
     DatasetTypeNotValidError,
     ModelTypeNotValidError,
     TokenizerTypeNotValidError,
 )
-from fairseq2.recipe.internal.config import _get_config_section, _RecipeConfigHolder
-from fairseq2.recipe.internal.dataset import _DatasetHolder
-from fairseq2.recipe.internal.evaluator import _EvaluatorFactory
-from fairseq2.recipe.internal.generator import _GeneratorFactory
-from fairseq2.recipe.internal.hook import _TrainHookManager
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.recipe.internal.reference_model import _ReferenceModelBootstrapper
-from fairseq2.recipe.internal.tokenizer import _TokenizerHolder
-from fairseq2.recipe.internal.trainer import _TrainerFactory, _ValidatorFactory
-from fairseq2.recipe.model import RecipeModel, _StandardRecipeModel
-from fairseq2.recipe.tokenizer import RecipeTokenizer
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
-from fairseq2.task import Task
-from fairseq2.trainer import Trainer, TrainUnit
-from fairseq2.utils.progress import ProgressReporter
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.recipe.internal.config import _get_config_section, _RecipeConfigHolder
+from llm_lib2.recipe.internal.dataset import _DatasetHolder
+from llm_lib2.recipe.internal.evaluator import _EvaluatorFactory
+from llm_lib2.recipe.internal.generator import _GeneratorFactory
+from llm_lib2.recipe.internal.hook import _TrainHookManager
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.recipe.internal.reference_model import _ReferenceModelBootstrapper
+from llm_lib2.recipe.internal.tokenizer import _TokenizerHolder
+from llm_lib2.recipe.internal.trainer import _TrainerFactory, _ValidatorFactory
+from llm_lib2.recipe.model import RecipeModel, _StandardRecipeModel
+from llm_lib2.recipe.tokenizer import RecipeTokenizer
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.task import Task
+from llm_lib2.trainer import Trainer, TrainUnit
+from llm_lib2.utils.progress import ProgressReporter
+from llm_lib2.utils.warn import _warn_deprecated
 
 BatchT = TypeVar("BatchT", bound=SupportsDeviceTransfer)
 

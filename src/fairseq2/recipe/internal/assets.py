@@ -11,16 +11,16 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetMetadataProvider,
     AssetMetadataSource,
     AssetSourceNotFoundError,
     FileAssetMetadataLoader,
 )
-from fairseq2.checkpoint import ModelMetadataLoader
-from fairseq2.error import raise_operational_system_error
-from fairseq2.logging import log
-from fairseq2.recipe.config import CommonSection
+from llm_lib2.checkpoint import ModelMetadataLoader
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import CommonSection
 
 
 @final

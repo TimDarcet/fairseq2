@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_libjpeg_turbo)
+macro(llm_lib2n_add_libjpeg_turbo)
     if(NOT TARGET jpeg_turbo_static)
         if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" AND NOT DEFINED ENV{ASM_NASM})
             find_program(NASM_EXECUTABLE NAMES nasm yasm)

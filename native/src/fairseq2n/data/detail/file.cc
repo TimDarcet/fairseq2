@@ -4,18 +4,18 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/detail/file.h"
+#include "llm_lib2n/data/detail/file.h"
 
 #include <system_error>
 
 #include <sys/mman.h>
 #include <sys/stat.h>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/detail/error.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/detail/error.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 namespace {
 
 void
@@ -48,4 +48,4 @@ memory_map_file(const file_desc &fd, const std::filesystem::path &path)
     return memory_block{static_cast<std::byte *>(addr), size, nullptr, mmap_deallocate};
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

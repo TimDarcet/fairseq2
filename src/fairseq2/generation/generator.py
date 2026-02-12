@@ -13,9 +13,9 @@ from typing import Protocol
 from torch import Tensor
 from torch.utils.hooks import RemovableHandle
 
-from fairseq2.models.clm import CausalLM
-from fairseq2.models.seq2seq import Seq2SeqModel
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.models.seq2seq import Seq2SeqModel
+from llm_lib2.nn import BatchLayout
 
 
 class SequenceGenerator(ABC):

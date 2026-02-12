@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/exception.h"
+#include "llm_lib2n/exception.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 internal_error::~internal_error() = default;
 

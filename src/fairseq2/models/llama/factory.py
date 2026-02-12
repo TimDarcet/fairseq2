@@ -12,9 +12,9 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 
-from fairseq2.error import NotSupportedError
-from fairseq2.models.llama.config import LLaMAConfig, LLaMARoPEScaleConfig
-from fairseq2.models.transformer import (
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.llama.config import LLaMAConfig, LLaMARoPEScaleConfig
+from llm_lib2.models.transformer import (
     CausalAttentionBias,
     FeedForwardNetwork,
     GLUFeedForwardNetwork,
@@ -25,14 +25,14 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.transformer_lm import (
+from llm_lib2.models.transformer_lm import (
     StandardTransformerLMDecoder,
     StandardTransformerLMDecoderLayer,
     TransformerLM,
     TransformerLMDecoder,
     TransformerLMDecoderLayer,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     ColumnShardedLinear,
     Embedding,
     LayerNorm,
@@ -46,7 +46,7 @@ from fairseq2.nn import (
     TiedProjection,
     VocabShardedEmbedding,
 )
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.utils.tensor import to_tensor
 
 
 def create_llama_model(config: LLaMAConfig) -> TransformerLM:

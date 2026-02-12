@@ -13,15 +13,15 @@
 
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/immutable_string.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/immutable_string.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class sp_model;
 
-class FAIRSEQ2_API sp_decoder final {
+class llm_lib2_API sp_decoder final {
 public:
     explicit
     sp_decoder(std::shared_ptr<const sp_model> model, bool reverse = false) noexcept;
@@ -45,4 +45,4 @@ private:
     bool reverse_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -9,15 +9,15 @@ from __future__ import annotations
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.gang import Gangs
-from fairseq2.models.llama4.config import Llama4Config
-from fairseq2.models.llama4.moe import MoE
-from fairseq2.models.transformer.experts import (
+from llm_lib2.gang import Gangs
+from llm_lib2.models.llama4.config import Llama4Config
+from llm_lib2.models.llama4.moe import MoE
+from llm_lib2.models.transformer.experts import (
     GroupedExpertNetwork,
     TPShardedExpertNetwork,
 )
-from fairseq2.nn import ColumnShardedLinear, RowShardedLinear
-from fairseq2.sharder import ModuleSharder, ShardSpec
+from llm_lib2.nn import ColumnShardedLinear, RowShardedLinear
+from llm_lib2.sharder import ModuleSharder, ShardSpec
 
 
 def get_llama4_shard_specs(config: Llama4Config) -> dict[str, ShardSpec]:

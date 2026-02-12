@@ -19,12 +19,12 @@ from typing import Any, Final, TypeAlias, final
 import torch
 from typing_extensions import override
 
-from fairseq2.error import InternalError
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.typing import ContextManager
-from fairseq2.utils.env import Environment, EnvironmentVariableError, get_local_rank
-from fairseq2.utils.version import torch_greater_or_equal
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.error import InternalError
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.typing import ContextManager
+from llm_lib2.utils.env import Environment, EnvironmentVariableError, get_local_rank
+from llm_lib2.utils.version import torch_greater_or_equal
+from llm_lib2.utils.warn import _warn_deprecated
 
 Device: TypeAlias = torch.device
 
@@ -64,7 +64,7 @@ def set_device(device: Device) -> ContextManager[None]:
 
         import torch
 
-        from fairseq2.device import set_device
+        from llm_lib2.device import set_device
 
         cuda0_device = torch.device("cuda:0")
 
@@ -144,7 +144,7 @@ def detect_default_device() -> Device:
 
     The default device is determined by the following precedence:
 
-    1) If ``FAIRSEQ2_DEVICE`` environment variable is set, the specified device
+    1) If ``llm_lib2_DEVICE`` environment variable is set, the specified device
        will be used.
     2) If CUDA is enabled and ``CUDA_VISIBLE_DEVICES`` environment variable
        contains a single device, the specified device will be used.
@@ -152,7 +152,7 @@ def detect_default_device() -> Device:
        CUDA device at the specified index will be used.
     4) CPU will be used.
 
-    :raises EnvironmentVariableError: ``FAIRSEQ2_DEVICE`` environment variable
+    :raises EnvironmentVariableError: ``llm_lib2_DEVICE`` environment variable
         does not represent a device.
 
     :raises EnvironmentVariableError: ``LOCAL_RANK`` environment variable is not
@@ -182,7 +182,7 @@ class _DefaultDeviceDetector:
 
     def detect(self) -> Device:
         """See :func:`detect_default_device`."""
-        device = self._maybe_get_device_from_env("FAIRSEQ2_DEVICE")
+        device = self._maybe_get_device_from_env("llm_lib2_DEVICE")
 
         if device is None:
             device = self._get_default_cuda_device()

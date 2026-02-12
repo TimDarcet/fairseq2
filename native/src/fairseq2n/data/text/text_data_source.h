@@ -13,13 +13,13 @@
 #include <string>
 #include <utility>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/data_source.h"
-#include "fairseq2n/data/text/text_line_reader.h"
-#include "fairseq2n/data/text/text_reader.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/data_source.h"
+#include "llm_lib2n/data/text/text_line_reader.h"
+#include "llm_lib2n/data/text/text_reader.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class text_data_source final : public data_source {
 public:
@@ -65,4 +65,4 @@ private:
     std::unique_ptr<text_line_reader> line_reader_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -8,7 +8,7 @@
 
 #include <png.h>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class png_read{
 public:
@@ -24,4 +24,4 @@ private:
     png_infop info_ptr{}; 
 };
 
-} // namespace fairseq2n::detail
+} // namespace llm_lib2n::detail

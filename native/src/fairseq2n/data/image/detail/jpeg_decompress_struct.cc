@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/image/detail/jpeg_decompress_struct.h"
+#include "llm_lib2n/data/image/detail/jpeg_decompress_struct.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 jpeg_decompress::jpeg_decompress() : cinfo() {
     jpeg_create_decompress(&cinfo);
@@ -22,4 +22,4 @@ jpeg_decompress_struct& jpeg_decompress::get() {
     return cinfo;
 }
 
-} // namespace fairseq2n::detail
+} // namespace llm_lib2n::detail

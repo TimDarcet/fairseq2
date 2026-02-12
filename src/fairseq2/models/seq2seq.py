@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING, Literal, overload
 from torch import Tensor
 from torch.nn import Module
 
-from fairseq2.nn import BatchLayout, IncrementalStateBag
+from llm_lib2.nn import BatchLayout, IncrementalStateBag
 
 
 class Seq2SeqModel(Module, ABC):

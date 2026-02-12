@@ -4,19 +4,19 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 #include <cstddef>
 #include <filesystem>
 #include <optional>
 #include <string>
 
-#include <fairseq2n/data/data_pipeline.h>
-#include <fairseq2n/data/text/text_reader.h>
+#include <llm_lib2n/data/data_pipeline.h>
+#include <llm_lib2n/data/text/text_reader.h>
 
 namespace py = pybind11;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 void
 def_text_reader(py::module_ &text_module)
@@ -63,4 +63,4 @@ def_text_reader(py::module_ &text_module)
         py::arg("block_size")  = std::nullopt);
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

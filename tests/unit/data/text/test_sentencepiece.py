@@ -14,12 +14,12 @@ from typing import ClassVar, Final
 import pytest
 import torch
 
-from fairseq2.data.tokenizers.sentencepiece import (
+from llm_lib2.data.tokenizers.sentencepiece import (
     SentencePieceDecoder,
     SentencePieceEncoder,
     SentencePieceModel,
 )
-from fairseq2.data_type import DataType
+from llm_lib2.data_type import DataType
 from tests.common import assert_equal, device
 
 TEST_SPM_PATH: Final = Path(__file__).parent.joinpath("test.spm")

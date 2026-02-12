@@ -10,11 +10,11 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.composition import register_dataset_family
-from fairseq2.datasets import SyncMode
-from fairseq2.recipe import EvalRecipe, Evaluator, RecipeContext
-from fairseq2.recipe.error import RecipeError
-from fairseq2.runtime.dependency import DependencyContainer
+from llm_lib2.composition import register_dataset_family
+from llm_lib2.datasets import SyncMode
+from llm_lib2.recipe import EvalRecipe, Evaluator, RecipeContext
+from llm_lib2.recipe.error import RecipeError
+from llm_lib2.runtime.dependency import DependencyContainer
 
 from ..criterion import Wav2Vec2AsrCriterion
 from ..data import (

@@ -6,17 +6,17 @@
 
 from __future__ import annotations
 
-from fairseq2.data.tokenizers import TokenizerHubAccessor
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.s2t_transformer.config import (
+from llm_lib2.data.tokenizers import TokenizerHubAccessor
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.s2t_transformer.config import (
     S2T_TRANSFORMER_FAMILY,
     S2TTransformerConfig,
 )
-from fairseq2.models.s2t_transformer.tokenizer import (
+from llm_lib2.models.s2t_transformer.tokenizer import (
     S2TTransformerTokenizer,
     S2TTransformerTokenizerConfig,
 )
-from fairseq2.models.transformer import TransformerModel
+from llm_lib2.models.transformer import TransformerModel
 
 get_s2t_transformer_model_hub = ModelHubAccessor(
     S2T_TRANSFORMER_FAMILY, kls=TransformerModel, config_kls=S2TTransformerConfig

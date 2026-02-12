@@ -12,9 +12,9 @@
 
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class packed_data_source final : public data_source {
 public:
@@ -64,4 +64,4 @@ private:
     bool pinned_memory_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

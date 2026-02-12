@@ -14,8 +14,8 @@ from torch import Tensor
 from torch.nn import Conv2d, Conv3d, Module
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
 
 
 class PatchFeatureExtractor(Module, ABC):

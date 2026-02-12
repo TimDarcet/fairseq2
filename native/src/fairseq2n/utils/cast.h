@@ -10,9 +10,9 @@
 #include <functional>
 #include <type_traits>
 
-#include "fairseq2n/float.h"
+#include "llm_lib2n/float.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template <typename Container>
 constexpr auto
@@ -59,4 +59,4 @@ maybe_narrow(U u, T &t) noexcept
     }
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

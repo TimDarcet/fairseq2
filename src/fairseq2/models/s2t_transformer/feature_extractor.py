@@ -14,10 +14,10 @@ from torch import Tensor
 from torch.nn import GLU, Conv1d, Sequential
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.models.feature_extractor import SequenceFeatureExtractor
-from fairseq2.nn import BatchLayout
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.models.feature_extractor import SequenceFeatureExtractor
+from llm_lib2.nn import BatchLayout
 
 
 @final

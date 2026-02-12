@@ -13,9 +13,9 @@ from typing import cast
 from pytest import Config, Parser, Session
 
 import tests.common
-from fairseq2 import init_fairseq2
-from fairseq2.device import Device
-from fairseq2.utils.warn import enable_deprecation_warnings
+from llm_lib2 import init_llm_lib2
+from llm_lib2.device import Device
+from llm_lib2.utils.warn import enable_deprecation_warnings
 
 
 def pytest_addoption(parser: Parser) -> None:
@@ -34,7 +34,7 @@ def pytest_addoption(parser: Parser) -> None:
 
 
 def pytest_sessionstart(session: Session) -> None:
-    init_fairseq2()
+    init_llm_lib2()
 
     enable_deprecation_warnings()
 

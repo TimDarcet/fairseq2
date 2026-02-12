@@ -9,10 +9,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Final
 
-from fairseq2.models.transformer import TransformerNormOrder
-from fairseq2.runtime.config_registry import ConfigRegistrar
-from fairseq2.runtime.dependency import DependencyContainer
-from fairseq2.utils.validation import ValidationResult
+from llm_lib2.models.transformer import TransformerNormOrder
+from llm_lib2.runtime.config_registry import ConfigRegistrar
+from llm_lib2.runtime.dependency import DependencyContainer
+from llm_lib2.utils.validation import ValidationResult
 
 WAV2VEC2_FAMILY: Final = "wav2vec2"
 

@@ -11,17 +11,17 @@ from typing import Any, Final, Protocol, TypeVar, final
 
 from typing_extensions import override
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetCard,
     AssetCardError,
     AssetCardNotValidError,
     AssetConfigLoader,
     AssetStore,
 )
-from fairseq2.error import InternalError, raise_operational_system_error
-from fairseq2.runtime.dependency import DependencyLookup, get_dependency_resolver
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.utils.validation import ObjectValidator, ValidationError
+from llm_lib2.error import InternalError, raise_operational_system_error
+from llm_lib2.runtime.dependency import DependencyLookup, get_dependency_resolver
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.utils.validation import ObjectValidator, ValidationError
 
 
 class DatasetFamily(ABC):

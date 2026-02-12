@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from fairseq2.checkpoint import HuggingFaceExporter, OutOfProcHuggingFaceExporter
-from fairseq2.metrics.recorders import MetricDescriptor
-from fairseq2.optim.fp16_loss_scaler import Float16LossScaler
-from fairseq2.recipe.internal.trainer import (
+from llm_lib2.checkpoint import HuggingFaceExporter, OutOfProcHuggingFaceExporter
+from llm_lib2.metrics.recorders import MetricDescriptor
+from llm_lib2.optim.fp16_loss_scaler import Float16LossScaler
+from llm_lib2.recipe.internal.trainer import (
     _Float16LossScalerFactory,
     _GarbageCollectorFactory,
     _HuggingFaceExporterFactory,
@@ -19,14 +19,14 @@ from fairseq2.recipe.internal.trainer import (
     _TrainerFactory,
     _ValidatorFactory,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.trainer import Trainer
-from fairseq2.utils.gc import GarbageCollector
-from fairseq2.validator import StandardValidator
+from llm_lib2.trainer import Trainer
+from llm_lib2.utils.gc import GarbageCollector
+from llm_lib2.validator import StandardValidator
 
 
 def _register_trainer_factory(container: DependencyContainer) -> None:

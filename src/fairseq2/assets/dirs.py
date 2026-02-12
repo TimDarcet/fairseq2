@@ -12,10 +12,10 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.logging import log
-from fairseq2.utils.env import Environment, EnvironmentVariableError
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.logging import log
+from llm_lib2.utils.env import Environment, EnvironmentVariableError
 
 
 class AssetDirectoryAccessor(ABC):
@@ -37,7 +37,7 @@ class StandardAssetDirectoryAccessor(AssetDirectoryAccessor):
 
     @override
     def maybe_get_system_dir(self) -> Path | None:
-        var_name = "FAIRSEQ2_ASSET_DIR"
+        var_name = "llm_lib2_ASSET_DIR"
 
         asset_dir = self._maybe_get_path_from_env(var_name)
         if asset_dir is not None:
@@ -52,7 +52,7 @@ class StandardAssetDirectoryAccessor(AssetDirectoryAccessor):
                 asset_dir = None
 
         if asset_dir is None:
-            asset_dir = self._get_path("/etc/fairseq2/assets")
+            asset_dir = self._get_path("/etc/llm_lib2/assets")
 
         try:
             dir_exists = self._file_system.exists(asset_dir)
@@ -66,7 +66,7 @@ class StandardAssetDirectoryAccessor(AssetDirectoryAccessor):
 
     @override
     def maybe_get_user_dir(self) -> Path | None:
-        var_name = "FAIRSEQ2_USER_ASSET_DIR"
+        var_name = "llm_lib2_USER_ASSET_DIR"
 
         asset_dir = self._maybe_get_path_from_env(var_name)
         if asset_dir is not None:
@@ -82,11 +82,11 @@ class StandardAssetDirectoryAccessor(AssetDirectoryAccessor):
 
         if asset_dir is None:
             asset_dir = self._maybe_get_path_from_env(
-                "XDG_CONFIG_HOME", sub_pathname="fairseq2/assets"
+                "XDG_CONFIG_HOME", sub_pathname="llm_lib2/assets"
             )
 
             if asset_dir is None:
-                asset_dir = self._get_path("~/.config/fairseq2/assets")
+                asset_dir = self._get_path("~/.config/llm_lib2/assets")
 
         try:
             dir_exists = self._file_system.exists(asset_dir)
@@ -100,14 +100,14 @@ class StandardAssetDirectoryAccessor(AssetDirectoryAccessor):
 
     @override
     def get_cache_dir(self) -> Path:
-        cache_dir = self._maybe_get_path_from_env("FAIRSEQ2_CACHE_DIR")
+        cache_dir = self._maybe_get_path_from_env("llm_lib2_CACHE_DIR")
         if cache_dir is None:
             cache_dir = self._maybe_get_path_from_env(
-                "XDG_CACHE_HOME", sub_pathname="fairseq2/assets"
+                "XDG_CACHE_HOME", sub_pathname="llm_lib2/assets"
             )
 
             if cache_dir is None:
-                cache_dir = self._get_path("~/.cache/fairseq2/assets")
+                cache_dir = self._get_path("~/.cache/llm_lib2/assets")
 
         return cache_dir
 

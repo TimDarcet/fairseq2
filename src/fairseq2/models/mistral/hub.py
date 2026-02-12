@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from types import NoneType
 
-from fairseq2.data.tokenizers import Tokenizer, TokenizerHubAccessor
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.mistral.config import MISTRAL_FAMILY, MistralConfig
-from fairseq2.models.transformer_lm import TransformerLM
+from llm_lib2.data.tokenizers import Tokenizer, TokenizerHubAccessor
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.mistral.config import MISTRAL_FAMILY, MistralConfig
+from llm_lib2.models.transformer_lm import TransformerLM
 
 get_mistral_model_hub = ModelHubAccessor(
     MISTRAL_FAMILY, kls=TransformerLM, config_kls=MistralConfig

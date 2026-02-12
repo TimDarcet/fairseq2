@@ -15,12 +15,12 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.error import InternalError
-from fairseq2.recipe.config import CommonSection
-from fairseq2.recipe.internal.config import _RecipeConfigHolder
-from fairseq2.utils.structured import StructureError, ValueConverter
-from fairseq2.utils.validation import ValidationError
-from fairseq2.world_info import WorldInfo
+from llm_lib2.error import InternalError
+from llm_lib2.recipe.config import CommonSection
+from llm_lib2.recipe.internal.config import _RecipeConfigHolder
+from llm_lib2.utils.structured import StructureError, ValueConverter
+from llm_lib2.utils.validation import ValidationError
+from llm_lib2.world_info import WorldInfo
 
 
 class _SweepTagGenerator(ABC):

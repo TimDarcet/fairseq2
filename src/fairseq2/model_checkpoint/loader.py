@@ -14,8 +14,8 @@ from typing import Protocol
 
 from torch import Tensor
 
-from fairseq2.gang import Gangs
-from fairseq2.runtime.dependency import get_dependency_resolver
+from llm_lib2.gang import Gangs
+from llm_lib2.runtime.dependency import get_dependency_resolver
 
 
 def get_model_checkpoint_loader() -> ModelCheckpointLoader:
@@ -52,7 +52,7 @@ class ModelCheckpointLoadOptions:
     state_dict_converter: StateDictConverter | None = None
     """
     If provided, used to transform the (sharded) state dictionaries in the
-    checkpoint from one format, such as Hugging Face Transformers, to fairseq2.
+    checkpoint from one format, such as Hugging Face Transformers, to llm_lib2.
     """
 
 
@@ -80,7 +80,7 @@ class ModelCheckpointLoader(ABC):
         dictionary conversion.
 
         If ``shard_dims`` is provided, it specifies the sharding dimension of
-        each parameter as returned by :func:`~fairseq2.nn.get_sharding_dims`.
+        each parameter as returned by :func:`~llm_lib2.nn.get_sharding_dims`.
         Along with ``gangs``, they enable on-the-fly parameter resharding during
         checkpoint loading.
 

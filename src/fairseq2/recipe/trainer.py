@@ -6,5 +6,5 @@
 
 from __future__ import annotations
 
-from fairseq2.trainer import Trainer as Trainer  # noqa: F401
-from fairseq2.trainer import TrainUnit as TrainUnit  # noqa: F401
+from llm_lib2.trainer import Trainer as Trainer  # noqa: F401
+from llm_lib2.trainer import TrainUnit as TrainUnit  # noqa: F401

@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_kaldi_native_fbank)
+macro(llm_lib2n_add_kaldi_native_fbank)
     if(NOT TARGET kaldi-native-fbank::core)
         find_package(Git REQUIRED)
 

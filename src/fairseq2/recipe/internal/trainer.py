@@ -12,44 +12,44 @@ from typing import Sequence, final
 import torch
 from torch.optim import Optimizer
 
-from fairseq2.checkpoint import NOOP_HG_EXPORTER, HuggingFaceExporter
-from fairseq2.datasets import DataReader
-from fairseq2.early_stopper import NOOP_EARLY_STOPPER
-from fairseq2.evaluator import EvalUnit
-from fairseq2.gang import Gangs
-from fairseq2.logging import log
-from fairseq2.metrics.recorders import (
+from llm_lib2.checkpoint import NOOP_HG_EXPORTER, HuggingFaceExporter
+from llm_lib2.datasets import DataReader
+from llm_lib2.early_stopper import NOOP_EARLY_STOPPER
+from llm_lib2.evaluator import EvalUnit
+from llm_lib2.gang import Gangs
+from llm_lib2.logging import log
+from llm_lib2.metrics.recorders import (
     NOOP_METRIC_DESCRIPTOR,
     MetricDescriptor,
     MetricDescriptorRegistry,
 )
-from fairseq2.models.hg import HuggingFaceConverter
-from fairseq2.optim.fp16_loss_scaler import (
+from llm_lib2.models.hg import HuggingFaceConverter
+from llm_lib2.optim.fp16_loss_scaler import (
     NOOP_FP16_LOSS_SCALER,
     Float16LossScaler,
     StandardFloat16LossScaler,
     supports_manual_grad_scaling,
 )
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     CommonSection,
     ModelSection,
     RegimeSection,
     TrainerSection,
 )
-from fairseq2.recipe.error import (
+from llm_lib2.recipe.error import (
     HuggingFaceNotSupportedError,
     ManualGradScalingNotSupportedError,
     MetricNotKnownError,
 )
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.trainer import BatchT, Trainer, TrainUnit
-from fairseq2.utils.gc import (
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.trainer import BatchT, Trainer, TrainUnit
+from llm_lib2.utils.gc import (
     NOOP_GARBAGE_COLLECTOR,
     GarbageCollector,
     StandardGarbageCollector,
 )
-from fairseq2.validator import NOOP_VALIDATOR, StandardValidator, Validator
+from llm_lib2.validator import NOOP_VALIDATOR, StandardValidator, Validator
 
 
 @final
@@ -208,7 +208,7 @@ class _Float16LossScalerFactory:
 
         grad_accumulation = self._section.grad_accumulation.num_batches
 
-        # Same formula as in fairseq.
+        # Same formula as in llm_lib.
         scale_window = max(int(2**14 / gangs.dp.size / grad_accumulation), 1)
 
         log.info("fp16 loss scale window set to {}.", scale_window)

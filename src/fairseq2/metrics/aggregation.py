@@ -13,8 +13,8 @@ from torcheval.metrics import Min as MinBase
 from torcheval.metrics import Sum as SumBase
 from typing_extensions import Self, override
 
-from fairseq2.device import CPU
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.device import CPU
+from llm_lib2.utils.tensor import to_tensor
 
 
 class Min(MinBase):

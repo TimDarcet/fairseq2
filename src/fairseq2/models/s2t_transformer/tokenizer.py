@@ -13,21 +13,21 @@ from typing import Literal, final
 
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import (
+from llm_lib2.data.tokenizers import (
     TokenDecoder,
     TokenEncoder,
     Tokenizer,
     VocabularyInfo,
 )
-from fairseq2.data.tokenizers.sentencepiece import (
+from llm_lib2.data.tokenizers.sentencepiece import (
     SentencePieceDecoder,
     SentencePieceEncoder,
     SentencePieceModel,
     get_sentencepiece_vocabulary_info,
     load_sentencepiece_model,
 )
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
 
 
 @final

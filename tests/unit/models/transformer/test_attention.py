@@ -12,7 +12,7 @@ import pytest
 import torch
 from torch import Tensor
 
-from fairseq2.models.transformer import (
+from llm_lib2.models.transformer import (
     AttentionBias,
     AttentionBiasCache,
     CausalAttentionBias,
@@ -21,7 +21,7 @@ from fairseq2.models.transformer import (
     StandardMultiheadAttention,
     TorchSDPA,
 )
-from fairseq2.nn import BatchLayout
+from llm_lib2.nn import BatchLayout
 from tests.common import assert_close, device
 
 

@@ -13,8 +13,8 @@ from typing import Any
 
 from torch.nn import Linear, Module
 
-from fairseq2.recipe.config import Default, ParameterGroupConfig, default
-from fairseq2.recipe.optim import prepare_parameter_groups
+from llm_lib2.recipe.config import Default, ParameterGroupConfig, default
+from llm_lib2.recipe.optim import prepare_parameter_groups
 
 
 class FooModel(Module):
@@ -35,7 +35,7 @@ class FooParamGroupConfig(ParameterGroupConfig):
 
 class TestPrepareParameterGroups:
     def test_works(self, caplog: Any) -> None:
-        caplog.set_level(logging.INFO, logger="fairseq2")
+        caplog.set_level(logging.INFO, logger="llm_lib2")
 
         model = FooModel()
 
@@ -78,12 +78,12 @@ class TestPrepareParameterGroups:
 
         assert len(caplog.records) == 3
 
-        assert caplog.record_tuples[0] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
-        assert caplog.record_tuples[1] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 1: proj2.bias, proj2.weight")  # fmt: skip
-        assert caplog.record_tuples[2] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 2: proj3.bias, proj3.weight")  # fmt: skip
+        assert caplog.record_tuples[0] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
+        assert caplog.record_tuples[1] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 1: proj2.bias, proj2.weight")  # fmt: skip
+        assert caplog.record_tuples[2] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 2: proj3.bias, proj3.weight")  # fmt: skip
 
     def test_works_when_no_groups_specified(self, caplog: Any) -> None:
-        caplog.set_level(logging.INFO, logger="fairseq2")
+        caplog.set_level(logging.INFO, logger="llm_lib2")
 
         model = FooModel()
 
@@ -94,7 +94,7 @@ class TestPrepareParameterGroups:
         assert len(caplog.records) == 0
 
     def test_works_when_groups_are_exhaustive(self, caplog: Any) -> None:
-        caplog.set_level(logging.INFO, logger="fairseq2")
+        caplog.set_level(logging.INFO, logger="llm_lib2")
 
         model = FooModel()
 
@@ -133,11 +133,11 @@ class TestPrepareParameterGroups:
 
         assert len(caplog.records) == 2
 
-        assert caplog.record_tuples[0] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
-        assert caplog.record_tuples[1] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 1: proj2.bias, proj2.weight, proj3.bias, proj3.weight")  # fmt: skip
+        assert caplog.record_tuples[0] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
+        assert caplog.record_tuples[1] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 1: proj2.bias, proj2.weight, proj3.bias, proj3.weight")  # fmt: skip
 
     def test_warns_when_group_has_no_match(self, caplog: Any) -> None:
-        caplog.set_level(logging.INFO, logger="fairseq2")
+        caplog.set_level(logging.INFO, logger="llm_lib2")
 
         model = FooModel()
 
@@ -183,6 +183,6 @@ class TestPrepareParameterGroups:
 
         assert len(caplog.records) == 3
 
-        assert caplog.record_tuples[0] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
-        assert caplog.record_tuples[1] == ("fairseq2", logging.WARN, "Optimizer parameter group 1 is empty.")  # fmt: skip
-        assert caplog.record_tuples[2] == ("fairseq2", logging.INFO, "Optimizer Parameter Group 2: proj2.bias, proj2.weight, proj3.bias, proj3.weight")  # fmt: skip
+        assert caplog.record_tuples[0] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 0: proj1.bias, proj1.weight")  # fmt: skip
+        assert caplog.record_tuples[1] == ("llm_lib2", logging.WARN, "Optimizer parameter group 1 is empty.")  # fmt: skip
+        assert caplog.record_tuples[2] == ("llm_lib2", logging.INFO, "Optimizer Parameter Group 2: proj2.bias, proj2.weight, proj3.bias, proj3.weight")  # fmt: skip

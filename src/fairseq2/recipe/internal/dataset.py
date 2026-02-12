@@ -9,20 +9,20 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import final
 
-from fairseq2.assets import AssetCardError, AssetStore
-from fairseq2.datasets import (
+from llm_lib2.assets import AssetCardError, AssetStore
+from llm_lib2.datasets import (
     DatasetFamily,
     DatasetFamilyNotKnownError,
     DatasetNotKnownError,
     _maybe_get_dataset_family,
 )
-from fairseq2.error import InternalError
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error
-from fairseq2.logging import log
-from fairseq2.recipe.config import DatasetSection
-from fairseq2.recipe.internal.asset_config import _AssetConfigOverrider
-from fairseq2.recipe.internal.log import _LogHelper
-from fairseq2.runtime.lookup import Lookup
+from llm_lib2.error import InternalError
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import DatasetSection
+from llm_lib2.recipe.internal.asset_config import _AssetConfigOverrider
+from llm_lib2.recipe.internal.log import _LogHelper
+from llm_lib2.runtime.lookup import Lookup
 
 
 @dataclass

@@ -12,21 +12,21 @@ from typing import TextIO
 
 from typing_extensions import override
 
-from fairseq2.composition import register_dataset_family
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.datasets import DataReadError, SequenceBatch
-from fairseq2.error import InternalError
-from fairseq2.file_system import FileMode
-from fairseq2.generation import SequenceGenerator
-from fairseq2.metrics import MetricBag
-from fairseq2.metrics.common import (
+from llm_lib2.composition import register_dataset_family
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.datasets import DataReadError, SequenceBatch
+from llm_lib2.error import InternalError
+from llm_lib2.file_system import FileMode
+from llm_lib2.generation import SequenceGenerator
+from llm_lib2.metrics import MetricBag
+from llm_lib2.metrics.common import (
     add_seq_generator_metrics,
     update_seq_generator_metrics,
 )
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.generator import GeneratorUnit
-from fairseq2.runtime.dependency import DependencyContainer
-from fairseq2.task import Task
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.generator import GeneratorUnit
+from llm_lib2.runtime.dependency import DependencyContainer
+from llm_lib2.task import Task
 
 from ..common import check_model_vocabulary
 from .config import LMGenerateConfig

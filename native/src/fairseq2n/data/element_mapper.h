@@ -12,13 +12,13 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/element_selector.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/element_selector.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API element_mapper {
+class llm_lib2_API element_mapper {
 public:
     explicit
     element_mapper(map_fn fn, std::optional<std::string> maybe_selector = {});
@@ -32,4 +32,4 @@ private:
     std::vector<std::tuple<element_path, data *>> buffer_{};
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -13,19 +13,19 @@ import torch.nn as nn
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import InternalError, NotSupportedError
-from fairseq2.models.transformer.attention_bias import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import InternalError, NotSupportedError
+from llm_lib2.models.transformer.attention_bias import (
     AttentionBias,
     AttentionBiasCache,
     maybe_get_attention_bias_tensor,
 )
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.models.transformer.sdpa.naive import (
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.models.transformer.sdpa.naive import (
     naive_scaled_dot_product_attention,
 )
-from fairseq2.nn import BatchLayout, StandardEmbedding
+from llm_lib2.nn import BatchLayout, StandardEmbedding
 
 
 @final

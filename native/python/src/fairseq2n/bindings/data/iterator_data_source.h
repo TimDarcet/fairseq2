@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/data_source.h"
-#include "fairseq2n/bindings/type_casters/py.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data_source.h"
+#include "llm_lib2n/bindings/type_casters/py.h"
 
 #include <pybind11/pybind11.h>
 
@@ -17,7 +17,7 @@ namespace py = pybind11;
 
 using reset_fn = std::function<py::iterator(py::iterator &)>;
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class iterator_data_source final : public data_source {
 public:
@@ -66,4 +66,4 @@ private:
     bool reset_{false};
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

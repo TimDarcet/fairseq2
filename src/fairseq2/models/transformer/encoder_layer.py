@@ -13,13 +13,13 @@ from torch import Tensor
 from torch.nn import Dropout, Module
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.models.transformer.attention_bias import AttentionBiasCache
-from fairseq2.models.transformer.ffn import FeedForwardNetwork
-from fairseq2.models.transformer.multihead_attention import MultiheadAttention
-from fairseq2.models.transformer.norm_order import TransformerNormOrder
-from fairseq2.nn import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.models.transformer.attention_bias import AttentionBiasCache
+from llm_lib2.models.transformer.ffn import FeedForwardNetwork
+from llm_lib2.models.transformer.multihead_attention import MultiheadAttention
+from llm_lib2.models.transformer.norm_order import TransformerNormOrder
+from llm_lib2.nn import (
     AdditiveResidualConnect,
     BatchLayout,
     LayerNorm,

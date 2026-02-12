@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from fairseq2.models.transformer_lm.model import TransformerLM
+from llm_lib2.models.transformer_lm.model import TransformerLM
 
 
 def compile_transformer_lm(model: TransformerLM, *args: Any, **kwargs: Any) -> None:

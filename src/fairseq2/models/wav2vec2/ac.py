@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from torch.nn import Module
 
-from fairseq2.models.utils.ac import apply_layerwise_ac
-from fairseq2.models.wav2vec2.model import Wav2Vec2Model
+from llm_lib2.models.utils.ac import apply_layerwise_ac
+from llm_lib2.models.wav2vec2.model import Wav2Vec2Model
 
 
 def apply_ac_to_wav2vec2(model: Wav2Vec2Model, every_nth_layer: int) -> Module:

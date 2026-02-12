@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.data.tokenizers.sentencepiece import (
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.data.tokenizers.sentencepiece import (
     BasicSentencePieceTokenizer,
     load_sentencepiece_model,
 )

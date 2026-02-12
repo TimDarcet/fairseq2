@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/sentencepiece/sp_processor.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_processor.h"
 
 #include <stdexcept>
 #include <system_error>
@@ -12,15 +12,15 @@
 #include <fmt/format.h>
 #include <sentencepiece/src/builtin_pb/sentencepiece_model.pb.h>
 
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/cast.h"
 
 using sentencepiece::ImmutableSentencePieceText;
 using sentencepiece::ModelProto;
 using sentencepiece::ModelProto_SentencePiece;
 using sentencepiece::SentencePieceProcessor;
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class sp_model_proto_loader {
 public:
@@ -213,4 +213,4 @@ sp_processor::serialize() const
     return native_->model_proto().SerializeAsString();
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from torch.nn import Module
 
-from fairseq2.models.transformer.model import TransformerModel
-from fairseq2.models.utils.ac import apply_layerwise_ac
+from llm_lib2.models.transformer.model import TransformerModel
+from llm_lib2.models.utils.ac import apply_layerwise_ac
 
 
 def apply_ac_to_transformer(model: TransformerModel, every_nth_layer: int) -> Module:

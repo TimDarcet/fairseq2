@@ -6,5 +6,5 @@
 
 from __future__ import annotations
 
-from fairseq2.generator import Generator as Generator  # noqa: F401
-from fairseq2.generator import GeneratorUnit as GeneratorUnit  # noqa: F401
+from llm_lib2.generator import Generator as Generator  # noqa: F401
+from llm_lib2.generator import GeneratorUnit as GeneratorUnit  # noqa: F401

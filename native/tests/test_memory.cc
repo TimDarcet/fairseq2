@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include <fairseq2n/memory.h>
+#include <llm_lib2n/memory.h>
 
 #include <array>
 #include <cstddef>
@@ -12,7 +12,7 @@
 
 #include <gtest/gtest.h>
 
-using namespace fairseq2n;
+using namespace llm_lib2n;
 
 TEST(test_memory_block, constructor_works)
 {

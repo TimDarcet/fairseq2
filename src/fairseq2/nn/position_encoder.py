@@ -19,12 +19,12 @@ from torch.nn.functional import embedding, interpolate
 from torch.nn.parameter import Parameter
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.nn.batch_layout import BatchLayout
-from fairseq2.nn.incremental_state import IncrementalStateBag
-from fairseq2.nn.utils.module import get_name_or_self
-from fairseq2.ops import unsqueeze
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.nn.batch_layout import BatchLayout
+from llm_lib2.nn.incremental_state import IncrementalStateBag
+from llm_lib2.nn.utils.module import get_name_or_self
+from llm_lib2.ops import unsqueeze
 
 
 class PositionEncoder(Module, ABC):
@@ -53,7 +53,7 @@ class PositionEncoder(Module, ABC):
         :param state_bag: If not ``None``, the encoder will operate in
             incremental decoding mode. The first element in ``seqs`` will be
             considered to be at position :attr:`state_bag.step_nr
-            <fairseq2.nn.IncrementalStateBag.step_nr>` instead of 0.
+            <llm_lib2.nn.IncrementalStateBag.step_nr>` instead of 0.
 
         :raises ValueError: when the sequence length of ``seqs`` exceeds
             :attr:`max_seq_len`.
@@ -105,7 +105,7 @@ class SinusoidalPositionEncoder(PositionEncoder):
         self.max_seq_len = max_seq_len
 
         # This is a legacy parameter that should only be set when the encodings
-        # must be compatible with fairseq.
+        # must be compatible with llm_lib.
         if _legacy_pad_idx is None:
             sin_offset = 0
         else:

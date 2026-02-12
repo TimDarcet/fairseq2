@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/file_stream.h"
+#include "llm_lib2n/data/file_stream.h"
 
 #include <utility>
 #include <system_error>
@@ -12,10 +12,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include "fairseq2n/detail/error.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/detail/error.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 file_stream::file_stream(file_desc &&fd, std::filesystem::path path, std::size_t chunk_size) noexcept
   : fd_{std::move(fd)}, path_{std::move(path)}, chunk_size_{chunk_size}
@@ -132,4 +132,4 @@ file_stream::seek(std::size_t offset, bool from_current) const
         "'{}' cannot be read", path_.string());
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

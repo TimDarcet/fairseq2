@@ -10,44 +10,44 @@ from pathlib import Path
 from types import NoneType
 from typing import Protocol, TypeVar
 
-from fairseq2.data.tokenizers import (
+from llm_lib2.data.tokenizers import (
     StandardTokenizerFamily,
     Tokenizer,
     TokenizerFamily,
     TokenizerLoader,
 )
-from fairseq2.data.tokenizers.char import CHAR_TOKENIZER_FAMILY, load_char_tokenizer
-from fairseq2.error import InternalError
-from fairseq2.models.llama import (
+from llm_lib2.data.tokenizers.char import CHAR_TOKENIZER_FAMILY, load_char_tokenizer
+from llm_lib2.error import InternalError
+from llm_lib2.models.llama import (
     LLAMA_FAMILY,
     LLaMATokenizerConfig,
     load_llama_tokenizer,
 )
-from fairseq2.models.llama4 import (
+from llm_lib2.models.llama4 import (
     LLAMA4_FAMILY,
     Llama4TokenizerConfig,
     load_llama4_tokenizer,
 )
-from fairseq2.models.mistral import MISTRAL_FAMILY, load_mistral_tokenizer
-from fairseq2.models.nllb import (
+from llm_lib2.models.mistral import MISTRAL_FAMILY, load_mistral_tokenizer
+from llm_lib2.models.nllb import (
     NLLB_FAMILY,
     NllbTokenizer,
     NllbTokenizerConfig,
     load_nllb_tokenizer,
 )
-from fairseq2.models.qwen import (
+from llm_lib2.models.qwen import (
     QWEN_FAMILY,
     QwenTokenizer,
     QwenTokenizerConfig,
     load_qwen_tokenizer,
 )
-from fairseq2.models.s2t_transformer import (
+from llm_lib2.models.s2t_transformer import (
     S2T_TRANSFORMER_FAMILY,
     S2TTransformerTokenizer,
     S2TTransformerTokenizerConfig,
     load_s2t_transformer_tokenizer,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,

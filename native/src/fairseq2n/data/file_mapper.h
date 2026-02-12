@@ -12,16 +12,16 @@
 #include <optional>
 #include <string>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/detail/lru_cache.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/detail/lru_cache.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class immutable_string;
 
-class FAIRSEQ2_API file_mapper {
+class llm_lib2_API file_mapper {
     static constexpr std::size_t default_cached_fd_count = 100;
 
 public:
@@ -43,4 +43,4 @@ private:
     mutable detail::lru_cache<memory_block> cache_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

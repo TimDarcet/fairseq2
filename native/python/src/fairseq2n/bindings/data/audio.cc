@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 #include <cstdint>
 #include <memory>
@@ -12,13 +12,13 @@
 #include <ATen/Device.h>
 #include <ATen/ScalarType.h>
 
-#include <fairseq2n/float.h>
-#include <fairseq2n/data/audio/audio_decoder.h>
-#include <fairseq2n/data/audio/waveform_to_fbank_converter.h>
+#include <llm_lib2n/float.h>
+#include <llm_lib2n/data/audio/audio_decoder.h>
+#include <llm_lib2n/data/audio/waveform_to_fbank_converter.h>
 
 namespace py = pybind11;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 void
 def_audio(py::module_ &data_module)
@@ -88,4 +88,4 @@ def_audio(py::module_ &data_module)
     map_functors().register_<waveform_to_fbank_converter>();
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

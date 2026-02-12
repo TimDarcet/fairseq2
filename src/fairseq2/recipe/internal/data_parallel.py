@@ -13,17 +13,17 @@ from torch.nn import Module
 from torch.nn.parallel import DistributedDataParallel as DDPModule
 from typing_extensions import override
 
-from fairseq2.checkpoint import CheckpointManager
-from fairseq2.data_type import DataType
-from fairseq2.error import InternalError
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error
-from fairseq2.logging import log
-from fairseq2.nn.fsdp import FSDPApplier, FSDPWrapper
-from fairseq2.nn.utils.module import to_device
-from fairseq2.recipe.config import TrainerSection
-from fairseq2.recipe.error import FSDPNotSupportedError
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.runtime.lookup import Lookup
+from llm_lib2.checkpoint import CheckpointManager
+from llm_lib2.data_type import DataType
+from llm_lib2.error import InternalError
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error
+from llm_lib2.logging import log
+from llm_lib2.nn.fsdp import FSDPApplier, FSDPWrapper
+from llm_lib2.nn.utils.module import to_device
+from llm_lib2.recipe.config import TrainerSection
+from llm_lib2.recipe.error import FSDPNotSupportedError
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.runtime.lookup import Lookup
 
 
 class _DataParallelModelWrapper(ABC):

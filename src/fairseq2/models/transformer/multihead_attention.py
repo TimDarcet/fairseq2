@@ -18,13 +18,13 @@ from torch.nn import Module
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.gang import Gangs
-from fairseq2.models.transformer.attention_bias import AttentionBiasCache
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.nn import (
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.gang import Gangs
+from llm_lib2.models.transformer.attention_bias import AttentionBiasCache
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.nn import (
     BatchLayout,
     ColumnShardedLinear,
     IncrementalState,
@@ -35,9 +35,9 @@ from fairseq2.nn import (
     Projection,
     RowShardedLinear,
 )
-from fairseq2.nn.utils.module import get_name_or_self
-from fairseq2.ops import repeat_interleave
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.nn.utils.module import get_name_or_self
+from llm_lib2.ops import repeat_interleave
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 class MultiheadAttention(Module, ABC):
@@ -293,7 +293,7 @@ class StandardMultiheadAttention(MultiheadAttention):
                 raise ValueError("`q_proj`, `k_proj`, `v_proj` must be all specified.")
 
             _warn_deprecated(
-                "`q_proj`, `k_proj`, and `v_proj` parameters of `StandardMultiheadAttention` are deprecated and will be removed in fairseq2 v0.12."
+                "`q_proj`, `k_proj`, and `v_proj` parameters of `StandardMultiheadAttention` are deprecated and will be removed in llm_lib2 v0.12."
             )
 
             if qkv_proj_init_fn is not None:
@@ -366,7 +366,7 @@ class StandardMultiheadAttention(MultiheadAttention):
             )
         else:
             _warn_deprecated(
-                "`output_proj` parameter of `StandardMultiheadAttention` is deprecated and will be removed in fairseq2 v0.12."
+                "`output_proj` parameter of `StandardMultiheadAttention` is deprecated and will be removed in llm_lib2 v0.12."
             )
 
             if output_proj_init_fn is not None:

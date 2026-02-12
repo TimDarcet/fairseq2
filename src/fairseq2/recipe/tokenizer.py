@@ -10,14 +10,14 @@ from typing import TypeVar, final
 
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import (
+from llm_lib2.data.tokenizers import (
     TokenDecoder,
     TokenEncoder,
     Tokenizer,
     TokenizerFamily,
     VocabularyInfo,
 )
-from fairseq2.device import Device
+from llm_lib2.device import Device
 
 TokenizerT = TypeVar("TokenizerT")
 

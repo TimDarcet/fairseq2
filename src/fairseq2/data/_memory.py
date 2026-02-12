@@ -9,7 +9,7 @@ from __future__ import annotations
 from array import array
 from typing import TYPE_CHECKING, TypeAlias, final, overload
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 
 Buffer: TypeAlias = bytes | bytearray | memoryview | array  # type: ignore[type-arg]
 
@@ -38,4 +38,4 @@ if TYPE_CHECKING or DOC_MODE:
         def __bytes__(self) -> bytes: ...
 
 else:
-    from fairseq2n.bindings.memory import MemoryBlock as MemoryBlock  # noqa: F401
+    from llm_lib2n.bindings.memory import MemoryBlock as MemoryBlock  # noqa: F401

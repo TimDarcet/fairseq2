@@ -12,11 +12,11 @@
 
 #include <ATen/Generator.h>
 
-#include "fairseq2n/float.h"
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class sample_data_source final : public data_source {
 public:
@@ -69,4 +69,4 @@ private:
     at::Generator generator_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

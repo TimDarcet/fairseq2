@@ -6,9 +6,9 @@
 
 from __future__ import annotations
 
-from fairseq2.models.w2vbert.config import W2VBertConfig
-from fairseq2.models.w2vbert.model import W2VBertModel
-from fairseq2.models.wav2vec2 import Wav2Vec2Factory, Wav2Vec2Model
+from llm_lib2.models.w2vbert.config import W2VBertConfig
+from llm_lib2.models.w2vbert.model import W2VBertModel
+from llm_lib2.models.wav2vec2 import Wav2Vec2Factory, Wav2Vec2Model
 
 
 def create_w2vbert_model(config: W2VBertConfig) -> W2VBertModel:

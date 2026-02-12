@@ -8,13 +8,13 @@
 
 #include <stdexcept>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/tape.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/tape.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API byte_stream {
+class llm_lib2_API byte_stream {
 public:
     byte_stream() noexcept = default;
 
@@ -49,7 +49,7 @@ public:
     supports_seek() const noexcept = 0;
 };
 
-class FAIRSEQ2_API byte_stream_error : public std::runtime_error {
+class llm_lib2_API byte_stream_error : public std::runtime_error {
 public:
     using std::runtime_error::runtime_error;
 
@@ -60,4 +60,4 @@ public:
    ~byte_stream_error() override;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

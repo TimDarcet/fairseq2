@@ -12,12 +12,12 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pytest
 
-from fairseq2.data.parquet.fragment_loading import (
+from llm_lib2.data.parquet.fragment_loading import (
     FragmentLoadingConfig,
     NamedColumns,
     ParquetFragmentLoader,
 )
-from fairseq2.data.parquet.fragment_streaming import (
+from llm_lib2.data.parquet.fragment_streaming import (
     FragmentStreamingConfig,
     ParquetFragmentStreamer,
 )

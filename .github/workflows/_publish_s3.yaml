@@ -50,7 +50,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::465485888595:role/fair-package-repo-fairseq2
+          role-to-assume: arn:aws:iam::465485888595:role/fair-package-repo-llm_lib2
       - name: Set S3 bucket and prefix
         env:
           TORCH: ${{ inputs.torch }}
@@ -60,24 +60,24 @@ jobs:
           echo S3_BUCKET=fair-package-repo >> "$GITHUB_ENV"
 
           if [[ $RELEASE_TYPE == "stable" ]]; then
-            s3_prefix="fairseq2/whl/pt$TORCH/$VARIANT"
+            s3_prefix="llm_lib2/whl/pt$TORCH/$VARIANT"
           else
-            s3_prefix="fairseq2/whl/$RELEASE_TYPE/pt$TORCH/$VARIANT"
+            s3_prefix="llm_lib2/whl/$RELEASE_TYPE/pt$TORCH/$VARIANT"
           fi
 
           echo S3_PREFIX=$s3_prefix >> "$GITHUB_ENV"
       - name: Upload wheel
         run: |
           for pkg in ~/artifacts/native/python/build/wheelhouse/*.whl; do
-            aws s3 cp "$pkg" s3://$S3_BUCKET/$S3_PREFIX/fairseq2n/
+            aws s3 cp "$pkg" s3://$S3_BUCKET/$S3_PREFIX/llm_lib2n/
           done
 
           for pkg in ~/artifacts/build/wheelhouse/*.whl; do
-            aws s3 cp "$pkg" s3://$S3_BUCKET/$S3_PREFIX/fairseq2/
+            aws s3 cp "$pkg" s3://$S3_BUCKET/$S3_PREFIX/llm_lib2/
           done
       - name: Update PEP 503 index
         run: |
             python3 -m pip install boto3
 
             python3 ci/scripts/update_pep503_index.py\
-              $S3_BUCKET $S3_PREFIX fairseq2n fairseq2
+              $S3_BUCKET $S3_PREFIX llm_lib2n llm_lib2

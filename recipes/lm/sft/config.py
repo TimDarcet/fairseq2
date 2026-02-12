@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     ADAMW_OPTIMIZER,
     COSINE_ANNEALING_LR,
     AdamWConfig,
@@ -41,7 +41,7 @@ class LMSFTConfig:
                 sources={
                     "train": [
                         LMSFTDataSource(
-                            path="hg://facebook/fairseq2-lm-gsm8k",
+                            path="hg://facebook/llm_lib2-lm-gsm8k",
                             split="sft_train",
                             weight=1.0,
                         ),

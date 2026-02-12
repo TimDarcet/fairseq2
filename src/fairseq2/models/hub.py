@@ -14,15 +14,15 @@ import torch
 from torch import Tensor
 from torch.nn import Module
 
-from fairseq2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
-from fairseq2.data_type import DataType
-from fairseq2.device import CPU, Device, get_current_device
-from fairseq2.error import InternalError
-from fairseq2.gang import Gangs, create_fake_gangs
-from fairseq2.models.family import ModelFamily, ModelFamilyNotKnownError
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.utils.warn import _warn_deprecated, _warn_progress_deprecated
+from llm_lib2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
+from llm_lib2.data_type import DataType
+from llm_lib2.device import CPU, Device, get_current_device
+from llm_lib2.error import InternalError
+from llm_lib2.gang import Gangs, create_fake_gangs
+from llm_lib2.models.family import ModelFamily, ModelFamilyNotKnownError
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.utils.warn import _warn_deprecated, _warn_progress_deprecated
 
 ModelT = TypeVar("ModelT", bound=Module)
 
@@ -50,7 +50,7 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
 
         .. code:: python
 
-            from fairseq2.models.qwen import get_qwen_model_hub
+            from llm_lib2.models.qwen import get_qwen_model_hub
 
             # List all available Qwen models.
             for card in get_qwen_model_hub().iter_cards():
@@ -64,7 +64,7 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
 
         .. code:: python
 
-            from fairseq2.models.qwen import get_qwen_model_hub
+            from llm_lib2.models.qwen import get_qwen_model_hub
 
             # List all available Qwen architectures.
             for arch in get_qwen_model_hub().get_archs():
@@ -78,7 +78,7 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
 
         .. code:: python
 
-            from fairseq2.models.qwen import get_qwen_model_hub
+            from llm_lib2.models.qwen import get_qwen_model_hub
 
             config = get_qwen_model_hub().get_arch_config("qwen25_7b")
 
@@ -114,8 +114,8 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
 
         .. code:: python
 
-            from fairseq2.assets import get_asset_store
-            from fairseq2.models.qwen import QwenConfig, get_qwen_model_hub
+            from llm_lib2.assets import get_asset_store
+            from llm_lib2.models.qwen import QwenConfig, get_qwen_model_hub
 
             card = get_asset_store().retrieve_card("qwen25_7b_instruct")
 
@@ -220,7 +220,7 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
 
         .. code:: python
 
-            from fairseq2.models.qwen import QwenConfig, get_qwen_model_hub
+            from llm_lib2.models.qwen import QwenConfig, get_qwen_model_hub
 
             # Use the default Qwen configuration except the number of
             # decoder layers.
@@ -327,13 +327,13 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
         can reduce memory usage but may cause slower load times on some systems.
 
         ``progress`` is deprecated and will be removed in v0.13. Use
-        ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress``
-        parameter of :func:`init_fairseq` to disable progress bars.
+        ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress``
+        parameter of :func:`init_llm_lib` to disable progress bars.
 
         .. code:: python
 
-            from fairseq2.assets import get_asset_store
-            from fairseq2.models.qwen import QwenConfig, get_qwen_model_hub
+            from llm_lib2.assets import get_asset_store
+            from llm_lib2.models.qwen import QwenConfig, get_qwen_model_hub
 
             card = get_asset_store().retrieve_card("qwen25_7b_instruct")
 
@@ -464,12 +464,12 @@ class ModelHub(Generic[ModelT, ModelConfigT]):
         If ``None``, the default restriction setting of the family will be used.
 
         ``progress`` is deprecated and will be removed in v0.13. Use
-        ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress``
-        parameter of :func:`init_fairseq` to disable progress bars.
+        ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress``
+        parameter of :func:`init_llm_lib` to disable progress bars.
 
         .. code:: python
 
-            from fairseq2.models.qwen import QwenConfig, get_qwen_model_hub
+            from llm_lib2.models.qwen import QwenConfig, get_qwen_model_hub
 
             checkpoint_path = ...
 
@@ -551,12 +551,12 @@ class ModelHubAccessor(Generic[ModelT, ModelConfigT]):
     This class provides a strongly-typed way to access model hubs. Its direct
     use is meant for model authors rather than library users.
 
-    See ``src/fairseq2/models/llama/hub.py`` as an example.
+    See ``src/llm_lib2/models/llama/hub.py`` as an example.
 
     .. code::
         :caption: The use of `ModelHubAccessor` for model authors
 
-        from fairseq2.models import ModelHubAccessor
+        from llm_lib2.models import ModelHubAccessor
 
         # Defined in the Python module where the model is implemented.
         get_my_model_hub = ModelHubAccessor(
@@ -622,7 +622,7 @@ class ModelArchitectureNotKnownError(Exception):
         """
         if family is None:
             _warn_deprecated(
-                "`ModelArchitectureNotKnownError` will require a `family` argument starting fairseq2 v0.12."
+                "`ModelArchitectureNotKnownError` will require a `family` argument starting llm_lib2 v0.12."
             )
 
             super().__init__(f"{arch} is not a known model architecture.")
@@ -728,13 +728,13 @@ def load_model(
     can reduce memory usage but may cause slower load times on some systems.
 
     ``progress`` is deprecated and will be removed in v0.13. Use
-    ``FAIRSEQ2_NO_PROGRESS=1`` environment variable or ``no_progress`` parameter
-    of :func:`init_fairseq` to disable progress bars.
+    ``llm_lib2_NO_PROGRESS=1`` environment variable or ``no_progress`` parameter
+    of :func:`init_llm_lib` to disable progress bars.
 
     .. code:: python
 
-        from fairseq2.assets import get_asset_store
-        from fairseq2.models.qwen import load_model
+        from llm_lib2.assets import get_asset_store
+        from llm_lib2.models.qwen import load_model
 
         card = get_asset_store().retrieve_card("qwen25_7b_instruct")
 

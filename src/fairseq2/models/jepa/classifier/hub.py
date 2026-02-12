@@ -6,12 +6,12 @@
 
 from __future__ import annotations
 
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.jepa.classifier.config import (
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.jepa.classifier.config import (
     JEPA_CLASSIFIER_FAMILY,
     JepaClassifierConfig,
 )
-from fairseq2.models.jepa.classifier.model import JepaClassifierModel
+from llm_lib2.models.jepa.classifier.model import JepaClassifierModel
 
 get_jepa_classifier_model_hub = ModelHubAccessor(
     JEPA_CLASSIFIER_FAMILY, JepaClassifierModel, JepaClassifierConfig

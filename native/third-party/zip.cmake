@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_zip)
+macro(llm_lib2n_add_zip)
     if(NOT TARGET zip::zip)
         set(backup_build_shared_libs ${BUILD_SHARED_LIBS})
 

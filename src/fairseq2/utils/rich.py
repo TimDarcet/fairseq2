@@ -26,7 +26,7 @@ from rich.progress import (
 from rich.text import Text
 from typing_extensions import Self, override
 
-from fairseq2.utils.progress import ProgressReporter, ProgressTask
+from llm_lib2.utils.progress import ProgressReporter, ProgressTask
 
 _console: Console | None = None
 

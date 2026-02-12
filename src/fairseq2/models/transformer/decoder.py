@@ -17,12 +17,12 @@ from torch.nn import Dropout, Module, ModuleList
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.device import CPU
-from fairseq2.error import InvalidOperationError
-from fairseq2.models.transformer.attention_bias import AttentionBiasCache
-from fairseq2.models.transformer.decoder_layer import TransformerDecoderLayer
-from fairseq2.models.transformer.encoder import _record_drop_for_backward
-from fairseq2.nn import BatchLayout, IncrementalStateBag, LayerNorm
+from llm_lib2.device import CPU
+from llm_lib2.error import InvalidOperationError
+from llm_lib2.models.transformer.attention_bias import AttentionBiasCache
+from llm_lib2.models.transformer.decoder_layer import TransformerDecoderLayer
+from llm_lib2.models.transformer.encoder import _record_drop_for_backward
+from llm_lib2.nn import BatchLayout, IncrementalStateBag, LayerNorm
 
 
 class TransformerDecoder(Module):

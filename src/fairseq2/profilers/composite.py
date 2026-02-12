@@ -11,7 +11,7 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.profilers.profiler import Profiler
+from llm_lib2.profilers.profiler import Profiler
 
 
 @final

@@ -9,11 +9,11 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Final
 
-from fairseq2.data.tokenizers.sentencepiece import (
+from llm_lib2.data.tokenizers.sentencepiece import (
     RawSentencePieceTokenizer,
     load_sentencepiece_model,
 )
-from fairseq2.data.tokenizers.tokenizer import Tokenizer
+from llm_lib2.data.tokenizers.tokenizer import Tokenizer
 
 CHAR_TOKENIZER_FAMILY: Final = "char_tokenizer"
 

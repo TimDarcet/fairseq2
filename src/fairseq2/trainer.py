@@ -24,42 +24,42 @@ from torch.profiler import record_function
 from torch.utils.hooks import RemovableHandle
 from typing_extensions import override
 
-from fairseq2.checkpoint import (
+from llm_lib2.checkpoint import (
     NOOP_HG_EXPORTER,
     CheckpointManager,
     HuggingFaceExporter,
     HuggingFaceExportOptions,
 )
-from fairseq2.data_type import DataType
-from fairseq2.datasets import DataReader
-from fairseq2.device import CPU, SupportsDeviceTransfer
-from fairseq2.early_stopper import NOOP_EARLY_STOPPER, EarlyStopper
-from fairseq2.error import InternalError, InvalidOperationError, StateDictError
-from fairseq2.gang import GangError, Gangs, broadcast_flag, raise_operational_gang_error
-from fairseq2.logging import log
-from fairseq2.metrics import Mean, MetricBag, sync_and_compute_metrics
-from fairseq2.metrics.common import extend_batch_metric_values
-from fairseq2.metrics.recorders import MetricRecorder
-from fairseq2.nn.data_parallel import get_data_parallel_facade
-from fairseq2.nn.utils.grad import check_grad_norms, normalize_grads
-from fairseq2.optim.fp16_loss_scaler import (
+from llm_lib2.data_type import DataType
+from llm_lib2.datasets import DataReader
+from llm_lib2.device import CPU, SupportsDeviceTransfer
+from llm_lib2.early_stopper import NOOP_EARLY_STOPPER, EarlyStopper
+from llm_lib2.error import InternalError, InvalidOperationError, StateDictError
+from llm_lib2.gang import GangError, Gangs, broadcast_flag, raise_operational_gang_error
+from llm_lib2.logging import log
+from llm_lib2.metrics import Mean, MetricBag, sync_and_compute_metrics
+from llm_lib2.metrics.common import extend_batch_metric_values
+from llm_lib2.metrics.recorders import MetricRecorder
+from llm_lib2.nn.data_parallel import get_data_parallel_facade
+from llm_lib2.nn.utils.grad import check_grad_norms, normalize_grads
+from llm_lib2.optim.fp16_loss_scaler import (
     NOOP_FP16_LOSS_SCALER,
     Float16LossScaler,
     Float16LossScaleResult,
 )
-from fairseq2.optim.lr_schedulers import LRScheduler
-from fairseq2.profilers import Profiler
-from fairseq2.recipe.error import MinimumLossScaleReachedError
-from fairseq2.recipe.model import RecipeModel
-from fairseq2.task import Task, TaskStopException
-from fairseq2.typing import ContextManager, Stateful
-from fairseq2.utils.device_stat import DeviceStatTracker
-from fairseq2.utils.gc import GarbageCollector
-from fairseq2.utils.progress import ProgressReporter, ProgressTask
-from fairseq2.utils.rng import RngBag
-from fairseq2.utils.stopwatch import Stopwatch
-from fairseq2.utils.warn import _warn_deprecated
-from fairseq2.validator import NOOP_VALIDATOR, Validator
+from llm_lib2.optim.lr_schedulers import LRScheduler
+from llm_lib2.profilers import Profiler
+from llm_lib2.recipe.error import MinimumLossScaleReachedError
+from llm_lib2.recipe.model import RecipeModel
+from llm_lib2.task import Task, TaskStopException
+from llm_lib2.typing import ContextManager, Stateful
+from llm_lib2.utils.device_stat import DeviceStatTracker
+from llm_lib2.utils.gc import GarbageCollector
+from llm_lib2.utils.progress import ProgressReporter, ProgressTask
+from llm_lib2.utils.rng import RngBag
+from llm_lib2.utils.stopwatch import Stopwatch
+from llm_lib2.utils.warn import _warn_deprecated
+from llm_lib2.validator import NOOP_VALIDATOR, Validator
 
 BatchT_contra = TypeVar(
     "BatchT_contra", bound=SupportsDeviceTransfer, contravariant=True

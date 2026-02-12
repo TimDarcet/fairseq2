@@ -11,9 +11,9 @@ import math
 import torch
 from torcheval.metrics import MulticlassAccuracy
 
-from fairseq2.datasets import SequenceBatch
-from fairseq2.metrics import Mean, MetricBag, Sum
-from fairseq2.models.wav2vec2 import (
+from llm_lib2.datasets import SequenceBatch
+from llm_lib2.metrics import Mean, MetricBag, Sum
+from llm_lib2.models.wav2vec2 import (
     Wav2Vec2Loss,
     Wav2Vec2Output,
     Wav2Vec2VectorQuantizerOutput,

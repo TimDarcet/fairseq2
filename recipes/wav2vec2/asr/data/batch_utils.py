@@ -4,8 +4,8 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-from fairseq2.data.data_pipeline import DataPipelineBuilder, create_bucket_sizes
-from fairseq2.logging import log
+from llm_lib2.data.data_pipeline import DataPipelineBuilder, create_bucket_sizes
+from llm_lib2.logging import log
 
 
 def add_length_batching(

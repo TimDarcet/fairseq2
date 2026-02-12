@@ -14,9 +14,9 @@ from torch import Tensor
 from torch.utils.tensorboard import SummaryWriter
 from typing_extensions import override
 
-from fairseq2.error import OperationalError, raise_operational_system_error
-from fairseq2.metrics.recorders.descriptor import MetricDescriptorRegistry
-from fairseq2.metrics.recorders.recorder import MetricRecorder
+from llm_lib2.error import OperationalError, raise_operational_system_error
+from llm_lib2.metrics.recorders.descriptor import MetricDescriptorRegistry
+from llm_lib2.metrics.recorders.recorder import MetricRecorder
 
 
 @final

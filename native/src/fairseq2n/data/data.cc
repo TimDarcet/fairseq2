@@ -4,15 +4,15 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/data/data.h"
 
 #include <stdexcept>
 
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 std::string
 repr<data_type>::operator()(data_type dt) const
@@ -41,4 +41,4 @@ repr<data_type>::operator()(data_type dt) const
     throw_<std::invalid_argument>("`dt` is not a valid data type.");
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

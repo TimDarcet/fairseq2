@@ -11,16 +11,16 @@ from typing import final
 
 from torch import Tensor
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.error import InternalError
-from fairseq2.generation.generator import (
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.error import InternalError
+from llm_lib2.generation.generator import (
     Seq2SeqGenerator,
     SequenceGenerator,
     SequenceGeneratorOutput,
 )
-from fairseq2.nn import BatchLayout
-from fairseq2.nn.utils.module import maybe_infer_device
-from fairseq2.nn.utils.padding import pad_seqs
+from llm_lib2.nn import BatchLayout
+from llm_lib2.nn.utils.module import maybe_infer_device
+from llm_lib2.nn.utils.padding import pad_seqs
 
 
 @final

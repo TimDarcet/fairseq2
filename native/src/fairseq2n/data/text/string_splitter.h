@@ -12,12 +12,12 @@
 #include <variant>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
-class FAIRSEQ2_API string_splitter final {
+class llm_lib2_API string_splitter final {
 public:
     explicit
     string_splitter(
@@ -46,4 +46,4 @@ private:
     void finalize_indices();
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

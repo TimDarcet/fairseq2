@@ -4,13 +4,13 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/filter_data_source.h"
+#include "llm_lib2n/data/filter_data_source.h"
 
 #include <exception>
 
-#include "fairseq2n/data/detail/exception.h"
+#include "llm_lib2n/data/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 std::optional<data>
 filter_data_source::next()
@@ -52,4 +52,4 @@ filter_data_source::invoke_function(data &example)
     return predicate_fn_(example);
 }
 
-} // fairseq2n::detail
+} // llm_lib2n::detail

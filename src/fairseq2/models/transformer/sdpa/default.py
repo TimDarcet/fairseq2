@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from typing import Protocol
 
-from fairseq2.models.transformer.attention_bias import AttentionBias
-from fairseq2.models.transformer.sdpa.base import SDPA
-from fairseq2.models.transformer.sdpa.torch import TorchSDPA
+from llm_lib2.models.transformer.attention_bias import AttentionBias
+from llm_lib2.models.transformer.sdpa.base import SDPA
+from llm_lib2.models.transformer.sdpa.torch import TorchSDPA
 
 
 class SDPAFactory(Protocol):

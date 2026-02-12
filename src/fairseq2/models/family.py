@@ -18,7 +18,7 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetCard,
     AssetCardError,
     AssetCardNotValidError,
@@ -26,38 +26,38 @@ from fairseq2.assets import (
     AssetDownloadManager,
     AssetStore,
 )
-from fairseq2.data_type import DataType, set_dtype
-from fairseq2.device import META_DEVICE
-from fairseq2.error import (
+from llm_lib2.data_type import DataType, set_dtype
+from llm_lib2.device import META_DEVICE
+from llm_lib2.error import (
     InternalError,
     NotSupportedError,
     raise_operational_system_error,
 )
-from fairseq2.file_system import FileSystem, raise_if_not_exists
-from fairseq2.gang import GangError, Gangs, raise_operational_gang_error, set_gangs
-from fairseq2.model_checkpoint import (
+from llm_lib2.file_system import FileSystem, raise_if_not_exists
+from llm_lib2.gang import GangError, Gangs, raise_operational_gang_error, set_gangs
+from llm_lib2.model_checkpoint import (
     CorruptModelCheckpointError,
     ModelCheckpointLoader,
     ModelCheckpointLoadOptions,
 )
-from fairseq2.models.utils.checkpoint import (
+from llm_lib2.models.utils.checkpoint import (
     ModelCheckpointMismatchError,
     set_model_state,
 )
-from fairseq2.nn import get_shard_dims
-from fairseq2.nn.fsdp import FSDPWrapper, load_with_sdp_gang
-from fairseq2.nn.utils.module import (
+from llm_lib2.nn import get_shard_dims
+from llm_lib2.nn.fsdp import FSDPWrapper, load_with_sdp_gang
+from llm_lib2.nn.utils.module import (
     broadcast_module,
     reset_non_persistent_buffers,
     to_empty,
 )
-from fairseq2.runtime.dependency import DependencyLookup, get_dependency_resolver
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.sharder import ModelSharder, ShardSpec, ShardSpecError
-from fairseq2.utils.progress import ProgressReporter
-from fairseq2.utils.uri import Uri
-from fairseq2.utils.validation import ObjectValidator, ValidationError
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.runtime.dependency import DependencyLookup, get_dependency_resolver
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.sharder import ModelSharder, ShardSpec, ShardSpecError
+from llm_lib2.utils.progress import ProgressReporter
+from llm_lib2.utils.uri import Uri
+from llm_lib2.utils.validation import ObjectValidator, ValidationError
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 # TODO: Will be deleted in v0.9
@@ -329,7 +329,7 @@ class StandardModelFamily(ModelFamily):
     ) -> None:
         if shard_specs is not None:
             _warn_deprecated(
-                "`shard_specs` and `sharder` parameters of `StandardModelFamily` are deprecated and will be removed in fairseq2 v0.12. See src/fairseq2/sharder.py for details."
+                "`shard_specs` and `sharder` parameters of `StandardModelFamily` are deprecated and will be removed in llm_lib2 v0.12. See src/llm_lib2/sharder.py for details."
             )
 
         self._name = name
@@ -634,7 +634,7 @@ class StandardModelFamily(ModelFamily):
 
         if not self._supports_meta:
             _warn_deprecated(
-                "In fairseq2 v0.12, `ModelFamily.iter_checkpoint` will stop supporting models that cannot be meta-initialized."
+                "In llm_lib2 v0.12, `ModelFamily.iter_checkpoint` will stop supporting models that cannot be meta-initialized."
             )
 
         if self._shard_specs is None:
@@ -787,7 +787,7 @@ class StandardModelFamily(ModelFamily):
     @override
     def supports_model_parallelism(self) -> bool:
         _warn_deprecated(
-            "`ModelFamily.supports_model_parallelism` is deprecated and will be removed in fairseq2 v0.12."
+            "`ModelFamily.supports_model_parallelism` is deprecated and will be removed in llm_lib2 v0.12."
         )
 
         return self._shard_specs is not None

@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/audio/detail/kaldi_fbank.h"
+#include "llm_lib2n/data/audio/detail/kaldi_fbank.h"
 
 #include <cstdint>
 #include <vector>
@@ -12,12 +12,12 @@
 
 #include <ATen/Functions.h>
 
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/detail/tensor_helpers.h"
-#include "fairseq2n/detail/parallel.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/detail/tensor_helpers.h"
+#include "llm_lib2n/detail/parallel.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class kaldi_fbank_compute_op {
 public:
@@ -122,4 +122,4 @@ kaldi_fbank_computer::compute(const at::Tensor &waveform, bool pin_memory)
     return kaldi_fbank_compute_op{this, waveform, pin_memory}.run();
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -12,10 +12,10 @@
 #include <type_traits>
 #include <utility>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/span.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/span.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 // Besides `addr` and `size`, the signature also allows passing an opaque `ctx`
 // pointer. It is typically used to pass extra information required to release
@@ -23,7 +23,7 @@ namespace fairseq2n {
 using memory_deallocator = void (*)(const void *addr, std::size_t size, void *ctx) noexcept;
 
 // Used internally by `memory_block` to manage the lifetime of the memory.
-class FAIRSEQ2_API memory_holder {
+class llm_lib2_API memory_holder {
 public:
     explicit
     memory_holder(
@@ -224,10 +224,10 @@ cast(writable_memory_span s) noexcept
     return {reinterpret_cast<T *>(s.data()), s.size() / sizeof(T)};
 }
 
-FAIRSEQ2_API writable_memory_block
+llm_lib2_API writable_memory_block
 allocate_memory(std::size_t size);
 
-FAIRSEQ2_API writable_memory_block
+llm_lib2_API writable_memory_block
 copy_memory(memory_span source);
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

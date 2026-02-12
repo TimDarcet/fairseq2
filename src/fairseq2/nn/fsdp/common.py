@@ -13,15 +13,15 @@ from torch import Tensor
 from torch.distributed._shard import load_with_process_group
 from torch.nn import Module
 
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.gang import Gangs
-from fairseq2.nn.utils.module import (
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.gang import Gangs
+from llm_lib2.nn.utils.module import (
     reset_non_persistent_buffers,
     reset_parameters,
     to_empty,
 )
-from fairseq2.typing import ContextManager
+from llm_lib2.typing import ContextManager
 
 
 class FSDPApplier(Protocol):

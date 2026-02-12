@@ -4,15 +4,15 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include <fairseq2n/data/detail/lru_cache.h>
+#include <llm_lib2n/data/detail/lru_cache.h>
 
 #include <cstdint>
 
 #include <gtest/gtest.h>
 
-#include <fairseq2n/data/immutable_string.h>
+#include <llm_lib2n/data/immutable_string.h>
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
 TEST(test_lru_cache, add_and_maybe_get_work)
 {

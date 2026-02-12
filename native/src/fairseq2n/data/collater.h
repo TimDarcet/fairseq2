@@ -12,10 +12,10 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/element_selector.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/element_selector.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class collate_options {
 public:
@@ -88,7 +88,7 @@ class collate_op;
 
 }  // namespace detail
 
-class FAIRSEQ2_API collater {
+class llm_lib2_API collater {
     friend class detail::collate_op;
 
 public:
@@ -103,4 +103,4 @@ private:
     std::vector<collate_options_override> opt_overrides_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

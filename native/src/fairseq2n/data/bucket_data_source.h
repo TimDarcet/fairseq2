@@ -10,9 +10,9 @@
 #include <memory>
 #include <utility>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class bucket_data_source final : public data_source {
 public:
@@ -43,4 +43,4 @@ private:
     bool drop_remainder_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

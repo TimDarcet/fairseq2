@@ -8,13 +8,13 @@
 
 #include <optional>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
 
 #include <ATen/Device.h>
 #include <ATen/ScalarType.h>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class image_decoder_options {
 public:
@@ -55,7 +55,7 @@ private:
     bool pin_memory_ = false;
 };
 
-class FAIRSEQ2_API image_decoder {
+class llm_lib2_API image_decoder {
 public:
     explicit
     image_decoder(image_decoder_options opts = {});
@@ -76,4 +76,4 @@ private:
     decode_jpeg(const memory_block &block) const;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

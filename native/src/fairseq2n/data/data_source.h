@@ -9,15 +9,15 @@
 #include <cstddef>
 #include <optional>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
-#include "fairseq2n/data/tape.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
+#include "llm_lib2n/data/tape.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 enum class data_source_finitude_type { finite, pseudo_infinite, infinite };
 
-class FAIRSEQ2_API data_source {
+class llm_lib2_API data_source {
 public:
     data_source() noexcept = default;
 
@@ -46,4 +46,4 @@ public:
     finitude_type() const noexcept = 0;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

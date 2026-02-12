@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 #include <filesystem>
 #include <fstream>
@@ -14,7 +14,7 @@
 
 namespace py = pybind11;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 PYBIND11_MODULE(bindings, m)
 {
@@ -44,4 +44,4 @@ PYBIND11_MODULE(bindings, m)
         py::arg("log_file"));
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

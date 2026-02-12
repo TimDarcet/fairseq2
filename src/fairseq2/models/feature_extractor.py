@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING
 from torch import Tensor
 from torch.nn import Module
 
-from fairseq2.nn import BatchLayout
+from llm_lib2.nn import BatchLayout
 
 
 class SequenceFeatureExtractor(Module, ABC):

@@ -5,12 +5,12 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-A command line program to convert fairseq2 models to their Hugging Face
+A command line program to convert llm_lib2 models to their Hugging Face
 Transformers equivalents.
 
 .. code:: bash
 
-    python -m fairseq2.models.utils.hg_export <fairseq2_model_name> <hg_save_dir>
+    python -m llm_lib2.models.utils.hg_export <llm_lib2_model_name> <hg_save_dir>
 
 
 See below for additional command line options.
@@ -25,43 +25,43 @@ from typing import NoReturn, Protocol, final
 
 import torch
 
-from fairseq2 import init_fairseq2
-from fairseq2.assets import (
+from llm_lib2 import init_llm_lib2
+from llm_lib2.assets import (
     AssetCardError,
     AssetDownloadError,
     AssetMetadataError,
     AssetStore,
 )
-from fairseq2.composition import (
+from llm_lib2.composition import (
     ExtensionError,
     register_checkpoint_models,
     register_file_assets,
 )
-from fairseq2.device import CPU
-from fairseq2.error import OperationalError, raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.gang import create_fake_gangs
-from fairseq2.logging import configure_logging, log
-from fairseq2.model_checkpoint import CorruptModelCheckpointError
-from fairseq2.models import (
+from llm_lib2.device import CPU
+from llm_lib2.error import OperationalError, raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.gang import create_fake_gangs
+from llm_lib2.logging import configure_logging, log
+from llm_lib2.model_checkpoint import CorruptModelCheckpointError
+from llm_lib2.models import (
     ModelFamily,
     ModelFamilyNotKnownError,
     ModelGatedError,
     _maybe_get_model_family,
 )
-from fairseq2.models.hg import (
+from llm_lib2.models.hg import (
     HuggingFaceConfig,
     HuggingFaceConverter,
     _LegacyHuggingFaceConverter,
     save_hugging_face_model,
 )
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.runtime.lookup import Lookup
-from fairseq2.utils.progress import ProgressReporter
+from llm_lib2.runtime.lookup import Lookup
+from llm_lib2.utils.progress import ProgressReporter
 
 
 def main() -> int:
@@ -95,7 +95,7 @@ def _run() -> None:
         _register_command(container, args)
 
     try:
-        resolver = init_fairseq2(extras=extras, no_progress=args.no_rich)
+        resolver = init_llm_lib2(extras=extras, no_progress=args.no_rich)
     except ExtensionError as ex:
         raise CommandError(f"{ex.entry_point} extension failed to initialize.") from ex
 
@@ -119,7 +119,7 @@ def _parse_args() -> Namespace:
     parser.add_argument(
         "--checkpoint-dir",
         type=Path,
-        help="fairseq2 checkpoint directory",
+        help="llm_lib2 checkpoint directory",
     )
 
     parser.add_argument(
@@ -132,7 +132,7 @@ def _parse_args() -> Namespace:
     parser.add_argument(
         "model",
         type=str,
-        help="name of the fairseq2 model",
+        help="name of the llm_lib2 model",
     )
 
     parser.add_argument(

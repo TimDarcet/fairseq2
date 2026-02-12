@@ -13,7 +13,7 @@ import torch
 from torch import Tensor
 from torch.nn import Module
 
-from fairseq2.utils.progress import ProgressReporter
+from llm_lib2.utils.progress import ProgressReporter
 
 
 def set_model_state(
@@ -124,7 +124,7 @@ def convert_state_dict(
     return converted_state_dict
 
 
-def convert_fairseq_state_dict(
+def convert_llm_lib_state_dict(
     state_dict: dict[str, object], key_map: Mapping[str, str]
 ) -> dict[str, object]:
     fs2_state_dict = convert_state_dict(state_dict, key_map)

@@ -13,10 +13,10 @@ from torch import Tensor
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.models import ModelFamily
-from fairseq2.nn.data_parallel import get_data_parallel_facade
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.typing import ContextManager, Stateful
+from llm_lib2.models import ModelFamily
+from llm_lib2.nn.data_parallel import get_data_parallel_facade
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.typing import ContextManager, Stateful
 
 
 class RecipeModel(ABC, Stateful):

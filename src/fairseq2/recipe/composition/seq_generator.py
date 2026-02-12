@@ -6,12 +6,12 @@
 
 from __future__ import annotations
 
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.recipe.internal.seq_generator import (
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.recipe.internal.seq_generator import (
     _Seq2SeqGeneratorFactory,
     _SequenceGeneratorFactory,
 )
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_seq_generators(container: DependencyContainer) -> None:

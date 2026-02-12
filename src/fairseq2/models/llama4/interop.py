@@ -11,8 +11,8 @@ from typing import cast
 
 import torch
 
-from fairseq2.models.llama4.config import Llama4Config
-from fairseq2.models.utils.checkpoint import convert_state_dict
+from llm_lib2.models.llama4.config import Llama4Config
+from llm_lib2.models.utils.checkpoint import convert_state_dict
 
 
 def _get_indices_to_split_wqkv(

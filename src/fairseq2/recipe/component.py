@@ -12,12 +12,12 @@ from typing import Any, Protocol, TypeVar, cast, final
 
 from typing_extensions import override
 
-from fairseq2.runtime.dependency import (
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyNotFoundError,
     DependencyResolver,
 )
-from fairseq2.utils.structured import ValueConverter
+from llm_lib2.utils.structured import ValueConverter
 
 T_co = TypeVar("T_co", covariant=True)
 

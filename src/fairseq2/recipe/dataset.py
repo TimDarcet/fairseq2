@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import TypeVar, final
 
-from fairseq2.datasets import DatasetFamily
+from llm_lib2.datasets import DatasetFamily
 
 DatasetT = TypeVar("DatasetT")
 

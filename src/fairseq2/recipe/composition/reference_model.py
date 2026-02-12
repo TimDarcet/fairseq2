@@ -11,13 +11,13 @@ from typing import final
 from torch.nn import Module
 from typing_extensions import override
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.gang import GangError, raise_operational_gang_error
-from fairseq2.recipe.base import Recipe, RecipeContext
-from fairseq2.recipe.composition.config import register_config_section
-from fairseq2.recipe.config import ReferenceModelSection
-from fairseq2.recipe.internal.model import _ModelHolder
-from fairseq2.recipe.internal.reference_model import (
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.gang import GangError, raise_operational_gang_error
+from llm_lib2.recipe.base import Recipe, RecipeContext
+from llm_lib2.recipe.composition.config import register_config_section
+from llm_lib2.recipe.config import ReferenceModelSection
+from llm_lib2.recipe.internal.model import _ModelHolder
+from llm_lib2.recipe.internal.reference_model import (
     _DelegatingReferenceModelPreparer,
     _LastReferenceModelPreparer,
     _ReferenceModelBootstrapper,
@@ -25,8 +25,8 @@ from fairseq2.recipe.internal.reference_model import (
     _ReferenceModelPreparer,
     _StandardReferenceModelBootstrapper,
 )
-from fairseq2.recipe.model import RecipeModel, _StandardRecipeModel
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.recipe.model import RecipeModel, _StandardRecipeModel
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def register_reference_model(container: DependencyContainer, section_name: str) -> None:

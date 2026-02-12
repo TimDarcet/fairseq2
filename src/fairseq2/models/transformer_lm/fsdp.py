@@ -8,10 +8,10 @@ from __future__ import annotations
 
 from torch.nn import Module
 
-from fairseq2.error import NotSupportedError
-from fairseq2.models.transformer_lm.model import TransformerLM
-from fairseq2.models.utils.fsdp import apply_layerwise_fsdp
-from fairseq2.nn.fsdp import FSDPWrapper
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.transformer_lm.model import TransformerLM
+from llm_lib2.models.utils.fsdp import apply_layerwise_fsdp
+from llm_lib2.nn.fsdp import FSDPWrapper
 
 
 def apply_fsdp_to_transformer_lm(

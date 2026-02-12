@@ -6,28 +6,28 @@
 
 from __future__ import annotations
 
-from fairseq2.models.transformer_lm.ac import (
+from llm_lib2.models.transformer_lm.ac import (
     apply_ac_to_transformer_lm as apply_ac_to_transformer_lm,
 )
-from fairseq2.models.transformer_lm.compiler import (
+from llm_lib2.models.transformer_lm.compiler import (
     compile_transformer_lm as compile_transformer_lm,
 )
-from fairseq2.models.transformer_lm.decoder import (
+from llm_lib2.models.transformer_lm.decoder import (
     StandardTransformerLMDecoder as StandardTransformerLMDecoder,
 )
-from fairseq2.models.transformer_lm.decoder import (
+from llm_lib2.models.transformer_lm.decoder import (
     TransformerLMDecoder as TransformerLMDecoder,
 )
-from fairseq2.models.transformer_lm.decoder import (
+from llm_lib2.models.transformer_lm.decoder import (
     TransformerLMDecoderLayerHook as TransformerLMDecoderLayerHook,
 )
-from fairseq2.models.transformer_lm.decoder_layer import (
+from llm_lib2.models.transformer_lm.decoder_layer import (
     StandardTransformerLMDecoderLayer as StandardTransformerLMDecoderLayer,
 )
-from fairseq2.models.transformer_lm.decoder_layer import (
+from llm_lib2.models.transformer_lm.decoder_layer import (
     TransformerLMDecoderLayer as TransformerLMDecoderLayer,
 )
-from fairseq2.models.transformer_lm.fsdp import (
+from llm_lib2.models.transformer_lm.fsdp import (
     apply_fsdp_to_transformer_lm as apply_fsdp_to_transformer_lm,
 )
-from fairseq2.models.transformer_lm.model import TransformerLM as TransformerLM
+from llm_lib2.models.transformer_lm.model import TransformerLM as TransformerLM

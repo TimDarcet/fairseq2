@@ -9,9 +9,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import final
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.recipe.internal.sweep_tag import _SweepTagGenerator
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.recipe.internal.sweep_tag import _SweepTagGenerator
 
 
 @final

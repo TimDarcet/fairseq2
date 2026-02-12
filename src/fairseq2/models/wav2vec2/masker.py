@@ -15,12 +15,12 @@ from torch import Tensor
 from torch.nn import Module, Parameter
 from typing_extensions import override
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.error import InternalError
-from fairseq2.nn import BatchLayout
-from fairseq2.nn.utils.mask import RowMaskFactory, compute_row_mask
-from fairseq2.nn.utils.module import get_name_or_self
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.error import InternalError
+from llm_lib2.nn import BatchLayout
+from llm_lib2.nn.utils.mask import RowMaskFactory, compute_row_mask
+from llm_lib2.nn.utils.module import get_name_or_self
 
 
 class Wav2Vec2Masker(Module, ABC):

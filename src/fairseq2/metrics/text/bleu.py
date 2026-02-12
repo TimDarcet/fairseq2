@@ -15,9 +15,9 @@ from torch import Tensor
 from torcheval.metrics import Metric
 from typing_extensions import Self, override
 
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.utils.tensor import to_tensor
 
 DEFAULT_BLEU_TOKENIZER: Final = BLEU.TOKENIZER_DEFAULT
 

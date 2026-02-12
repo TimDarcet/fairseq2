@@ -6,10 +6,10 @@
 
 from __future__ import annotations
 
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.generation.sampling import Sampler, TopKSampler, TopPSampler
-from fairseq2.recipe.component import register_component
-from fairseq2.recipe.config import (
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.generation.sampling import Sampler, TopKSampler, TopPSampler
+from llm_lib2.recipe.component import register_component
+from llm_lib2.recipe.config import (
     SAMPLING_GENERATOR,
     TOP_K_SAMPLER,
     TOP_P_SAMPLER,
@@ -17,11 +17,11 @@ from fairseq2.recipe.config import (
     TopKSamplerConfig,
     TopPSamplerConfig,
 )
-from fairseq2.recipe.internal.sampling import (
+from llm_lib2.recipe.internal.sampling import (
     _SamplingSeq2SeqGeneratorFactory,
     _SamplingSequenceGeneratorFactory,
 )
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_sampling(container: DependencyContainer) -> None:

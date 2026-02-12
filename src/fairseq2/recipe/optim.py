@@ -24,10 +24,10 @@ from dataclasses import dataclass, fields
 from torch import Tensor
 from torch.nn import Module, Parameter
 
-from fairseq2.logging import log
-from fairseq2.recipe.config import ParameterGroupConfig, default
-from fairseq2.recipe.model import RecipeModel
-from fairseq2.utils.validation import ValidationError
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import ParameterGroupConfig, default
+from llm_lib2.recipe.model import RecipeModel
+from llm_lib2.utils.validation import ValidationError
 
 
 def prepare_parameter_groups(
@@ -58,11 +58,11 @@ def prepare_parameter_groups(
 
         from torch.optim import Optimizer
 
-        from fairseq2.recipe import Recipe
-        from fairseq2.recipe.component import register_component
-        from fairseq2.recipe.config import Default, ParameterGroupConfig, default
-        from fairseq2.recipe.optim import prepare_parameter_groups
-        from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+        from llm_lib2.recipe import Recipe
+        from llm_lib2.recipe.component import register_component
+        from llm_lib2.recipe.config import Default, ParameterGroupConfig, default
+        from llm_lib2.recipe.optim import prepare_parameter_groups
+        from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
         @dataclass
         class MyOptimizerConfig:
@@ -199,11 +199,11 @@ def maybe_raise_param_group_length_error(
     field: str, value: Sequence[object], num_param_groups: int
 ) -> None:
     """
-    Raises :class:`~fairseq2.utils.validation.ValidationError` if the length of
+    Raises :class:`~llm_lib2.utils.validation.ValidationError` if the length of
     a learning rate scheduler configuration field (i.e. ``len(value)``) does not
     match the number of optimizer parameter groups.
 
-    :raises ~fairseq2.utils.validation.ValidationError: If ``len(value)`` does
+    :raises ~llm_lib2.utils.validation.ValidationError: If ``len(value)`` does
         not match ``num_param_groups``.
 
     .. code:: python
@@ -211,8 +211,8 @@ def maybe_raise_param_group_length_error(
 
         from torch.optim import Optimizer
 
-        from fairseq2.recipe.config import MyleLRConfig
-        from fairseq2.recipe.optim import maybe_raise_param_group_length_error
+        from llm_lib2.recipe.config import MyleLRConfig
+        from llm_lib2.recipe.optim import maybe_raise_param_group_length_error
 
         def get_start_lr(config: MyleLRConfig, optimizer: Optimizer) -> list[float]:
             num_param_groups = len(optimizer.param_groups)

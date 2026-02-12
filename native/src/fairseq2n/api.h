@@ -6,4 +6,4 @@
 
 #pragma once
 
-#define FAIRSEQ2_API __attribute__((visibility("default")))
+#define llm_lib2_API __attribute__((visibility("default")))

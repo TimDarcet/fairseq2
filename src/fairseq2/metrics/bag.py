@@ -14,10 +14,10 @@ from torcheval.metrics import Metric
 from torcheval.metrics.toolkit import sync_and_compute_collection
 from typing_extensions import override
 
-from fairseq2.device import Device
-from fairseq2.error import InternalError, InvalidOperationError, StateDictError
-from fairseq2.gang import Gang, GangError
-from fairseq2.typing import Stateful
+from llm_lib2.device import Device
+from llm_lib2.error import InternalError, InvalidOperationError, StateDictError
+from llm_lib2.gang import Gang, GangError
+from llm_lib2.typing import Stateful
 
 MetricT = TypeVar("MetricT", bound=Metric[Any])
 

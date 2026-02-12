@@ -19,13 +19,13 @@ declare -a variants=(cpu cu124 cu126 cu128)
 for variant in "${variants[@]}"; do
     docker build\
         --network host\
-        --tag $repo/fairseq2-ci-manylinux_$arch:$version-$variant\
+        --tag $repo/llm_lib2-ci-manylinux_$arch:$version-$variant\
         --file manylinux_$arch/Dockerfile.$variant\
         manylinux_$arch/
 done
 
 for variant in "${variants[@]}"; do
-    docker push $repo/fairseq2-ci-manylinux_$arch:$version-$variant
+    docker push $repo/llm_lib2-ci-manylinux_$arch:$version-$variant
 done
 
 docker logout ghcr.io

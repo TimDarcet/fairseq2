@@ -12,8 +12,8 @@ from typing import Any
 import numpy as np
 import torch
 
-from fairseq2.data.audio import AudioDecoder
-from fairseq2.data.data_pipeline import DataPipelineBuilder, FileMapper
+from llm_lib2.data.audio import AudioDecoder
+from llm_lib2.data.data_pipeline import DataPipelineBuilder, FileMapper
 
 
 def add_audio_file_loading(
@@ -45,7 +45,7 @@ def add_audio_decoding(
     npc: int,
     selector: str,
 ) -> DataPipelineBuilder:
-    """Add audio decoding to pipeline by creating a ``fairseq2.data._memory.MemoryBlock`` at
+    """Add audio decoding to pipeline by creating a ``llm_lib2.data._memory.MemoryBlock`` at
     the selector. Waveforms are in ``torch.float32`` if ``normalize_audio``, else ``dtype``.
     """
     audio_decoder = AudioDecoder(dtype=torch.float32 if normalize_audio else dtype)

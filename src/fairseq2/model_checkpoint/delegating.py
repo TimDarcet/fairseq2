@@ -13,8 +13,8 @@ from typing import final
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.file_system import FileSystem, raise_if_not_exists
-from fairseq2.model_checkpoint.loader import (
+from llm_lib2.file_system import FileSystem, raise_if_not_exists
+from llm_lib2.model_checkpoint.loader import (
     CorruptModelCheckpointError,
     ModelCheckpointLoader,
     ModelCheckpointLoadOptions,

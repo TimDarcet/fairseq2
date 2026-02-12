@@ -12,8 +12,8 @@ from typing import TypeAlias
 import torch
 from torch import Tensor
 
-from fairseq2.data_type import DataType
-from fairseq2.device import CPU, Device
+from llm_lib2.data_type import DataType
+from llm_lib2.device import CPU, Device
 
 TensorData: TypeAlias = int | float | Sequence[int] | Sequence[float]
 

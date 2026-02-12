@@ -14,10 +14,10 @@ from torch.nn import Dropout
 from torch.nn.functional import ctc_loss, log_softmax
 from typing_extensions import override
 
-from fairseq2.models.asr import AsrModel
-from fairseq2.models.transformer import TransformerEncoder
-from fairseq2.models.wav2vec2 import Wav2Vec2Frontend, Wav2Vec2Masker
-from fairseq2.nn import BatchLayout, Projection
+from llm_lib2.models.asr import AsrModel
+from llm_lib2.models.transformer import TransformerEncoder
+from llm_lib2.models.wav2vec2 import Wav2Vec2Frontend, Wav2Vec2Masker
+from llm_lib2.nn import BatchLayout, Projection
 
 
 @final

@@ -10,12 +10,12 @@ from typing import ClassVar, Final
 import pytest
 import torch
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.generation.beam_search import BeamSearchSeq2SeqGenerator
-from fairseq2.generation.step_processor import BannedSequenceProcessor
-from fairseq2.generation.text import TextTranslator
-from fairseq2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
-from fairseq2.models.seq2seq import Seq2SeqModel
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.generation.beam_search import BeamSearchSeq2SeqGenerator
+from llm_lib2.generation.step_processor import BannedSequenceProcessor
+from llm_lib2.generation.text import TextTranslator
+from llm_lib2.models.nllb import get_nllb_model_hub, get_nllb_tokenizer_hub
+from llm_lib2.models.seq2seq import Seq2SeqModel
 from tests.common import device
 
 BANNED_ENG_SENTENCES: Final = [

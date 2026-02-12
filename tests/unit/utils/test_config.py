@@ -10,7 +10,7 @@ from collections.abc import Mapping
 
 import pytest
 
-from fairseq2.utils.config import ReplaceEnvDirective, StandardConfigMerger
+from llm_lib2.utils.config import ReplaceEnvDirective, StandardConfigMerger
 from tests.unit.helper import FooEnvironment
 
 

@@ -6,8 +6,8 @@
 
 from __future__ import annotations
 
-from fairseq2.models import ModelHubAccessor
-from fairseq2.models.w2vbert.config import W2VBERT_FAMILY, W2VBertConfig
-from fairseq2.models.w2vbert.model import W2VBertModel
+from llm_lib2.models import ModelHubAccessor
+from llm_lib2.models.w2vbert.config import W2VBERT_FAMILY, W2VBertConfig
+from llm_lib2.models.w2vbert.model import W2VBertModel
 
 get_w2vbert_model_hub = ModelHubAccessor(W2VBERT_FAMILY, W2VBertModel, W2VBertConfig)

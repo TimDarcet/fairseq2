@@ -4,11 +4,11 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 namespace py = pybind11;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 void
 def_text(py::module_ &data_module)
@@ -22,4 +22,4 @@ def_text(py::module_ &data_module)
     def_text_converters(m);
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

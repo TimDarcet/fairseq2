@@ -10,18 +10,18 @@ from typing import final
 
 from torch.nn import Module
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.generation import Seq2SeqGenerator, SequenceGenerator
-from fairseq2.generation.sampling import (
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.generation import Seq2SeqGenerator, SequenceGenerator
+from llm_lib2.generation.sampling import (
     Sampler,
     SamplingSeq2SeqGenerator,
     SamplingSequenceGenerator,
 )
-from fairseq2.models.clm import CausalLM
-from fairseq2.models.seq2seq import Seq2SeqModel
-from fairseq2.recipe.component import ComponentManager, ComponentNotKnownError
-from fairseq2.recipe.config import SamplingConfig
-from fairseq2.recipe.error import SamplerNotKnownError, raise_model_type_not_valid_error
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.models.seq2seq import Seq2SeqModel
+from llm_lib2.recipe.component import ComponentManager, ComponentNotKnownError
+from llm_lib2.recipe.config import SamplingConfig
+from llm_lib2.recipe.error import SamplerNotKnownError, raise_model_type_not_valid_error
 
 
 @final

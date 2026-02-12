@@ -4,16 +4,16 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/text_reader.h"
+#include "llm_lib2n/data/text/text_reader.h"
 
 #include <memory>
 
-#include "fairseq2n/data/data_pipeline.h"
-#include "fairseq2n/data/text/text_data_source.h"
+#include "llm_lib2n/data/data_pipeline.h"
+#include "llm_lib2n/data/text/text_data_source.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 data_pipeline_builder
 read_text(std::filesystem::path path, std::optional<std::string> maybe_key, text_options opts)
@@ -30,4 +30,4 @@ read_text(std::filesystem::path path, std::optional<std::string> maybe_key, text
     return data_pipeline_builder{std::move(factory)};
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

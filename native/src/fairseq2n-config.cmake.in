@@ -10,6 +10,6 @@ include(CMakeFindDependencyMacro)
 
 find_dependency(Torch @TORCH_VERSION@)
 
-include(${CMAKE_CURRENT_LIST_DIR}/fairseq2n-targets.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/llm_lib2n-targets.cmake)
 
-check_required_components(fairseq2n)
+check_required_components(llm_lib2n)

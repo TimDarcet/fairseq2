@@ -8,9 +8,9 @@ from __future__ import annotations
 
 from torch.nn import GELU, SiLU
 
-from fairseq2.models.conformer import ConformerBlock, ConformerConvolution
-from fairseq2.models.feature_extractor import SequenceFeatureExtractor
-from fairseq2.models.transformer import (
+from llm_lib2.models.conformer import ConformerBlock, ConformerConvolution
+from llm_lib2.models.feature_extractor import SequenceFeatureExtractor
+from llm_lib2.models.transformer import (
     SDPA,
     FeedForwardNetwork,
     IdentityBias,
@@ -26,30 +26,30 @@ from fairseq2.models.transformer import (
     TransformerNormOrder,
     create_default_sdpa,
 )
-from fairseq2.models.wav2vec2.config import Wav2Vec2Config, Wav2Vec2EncoderConfig
-from fairseq2.models.wav2vec2.feature_extractor import (
+from llm_lib2.models.wav2vec2.config import Wav2Vec2Config, Wav2Vec2EncoderConfig
+from llm_lib2.models.wav2vec2.feature_extractor import (
     Wav2Vec2FbankFeatureExtractor,
     Wav2Vec2FeatureExtractor,
 )
-from fairseq2.models.wav2vec2.frontend import Wav2Vec2Frontend
-from fairseq2.models.wav2vec2.masker import StandardWav2Vec2Masker, Wav2Vec2Masker
-from fairseq2.models.wav2vec2.model import Wav2Vec2Model
-from fairseq2.models.wav2vec2.position_encoder import (
+from llm_lib2.models.wav2vec2.frontend import Wav2Vec2Frontend
+from llm_lib2.models.wav2vec2.masker import StandardWav2Vec2Masker, Wav2Vec2Masker
+from llm_lib2.models.wav2vec2.model import Wav2Vec2Model
+from llm_lib2.models.wav2vec2.position_encoder import (
     Wav2Vec2PositionEncoder,
     Wav2Vec2StackedPositionEncoder,
 )
-from fairseq2.models.wav2vec2.vector_quantizer import (
+from llm_lib2.models.wav2vec2.vector_quantizer import (
     GumbelWav2Vec2VectorQuantizer,
     Wav2Vec2VectorQuantizer,
 )
-from fairseq2.nn import (
+from llm_lib2.nn import (
     LayerNorm,
     PositionEncoder,
     RotaryEncoder,
     StandardLayerNorm,
     init_bert_projection,
 )
-from fairseq2.runtime.lazy import Lazy
+from llm_lib2.runtime.lazy import Lazy
 
 
 def create_wav2vec2_model(config: Wav2Vec2Config) -> Wav2Vec2Model:

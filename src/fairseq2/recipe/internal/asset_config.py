@@ -11,11 +11,11 @@ from typing import final
 
 from typing_extensions import override
 
-from fairseq2.error import InternalError
-from fairseq2.recipe.error import RecipeConfigParseError
-from fairseq2.utils.config import ConfigDirectiveError, ConfigMerger, ConfigProcessor
-from fairseq2.utils.structured import StructureError, ValueConverter
-from fairseq2.utils.validation import ObjectValidator, ValidationError
+from llm_lib2.error import InternalError
+from llm_lib2.recipe.error import RecipeConfigParseError
+from llm_lib2.utils.config import ConfigDirectiveError, ConfigMerger, ConfigProcessor
+from llm_lib2.utils.structured import StructureError, ValueConverter
+from llm_lib2.utils.validation import ObjectValidator, ValidationError
 
 
 class _AssetConfigOverrider(ABC):

@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/utf8_stream.h"
+#include "llm_lib2n/data/text/utf8_stream.h"
 
 #include <algorithm>
 #include <utility>
@@ -12,12 +12,12 @@
 
 #include <iconv.h>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/data/text/detail/utf.h"
-#include "fairseq2n/detail/error.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/data/text/detail/utf.h"
+#include "llm_lib2n/detail/error.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 utf8_stream::utf8_stream(
     std::unique_ptr<byte_stream> &&inner,
@@ -270,4 +270,4 @@ utf8_stream::reset_iconv() noexcept
 // NOLINTNEXTLINE(performance-no-int-to-ptr)
 const ::iconv_t utf8_stream::invalid_iconv_ = reinterpret_cast<::iconv_t>(-1);
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

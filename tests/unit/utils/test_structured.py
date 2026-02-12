@@ -14,8 +14,8 @@ from pathlib import Path
 import pytest
 import torch
 
-from fairseq2.data_type import DataType
-from fairseq2.utils.structured import StandardValueConverter, StructureError
+from llm_lib2.data_type import DataType
+from llm_lib2.utils.structured import StandardValueConverter, StructureError
 
 # mypy: disable-error-code="arg-type"
 

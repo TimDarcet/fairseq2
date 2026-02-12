@@ -6,14 +6,14 @@
 
 from __future__ import annotations
 
-from fairseq2.models.qwen.config import QwenConfig
-from fairseq2.sharder import ShardSpec
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.models.qwen.config import QwenConfig
+from llm_lib2.sharder import ShardSpec
+from llm_lib2.utils.warn import _warn_deprecated
 
 
 def get_qwen_shard_specs(config: QwenConfig) -> dict[str, ShardSpec]:
     _warn_deprecated(
-        "`get_qwen_shard_specs` is deprecated and will be removed in fairseq2 v0.12. See src/fairseq2/sharder.py for details."
+        "`get_qwen_shard_specs` is deprecated and will be removed in llm_lib2 v0.12. See src/llm_lib2/sharder.py for details."
     )
 
     return {

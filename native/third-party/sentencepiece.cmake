@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_sentencepiece)
+macro(llm_lib2n_add_sentencepiece)
     if(NOT TARGET sentencepiece-static)
         set(CMAKE_POLICY_DEFAULT_CMP0063 NEW)
         set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)

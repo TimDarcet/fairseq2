@@ -31,18 +31,18 @@ target_sources(py_bindings
         type_casters/torch.cc
 )
 
-fairseq2n_set_compile_options(py_bindings)
+llm_lib2n_set_compile_options(py_bindings)
 
 target_include_directories(py_bindings PRIVATE ${PROJECT_SOURCE_DIR}/python/src)
 
 target_link_libraries(py_bindings
     PRIVATE
-        pybind11::module fmt::fmt kuba-zip fairseq2n torch torch_python
+        pybind11::module fmt::fmt kuba-zip llm_lib2n torch torch_python
 )
 
-fairseq2n_set_link_options(py_bindings ALLOW_UNDEFINED_SYMBOLS)
+llm_lib2n_set_link_options(py_bindings ALLOW_UNDEFINED_SYMBOLS)
 
-if(FAIRSEQ2N_PYTHON_DEVEL)
+if(llm_lib2N_PYTHON_DEVEL)
     # We have to use absolute rpath so that the in-source copy of the extension
     # module can find its dependencies under the build tree.
     set_property(TARGET py_bindings PROPERTY BUILD_RPATH_USE_ORIGIN OFF)
@@ -52,14 +52,14 @@ if(FAIRSEQ2N_PYTHON_DEVEL)
     add_custom_target(py_bindings_in_src ALL
         COMMAND
             ${CMAKE_COMMAND} -E copy_if_different
-                "$<TARGET_FILE:py_bindings>" "${PROJECT_SOURCE_DIR}/python/src/fairseq2n"
+                "$<TARGET_FILE:py_bindings>" "${PROJECT_SOURCE_DIR}/python/src/llm_lib2n"
         VERBATIM
     )
 
     add_dependencies(py_bindings_in_src py_bindings)
 endif()
 
-if(FAIRSEQ2N_INSTALL_STANDALONE)
+if(llm_lib2N_INSTALL_STANDALONE)
     if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
         set(rpath_origin @loader_path)
     else()
@@ -68,11 +68,11 @@ if(FAIRSEQ2N_INSTALL_STANDALONE)
 
     set_property(TARGET py_bindings APPEND PROPERTY INSTALL_RPATH ${rpath_origin}/lib)
 
-    if(FAIRSEQ2N_USE_CUDA)
+    if(llm_lib2N_USE_CUDA)
         # If NVIDIA's CUDA wheels are installed, give them precedence.
         set_property(
             TARGET
-                fairseq2n
+                llm_lib2n
             APPEND PROPERTY
                 INSTALL_RPATH
                     ${rpath_origin}/../../nvidia/cuda_runtime/lib

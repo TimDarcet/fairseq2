@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     ADAMW_OPTIMIZER,
     COSINE_ANNEALING_LR,
     AdamWConfig,

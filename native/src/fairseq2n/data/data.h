@@ -19,15 +19,15 @@
 #include <ATen/Tensor.h>
 #include <c10/util/order_preserving_flat_hash_map.h>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/float.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/data/immutable_string.h"
-#include "fairseq2n/data/py.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/data/immutable_string.h"
+#include "llm_lib2n/data/py.h"
+#include "llm_lib2n/utils/cast.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 template <
     typename Key,
@@ -381,9 +381,9 @@ using data_list = std::vector<data>;
 using data_dict = flat_hash_map<std::string, data>;
 
 template <>
-struct FAIRSEQ2_API repr<data_type> {
+struct llm_lib2_API repr<data_type> {
     std::string
     operator()(data_type dt) const;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

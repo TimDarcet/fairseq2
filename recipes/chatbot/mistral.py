@@ -12,9 +12,9 @@ import torch
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.device import Device
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.device import Device
+from llm_lib2.utils.tensor import to_tensor
 
 from .chatbot import Dialog, DialogEncoder
 

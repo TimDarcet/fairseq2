@@ -11,7 +11,7 @@ from typing import final, overload
 
 from typing_extensions import override
 
-from fairseq2.utils.env import Environment
+from llm_lib2.utils.env import Environment
 
 
 @final

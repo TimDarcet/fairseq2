@@ -11,12 +11,12 @@ from typing import Final, final
 
 from typing_extensions import override
 
-from fairseq2.logging import log
-from fairseq2.metrics.recorders.descriptor import (
+from llm_lib2.logging import log
+from llm_lib2.metrics.recorders.descriptor import (
     MetricDescriptor,
     MetricDescriptorRegistry,
 )
-from fairseq2.metrics.recorders.recorder import MetricRecorder
+from llm_lib2.metrics.recorders.recorder import MetricRecorder
 
 
 @final

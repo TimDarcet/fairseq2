@@ -10,9 +10,9 @@ from types import NoneType
 
 from torch.optim import Optimizer
 
-from fairseq2.optim.lr_schedulers import LRScheduler, PassthroughLR
-from fairseq2.recipe.component import register_component
-from fairseq2.recipe.config import (
+from llm_lib2.optim.lr_schedulers import LRScheduler, PassthroughLR
+from llm_lib2.recipe.component import register_component
+from llm_lib2.recipe.config import (
     COSINE_ANNEALING_LR,
     MYLE_LR,
     NOAM_LR,
@@ -25,7 +25,7 @@ from fairseq2.recipe.config import (
     PolynomialDecayLRConfig,
     TriStageLRConfig,
 )
-from fairseq2.recipe.internal.lr_schedulers import (
+from llm_lib2.recipe.internal.lr_schedulers import (
     _CosineAnnealingLRFactory,
     _LRSchedulerFactory,
     _MyleLRFactory,
@@ -33,7 +33,7 @@ from fairseq2.recipe.internal.lr_schedulers import (
     _PolynomialDecayLRFactory,
     _TriStageLRFactory,
 )
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 
 def _register_lr_schedulers(container: DependencyContainer) -> None:

@@ -6,4 +6,4 @@
 
 from __future__ import annotations
 
-from fairseq2.nn.functional.cross_entropy import cross_entropy as cross_entropy
+from llm_lib2.nn.functional.cross_entropy import cross_entropy as cross_entropy

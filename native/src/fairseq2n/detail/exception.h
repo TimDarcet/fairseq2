@@ -12,7 +12,7 @@
 
 #include <fmt/core.h>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template <typename E, typename... Args>
 [[noreturn]] inline void
@@ -35,4 +35,4 @@ throw_system_error(std::error_code ec, fmt::format_string<Args...> format, Args 
     throw std::system_error{ec, fmt::vformat(format, fmt::make_format_args(args...))};
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

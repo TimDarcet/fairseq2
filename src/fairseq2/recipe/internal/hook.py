@@ -7,8 +7,8 @@ from __future__ import annotations
 
 from typing import final
 
-from fairseq2.recipe.internal.task import _TaskRunner
-from fairseq2.trainer import Trainer
+from llm_lib2.recipe.internal.task import _TaskRunner
+from llm_lib2.trainer import Trainer
 
 
 @final

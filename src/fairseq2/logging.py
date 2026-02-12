@@ -10,7 +10,7 @@ import logging
 from logging import INFO, Formatter, Logger, NullHandler, StreamHandler, getLogger
 from typing import Any, Final, final
 
-from fairseq2.utils.env import StandardEnvironment, get_rank
+from llm_lib2.utils.env import StandardEnvironment, get_rank
 
 
 @final
@@ -67,7 +67,7 @@ def get_log_writer(name: str | None = None) -> LogWriter:
     return LogWriter(getLogger(name))
 
 
-log = get_log_writer("fairseq2")
+log = get_log_writer("llm_lib2")
 
 
 def configure_logging(no_rich: bool = False) -> None:
@@ -93,7 +93,7 @@ def configure_logging(no_rich: bool = False) -> None:
         else:
             from rich.logging import RichHandler
 
-            from fairseq2.utils.rich import get_error_console
+            from llm_lib2.utils.rich import get_error_console
 
             console = get_error_console()
 

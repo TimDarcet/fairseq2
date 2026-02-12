@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/detail/file_system.h"
+#include "llm_lib2n/data/detail/file_system.h"
 
 #include <array>
 #include <memory>
@@ -17,10 +17,10 @@
 
 #include <strnatcmp.h>
 
-#include "fairseq2n/detail/error.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/detail/error.h"
+#include "llm_lib2n/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 namespace {
 
 struct fts_deleter {
@@ -96,4 +96,4 @@ list_files(const std::filesystem::path &path, const std::optional<std::string> &
     return output;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

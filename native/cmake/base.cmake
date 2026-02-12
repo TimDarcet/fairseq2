@@ -6,9 +6,9 @@
 
 include_guard(DIRECTORY)
 
-function(fairseq2n_set_compile_options target)
+function(llm_lib2n_set_compile_options target)
     if(NOT CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-        message(FATAL_ERROR "fairseq2n supports only GCC and Clang toolchains!")
+        message(FATAL_ERROR "llm_lib2n supports only GCC and Clang toolchains!")
     endif()
 
     set_target_properties(${target} PROPERTIES
@@ -32,7 +32,7 @@ function(fairseq2n_set_compile_options target)
             ON
     )
 
-    if(FAIRSEQ2N_RUN_CLANG_TIDY)
+    if(llm_lib2N_RUN_CLANG_TIDY)
         set_target_properties(${target} PROPERTIES
             C_CLANG_TIDY
                 ${CLANG_TIDY_EXECUTABLE}
@@ -45,7 +45,7 @@ function(fairseq2n_set_compile_options target)
 
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
         if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7)
-            message(FATAL_ERROR "fairseq2n requires GCC 7 or greater!")
+            message(FATAL_ERROR "llm_lib2n requires GCC 7 or greater!")
         endif()
 
         target_compile_options(${target}
@@ -73,7 +73,7 @@ function(fairseq2n_set_compile_options target)
         target_compile_definitions(${target} PRIVATE $<$<CONFIG:Debug>:_GLIBCXX_ASSERTIONS>)
     else()
         if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 12)
-            message(FATAL_ERROR "fairseq2n requires Clang 12 or greater!")
+            message(FATAL_ERROR "llm_lib2n requires Clang 12 or greater!")
         endif()
 
         target_compile_options(${target}
@@ -104,26 +104,26 @@ function(fairseq2n_set_compile_options target)
         endif()
     endif()
 
-    if(FAIRSEQ2N_TREAT_WARNINGS_AS_ERRORS)
+    if(llm_lib2N_TREAT_WARNINGS_AS_ERRORS)
         target_compile_options(${target}
             PRIVATE
                 $<IF:$<COMPILE_LANGUAGE:CUDA>,SHELL:--compiler-options -Werror,-Werror>
         )
     endif()
 
-    if(FAIRSEQ2N_BUILD_FOR_NATIVE)
+    if(llm_lib2N_BUILD_FOR_NATIVE)
         target_compile_options(${target} PRIVATE -march=native -mtune=native)
     endif()
 
     target_compile_options(${target} PRIVATE -fasynchronous-unwind-tables -fstack-protector-strong)
 
     # Sanitizers do not support source fortification.
-    if(NOT FAIRSEQ2N_SANITIZERS OR FAIRSEQ2N_SANITIZERS STREQUAL "nosan")
+    if(NOT llm_lib2N_SANITIZERS OR llm_lib2N_SANITIZERS STREQUAL "nosan")
         target_compile_definitions(${target} PRIVATE $<$<NOT:$<CONFIG:Debug>>:_FORTIFY_SOURCE=2>)
     endif()
 endfunction()
 
-function(fairseq2n_set_link_options target)
+function(llm_lib2n_set_link_options target)
     cmake_parse_arguments(arg
         #OPTIONS
             "ALLOW_UNDEFINED_SYMBOLS"
@@ -149,7 +149,7 @@ function(fairseq2n_set_link_options target)
             target_link_options(${target} PRIVATE LINKER:-z,defs)
         endif()
 
-        if(FAIRSEQ2N_TREAT_WARNINGS_AS_ERRORS)
+        if(llm_lib2N_TREAT_WARNINGS_AS_ERRORS)
             target_link_options(${target} PRIVATE LINKER:--fatal-warnings)
         endif()
     elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
@@ -163,24 +163,24 @@ function(fairseq2n_set_link_options target)
             )
         endif()
 
-#        if(FAIRSEQ2N_TREAT_WARNINGS_AS_ERRORS)
+#        if(llm_lib2N_TREAT_WARNINGS_AS_ERRORS)
 #            target_link_options(${target} PRIVATE LINKER:-fatal_warnings)
 #        endif()
     else()
-        message(FATAL_ERROR "fairseq2n supports only Linux and macOS operating systems!")
+        message(FATAL_ERROR "llm_lib2n supports only Linux and macOS operating systems!")
     endif()
 
-    if(FAIRSEQ2N_PERFORM_LTO)
+    if(llm_lib2N_PERFORM_LTO)
         set_property(TARGET ${target} PROPERTY INTERPROCEDURAL_OPTIMIZATION ON)
     endif()
 endfunction()
 
-function(fairseq2n_set_sanitizers)
-    if(NOT FAIRSEQ2N_SANITIZERS OR FAIRSEQ2N_SANITIZERS STREQUAL "nosan")
+function(llm_lib2n_set_sanitizers)
+    if(NOT llm_lib2N_SANITIZERS OR llm_lib2N_SANITIZERS STREQUAL "nosan")
         return()
     endif()
 
-    foreach(sanitizer IN LISTS FAIRSEQ2N_SANITIZERS)
+    foreach(sanitizer IN LISTS llm_lib2N_SANITIZERS)
         if(sanitizer STREQUAL "asan")
             if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
                 add_compile_definitions(_GLIBCXX_SANITIZE_VECTOR)
@@ -192,7 +192,7 @@ function(fairseq2n_set_sanitizers)
         elseif(sanitizer STREQUAL "tsan")
             list(APPEND sanitizer_flags -fsanitize=thread)
         else()
-            message(FATAL_ERROR "fairseq2n does not support the '${sanitizer}' sanitizer!")
+            message(FATAL_ERROR "llm_lib2n does not support the '${sanitizer}' sanitizer!")
         endif()
     endforeach()
 

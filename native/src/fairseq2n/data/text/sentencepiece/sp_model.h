@@ -16,9 +16,9 @@
 #include <utility>
 #include <vector>
 
-#include "fairseq2n/api.h"
+#include "llm_lib2n/api.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class sp_model_options {
 public:
@@ -52,7 +52,7 @@ class sp_processor;
 
 }
 
-class FAIRSEQ2_API sp_model {
+class llm_lib2_API sp_model {
     friend class sp_decoder;
     friend class sp_encoder;
 
@@ -104,4 +104,4 @@ private:
     std::unique_ptr<detail::sp_processor> processor_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

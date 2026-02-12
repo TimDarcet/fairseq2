@@ -14,7 +14,7 @@ Steps to reproduce the behavior. Ideally attach a minimal code sample to reprodu
 A clear and concise description of what you expected to happen.
 
 **Environment:**
-At the very least, specify the versions of fairseq2, PyTorch, Python, and CUDA along with your operating system and, if relevant, GPU model.
+At the very least, specify the versions of llm_lib2, PyTorch, Python, and CUDA along with your operating system and, if relevant, GPU model.
 
 **Additional Context:**
 Add any other context about the bug here.

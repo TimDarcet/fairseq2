@@ -20,7 +20,7 @@ from typing import BinaryIO, TextIO, cast, final
 
 from typing_extensions import override
 
-from fairseq2.typing import ContextManager
+from llm_lib2.typing import ContextManager
 
 
 class FileMode(Enum):

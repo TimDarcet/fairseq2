@@ -53,22 +53,22 @@ jobs:
         if: inputs.version_override
         run: |
           tools/set-project-version.sh ${{ inputs.version_override }}
-      - name: Build fairseq2n
+      - name: Build llm_lib2n
         working-directory: native
         run: |
           cmake\
             -GNinja\
             -DCMAKE_BUILD_TYPE=Release\
             -DPython3_FIND_FRAMEWORK=NEVER\
-            -DFAIRSEQ2N_PERFORM_LTO=OFF\
-            -DFAIRSEQ2N_TREAT_WARNINGS_AS_ERRORS=ON\
-            -DFAIRSEQ2N_THREAD_LIB=""\
-            -DFAIRSEQ2N_BUILD_PYTHON_BINDINGS=ON\
-            -DFAIRSEQ2N_PYTHON_DEVEL=OFF\
+            -Dllm_lib2N_PERFORM_LTO=OFF\
+            -Dllm_lib2N_TREAT_WARNINGS_AS_ERRORS=ON\
+            -Dllm_lib2N_THREAD_LIB=""\
+            -Dllm_lib2N_BUILD_PYTHON_BINDINGS=ON\
+            -Dllm_lib2N_PYTHON_DEVEL=OFF\
             -B build
 
           cmake --build build
-      - name: Package fairseq2n
+      - name: Package llm_lib2n
         working-directory: native/python
         run: |
           pip wheel\
@@ -77,7 +77,7 @@ jobs:
             --no-deps\
             --wheel-dir build/wheelhouse\
             .
-      - name: Package fairseq2
+      - name: Package llm_lib2
         run: |
           pip wheel --no-deps --wheel-dir build/wheelhouse .
       - name: Upload wheels and native tests to staging
@@ -119,20 +119,20 @@ jobs:
       - name: Install requirements
         run: |
           pip install --requirement requirements-devel.txt
-      - name: Install fairseq2n
+      - name: Install llm_lib2n
         run: |
           pip install --no-cache-dir ~/artifacts/native/python/build/wheelhouse/*.whl
-      - name: Install fairseq2
+      - name: Install llm_lib2
         run: |
           whl=$(ls ~/artifacts/build/wheelhouse/*.whl)
 
           pip install --no-cache-dir\
-            "fairseq2@file://$whl" "fairseq2[arrow]@file://$whl"
+            "llm_lib2@file://$whl" "llm_lib2[arrow]@file://$whl"
       - name: Run native tests
         run: |
           chmod 755 ~/artifacts/native/build/tests/run-tests
 
-          DYLD_LIBRARY_PATH=~/venv/lib:~/venv/lib/python${{ inputs.py }}/site-packages/torch/lib:~/venv/lib/python${{ inputs.py }}/site-packages/fairseq2n/lib\
+          DYLD_LIBRARY_PATH=~/venv/lib:~/venv/lib/python${{ inputs.py }}/site-packages/torch/lib:~/venv/lib/python${{ inputs.py }}/site-packages/llm_lib2n/lib\
             ~/artifacts/native/build/tests/run-tests
       - name: Run Python tests
         run: |

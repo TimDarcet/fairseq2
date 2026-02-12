@@ -11,16 +11,16 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import TYPE_CHECKING, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 from torch import Tensor
 from typing_extensions import override
 
-from fairseq2.data.tokenizers.family import TokenizerModelError
-from fairseq2.data.tokenizers.tokenizer import TokenDecoder, TokenEncoder, Tokenizer
-from fairseq2.data.tokenizers.vocab_info import VocabularyInfo
-from fairseq2.device import Device
-from fairseq2.error import NotSupportedError
-from fairseq2.runtime.dependency import get_dependency_resolver
+from llm_lib2.data.tokenizers.family import TokenizerModelError
+from llm_lib2.data.tokenizers.tokenizer import TokenDecoder, TokenEncoder, Tokenizer
+from llm_lib2.data.tokenizers.vocab_info import VocabularyInfo
+from llm_lib2.device import Device
+from llm_lib2.error import NotSupportedError
+from llm_lib2.runtime.dependency import get_dependency_resolver
 
 if TYPE_CHECKING or DOC_MODE:
 
@@ -91,13 +91,13 @@ if TYPE_CHECKING or DOC_MODE:
         def decode_from_tokens(self, tokens: Sequence[str]) -> str: ...
 
 else:
-    from fairseq2n.bindings.data.text.sentencepiece import (
+    from llm_lib2n.bindings.data.text.sentencepiece import (
         SentencePieceDecoder as SentencePieceDecoder,
     )
-    from fairseq2n.bindings.data.text.sentencepiece import (
+    from llm_lib2n.bindings.data.text.sentencepiece import (
         SentencePieceEncoder as SentencePieceEncoder,
     )
-    from fairseq2n.bindings.data.text.sentencepiece import (
+    from llm_lib2n.bindings.data.text.sentencepiece import (
         SentencePieceModel as SentencePieceModel,
     )
 

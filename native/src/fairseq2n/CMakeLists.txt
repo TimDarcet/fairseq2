@@ -5,12 +5,12 @@
 # LICENSE file in the root directory of this source tree.
 
 # ------------------------------------------------------------
-# Target: fairseq2n
+# Target: llm_lib2n
 # ------------------------------------------------------------
 
-add_library(fairseq2n SHARED)
+add_library(llm_lib2n SHARED)
 
-target_sources(fairseq2n
+target_sources(llm_lib2n
     PRIVATE
         exception.cc
         memory.cc
@@ -72,37 +72,37 @@ target_sources(fairseq2n
         data/text/sentencepiece/sp_processor.cc
 )
 
-if(FAIRSEQ2N_SUPPORT_IMAGE)
-    target_sources(fairseq2n
+if(llm_lib2N_SUPPORT_IMAGE)
+    target_sources(llm_lib2n
         PRIVATE
             data/image/detail/jpeg_decompress_struct.cc
             data/image/detail/png_read_struct.cc
     )
 endif()
 
-if(FAIRSEQ2N_USE_CUDA)
-    target_sources(fairseq2n
+if(llm_lib2N_USE_CUDA)
+    target_sources(llm_lib2n
         PRIVATE
             generation/ngram_repeat_block.cu
     )
 endif()
 
-fairseq2n_set_compile_options(fairseq2n)
+llm_lib2n_set_compile_options(llm_lib2n)
 
-target_compile_features(fairseq2n PUBLIC cxx_std_17)
+target_compile_features(llm_lib2n PUBLIC cxx_std_17)
 
-if(FAIRSEQ2N_SUPPORT_IMAGE)
-    target_compile_definitions(fairseq2n PRIVATE FAIRSEQ2N_SUPPORT_IMAGE)
+if(llm_lib2N_SUPPORT_IMAGE)
+    target_compile_definitions(llm_lib2n PRIVATE llm_lib2N_SUPPORT_IMAGE)
 endif()
 
-if(FAIRSEQ2N_USE_CUDA)
-    target_compile_features(fairseq2n PRIVATE cuda_std_17)
+if(llm_lib2N_USE_CUDA)
+    target_compile_features(llm_lib2n PRIVATE cuda_std_17)
 
-    target_compile_definitions(fairseq2n PRIVATE FAIRSEQ2N_USE_CUDA)
+    target_compile_definitions(llm_lib2n PRIVATE llm_lib2N_USE_CUDA)
 endif()
 
-if(FAIRSEQ2N_THREAD_LIB STREQUAL "tbb")
-    target_compile_definitions(fairseq2n PRIVATE FAIRSEQ2N_USE_TBB)
+if(llm_lib2N_THREAD_LIB STREQUAL "tbb")
+    target_compile_definitions(llm_lib2n PRIVATE llm_lib2N_USE_TBB)
 endif()
 
 if(PROJECT_IS_TOP_LEVEL)
@@ -111,13 +111,13 @@ else()
     set(system SYSTEM)
 endif()
 
-target_include_directories(fairseq2n ${system}
+target_include_directories(llm_lib2n ${system}
     PUBLIC
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src>
         $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/src>
 )
 
-target_link_libraries(fairseq2n
+target_link_libraries(llm_lib2n
     PRIVATE
         ${CMAKE_DL_LIBS}
     PRIVATE
@@ -133,32 +133,32 @@ target_link_libraries(fairseq2n
         torch
 )
 
-if(FAIRSEQ2N_SUPPORT_IMAGE)
-    target_link_libraries(fairseq2n PRIVATE jpeg_turbo_static png_static)
+if(llm_lib2N_SUPPORT_IMAGE)
+    target_link_libraries(llm_lib2n PRIVATE jpeg_turbo_static png_static)
 endif()
 
-if(FAIRSEQ2N_USE_CUDA)
-    target_link_libraries(fairseq2n PRIVATE CUDA::cudart)
+if(llm_lib2N_USE_CUDA)
+    target_link_libraries(llm_lib2n PRIVATE CUDA::cudart)
 endif()
 
-if(FAIRSEQ2N_THREAD_LIB STREQUAL "tbb")
-    target_link_libraries(fairseq2n PRIVATE TBB::tbb)
+if(llm_lib2N_THREAD_LIB STREQUAL "tbb")
+    target_link_libraries(llm_lib2n PRIVATE TBB::tbb)
 endif()
 
-fairseq2n_set_link_options(fairseq2n)
+llm_lib2n_set_link_options(llm_lib2n)
 
-set_target_properties(fairseq2n PROPERTIES
+set_target_properties(llm_lib2n PROPERTIES
     VERSION
         ${PROJECT_VERSION}
     SOVERSION
         ${PROJECT_VERSION_MAJOR}
 )
 
-add_library(fairseq2n::fairseq2n ALIAS fairseq2n)
+add_library(llm_lib2n::llm_lib2n ALIAS llm_lib2n)
 
 install(
     TARGETS
-        fairseq2n
+        llm_lib2n
     EXPORT
         ${PROJECT_NAME}-targets
     LIBRARY
@@ -192,13 +192,13 @@ install(
 # Library Configuration
 # ------------------------------------------------------------
 
-if(FAIRSEQ2N_SUPPORT_IMAGE)
+if(llm_lib2N_SUPPORT_IMAGE)
     set(SUPPORTS_IMAGE "true")
 else()
     set(SUPPORTS_IMAGE "false")
 endif()
 
-if(FAIRSEQ2N_USE_CUDA)
+if(llm_lib2N_USE_CUDA)
     set(USES_CUDA "true")
 
     set(CUDA_VERSION_MAJOR "${CUDAToolkit_VERSION_MAJOR}")
@@ -216,7 +216,7 @@ install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/config.h
     DESTINATION
-        ${install_inc_dir}/fairseq2n
+        ${install_inc_dir}/llm_lib2n
     COMPONENT
         devel
 )

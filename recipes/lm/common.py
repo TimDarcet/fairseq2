@@ -6,11 +6,11 @@
 
 from __future__ import annotations
 
-from fairseq2.logging import log
-from fairseq2.models.clm import CausalLM
-from fairseq2.nn import Embedding
-from fairseq2.recipe import RecipeContext
-from fairseq2.recipe.error import RecipeError
+from llm_lib2.logging import log
+from llm_lib2.models.clm import CausalLM
+from llm_lib2.nn import Embedding
+from llm_lib2.recipe import RecipeContext
+from llm_lib2.recipe.error import RecipeError
 
 
 def check_model_vocabulary(context: RecipeContext) -> None:

@@ -9,8 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import final
 
-from fairseq2.assets import AssetCardError, AssetStore
-from fairseq2.data.tokenizers import (
+from llm_lib2.assets import AssetCardError, AssetStore
+from llm_lib2.data.tokenizers import (
     Tokenizer,
     TokenizerFamily,
     TokenizerFamilyNotKnownError,
@@ -18,14 +18,14 @@ from fairseq2.data.tokenizers import (
     _maybe_get_tokenizer_family,
     resolve_tokenizer_reference,
 )
-from fairseq2.error import InternalError, raise_operational_system_error
-from fairseq2.gang import Gangs
-from fairseq2.logging import log
-from fairseq2.recipe.config import TokenizerSection
-from fairseq2.recipe.error import TokenizerModelNotFoundError
-from fairseq2.recipe.internal.asset_config import _AssetConfigOverrider
-from fairseq2.recipe.internal.log import _log_tokenizer, _LogHelper
-from fairseq2.runtime.lookup import Lookup
+from llm_lib2.error import InternalError, raise_operational_system_error
+from llm_lib2.gang import Gangs
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import TokenizerSection
+from llm_lib2.recipe.error import TokenizerModelNotFoundError
+from llm_lib2.recipe.internal.asset_config import _AssetConfigOverrider
+from llm_lib2.recipe.internal.log import _log_tokenizer, _LogHelper
+from llm_lib2.runtime.lookup import Lookup
 
 
 @dataclass

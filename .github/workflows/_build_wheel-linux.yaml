@@ -44,7 +44,7 @@ jobs:
     runs-on:
       labels: 4-core-ubuntu
     container:
-      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_${{ inputs.arch }}:3-${{ inputs.variant }}
+      image: ghcr.io/facebookresearch/llm_lib2-ci-manylinux_${{ inputs.arch }}:3-${{ inputs.variant }}
     defaults:
       run:
         shell: bash
@@ -82,7 +82,7 @@ jobs:
           else
               tools/set-project-version.sh --native-only $version+$VARIANT
           fi
-      - name: Build fairseq2n
+      - name: Build llm_lib2n
         working-directory: native
         env:
           VARIANT: ${{ inputs.variant }}
@@ -114,16 +114,16 @@ jobs:
             -GNinja\
             -DCMAKE_BUILD_TYPE=$build_type\
             -DCMAKE_CUDA_ARCHITECTURES="$cuda_archs"\
-            -DFAIRSEQ2N_PERFORM_LTO=$lto\
-            -DFAIRSEQ2N_SANITIZERS="${SANITIZERS/_/;}"\
-            -DFAIRSEQ2N_TREAT_WARNINGS_AS_ERRORS=ON\
-            -DFAIRSEQ2N_USE_CUDA=$cuda\
-            -DFAIRSEQ2N_PYTHON_DEVEL=OFF\
+            -Dllm_lib2N_PERFORM_LTO=$lto\
+            -Dllm_lib2N_SANITIZERS="${SANITIZERS/_/;}"\
+            -Dllm_lib2N_TREAT_WARNINGS_AS_ERRORS=ON\
+            -Dllm_lib2N_USE_CUDA=$cuda\
+            -Dllm_lib2N_PYTHON_DEVEL=OFF\
             -B build
           EOF
 
           scl enable gcc-toolset-11 "cmake --build build"
-      - name: Package fairseq2n
+      - name: Package llm_lib2n
         working-directory: native/python
         run: |
           pip wheel\
@@ -134,7 +134,7 @@ jobs:
             --config-settings "--build-option=manylinux_2_28_${{ inputs.arch }}"\
             --wheel-dir build/wheelhouse\
             .
-      - name: Package fairseq2
+      - name: Package llm_lib2
         run: |
           pip wheel --no-deps --wheel-dir build/wheelhouse .
       - name: Upload wheels and native tests to staging
@@ -153,7 +153,7 @@ jobs:
     runs-on:
       labels: 4-core-ubuntu
     container:
-      image: ghcr.io/facebookresearch/fairseq2-ci-manylinux_${{ inputs.arch }}:3-${{ inputs.variant }}
+      image: ghcr.io/facebookresearch/llm_lib2-ci-manylinux_${{ inputs.arch }}:3-${{ inputs.variant }}
     defaults:
       run:
         shell: bash
@@ -185,15 +185,15 @@ jobs:
               # 2021.9 are built against a newer glibc.
               pip install tbb==2021.8
           fi
-      - name: Install fairseq2n
+      - name: Install llm_lib2n
         run: |
           pip install --no-cache-dir ~/artifacts/native/python/build/wheelhouse/*.whl
-      - name: Install fairseq2
+      - name: Install llm_lib2
         run: |
           whl=$(ls ~/artifacts/build/wheelhouse/*.whl)
 
           pip install --no-cache-dir\
-            "fairseq2@file://$whl" "fairseq2[arrow]@file://$whl"
+            "llm_lib2@file://$whl" "llm_lib2[arrow]@file://$whl"
       - name: Set the sanitizer variables
         if: inputs.sanitizers != 'nosan'
         env:
@@ -229,7 +229,7 @@ jobs:
 
           site_packages=~/venv/lib/python${{ inputs.py }}/site-packages
 
-          LD_LIBRARY_PATH=~/venv/lib:$site_packages/torch/lib:$site_packages/fairseq2n/lib:$LD_LIBRARY_PATH\
+          LD_LIBRARY_PATH=~/venv/lib:$site_packages/torch/lib:$site_packages/llm_lib2n/lib:$LD_LIBRARY_PATH\
             ~/artifacts/native/build/tests/run-tests
       - name: Run Python tests
         env:
@@ -252,11 +252,11 @@ jobs:
         run: |
           # Unfortunately Python leaks quite a bit of memory, so we cannot rely
           # on the raw output of LSan. As a rudimentary workaround, we check if
-          # any stack frame has a symbol containing the word 'fairseq2'.
+          # any stack frame has a symbol containing the word 'llm_lib2'.
           for f in ~/lsan.out.*; do
             cat $f
 
-            if grep --silent 'fairseq2' $f; then
+            if grep --silent 'llm_lib2' $f; then
                 exit 1
             fi
           done

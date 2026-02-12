@@ -24,9 +24,9 @@ except ImportError:
 else:
     _has_rms_norm = True
 
-from fairseq2.data_type import DataType
-from fairseq2.device import Device
-from fairseq2.nn.utils.module import get_name_or_self
+from llm_lib2.data_type import DataType
+from llm_lib2.device import Device
+from llm_lib2.nn.utils.module import get_name_or_self
 
 
 class LayerNorm(Module, ABC):

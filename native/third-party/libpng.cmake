@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_libpng)
+macro(llm_lib2n_add_libpng)
     if(NOT TARGET png_static)
         set(CMAKE_POLICY_DEFAULT_CMP0126 NEW)
 

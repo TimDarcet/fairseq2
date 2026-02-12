@@ -20,7 +20,7 @@ A typical implementation of a ``validate()`` method looks like the following:
 
     from dataclasses import dataclass
 
-    from fairseq2.utils.validation import Validatable, ValidationResult
+    from llm_lib2.utils.validation import Validatable, ValidationResult
 
     @dataclass
     class FooConfig(Validatable):
@@ -44,7 +44,7 @@ validatable. :class:`ObjectValidator` will traverse the object graph and call
 each ``validate()`` method it finds in dataclasses as well as in composite
 objects of types ``list``, ``Mapping``, ``Set``, and ``tuple``.
 
-Whenever ``FooConfig`` is used in a recipe configuration, fairseq2 will ensure
+Whenever ``FooConfig`` is used in a recipe configuration, llm_lib2 will ensure
 that it is validated before setting :attr:`RecipeContext.config`. To manually
 validate an object outside of recipes, :class:`StandardObjectValidator` can
 be used:
@@ -53,7 +53,7 @@ be used:
 
     from dataclasses import dataclass
 
-    from fairseq2.utils.validation import (
+    from llm_lib2.utils.validation import (
         ObjectValidator,
         StandardObjectValidator,
         Validatable,
@@ -98,7 +98,7 @@ from typing import Protocol, final, runtime_checkable
 
 from typing_extensions import override
 
-from fairseq2.typing import is_dataclass_instance
+from llm_lib2.typing import is_dataclass_instance
 
 
 class ObjectValidator(ABC):

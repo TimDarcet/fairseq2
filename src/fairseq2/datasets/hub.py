@@ -9,10 +9,10 @@ from __future__ import annotations
 from collections.abc import Iterator
 from typing import Generic, TypeVar, cast, final
 
-from fairseq2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
-from fairseq2.datasets.family import DatasetFamily, DatasetFamilyNotKnownError
-from fairseq2.error import InternalError
-from fairseq2.runtime.dependency import get_dependency_resolver
+from llm_lib2.assets import AssetCard, AssetCardError, AssetNotFoundError, AssetStore
+from llm_lib2.datasets.family import DatasetFamily, DatasetFamilyNotKnownError
+from llm_lib2.error import InternalError
+from llm_lib2.runtime.dependency import get_dependency_resolver
 
 DatasetT = TypeVar("DatasetT")
 

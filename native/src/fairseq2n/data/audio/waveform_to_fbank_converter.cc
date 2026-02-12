@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/audio/waveform_to_fbank_converter.h"
+#include "llm_lib2n/data/audio/waveform_to_fbank_converter.h"
 
 #include <limits>
 #include <tuple>
@@ -14,13 +14,13 @@
 #include <ATen/Tensor.h>
 #include <kaldi-native-fbank/csrc/feature-fbank.h>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/data/audio/detail/kaldi_fbank.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/data/audio/detail/kaldi_fbank.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 waveform_to_fbank_converter::waveform_to_fbank_converter(fbank_options opts) noexcept
   : opts_{opts}
@@ -162,4 +162,4 @@ waveform_to_fbank_converter::init_computer(float32 sample_rate) const
     computer_ = std::make_unique<kaldi_fbank_computer>(opts);
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -9,13 +9,13 @@ from __future__ import annotations
 import pytest
 from torch.nn import Linear, Module
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     AdafactorConfig,
     AdafactorGroupConfig,
     AdamWConfig,
     AdamWGroupConfig,
 )
-from fairseq2.recipe.internal.optim import _AdafactorFactory, _AdamWFactory
+from llm_lib2.recipe.internal.optim import _AdafactorFactory, _AdamWFactory
 
 
 class FooModel(Module):

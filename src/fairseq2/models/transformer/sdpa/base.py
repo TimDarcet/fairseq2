@@ -12,8 +12,8 @@ from typing import TYPE_CHECKING
 from torch import Tensor
 from torch.nn import Module
 
-from fairseq2.models.transformer.attention_bias import AttentionBiasCache
-from fairseq2.nn import BatchLayout
+from llm_lib2.models.transformer.attention_bias import AttentionBiasCache
+from llm_lib2.nn import BatchLayout
 
 
 class SDPA(Module, ABC):

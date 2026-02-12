@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import final
 from urllib.parse import ParseResult, urlparse, urlunparse
 
-from fairseq2.error import InternalError, NotSupportedError
+from llm_lib2.error import InternalError, NotSupportedError
 
 
 @final

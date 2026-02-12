@@ -6,8 +6,8 @@
 
 from dataclasses import dataclass, field
 
-from fairseq2.data.data_pipeline import DataPipelineBuilder
-from fairseq2.data.parquet.arrow_transform import (
+from llm_lib2.data.data_pipeline import DataPipelineBuilder
+from llm_lib2.data.parquet.arrow_transform import (
     apply_filter,
     concat_table,
     filter_list_by_range,
@@ -16,22 +16,22 @@ from fairseq2.data.parquet.arrow_transform import (
     repeat_list_column,
     replace_table_column,
 )
-from fairseq2.data.parquet.fragment_loading import (
+from llm_lib2.data.parquet.fragment_loading import (
     FragmentLoadingConfig,
     NamedColumns,
     ParquetFragmentLoader,
 )
-from fairseq2.data.parquet.fragment_streaming import (
+from llm_lib2.data.parquet.fragment_streaming import (
     FragmentStreamingConfig,
     ParquetFragmentStreamer,
     RejectionDistributionSmoother,
 )
-from fairseq2.data.parquet.fragment_streaming.primitives import (
+from llm_lib2.data.parquet.fragment_streaming.primitives import (
     init_parquet_dataset,
     stream_parquet_fragments,
 )
-from fairseq2.data.parquet.table_bucketing import TableBucketer, TableBucketingConfig
-from fairseq2.data.parquet.utils import (
+from llm_lib2.data.parquet.table_bucketing import TableBucketer, TableBucketingConfig
+from llm_lib2.data.parquet.utils import (
     BatchOutputType,
     NestedDict,
     NestedDictValue,
@@ -65,7 +65,7 @@ def build_basic_parquet_data_pipeline(
     """
     Simple integration of Parquet components to build a basic dataloading pipeline.
 
-    >>> from fairseq2.data.parquet import *
+    >>> from llm_lib2.data.parquet import *
     >>> config = BasicDataLoadingConfig(
     ...     fragment_stream_config=FragmentStreamingConfig(
     ...         parquet_path="path/to/parquet",

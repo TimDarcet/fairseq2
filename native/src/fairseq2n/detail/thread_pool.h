@@ -15,7 +15,7 @@
 #include <thread>
 #include <vector>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class thread_pool {
 public:
@@ -93,4 +93,4 @@ private:
     bool stop_{false};
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include <fairseq2n/data/tape.h>
+#include <llm_lib2n/data/tape.h>
 
 #include <cstdint>
 #include <optional>
@@ -13,10 +13,10 @@
 
 #include <gtest/gtest.h>
 
-#include <fairseq2n/float.h>
-#include <fairseq2n/data/immutable_string.h>
+#include <llm_lib2n/float.h>
+#include <llm_lib2n/data/immutable_string.h>
 
-using namespace fairseq2n;
+using namespace llm_lib2n;
 
 TEST(test_tape, record_and_read_work)
 {

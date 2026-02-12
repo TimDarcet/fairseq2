@@ -11,9 +11,9 @@
 #include <unordered_map>
 #include <utility>
 
-#include "fairseq2n/data/immutable_string.h"
+#include "llm_lib2n/data/immutable_string.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 template <typename T>
 class lru_cache {
@@ -111,4 +111,4 @@ lru_cache<T>::maybe_get(const immutable_string &key)
     return nullptr;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

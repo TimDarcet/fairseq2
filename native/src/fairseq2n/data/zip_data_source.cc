@@ -4,18 +4,18 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/zip_data_source.h"
+#include "llm_lib2n/data/zip_data_source.h"
 
 #include <algorithm>
 #include <cstdint>
 
 #include <fmt/format.h>
 
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/detail/parallel.h"
-#include "fairseq2n/data/detail/exception.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/detail/parallel.h"
+#include "llm_lib2n/data/detail/exception.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 zip_data_source::zip_data_source(
     std::vector<data_pipeline> &&pipelines,
@@ -214,4 +214,4 @@ zip_data_source::finitude_type() const noexcept
     return finitude_type_;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

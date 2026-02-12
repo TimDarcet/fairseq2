@@ -4,7 +4,7 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-macro(fairseq2n_add_gtest)
+macro(llm_lib2n_add_gtest)
     if(NOT TARGET GTest::gtest_main)
         set(INSTALL_GTEST OFF)
 

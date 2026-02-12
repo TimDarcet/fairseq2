@@ -4,15 +4,15 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/memory.h"
+#include "llm_lib2n/memory.h"
 
 #include <algorithm>
 
 #include <new>
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -45,4 +45,4 @@ copy_memory(memory_span source)
     return target;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

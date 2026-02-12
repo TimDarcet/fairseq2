@@ -6,5 +6,5 @@
 
 from __future__ import annotations
 
-from fairseq2.evaluator import Evaluator as Evaluator  # noqa: F401
-from fairseq2.evaluator import EvalUnit as EvalUnit  # noqa: F401
+from llm_lib2.evaluator import Evaluator as Evaluator  # noqa: F401
+from llm_lib2.evaluator import EvalUnit as EvalUnit  # noqa: F401

@@ -13,9 +13,9 @@
 
 #include <ATen/Generator.h>
 
-#include "fairseq2n/data/data_source.h"
+#include "llm_lib2n/data/data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 class shuffle_data_source final : public data_source {
     static constexpr std::size_t max_pre_alloc_size_ = 100'000;
@@ -57,4 +57,4 @@ private:
     at::Generator generator_;
 };
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

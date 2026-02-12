@@ -13,25 +13,25 @@ from typing import final
 
 import torch
 
-import fairseq2.runtime.dependency
-from fairseq2.composition import _register_library
-from fairseq2.error import raise_operational_system_error
-from fairseq2.logging import configure_logging
-from fairseq2.recipe.base import Recipe
-from fairseq2.recipe.internal.cluster import _ClusterPreparer
-from fairseq2.recipe.internal.config import _is_train_config, _RecipeConfigHolder
-from fairseq2.recipe.internal.log import _LogHelper
-from fairseq2.recipe.internal.logging import _DistributedLogConfigurer
-from fairseq2.recipe.internal.output_dir import _OutputDirectoryCreator
-from fairseq2.recipe.internal.task import _TaskRunner
-from fairseq2.recipe.internal.torch import _TorchConfigurer
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
-from fairseq2.task import Task
-from fairseq2.utils.structured import ValueConverter
-from fairseq2.utils.validation import ObjectValidator
-from fairseq2.utils.warn import _warn_deprecated, enable_deprecation_warnings
-from fairseq2.utils.yaml import YamlDumper
-from fairseq2.world_info import WorldInfo
+import llm_lib2.runtime.dependency
+from llm_lib2.composition import _register_library
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.logging import configure_logging
+from llm_lib2.recipe.base import Recipe
+from llm_lib2.recipe.internal.cluster import _ClusterPreparer
+from llm_lib2.recipe.internal.config import _is_train_config, _RecipeConfigHolder
+from llm_lib2.recipe.internal.log import _LogHelper
+from llm_lib2.recipe.internal.logging import _DistributedLogConfigurer
+from llm_lib2.recipe.internal.output_dir import _OutputDirectoryCreator
+from llm_lib2.recipe.internal.task import _TaskRunner
+from llm_lib2.recipe.internal.torch import _TorchConfigurer
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.task import Task
+from llm_lib2.utils.structured import ValueConverter
+from llm_lib2.utils.validation import ObjectValidator
+from llm_lib2.utils.warn import _warn_deprecated, enable_deprecation_warnings
+from llm_lib2.utils.yaml import YamlDumper
+from llm_lib2.world_info import WorldInfo
 
 #
 # DEPRECATED - BEGIN
@@ -81,7 +81,7 @@ def run(
     no_rich: bool = False,
     no_progress: bool | None = None,
 ) -> None:
-    from fairseq2.recipe.composition import (
+    from llm_lib2.recipe.composition import (
         _register_inference_recipe,
         _register_train_recipe,
     )
@@ -177,14 +177,14 @@ def _run_recipe(resolver: DependencyResolver) -> None:
 
 @contextmanager
 def _swap_default_resolver(resolver: DependencyResolver) -> Iterator[None]:
-    original_resolver = fairseq2.runtime.dependency._resolver
+    original_resolver = llm_lib2.runtime.dependency._resolver
 
-    fairseq2.runtime.dependency._resolver = resolver
+    llm_lib2.runtime.dependency._resolver = resolver
 
     try:
         yield
     finally:
-        fairseq2.runtime.dependency._resolver = original_resolver
+        llm_lib2.runtime.dependency._resolver = original_resolver
 
 
 @final

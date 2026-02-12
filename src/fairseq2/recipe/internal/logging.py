@@ -10,14 +10,14 @@ from logging import DEBUG, FileHandler, Formatter
 from pathlib import Path
 from typing import TYPE_CHECKING, final
 
-from fairseq2n import DOC_MODE
+from llm_lib2n import DOC_MODE
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.logging import log
-from fairseq2.recipe.config import CommonSection
-from fairseq2.utils.env import Environment
-from fairseq2.world_info import WorldInfo
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.logging import log
+from llm_lib2.recipe.config import CommonSection
+from llm_lib2.utils.env import Environment
+from llm_lib2.world_info import WorldInfo
 
 
 @final
@@ -119,4 +119,4 @@ if TYPE_CHECKING or DOC_MODE:
     def _enable_aten_logging(log_file: Path) -> None: ...
 
 else:
-    from fairseq2n.bindings import _enable_aten_logging
+    from llm_lib2n.bindings import _enable_aten_logging

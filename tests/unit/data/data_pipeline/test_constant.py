@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.data.data_pipeline import DataPipeline
+from llm_lib2.data.data_pipeline import DataPipeline
 
 
 class TestConstantOp:

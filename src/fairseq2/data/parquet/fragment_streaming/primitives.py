@@ -18,17 +18,17 @@ import pyarrow.parquet as pq
 import torch
 from pyarrow.dataset import get_partition_keys
 
-from fairseq2.data.data_pipeline import (
+from llm_lib2.data.data_pipeline import (
     DataPipelineBuilder,
     read_iterator,
     read_sequence,
 )
-from fairseq2.data.parquet.fragment_streaming.config import ParquetDatasetLimitOptions
-from fairseq2.data.parquet.utils import (
+from llm_lib2.data.parquet.fragment_streaming.config import ParquetDatasetLimitOptions
+from llm_lib2.data.parquet.utils import (
     circular_shift_left,
     split_fragment_in_row_groups,
 )
-from fairseq2.logging import log
+from llm_lib2.logging import log
 
 try:
     from itertools import batched  # type: ignore

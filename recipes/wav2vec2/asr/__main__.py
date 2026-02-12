@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.recipe.cli import train_main
+from llm_lib2.recipe.cli import train_main
 
 from .recipe import Wav2Vec2AsrRecipe
 

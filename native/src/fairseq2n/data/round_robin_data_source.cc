@@ -4,11 +4,11 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/round_robin_data_source.h"
+#include "llm_lib2n/data/round_robin_data_source.h"
 
 #include <algorithm>
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 round_robin_data_source::round_robin_data_source(
     std::vector<data_pipeline> &&pipelines, 
@@ -170,4 +170,4 @@ round_robin_data_source::are_all_done() noexcept
     return is_eod_;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

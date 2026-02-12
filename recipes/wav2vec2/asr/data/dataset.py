@@ -12,11 +12,11 @@ from typing import Any, Final, final
 
 import torch
 
-from fairseq2.data.data_pipeline import DataPipeline, DataPipelineBuilder
-from fairseq2.data.text import StrSplitter, read_text
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.data_type import DataType
-from fairseq2.datasets import (
+from llm_lib2.data.data_pipeline import DataPipeline, DataPipelineBuilder
+from llm_lib2.data.text import StrSplitter, read_text
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.data_type import DataType
+from llm_lib2.datasets import (
     DataPipelineReader,
     DataReader,
     DataReadError,
@@ -24,8 +24,8 @@ from fairseq2.datasets import (
     Seq2SeqBatch,
     SyncMode,
 )
-from fairseq2.gang import Gangs
-from fairseq2.recipe.config import DatasetSection
+from llm_lib2.gang import Gangs
+from llm_lib2.recipe.config import DatasetSection
 
 from .batch_utils import add_batch_shuffling, add_length_batching
 from .preprocessing import (

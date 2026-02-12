@@ -23,11 +23,11 @@ target_sources(tests
         utils/test_cast.cc
 )
 
-fairseq2n_set_compile_options(tests)
+llm_lib2n_set_compile_options(tests)
 
-target_link_libraries(tests PRIVATE GTest::gtest_main fairseq2n)
+target_link_libraries(tests PRIVATE GTest::gtest_main llm_lib2n)
 
-fairseq2n_set_link_options(tests)
+llm_lib2n_set_link_options(tests)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     # The torch wheel for aarch64 comes with an extra 'torch.libs' directory

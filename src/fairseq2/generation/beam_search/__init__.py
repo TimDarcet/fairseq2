@@ -6,16 +6,16 @@
 
 from __future__ import annotations
 
-from fairseq2.generation.beam_search.algo import (
+from llm_lib2.generation.beam_search.algo import (
     BeamSearchAlgorithm as BeamSearchAlgorithm,
 )
-from fairseq2.generation.beam_search.algo import BeamStep as BeamStep
-from fairseq2.generation.beam_search.algo import (
+from llm_lib2.generation.beam_search.algo import BeamStep as BeamStep
+from llm_lib2.generation.beam_search.algo import (
     StandardBeamSearchAlgorithm as StandardBeamSearchAlgorithm,
 )
-from fairseq2.generation.beam_search.generator import (
+from llm_lib2.generation.beam_search.generator import (
     BeamSearchSeq2SeqGenerator as BeamSearchSeq2SeqGenerator,
 )
-from fairseq2.generation.beam_search.generator import (
+from llm_lib2.generation.beam_search.generator import (
     BeamSearchSequenceGenerator as BeamSearchSequenceGenerator,
 )

@@ -12,17 +12,17 @@ from typing import Iterator, final
 
 from typing_extensions import override
 
-from fairseq2.assets import (
+from llm_lib2.assets import (
     AssetMetadataError,
     AssetMetadataFileLoader,
     AssetMetadataProvider,
     AssetMetadataSource,
     CachedAssetMetadataProvider,
 )
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileSystem
-from fairseq2.utils.structured import ValueConverter
-from fairseq2.utils.yaml import YamlDumper
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileSystem
+from llm_lib2.utils.structured import ValueConverter
+from llm_lib2.utils.yaml import YamlDumper
 
 
 class ModelMetadataDumper(ABC):

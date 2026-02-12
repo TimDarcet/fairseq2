@@ -20,10 +20,10 @@ from torch import get_default_dtype
 from torch.overrides import TorchFunctionMode
 from typing_extensions import override
 
-from fairseq2.runtime.dependency import get_dependency_resolver
-from fairseq2.typing import ContextManager
-from fairseq2.utils.threading import ThreadLocalStorage
-from fairseq2.utils.warn import _warn_deprecated
+from llm_lib2.runtime.dependency import get_dependency_resolver
+from llm_lib2.typing import ContextManager
+from llm_lib2.utils.threading import ThreadLocalStorage
+from llm_lib2.utils.warn import _warn_deprecated
 
 DataType: TypeAlias = torch.dtype
 
@@ -41,7 +41,7 @@ def set_dtype(dtype: DataType) -> ContextManager[None]:
 
         import torch
 
-        from fairseq2.data_type import set_dtype
+        from llm_lib2.data_type import set_dtype
 
         with set_dtype(torch.bfloat16):
             t = torch.ones((4,4))

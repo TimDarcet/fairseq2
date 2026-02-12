@@ -13,7 +13,7 @@ from torch import Tensor
 from torch.optim import Optimizer
 from typing_extensions import override
 
-from fairseq2.optim.lr_schedulers.lr_scheduler import (
+from llm_lib2.optim.lr_schedulers.lr_scheduler import (
     AbstractLRScheduler,
     get_per_param_group,
 )

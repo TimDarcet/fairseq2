@@ -13,14 +13,14 @@
 #include <ATen/ScalarType.h>
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class immutable_string;
 
-class FAIRSEQ2_API string_to_tensor_converter final {
+class llm_lib2_API string_to_tensor_converter final {
 public:
     explicit
     string_to_tensor_converter(
@@ -39,4 +39,4 @@ private:
     at::ScalarType dtype_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

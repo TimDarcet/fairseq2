@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/memory_stream.h"
+#include "llm_lib2n/data/memory_stream.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 memory_block
 memory_stream::read_chunk()
@@ -57,4 +57,4 @@ memory_stream::supports_seek() const noexcept
     return true;
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

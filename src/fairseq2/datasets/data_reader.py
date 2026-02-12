@@ -14,11 +14,11 @@ from typing import TypeVar, final
 import torch
 from typing_extensions import Self, override
 
-from fairseq2.data.data_pipeline import DataPipeline, DataPipelineError
-from fairseq2.gang import Gang, Gangs, all_sum
-from fairseq2.logging import log
-from fairseq2.typing import Stateful
-from fairseq2.utils.tensor import to_tensor
+from llm_lib2.data.data_pipeline import DataPipeline, DataPipelineError
+from llm_lib2.gang import Gang, Gangs, all_sum
+from llm_lib2.logging import log
+from llm_lib2.typing import Stateful
+from llm_lib2.utils.tensor import to_tensor
 
 
 class SyncMode(Enum):

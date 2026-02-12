@@ -12,8 +12,8 @@ from pathlib import Path
 from torch.nn import Module
 from typing_extensions import NoReturn
 
-from fairseq2.data.tokenizers import Tokenizer
-from fairseq2.device import Device
+from llm_lib2.data.tokenizers import Tokenizer
+from llm_lib2.device import Device
 
 
 class RecipeConfigParseError(Exception):

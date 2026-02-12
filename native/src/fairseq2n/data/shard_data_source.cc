@@ -4,9 +4,9 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/shard_data_source.h"
+#include "llm_lib2n/data/shard_data_source.h"
 
-namespace fairseq2n::detail {
+namespace llm_lib2n::detail {
 
 shard_data_source::shard_data_source(
     std::unique_ptr<data_source> &&inner,
@@ -68,4 +68,4 @@ shard_data_source::finitude_type() const noexcept
     return inner_->finitude_type();
 }
 
-}  // namespace fairseq2n::detail
+}  // namespace llm_lib2n::detail

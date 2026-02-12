@@ -4,20 +4,20 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/bindings/module.h"
+#include "llm_lib2n/bindings/module.h"
 
 #include <cstddef>
 #include <utility>
 
-#include <fairseq2n/memory.h>
-#include <fairseq2n/detail/exception.h>
-#include <fairseq2n/utils/cast.h>
+#include <llm_lib2n/memory.h>
+#include <llm_lib2n/detail/exception.h>
+#include <llm_lib2n/utils/cast.h>
 
 namespace py = pybind11;
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -117,4 +117,4 @@ def_memory(py::module_ &base_module)
                 }));
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -8,13 +8,13 @@
 
 #include <optional>
 
-#include "fairseq2n/api.h"
-#include "fairseq2n/data/data.h"
+#include "llm_lib2n/api.h"
+#include "llm_lib2n/data/data.h"
 
 #include <ATen/Device.h>
 #include <ATen/ScalarType.h>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 class audio_decoder_options {
 public:
@@ -89,7 +89,7 @@ private:
     bool pin_memory_ = false;
 };
 
-class FAIRSEQ2_API audio_decoder {
+class llm_lib2_API audio_decoder {
 public:
     explicit
     audio_decoder(audio_decoder_options opts = {});
@@ -101,4 +101,4 @@ private:
     audio_decoder_options opts_;
 };
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

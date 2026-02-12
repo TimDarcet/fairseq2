@@ -11,14 +11,14 @@ import warnings
 
 def enable_deprecation_warnings() -> None:
     """
-    Enables fairseq2 deprecation warnings.
+    Enables llm_lib2 deprecation warnings.
 
     This function is called by all recipe entry points to ensure that
     deprecation warnings are visible to users. It is strongly advised that
     developers also call it in their test runners to ensure that all deprecation
     warnings are caught and handled in a timely manner.
     """
-    warnings.filterwarnings("once", category=DeprecationWarning, module="fairseq2.*")
+    warnings.filterwarnings("once", category=DeprecationWarning, module="llm_lib2.*")
 
 
 def _warn_deprecated(msg: str) -> None:
@@ -29,5 +29,5 @@ def _warn_deprecated(msg: str) -> None:
 def _warn_progress_deprecated(value: bool | None) -> None:
     if value is not None:
         _warn_deprecated(
-            "`progress` parameter in all fairseq2 APIs is deprecated, has no effect, and will be removed in v0.13."
+            "`progress` parameter in all llm_lib2 APIs is deprecated, has no effect, and will be removed in v0.13."
         )

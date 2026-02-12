@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/text/sentencepiece/sp_encoder.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_encoder.h"
 
 #include <algorithm>
 #include <cstddef>
@@ -12,21 +12,21 @@
 
 #include <ATen/Functions.h>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/immutable_string.h"
-#include "fairseq2n/data/detail/tensor_helpers.h"
-#include "fairseq2n/data/text/sentencepiece/sp_model.h"
-#include "fairseq2n/data/text/sentencepiece/sp_processor.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/utils/cast.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/immutable_string.h"
+#include "llm_lib2n/data/detail/tensor_helpers.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_model.h"
+#include "llm_lib2n/data/text/sentencepiece/sp_processor.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/utils/cast.h"
 
 using sentencepiece::ImmutableSentencePieceText;
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -175,4 +175,4 @@ sp_encoder::encode_as_tokens(std::string_view text) const
     return tokens;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

@@ -8,36 +8,36 @@ from __future__ import annotations
 
 from rich.console import Console
 
-from fairseq2.assets import AssetConfigLoader, StandardAssetConfigLoader
-from fairseq2.checkpoint import (
+from llm_lib2.assets import AssetConfigLoader, StandardAssetConfigLoader
+from llm_lib2.checkpoint import (
     ModelMetadataDumper,
     ModelMetadataLoader,
     StandardModelMetadataDumper,
     StandardModelMetadataLoader,
 )
-from fairseq2.cluster import (
+from llm_lib2.cluster import (
     ClusterHandler,
     ClusterResolver,
     SlurmHandler,
     StandardClusterResolver,
 )
-from fairseq2.composition.assets import _register_asset
-from fairseq2.composition.datasets import _register_dataset_families
-from fairseq2.composition.extensions import _register_extensions
-from fairseq2.composition.models import _register_model_families
-from fairseq2.composition.tokenizers import _register_tokenizer_families
-from fairseq2.data.tokenizers.hub import GlobalTokenizerLoader
-from fairseq2.data.tokenizers.sentencepiece import (
+from llm_lib2.composition.assets import _register_asset
+from llm_lib2.composition.datasets import _register_dataset_families
+from llm_lib2.composition.extensions import _register_extensions
+from llm_lib2.composition.models import _register_model_families
+from llm_lib2.composition.tokenizers import _register_tokenizer_families
+from llm_lib2.data.tokenizers.hub import GlobalTokenizerLoader
+from llm_lib2.data.tokenizers.sentencepiece import (
     SentencePieceModelLoader,
     StandardSentencePieceModelLoader,
 )
-from fairseq2.data_type import (
+from llm_lib2.data_type import (
     DataTypeContext,
     _DataTypeModeStack,
     _StandardDataTypeContext,
     _tensor_constructors,
 )
-from fairseq2.device import (
+from llm_lib2.device import (
     CPU,
     CudaContext,
     Device,
@@ -46,9 +46,9 @@ from fairseq2.device import (
     _StandardCudaContext,
     _StandardDeviceContext,
 )
-from fairseq2.file_system import FileSystem, LocalFileSystem
-from fairseq2.gang import GangContext, _GangManager, _StandardGangContext
-from fairseq2.io import (
+from llm_lib2.file_system import FileSystem, LocalFileSystem
+from llm_lib2.gang import GangContext, _GangManager, _StandardGangContext
+from llm_lib2.io import (
     SafetensorsLoader,
     TensorFileDumper,
     TensorFileLoader,
@@ -56,29 +56,29 @@ from fairseq2.io import (
     _TorchTensorFileDumper,
     _TorchTensorFileLoader,
 )
-from fairseq2.model_checkpoint import (
+from llm_lib2.model_checkpoint import (
     ModelCheckpointLoader,
     _BasicModelCheckpointLoader,
     _DelegatingModelCheckpointLoader,
     _NativeModelCheckpointLoader,
     _SafetensorsCheckpointLoader,
 )
-from fairseq2.models.hub import GlobalModelLoader
-from fairseq2.models.llama import _LLaMACheckpointLoader
-from fairseq2.models.llama4.sharder import MoESharder
-from fairseq2.runtime.dependency import (
+from llm_lib2.models.hub import GlobalModelLoader
+from llm_lib2.models.llama import _LLaMACheckpointLoader
+from llm_lib2.models.llama4.sharder import MoESharder
+from llm_lib2.runtime.dependency import (
     DependencyContainer,
     DependencyResolver,
     wire_object,
 )
-from fairseq2.sharder import (
+from llm_lib2.sharder import (
     EmbeddingSharder,
     LinearSharder,
     ModelSharder,
     ModuleSharder,
     StandardModelSharder,
 )
-from fairseq2.utils.config import (
+from llm_lib2.utils.config import (
     ConfigDirective,
     ConfigMerger,
     ConfigProcessor,
@@ -86,30 +86,30 @@ from fairseq2.utils.config import (
     StandardConfigMerger,
     StandardConfigProcessor,
 )
-from fairseq2.utils.env import Environment, StandardEnvironment, get_rank
-from fairseq2.utils.process import ProcessRunner, StandardProcessRunner
-from fairseq2.utils.progress import NOOP_PROGRESS_REPORTER, ProgressReporter
-from fairseq2.utils.rich import (
+from llm_lib2.utils.env import Environment, StandardEnvironment, get_rank
+from llm_lib2.utils.process import ProcessRunner, StandardProcessRunner
+from llm_lib2.utils.progress import NOOP_PROGRESS_REPORTER, ProgressReporter
+from llm_lib2.utils.rich import (
     RichProgressReporter,
     _create_rich_download_progress_columns,
     get_error_console,
 )
-from fairseq2.utils.rng import RngBag
-from fairseq2.utils.structured import StandardValueConverter, ValueConverter
-from fairseq2.utils.threading import (
+from llm_lib2.utils.rng import RngBag
+from llm_lib2.utils.structured import StandardValueConverter, ValueConverter
+from llm_lib2.utils.threading import (
     ThreadLocalStorage,
     ThreadPool,
     _StandardThreadLocalStorage,
     _StandardThreadPool,
 )
-from fairseq2.utils.validation import ObjectValidator, StandardObjectValidator
-from fairseq2.utils.yaml import (
+from llm_lib2.utils.validation import ObjectValidator, StandardObjectValidator
+from llm_lib2.utils.yaml import (
     RuamelYamlDumper,
     RuamelYamlLoader,
     YamlDumper,
     YamlLoader,
 )
-from fairseq2.world_info import WorldInfo
+from llm_lib2.world_info import WorldInfo
 
 
 def _register_library(
@@ -127,7 +127,7 @@ def _register_library(
 
     # Progress Reporters
     if no_progress is None:
-        no_progress = env.has("FAIRSEQ2_NO_PROGRESS")
+        no_progress = env.has("llm_lib2_NO_PROGRESS")
 
     if not no_progress:
         rank = get_rank(env)

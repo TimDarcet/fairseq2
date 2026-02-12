@@ -4,7 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/audio/audio_decoder.h"
+#include "llm_lib2n/data/audio/audio_decoder.h"
 
 #include <cstdint>
 #include <exception>
@@ -14,18 +14,18 @@
 #include <ATen/ScalarType.h>
 #include <ATen/Tensor.h>
 
-#include "fairseq2n/exception.h"
-#include "fairseq2n/float.h"
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/memory.h"
-#include "fairseq2n/span.h"
-#include "fairseq2n/data/audio/detail/sndfile.h"
-#include "fairseq2n/data/detail/tensor_helpers.h"
-#include "fairseq2n/detail/exception.h"
+#include "llm_lib2n/exception.h"
+#include "llm_lib2n/float.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/memory.h"
+#include "llm_lib2n/span.h"
+#include "llm_lib2n/data/audio/detail/sndfile.h"
+#include "llm_lib2n/data/detail/tensor_helpers.h"
+#include "llm_lib2n/detail/exception.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 audio_decoder::audio_decoder(audio_decoder_options opts)
   : opts_{opts}
@@ -124,4 +124,4 @@ audio_decoder::operator()(data &&d) const
     return output;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

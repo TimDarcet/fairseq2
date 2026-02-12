@@ -9,9 +9,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Final
 
-from fairseq2.models.wav2vec2 import Wav2Vec2Config, Wav2Vec2EncoderConfig
-from fairseq2.runtime.config_registry import ConfigRegistrar, get_config
-from fairseq2.runtime.dependency import DependencyContainer, DependencyResolver
+from llm_lib2.models.wav2vec2 import Wav2Vec2Config, Wav2Vec2EncoderConfig
+from llm_lib2.runtime.config_registry import ConfigRegistrar, get_config
+from llm_lib2.runtime.dependency import DependencyContainer, DependencyResolver
 
 WAV2VEC2_ASR_FAMILY: Final = "wav2vec2_asr"
 

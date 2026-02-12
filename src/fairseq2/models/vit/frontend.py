@@ -12,10 +12,10 @@ from torch import Tensor
 from torch.nn import Dropout
 from typing_extensions import override
 
-from fairseq2.error import NotSupportedError
-from fairseq2.models.transformer import TransformerFrontend
-from fairseq2.models.vit.feature_extractor import PatchFeatureExtractor
-from fairseq2.nn import (
+from llm_lib2.error import NotSupportedError
+from llm_lib2.models.transformer import TransformerFrontend
+from llm_lib2.models.vit.feature_extractor import PatchFeatureExtractor
+from llm_lib2.nn import (
     BatchLayout,
     IncrementalStateBag,
     InterpolatedPositionEncoder,

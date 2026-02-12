@@ -14,7 +14,7 @@
 #include <system_error>
 #include <type_traits>
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 
 template <typename StringViewLike, typename It>
@@ -100,4 +100,4 @@ from_string(std::string_view s, std::int16_t base = 10)
     throw std::invalid_argument{"`s` does not represent a valid integer value."};
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

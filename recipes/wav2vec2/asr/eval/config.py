@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 
 import torch
 
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.config import (
     CommonSection,
     EvaluatorSection,
     GangSection,

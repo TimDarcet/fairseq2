@@ -6,7 +6,7 @@
 
 from __future__ import annotations
 
-from fairseq2.assets import AssetCard, AssetCardError, AssetStore
+from llm_lib2.assets import AssetCard, AssetCardError, AssetStore
 
 
 def resolve_tokenizer_reference(asset_store: AssetStore, card: AssetCard) -> AssetCard:

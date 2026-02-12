@@ -9,9 +9,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import final
 
-from fairseq2.gang import Gangs
-from fairseq2.profilers import TorchProfiler
-from fairseq2.recipe.config import CommonSection
+from llm_lib2.gang import Gangs
+from llm_lib2.profilers import TorchProfiler
+from llm_lib2.recipe.config import CommonSection
 
 
 @final

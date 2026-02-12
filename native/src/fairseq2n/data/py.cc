@@ -4,13 +4,13 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/py.h"
+#include "llm_lib2n/data/py.h"
 
 #include <cassert>
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 namespace detail {
 namespace {
 
@@ -46,4 +46,4 @@ py_object::dec_ref() noexcept
     dec_ref_fn_(*this);
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

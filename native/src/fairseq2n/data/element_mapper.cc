@@ -4,18 +4,18 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-#include "fairseq2n/data/element_mapper.h"
+#include "llm_lib2n/data/element_mapper.h"
 
 #include <exception>
 #include <stdexcept>
 
-#include "fairseq2n/fmt.h"
-#include "fairseq2n/detail/exception.h"
-#include "fairseq2n/detail/parallel.h"
+#include "llm_lib2n/fmt.h"
+#include "llm_lib2n/detail/exception.h"
+#include "llm_lib2n/detail/parallel.h"
 
-using namespace fairseq2n::detail;
+using namespace llm_lib2n::detail;
 
-namespace fairseq2n {
+namespace llm_lib2n {
 
 element_mapper::element_mapper(map_fn fn, std::optional<std::string> maybe_selector)
   : map_fn_{std::move(fn)}
@@ -63,4 +63,4 @@ element_mapper::operator()(data &&d) try
     throw;
 }
 
-}  // namespace fairseq2n
+}  // namespace llm_lib2n

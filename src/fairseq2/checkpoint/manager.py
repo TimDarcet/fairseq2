@@ -20,15 +20,15 @@ from torch import Tensor
 from torch.overrides import TorchFunctionMode
 from typing_extensions import override
 
-from fairseq2.device import CPU
-from fairseq2.error import (
+from llm_lib2.device import CPU
+from llm_lib2.error import (
     OperationalError,
     StateDictError,
     raise_operational_system_error,
 )
-from fairseq2.file_system import FileMode, FileSystem, _flush_nfs_lookup_cache
-from fairseq2.gang import GangError, Gangs, all_sum, raise_operational_gang_error
-from fairseq2.io import (
+from llm_lib2.file_system import FileMode, FileSystem, _flush_nfs_lookup_cache
+from llm_lib2.gang import GangError, Gangs, all_sum, raise_operational_gang_error
+from llm_lib2.io import (
     CorruptFileError,
     DataNotPicklableError,
     TensorFileDumper,
@@ -36,10 +36,10 @@ from fairseq2.io import (
     TensorFileLoader,
     TensorFileLoadOptions,
 )
-from fairseq2.nn.fsdp import load_with_sdp_gang
-from fairseq2.runtime.closable import Closable
-from fairseq2.typing import Stateful
-from fairseq2.utils.threading import ThreadPool
+from llm_lib2.nn.fsdp import load_with_sdp_gang
+from llm_lib2.runtime.closable import Closable
+from llm_lib2.typing import Stateful
+from llm_lib2.utils.threading import ThreadPool
 
 
 class CheckpointManager(Closable):

@@ -8,12 +8,12 @@ from __future__ import annotations
 
 import torch
 
-from fairseq2.models.transformer import (
+from llm_lib2.models.transformer import (
     ALiBiAttentionBias,
     CausalAttentionBias,
     materialize_attention_bias,
 )
-from fairseq2.nn import BatchLayout
+from llm_lib2.nn import BatchLayout
 from tests.common import assert_close, device
 
 

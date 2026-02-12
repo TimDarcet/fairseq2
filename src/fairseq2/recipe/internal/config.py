@@ -12,15 +12,15 @@ from typing import TypeVar, final, get_type_hints
 
 from typing_extensions import override
 
-from fairseq2.recipe.component import ComponentManager
-from fairseq2.recipe.config import (
+from llm_lib2.recipe.component import ComponentManager
+from llm_lib2.recipe.config import (
     ConfigSectionNotFoundError,
     ModelSection,
     SupportsStructure,
 )
-from fairseq2.runtime.dependency import DependencyResolver
-from fairseq2.typing import is_dataclass_instance
-from fairseq2.utils.structured import StructureError, ValueConverter
+from llm_lib2.runtime.dependency import DependencyResolver
+from llm_lib2.typing import is_dataclass_instance
+from llm_lib2.utils.structured import StructureError, ValueConverter
 
 
 def _is_train_config(config_kls: type[object]) -> bool:

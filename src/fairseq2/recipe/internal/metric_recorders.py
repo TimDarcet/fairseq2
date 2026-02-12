@@ -15,20 +15,20 @@ from typing_extensions import override
 from wandb import Run as WandbRun
 from wandb.errors import UsageError as WandbUsageError
 
-from fairseq2.error import raise_operational_system_error
-from fairseq2.file_system import FileMode, FileSystem
-from fairseq2.gang import Gangs
-from fairseq2.metrics.recorders import (
+from llm_lib2.error import raise_operational_system_error
+from llm_lib2.file_system import FileMode, FileSystem
+from llm_lib2.gang import Gangs
+from llm_lib2.metrics.recorders import (
     NOOP_METRIC_RECORDER,
     MetricRecorder,
     TensorBoardRecorder,
     WandbRecorder,
 )
-from fairseq2.recipe.config import CommonSection
-from fairseq2.recipe.error import WandbInitializationError
-from fairseq2.recipe.internal.config import _RecipeConfigHolder
-from fairseq2.utils.env import Environment
-from fairseq2.utils.structured import ValueConverter
+from llm_lib2.recipe.config import CommonSection
+from llm_lib2.recipe.error import WandbInitializationError
+from llm_lib2.recipe.internal.config import _RecipeConfigHolder
+from llm_lib2.utils.env import Environment
+from llm_lib2.utils.structured import ValueConverter
 
 
 @final
